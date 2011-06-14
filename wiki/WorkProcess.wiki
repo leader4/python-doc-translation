@@ -1,0 +1,9 @@
+#该文档描述了该项目的主要流程.
+
+= Introduction =
+
+先在 branches 目录修改文件, 当被审核后才能被移至 trunk 目录.
+
+
+= Details =
+
