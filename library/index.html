@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Python Standard Library &mdash; Python v3.2 documentation</title>
+    <title>Python 标准库 &mdash; Python v3.2 文档</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -41,19 +41,19 @@
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+             accesskey="I">目录</a></li>
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+             >模块</a> |</li>
         <li class="right" >
           <a href="intro.html" title="1. Introduction"
-             accesskey="N">next</a> |</li>
+             accesskey="N">下一页</a> |</li>
         <li class="right" >
           <a href="../reference/grammar.html" title="9. Full Grammar specification"
-             accesskey="P">previous</a> |</li>
+             accesskey="P">上一页</a> |</li>
         <li><img src="../_static/py.png" alt=""
                  style="vertical-align: middle; margin-top: -1px"/></li>
-        <li><a href="../index.html">Python v3.2 documentation</a> &raquo;</li>
+        <li><a href="../index.html">Python v3.2 文档</a> &raquo;</li>
  
       </ul>
     </div>  
@@ -64,150 +64,136 @@
           <div class="body">
             
   <div class="section" id="the-python-standard-library">
-<span id="library-index"></span><h1>The Python Standard Library<a class="headerlink" href="#the-python-standard-library" title="Permalink to this headline">¶</a></h1>
+<span id="library-index"></span><h1>Python 标准库<a class="headerlink" href="#the-python-standard-library" title="Permalink to this headline">¶</a></h1>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Release:</th><td class="field-body">3.2</td>
+<tr class="field"><th class="field-name">版本:</th><td class="field-body">3.2</td>
 </tr>
-<tr class="field"><th class="field-name">Date:</th><td class="field-body">May 12, 2011</td>
+<tr class="field"><th class="field-name">日期:</th><td class="field-body">May 12, 2011</td>
 </tr>
 </tbody>
 </table>
-<p>While <a class="reference internal" href="../reference/index.html#reference-index"><em>The Python Language Reference</em></a> describes the exact syntax and
-semantics of the Python language, this library reference manual
-describes the standard library that is distributed with Python. It also
-describes some of the optional components that are commonly included
-in Python distributions.</p>
-<p>Python&#8217;s standard library is very extensive, offering a wide range of
-facilities as indicated by the long table of contents listed below. The
-library contains built-in modules (written in C) that provide access to
-system functionality such as file I/O that would otherwise be
-inaccessible to Python programmers, as well as modules written in Python
-that provide standardized solutions for many problems that occur in
-everyday programming. Some of these modules are explicitly designed to
-encourage and enhance the portability of Python programs by abstracting
-away platform-specifics into platform-neutral APIs.</p>
-<p>The Python installers for the Windows platform usually includes
-the entire standard library and often also include many additional
-components. For Unix-like operating systems Python is normally provided
-as a collection of packages, so it may be necessary to use the packaging
-tools provided with the operating system to obtain some or all of the
-optional components.</p>
-<p>In addition to the standard library, there is a growing collection of
-several thousand components (from individual programs and modules to
-packages and entire application development frameworks), available from
-the <a class="reference external" href="http://pypi.python.org/pypi">Python Package Index</a>.</p>
+<p>相比于 <a class="reference internal" href="../reference/index.html#reference-index"><em>Python 语言参考</em></a> 描述了 Python 精准的语法和词义, 
+这份库参考手册则描述了与 Python 一起发布的标准库. 同时它也描述了一些可选组件, 那些组件常常会同包含在 Python 的发行包里.</p>
+<p>Python 的标准库十分广阔, 它提供了广泛的工具, 由下面长长的目录表就可以看得出来. 该库包含了提供访问系统功能 (比如说 文件输入/输入)
+的内建模块 (使用 C 编写), 否则, 那些操作对于 Python 程序员来说就太困难了, 除此以外, 它还提供了一些用 Python 编写的模块, 这些模块为
+日常编程所遇到的问题提供了一个标准的解决方案. 在这些模块中, 有一些被明确的设计用来鼓励和加强 Python 程序的可移植性, 这些设计通过
+把平台相关的 API 抽象为平台无关的 API.</p>
+<p>Windows 平台上的 Pythan 安装包通常会包括整个标准库, 经常也会包括许多额外的组件. 对类 Unix 操作系统, Python 一般会以软件包的形式
+提供给用户, 所以, 使用系统提供的软件包工具来获取一些或所有的可选组件是必要的.</p>
+<p>除了标准库, 还有一个不断增长的软件集, 它包含数千个组件 (既有单独的程序和模块, 又有包和整个应用开发框架), 你可以在
+ <a class="reference external" href="http://pypi.python.org/pypi">Python 包目录</a>中找到它.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="functions.html">2. Built-in Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="constants.html">3. Built-in Constants</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="constants.html#constants-added-by-the-site-module">3.1. Constants added by the <tt class="docutils literal"><span class="pre">site</span></tt> module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">2. 内建函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constants.html">3. 内建常量</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="constants.html#constants-added-by-the-site-module">3.1. <tt class="docutils literal"><span class="pre">site</span></tt> 模块增加的常量</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="stdtypes.html">4. Built-in Types</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#truth-value-testing">4.1. Truth Value Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#boolean-operations-and-or-not">4.2. Boolean Operations &#8212; <tt class="docutils literal"><span class="pre">and</span></tt>, <tt class="docutils literal"><span class="pre">or</span></tt>, <tt class="docutils literal"><span class="pre">not</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#comparisons">4.3. Comparisons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#numeric-types-int-float-complex">4.4. Numeric Types &#8212; <tt class="docutils literal"><span class="pre">int</span></tt>, <tt class="docutils literal"><span class="pre">float</span></tt>, <tt class="docutils literal"><span class="pre">complex</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#iterator-types">4.5. Iterator Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#sequence-types-str-bytes-bytearray-list-tuple-range">4.6. Sequence Types &#8212; <tt class="docutils literal"><span class="pre">str</span></tt>, <tt class="docutils literal"><span class="pre">bytes</span></tt>, <tt class="docutils literal"><span class="pre">bytearray</span></tt>, <tt class="docutils literal"><span class="pre">list</span></tt>, <tt class="docutils literal"><span class="pre">tuple</span></tt>, <tt class="docutils literal"><span class="pre">range</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#set-types-set-frozenset">4.7. Set Types &#8212; <tt class="docutils literal"><span class="pre">set</span></tt>, <tt class="docutils literal"><span class="pre">frozenset</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#mapping-types-dict">4.8. Mapping Types &#8212; <tt class="docutils literal"><span class="pre">dict</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#memoryview-type">4.9. memoryview type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#context-manager-types">4.10. Context Manager Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#other-built-in-types">4.11. Other Built-in Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#special-attributes">4.12. Special Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stdtypes.html">4. 内建类型</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#truth-value-testing">4.1. 真值测试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#boolean-operations-and-or-not">4.2. 布尔操作符 &#8212; <tt class="docutils literal"><span class="pre">and</span></tt>, <tt class="docutils literal"><span class="pre">or</span></tt>, <tt class="docutils literal"><span class="pre">not</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#comparisons">4.3. 比较符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#numeric-types-int-float-complex">4.4. 数值类型 &#8212; <tt class="docutils literal"><span class="pre">int</span></tt>, <tt class="docutils literal"><span class="pre">float</span></tt>, <tt class="docutils literal"><span class="pre">complex</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#iterator-types">4.5. 迭代器类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#sequence-types-str-bytes-bytearray-list-tuple-range">4.6. 序列类型 &#8212; <tt class="docutils literal"><span class="pre">str</span></tt>, <tt class="docutils literal"><span class="pre">bytes</span></tt>, <tt class="docutils literal"><span class="pre">bytearray</span></tt>, <tt class="docutils literal"><span class="pre">list</span></tt>, <tt class="docutils literal"><span class="pre">tuple</span></tt>, <tt class="docutils literal"><span class="pre">range</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#set-types-set-frozenset">4.7. 集合类型 &#8212; <tt class="docutils literal"><span class="pre">set</span></tt>, <tt class="docutils literal"><span class="pre">frozenset</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#mapping-types-dict">4.8. 映射类型 &#8212; <tt class="docutils literal"><span class="pre">dict</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#memoryview-type">4.9. memoryview 类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#context-manager-types">4.10. Context Manager 类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#other-built-in-types">4.11. 其它内建类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdtypes.html#special-attributes">4.12. 特殊属性</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="exceptions.html">5. Built-in Exceptions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-hierarchy">5.1. Exception hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">5. 内建异常</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-hierarchy">5.1. 异常等级</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="strings.html">6. String Services</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="string.html">6.1. <tt class="docutils literal"><span class="pre">string</span></tt> &#8212; Common string operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="re.html">6.2. <tt class="docutils literal"><span class="pre">re</span></tt> &#8212; Regular expression operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="struct.html">6.3. <tt class="docutils literal"><span class="pre">struct</span></tt> &#8212; Interpret bytes as packed binary data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="difflib.html">6.4. <tt class="docutils literal"><span class="pre">difflib</span></tt> &#8212; Helpers for computing deltas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="textwrap.html">6.5. <tt class="docutils literal"><span class="pre">textwrap</span></tt> &#8212; Text wrapping and filling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="codecs.html">6.6. <tt class="docutils literal"><span class="pre">codecs</span></tt> &#8212; Codec registry and base classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="unicodedata.html">6.7. <tt class="docutils literal"><span class="pre">unicodedata</span></tt> &#8212; Unicode Database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stringprep.html">6.8. <tt class="docutils literal"><span class="pre">stringprep</span></tt> &#8212; Internet String Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">6. 字符串服务</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="string.html">6.1. <tt class="docutils literal"><span class="pre">string</span></tt> &#8212; 公共字符串操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="re.html">6.2. <tt class="docutils literal"><span class="pre">re</span></tt> &#8212; 正则表达式操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct.html">6.3. <tt class="docutils literal"><span class="pre">struct</span></tt> &#8212; 把字节解释为紧密的二进制数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="difflib.html">6.4. <tt class="docutils literal"><span class="pre">difflib</span></tt> &#8212; 计算 delta 的助手</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textwrap.html">6.5. <tt class="docutils literal"><span class="pre">textwrap</span></tt> &#8212; 包装和填充文本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codecs.html">6.6. <tt class="docutils literal"><span class="pre">codecs</span></tt> &#8212; 编码解码器的注册处以及基类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicodedata.html">6.7. <tt class="docutils literal"><span class="pre">unicodedata</span></tt> &#8212; Unicode 数据库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stringprep.html">6.8. <tt class="docutils literal"><span class="pre">stringprep</span></tt> &#8212; Internet String 准备</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="datatypes.html">7. Data Types</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="datetime.html">7.1. <tt class="docutils literal"><span class="pre">datetime</span></tt> &#8212; Basic date and time types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="calendar.html">7.2. <tt class="docutils literal"><span class="pre">calendar</span></tt> &#8212; General calendar-related functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="collections.html">7.3. <tt class="docutils literal"><span class="pre">collections</span></tt> &#8212; Container datatypes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="heapq.html">7.4. <tt class="docutils literal"><span class="pre">heapq</span></tt> &#8212; Heap queue algorithm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bisect.html">7.5. <tt class="docutils literal"><span class="pre">bisect</span></tt> &#8212; Array bisection algorithm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="array.html">7.6. <tt class="docutils literal"><span class="pre">array</span></tt> &#8212; Efficient arrays of numeric values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sched.html">7.7. <tt class="docutils literal"><span class="pre">sched</span></tt> &#8212; Event scheduler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="queue.html">7.8. <tt class="docutils literal"><span class="pre">queue</span></tt> &#8212; A synchronized queue class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="weakref.html">7.9. <tt class="docutils literal"><span class="pre">weakref</span></tt> &#8212; Weak references</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html">7.10. <tt class="docutils literal"><span class="pre">types</span></tt> &#8212; Names for built-in types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="copy.html">7.11. <tt class="docutils literal"><span class="pre">copy</span></tt> &#8212; Shallow and deep copy operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pprint.html">7.12. <tt class="docutils literal"><span class="pre">pprint</span></tt> &#8212; Data pretty printer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reprlib.html">7.13. <tt class="docutils literal"><span class="pre">reprlib</span></tt> &#8212; Alternate <tt class="docutils literal"><span class="pre">repr()</span></tt> implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.html">7. 数据类型</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datetime.html">7.1. <tt class="docutils literal"><span class="pre">datetime</span></tt> &#8212; 基本日期和时间类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">7.2. <tt class="docutils literal"><span class="pre">calendar</span></tt> &#8212; 常规有关日历的函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collections.html">7.3. <tt class="docutils literal"><span class="pre">collections</span></tt> &#8212; 容器数据类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heapq.html">7.4. <tt class="docutils literal"><span class="pre">heapq</span></tt> &#8212; 堆队列算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bisect.html">7.5. <tt class="docutils literal"><span class="pre">bisect</span></tt> &#8212; 数组分切算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="array.html">7.6. <tt class="docutils literal"><span class="pre">array</span></tt> &#8212; 高效的数值数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sched.html">7.7. <tt class="docutils literal"><span class="pre">sched</span></tt> &#8212; 时间调度程序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queue.html">7.8. <tt class="docutils literal"><span class="pre">queue</span></tt> &#8212; 一个同步的队列类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weakref.html">7.9. <tt class="docutils literal"><span class="pre">weakref</span></tt> &#8212; 不牢固的引用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">7.10. <tt class="docutils literal"><span class="pre">types</span></tt> &#8212; 内置类型的名字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="copy.html">7.11. <tt class="docutils literal"><span class="pre">copy</span></tt> &#8212; 浅复制和深复制操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pprint.html">7.12. <tt class="docutils literal"><span class="pre">pprint</span></tt> &#8212; 数据漂亮的打印机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reprlib.html">7.13. <tt class="docutils literal"><span class="pre">reprlib</span></tt> &#8212; 替代 <tt class="docutils literal"><span class="pre">repr()</span></tt> 的实现</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="numeric.html">8. Numeric and Mathematical Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="numbers.html">8.1. <tt class="docutils literal"><span class="pre">numbers</span></tt> &#8212; Numeric abstract base classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="math.html">8.2. <tt class="docutils literal"><span class="pre">math</span></tt> &#8212; Mathematical functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cmath.html">8.3. <tt class="docutils literal"><span class="pre">cmath</span></tt> &#8212; Mathematical functions for complex numbers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="decimal.html">8.4. <tt class="docutils literal"><span class="pre">decimal</span></tt> &#8212; Decimal fixed point and floating point arithmetic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fractions.html">8.5. <tt class="docutils literal"><span class="pre">fractions</span></tt> &#8212; Rational numbers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="random.html">8.6. <tt class="docutils literal"><span class="pre">random</span></tt> &#8212; Generate pseudo-random numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numeric.html">8. 数值和数学模块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="numbers.html">8.1. <tt class="docutils literal"><span class="pre">numbers</span></tt> &#8212; 数值抽象基类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html">8.2. <tt class="docutils literal"><span class="pre">math</span></tt> &#8212; 数学函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmath.html">8.3. <tt class="docutils literal"><span class="pre">cmath</span></tt> &#8212; 关于复数的数学函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decimal.html">8.4. <tt class="docutils literal"><span class="pre">decimal</span></tt> &#8212; 定点和浮点十进制数算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fractions.html">8.5. <tt class="docutils literal"><span class="pre">fractions</span></tt> &#8212; 有理数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="random.html">8.6. <tt class="docutils literal"><span class="pre">random</span></tt> &#8212; 常规伪随机数</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="functional.html">9. Functional Programming Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="itertools.html">9.1. <tt class="docutils literal"><span class="pre">itertools</span></tt> &#8212; Functions creating iterators for efficient looping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functools.html">9.2. <tt class="docutils literal"><span class="pre">functools</span></tt> &#8212; Higher order functions and operations on callable objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operator.html">9.3. <tt class="docutils literal"><span class="pre">operator</span></tt> &#8212; Standard operators as functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operator.html#inplace-operators">9.4. Inplace Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional.html">9. 函数式编程模块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="itertools.html">9.1. <tt class="docutils literal"><span class="pre">itertools</span></tt> &#8212; 生成有高效率循环的迭代器的函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functools.html">9.2. <tt class="docutils literal"><span class="pre">functools</span></tt> &#8212; 可调用对象的高阶函数和操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator.html">9.3. <tt class="docutils literal"><span class="pre">operator</span></tt> &#8212; 作为函数的标准运算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator.html#inplace-operators">9.4. 原地操作符</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="filesys.html">10. File and Directory Access</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="os.path.html">10.1. <tt class="docutils literal"><span class="pre">os.path</span></tt> &#8212; Common pathname manipulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fileinput.html">10.2. <tt class="docutils literal"><span class="pre">fileinput</span></tt> &#8212; Iterate over lines from multiple input streams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stat.html">10.3. <tt class="docutils literal"><span class="pre">stat</span></tt> &#8212; Interpreting <tt class="docutils literal"><span class="pre">stat()</span></tt> results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="filecmp.html">10.4. <tt class="docutils literal"><span class="pre">filecmp</span></tt> &#8212; File and Directory Comparisons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tempfile.html">10.5. <tt class="docutils literal"><span class="pre">tempfile</span></tt> &#8212; Generate temporary files and directories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glob.html">10.6. <tt class="docutils literal"><span class="pre">glob</span></tt> &#8212; Unix style pathname pattern expansion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fnmatch.html">10.7. <tt class="docutils literal"><span class="pre">fnmatch</span></tt> &#8212; Unix filename pattern matching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linecache.html">10.8. <tt class="docutils literal"><span class="pre">linecache</span></tt> &#8212; Random access to text lines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shutil.html">10.9. <tt class="docutils literal"><span class="pre">shutil</span></tt> &#8212; High-level file operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="macpath.html">10.10. <tt class="docutils literal"><span class="pre">macpath</span></tt> &#8212; Mac OS 9 path manipulation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filesys.html">10. 文件和目录存取</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="os.path.html">10.1. <tt class="docutils literal"><span class="pre">os.path</span></tt> &#8212; 通用路径名处理\</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fileinput.html">10.2. <tt class="docutils literal"><span class="pre">fileinput</span></tt> &#8212; 遍历多重输入流中的每一行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat.html">10.3. <tt class="docutils literal"><span class="pre">stat</span></tt> &#8212; 解释 <tt class="docutils literal"><span class="pre">stat()</span></tt> 结果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filecmp.html">10.4. <tt class="docutils literal"><span class="pre">filecmp</span></tt> &#8212; 文件和目录比较</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tempfile.html">10.5. <tt class="docutils literal"><span class="pre">tempfile</span></tt> &#8212; 常规临时文件和目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glob.html">10.6. <tt class="docutils literal"><span class="pre">glob</span></tt> &#8212; Unix 风格路径名模式扩充</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fnmatch.html">10.7. <tt class="docutils literal"><span class="pre">fnmatch</span></tt> &#8212; Unix 文件名模式匹配</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linecache.html">10.8. <tt class="docutils literal"><span class="pre">linecache</span></tt> &#8212; 随机存取的文本行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shutil.html">10.9. <tt class="docutils literal"><span class="pre">shutil</span></tt> &#8212; 高级文件操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macpath.html">10.10. <tt class="docutils literal"><span class="pre">macpath</span></tt> &#8212; Mac OS 9 路径处理函数</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="persistence.html">11. Data Persistence</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pickle.html">11.1. <tt class="docutils literal"><span class="pre">pickle</span></tt> &#8212; Python object serialization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="copyreg.html">11.2. <tt class="docutils literal"><span class="pre">copyreg</span></tt> &#8212; Register <tt class="docutils literal"><span class="pre">pickle</span></tt> support functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shelve.html">11.3. <tt class="docutils literal"><span class="pre">shelve</span></tt> &#8212; Python object persistence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="marshal.html">11.4. <tt class="docutils literal"><span class="pre">marshal</span></tt> &#8212; Internal Python object serialization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dbm.html">11.5. <tt class="docutils literal"><span class="pre">dbm</span></tt> &#8212; Interfaces to Unix &#8220;databases&#8221;</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sqlite3.html">11.6. <tt class="docutils literal"><span class="pre">sqlite3</span></tt> &#8212; DB-API 2.0 interface for SQLite databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistence.html">11. 数据持久化</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pickle.html">11.1. <tt class="docutils literal"><span class="pre">pickle</span></tt> &#8212; Python 对象串行化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="copyreg.html">11.2. <tt class="docutils literal"><span class="pre">copyreg</span></tt> &#8212; 注册 <tt class="docutils literal"><span class="pre">pickle</span></tt> 支持功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shelve.html">11.3. <tt class="docutils literal"><span class="pre">shelve</span></tt> &#8212; Python 对象持久化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marshal.html">11.4. <tt class="docutils literal"><span class="pre">marshal</span></tt> &#8212; 内部 Python 对象串行化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dbm.html">11.5. <tt class="docutils literal"><span class="pre">dbm</span></tt> &#8212; Unix &#8220;数据库&#8221; 的接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite3.html">11.6. <tt class="docutils literal"><span class="pre">sqlite3</span></tt> &#8212; DB-API 2.0 关于 SQLite 数据库的接口</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="archiving.html">12. Data Compression and Archiving</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="zlib.html">12.1. <tt class="docutils literal"><span class="pre">zlib</span></tt> &#8212; Compression compatible with <strong class="program">gzip</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="gzip.html">12.2. <tt class="docutils literal"><span class="pre">gzip</span></tt> &#8212; Support for <strong class="program">gzip</strong> files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bz2.html">12.3. <tt class="docutils literal"><span class="pre">bz2</span></tt> &#8212; Compression compatible with <strong class="program">bzip2</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="zipfile.html">12.4. <tt class="docutils literal"><span class="pre">zipfile</span></tt> &#8212; Work with ZIP archives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tarfile.html">12.5. <tt class="docutils literal"><span class="pre">tarfile</span></tt> &#8212; Read and write tar archive files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archiving.html">12. 数据压缩和归档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zlib.html">12.1. <tt class="docutils literal"><span class="pre">zlib</span></tt> &#8212; 与 <strong class="program">gzip</strong> 兼容的压缩</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gzip.html">12.2. <tt class="docutils literal"><span class="pre">gzip</span></tt> &#8212; 对 <strong class="program">gzip</strong> 文件的支持</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bz2.html">12.3. <tt class="docutils literal"><span class="pre">bz2</span></tt> &#8212; 与 <strong class="program">bzip2</strong> 兼容的压缩</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zipfile.html">12.4. <tt class="docutils literal"><span class="pre">zipfile</span></tt> &#8212; 对 ZIP 归档文件有效</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tarfile.html">12.5. <tt class="docutils literal"><span class="pre">tarfile</span></tt> &#8212; 读写 tar 归档文件</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fileformats.html">13. File Formats</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="csv.html">13.1. <tt class="docutils literal"><span class="pre">csv</span></tt> &#8212; CSV File Reading and Writing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configparser.html">13.2. <tt class="docutils literal"><span class="pre">configparser</span></tt> &#8212; Configuration file parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="netrc.html">13.3. <tt class="docutils literal"><span class="pre">netrc</span></tt> &#8212; netrc file processing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xdrlib.html">13.4. <tt class="docutils literal"><span class="pre">xdrlib</span></tt> &#8212; Encode and decode XDR data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plistlib.html">13.5. <tt class="docutils literal"><span class="pre">plistlib</span></tt> &#8212; Generate and parse Mac OS X <tt class="docutils literal"><span class="pre">.plist</span></tt> files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fileformats.html">13. 文件格式</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">13.1. <tt class="docutils literal"><span class="pre">csv</span></tt> &#8212; CSV 文件的读写</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configparser.html">13.2. <tt class="docutils literal"><span class="pre">configparser</span></tt> &#8212; 配置文件分析器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="netrc.html">13.3. <tt class="docutils literal"><span class="pre">netrc</span></tt> &#8212; netrc 文件处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xdrlib.html">13.4. <tt class="docutils literal"><span class="pre">xdrlib</span></tt> &#8212; 编码和解码 XDR 数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plistlib.html">13.5. <tt class="docutils literal"><span class="pre">plistlib</span></tt> &#8212; 生成和解析 Mac OS X <tt class="docutils literal"><span class="pre">.plist</span></tt> 文件</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="crypto.html">14. Cryptographic Services</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="crypto.html">14. 密码服务</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="hashlib.html">14.1. <tt class="docutils literal"><span class="pre">hashlib</span></tt> &#8212; Secure hashes and message digests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hmac.html">14.2. <tt class="docutils literal"><span class="pre">hmac</span></tt> &#8212; Keyed-Hashing for Message Authentication</a></li>
 </ul>
