@@ -1,7 +1,7 @@
-.. _reporting-bugs:
+ï»¿.. _reporting-bugs:
 
 ***********************
-Reporting Bugs ±¨¸æ´íÎó
+Reporting Bugs æŠ¥å‘Šé”™è¯¯
 ***********************
 
 Python is a mature programming language which has established a reputation for
