@@ -1,5 +1,5 @@
-#summary One-sentence summary of this page.
 #labels Phase-Implementation
+#简要介绍reST
 
 = 关于编写文档所用的标记语言reST =
 
