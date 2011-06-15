@@ -1,0 +1,12 @@
+#summary One-sentence summary of this page.
+#labels Phase-Implementation
+
+= 关于编写文档所用的标记语言reST =
+
+Python的官方文档采用的是 *reST* 来编写文档。所以如果你希望更好的翻译Python的文档，请花一些时间了解一下 reStructuredText (reST)。
+
+如果你会一些Wiki的标记，那么对于 reST 就会很快上手。即使你可能以前没听过，那么也不要担心，因为学习这个是非常轻松的。
+
+网上的资料有很多，可以搜索一下 `reST ` ，相信会有很多简单的入门笔记。
+在Python的官网中也有对此的简单介绍，请参考[http://docs.python.org/documenting/rest.html reST]。当然，你也可以看更官方的文档[http://docutils.sourceforge.net/rst.html reST]。
+如果你想看中文的翻译，那么可以看看svn中的关于documenting这部分的中文翻译。由于英语及中文水平有限，如果觉得此翻译不是很好，你可以对其进行修改。
