@@ -1,10 +1,14 @@
-Contributors to the Python Documentation
-----------------------------------------
+Contributors to the Python Documentation Python 文档的贡献者
+------------------------------------------------------------
 
 This section lists people who have contributed in some way to the Python
 documentation.  It is probably not complete -- if you feel that you or
 anyone else should be on this list, please let us know (send email to
 docs@python.org), and we'll be glad to correct the problem.
+
+该小节列出了以任何方式对 Python 文档作出贡献的人.  它可能不够完整 -- 如果
+你觉得你或某人应该在这个列表里, 请告诉我们 (发送邮件到 docs@python.org), 
+我们将很乐意纠正这些错误.
 
 .. acks::
 
