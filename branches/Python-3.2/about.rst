@@ -1,13 +1,13 @@
-==================================
-About these documents ¹ØÓÚÕâĞ©ÎÄµµ
+ï»¿==================================
+About these documents å…³äºè¿™äº›æ–‡æ¡£
 ==================================
 
 
 These documents are generated from `reStructuredText`_ sources by `Sphinx`_, a
 document processor specifically written for the Python documentation.
 
-ÕâĞ©ÎÄµµÍ¨¹ı `Sphinx`_ ÓÉ `reStructuredText`_ Éú³É, `Sphinx`_ ÊÇÒ»¸öÎÄµµ´¦ÀíÆ÷,
-ËüÊÇÌØÒâÎª Python ÎÄµµ¶ø¿ª·¢µÄ.
+è¿™äº›æ–‡æ¡£é€šè¿‡ `Sphinx`_ ç”± `reStructuredText`_ ç”Ÿæˆ, `Sphinx`_ æ˜¯ä¸€ä¸ªæ–‡æ¡£å¤„ç†å™¨,
+å®ƒæ˜¯ç‰¹æ„ä¸º Python æ–‡æ¡£è€Œå¼€å‘çš„.
 
 
 .. _reStructuredText: http://docutils.sf.net/rst.html
@@ -20,13 +20,13 @@ Development of the documentation and its toolchain takes place on the
 docs@python.org mailing list.  We're always looking for volunteers wanting
 to help with the docs, so feel free to send a mail there!
 
-¸ÃÎÄµµºÍËüµÄ¹¤¾ßÁ´µÄ¿ª·¢ÔÚ docs@python.org ·¢ÉúÔÚÓÊ¼şÁĞ±íÉÏ. ÎÒÃÇÒ»Ö±ÔÚÑ°ÕÒ
-Ö¾Ô¸Õß°ïÖúÎÒÃÇ¹ÜÀíÎÄµµ, ÇëËæÒâ·¢ËÍÓÊ¼şµ½ÄÇÀï!
+è¯¥æ–‡æ¡£å’Œå®ƒçš„å·¥å…·é“¾çš„å¼€å‘åœ¨ docs@python.org å‘ç”Ÿåœ¨é‚®ä»¶åˆ—è¡¨ä¸Š. æˆ‘ä»¬ä¸€ç›´åœ¨å¯»æ‰¾
+å¿—æ„¿è€…å¸®åŠ©æˆ‘ä»¬ç®¡ç†æ–‡æ¡£, è¯·éšæ„å‘é€é‚®ä»¶åˆ°é‚£é‡Œ!
 
 
 Many thanks go to:
 
-ÌØ±ğ¸ĞĞ»:
+ç‰¹åˆ«æ„Ÿè°¢:
 
 * Fred L. Drake, Jr., the creator of the original Python documentation toolset
   and writer of much of the content;
@@ -36,16 +36,16 @@ Many thanks go to:
   <http://effbot.org/zone/pyref.htm>`_ project from which Sphinx got many good
   ideas.
   
-* Fred L. Drake, Jr., Ô­Ê¼ Python ÎÄµµ¹¤¾ß°üµÄ´´ÔìÕß, Ò²ÊÇ´óÁ¿ÄÚÈİµÄ×÷Õß;
-* `Docutils <http://docutils.sf.net/>`_ ÏîÄ¿, Ëü´´ÔìÁË reStructuredText ºÍ 
-  Docutils Ì×¼ş;
-* Fredrik Lundh, ÒòÎª `Alternative Python Reference
-  <http://effbot.org/zone/pyref.htm>`_ ÏîÄ¿, ´ÓÖĞ Sphinx »ñÈ¡ÁËĞí¶àºÃµã×Ó.
+* Fred L. Drake, Jr., åŸå§‹ Python æ–‡æ¡£å·¥å…·åŒ…çš„åˆ›é€ è€…, ä¹Ÿæ˜¯å¤§é‡å†…å®¹çš„ä½œè€…;
+* `Docutils <http://docutils.sf.net/>`_ é¡¹ç›®, å®ƒåˆ›é€ äº† reStructuredText å’Œ 
+  Docutils å¥—ä»¶;
+* Fredrik Lundh, å› ä¸º `Alternative Python Reference
+  <http://effbot.org/zone/pyref.htm>`_ é¡¹ç›®, ä»ä¸­ Sphinx è·å–äº†è®¸å¤šå¥½ç‚¹å­.
 
 See :ref:`reporting-bugs` for information how to report bugs in this
 documentation, or Python itself.
 
-²ÎÕÕ :ref:`reporting-bugs` »ñÈ¡ÈçºÎ±¨¸æ¸ÃÎÄµµ»ò Python ×ÔÉíµÄ´íÎó.
+å‚ç…§ :ref:`reporting-bugs` è·å–å¦‚ä½•æŠ¥å‘Šè¯¥æ–‡æ¡£æˆ– Python è‡ªèº«çš„é”™è¯¯.
 
 .. including the ACKS file here so that it can be maintained separately
 .. include:: ACKS.txt
@@ -53,4 +53,4 @@ documentation, or Python itself.
 It is only with the input and contributions of the Python community
 that Python has such wonderful documentation -- Thank You!
 
-Ö»ÓĞ Python ÉçÇøµÄÍ¶ÈëÓë·îÏ×²ÅÊ¹µÃ Python ÓµÓĞÈç´ËÃÀÃîµÄÎÄµµ -- Ğ»Ğ»
+åªæœ‰ Python ç¤¾åŒºçš„æŠ•å…¥ä¸å¥‰çŒ®æ‰ä½¿å¾— Python æ‹¥æœ‰å¦‚æ­¤ç¾å¦™çš„æ–‡æ¡£ -- è°¢è°¢
