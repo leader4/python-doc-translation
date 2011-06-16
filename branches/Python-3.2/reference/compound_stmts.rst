@@ -1,4 +1,4 @@
-.. _compound:
+﻿.. _compound:
 
 *******************
 Compound statements
