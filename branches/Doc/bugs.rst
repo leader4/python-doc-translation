@@ -102,7 +102,7 @@ description of the issue workflow.
       Article which goes into some detail about how to create a useful bug report.
       This describes what kind of information is useful and why it is useful.
 	  
-	`如何有效的报告错误 <http://www.chiark.greenend.org.uk/~sgtatham/bugs.html>`_
+   `如何有效的报告错误 <http://www.chiark.greenend.org.uk/~sgtatham/bugs.html>`_
 	  这篇文章探讨了如何创建一份有用的 bug 报告的一些细节. 它描述了什么类型的信息
       是有用的以及它为什么有用.	  
 
@@ -110,6 +110,6 @@ description of the issue workflow.
       Information about writing a good bug report.  Some of this is specific to the
       Mozilla project, but describes general good practices.
 	  
-	`Bug 书写指导 <http://developer.mozilla.org/en/docs/Bug_writing_guidelines>`_
+   `Bug 书写指导 <http://developer.mozilla.org/en/docs/Bug_writing_guidelines>`_
       有关如何写一个好的 bug 报告的信息.  其中有一些专门针对 Mozilla 项目, 但也描述了
 	  一般性的好的做法.
