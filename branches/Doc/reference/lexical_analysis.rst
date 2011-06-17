@@ -133,20 +133,23 @@ addition, if the first bytes of the file are the UTF-8 byte-order mark
 among others, by Microsoft's :program:`notepad`).
 
 如果找不到任何编码声明, 那么就默认编码器是 UTF-8.  此外, 如果文件的头几个字节是 
-UTF-8 BOM (``b'\xef\xbb\xbf'``), 那么编码器就是 UTF-8 (这是被一些支持的程序支持
-的, 其中有 Microsoft 的 :program:`记事本`).
+UTF-8 BOM (``b'\xef\xbb\xbf'``), 那么声明的编码器就是 UTF-8 (这是被一些支持的程
+序支持的, 其中包含 Microsoft 的 :program:`记事本`).
 
 If an encoding is declared, the encoding name must be recognized by Python. The
 encoding is used for all lexical analysis, including string literals, comments
 and identifiers. The encoding declaration must appear on a line of its own.
+
+如果声明了一个编码器, 那么这个编码器的名字一定要能被 Python 辨认. 该编码器将在所
+有的词法分析中使用, 包含字符串, 注释和标识符. 编码声明必须出现在所在的行里.
 
 .. XXX there should be a list of supported encodings.
 
 
 .. _explicit-joining:
 
-Explicit line joining
----------------------
+Explicit line joining 显示加入行
+--------------------------------
 
 .. index:: physical line, line joining, line continuation, backslash character
 
@@ -161,17 +164,30 @@ character.  For example::
       and 0 <= minute < 60 and 0 <= second < 60:   # Looks like a valid date
            return 1
 
+两个以上的物理行可以通过使用反斜杠字符 (``\``) 加入到逻辑行, 如下: 当一个物理行以
+一个不在注释或字符串里的反斜杠结尾, 它将删除反斜杠和行终结符, 加入到随后以形成单
+一的逻辑行.  例如::
+
+   if 1900 < year < 2100 and 1 <= month <= 12 \
+      and 1 <= day <= 31 and 0 <= hour < 24 \
+      and 0 <= minute < 60 and 0 <= second < 60:   # 看起来像个有效的时间
+           return 1
+		   
 A line ending in a backslash cannot carry a comment.  A backslash does not
 continue a comment.  A backslash does not continue a token except for string
 literals (i.e., tokens other than string literals cannot be split across
 physical lines using a backslash).  A backslash is illegal elsewhere on a line
 outside a string literal.
 
+以反斜杠结尾的行不能跟着注释.  反斜杠不能继续一个注释.  反斜杠一般不能继续一个标
+识符, 除非是字符串 (例如, 除字符串以外的标识符不能通过使用反斜杠分隔成几个物理行). 
+A backslash is illegal elsewhere on a line outside a string literal.
+
 
 .. _implicit-joining:
 
-Implicit line joining
----------------------
+Implicit line joining 隐式加入行
+--------------------------------
 
 Expressions in parentheses, square brackets or curly braces can be split over
 more than one physical line without using backslashes. For example::
@@ -181,11 +197,20 @@ more than one physical line without using backslashes. For example::
                   'Juli',    'Augustus', 'September',  # for the months
                   'Oktober', 'November', 'December']   # of the year
 
+在圆括号, 方括号, 大括号里的表达式可以被分割成多行而不需要使用反斜杠. 例如::
+
+   month_names = ['Januari', 'Februari', 'Maart',      # 这是一
+                  'April',   'Mei',      'Juni',       # 年中月
+                  'Juli',    'Augustus', 'September',  # 份的荷
+                  'Oktober', 'November', 'December']   # 兰语名字
+				  
 Implicitly continued lines can carry comments.  The indentation of the
 continuation lines is not important.  Blank continuation lines are allowed.
 There is no NEWLINE token between implicit continuation lines.  Implicitly
 continued lines can also occur within triple-quoted strings (see below); in that
 case they cannot carry comments.
+
+隐式继续行可以带注释.  
 
 
 .. _blank-lines:
