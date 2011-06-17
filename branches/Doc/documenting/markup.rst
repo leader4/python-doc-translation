@@ -1,12 +1,16 @@
 .. highlightlang:: rest
 
-Additional Markup Constructs
-============================
+Additional Markup Constructs 额外的标记
+=========================================
 
 Sphinx adds a lot of new directives and interpreted text roles to standard reST
 markup.  This section contains the reference material for these facilities.
 Documentation for "standard" reST constructs is not included here, though
 they are used in the Python documentation.
+
+除了标准 reST 的标记, Sphinx 增加了很多的控制指令和解释的文字. 
+本节将包含一个参考手册, 对此进行具体描述. "标准" 的 reST 文档
+是不会在这里介绍的, 尽管他们会在 Python 文档中用到.
 
 .. note::
 
@@ -14,9 +18,13 @@ they are used in the Python documentation.
    coverage can be found in `its own documentation
    <http://sphinx.pocoo.org/contents.html>`_.
 
+   这个仅仅是对 Sphinx 扩展标记的一个概述; 
+   完全的参考手册可以在 `它自己的文档 <http://sphinx.pocoo.org/contents.html>`_ 
+   中找到.
 
-Meta-information markup
------------------------
+
+Meta-information markup 元信息标记
+-----------------------------------
 
 .. describe:: sectionauthor
 
@@ -27,17 +35,29 @@ Meta-information markup
 
       .. sectionauthor:: Guido van Rossum <guido@python.org>
 
+   本节作者的标识符. 参数应该包含作者的名字和邮箱地址.
+   而地址的域名应该是小写的. 例如::
+
+      .. sectionauthor:: Guido van Rossum <guido@python.org>
+
+
    Currently, this markup isn't reflected in the output in any way, but it helps
    keep track of contributions.
 
+   目前, 这个标记并没有在输出时有什么反映, 但是它记录了谁对此有贡献.
 
-Module-specific markup
-----------------------
+Module-specific markup 关于模块的标记
+--------------------------------------
 
 The markup described in this section is used to provide information about a
 module being documented.  Each module should be documented in its own file.
 Normally this markup appears after the title heading of that file; a typical
-file might start like this::
+file might start like this:
+
+这个标记描述了关于文档中模块的相关信息. 每个模块都应该在自己的文件中描述.
+一般来说, 这个标记出现在文件的标题后面; 一个典型的文件会看起来像这样:
+
+::
 
    :mod:`parrot` -- Dead parrot access
    ===================================
@@ -51,11 +71,17 @@ file might start like this::
 As you can see, the module-specific markup consists of two directives, the
 ``module`` directive and the ``moduleauthor`` directive.
 
+就像你看到的, 关于模块的标记包含有两个指令, 一个是 ``module`` ,  另一个
+``moduleauthor`` 指令.
+
 .. describe:: module
 
    This directive marks the beginning of the description of a module, package,
    or submodule. The name should be fully qualified (i.e. including the
    package name for submodules).
+
+   这个指令标记了模块, 包, 或子模块的描述. 这个名字应该完整 (
+   也就是说对于子模块应该包含包名) .
 
    The ``platform`` option, if present, is a comma-separated list of the
    platforms on which the module is available (if it is available on all
@@ -63,11 +89,21 @@ As you can see, the module-specific markup consists of two directives, the
    examples that are in use include "IRIX", "Mac", "Windows", and "Unix".  It is
    important to use a key which has already been used when applicable.
 
+   ``platform`` 选项, 如果存在, 是一个用逗号分隔的列表, 这个指明了能够使用
+   该模块的平台 (如果在所有平台都可以使用, 那么就应该忽略这个选项).
+   而此处使用的应该是简短的标识符; 比如 "IRIX", "Mac", "Windows", and "Unix".
+   使用正确的键值是很重要的.
+
    The ``synopsis`` option should consist of one sentence describing the
    module's purpose -- it is currently only used in the Global Module Index.
 
+   ``synopsis`` 选项应该包含一个模块目的的描述 -- 目前这个只用于全局模块索引.
+
    The ``deprecated`` option can be given (with no value) to mark a module as
    deprecated; it will be designated as such in various locations then.
+
+   ``deprecated`` 选项可以使用 (而不需要值) 用于标记一个模块是被反对的;
+   它将会在合适的地方被指定.
 
 .. describe:: moduleauthor
 
@@ -75,22 +111,34 @@ As you can see, the module-specific markup consists of two directives, the
    authors of the module code, just like ``sectionauthor`` names the author(s)
    of a piece of documentation.  It too does not result in any output currently.
 
+   ``moduleauthor`` 指令, 可以多次出现, 指明了模块编写者, 就像 ``sectionauthor``
+   指明了文档的作者一样. 这个同样也没有任何输出. 
+
 .. note::
 
    It is important to make the section title of a module-describing file
    meaningful since that value will be inserted in the table-of-contents trees
    in overview files.
 
+   下面这点很重要, 每个模块的章节标题应该有意义, 因为这个将被插入到目录中.
 
-Information units
------------------
+
+Information units 信息单元
+----------------------------
 
 There are a number of directives used to describe specific features provided by
 modules.  Each directive requires one or more signatures to provide basic
 information about what is being described, and the content should be the
 description.  The basic version makes entries in the general index; if no index
 entry is desired, you can give the directive option flag ``:noindex:``.  The
-following example shows all of the features of this directive type::
+following example shows all of the features of this directive type:
+
+在模块中会有很多用以特殊作用的指示符. 每个指示符都需要一个甚至更多的签名
+用于提供基本的信息, 而其内容应该是具体的描述. 最基本的版本应该是有索引的;
+如果没有索引, 那么你可以给指示符一个选项 ``:noindex:`` . 
+下面的例子给出了所有的特征:
+
+::
 
     .. function:: spam(eggs)
                   ham(eggs)
@@ -105,29 +153,51 @@ cross-references.  If you describe methods belonging to an abstract protocol,
 such as "context managers", include a (pseudo-)type name too to make the
 index entries more informative.
 
+对象的方法或成员的签名应该总包含其类型的名称 (``.. method:: FileInput.input(...)``),
+尽管它可能是从上下文中很容易看出; 这个就可以使用交叉引用了. 如果你描述的方法
+属于一个抽象的协议, 像 "context managers", 同样请包含一个 (伪) 类型名用以
+在索引中给出更多信息.
+
 The directives are:
 
 .. describe:: c:function
 
-   Describes a C function. The signature should be given as in C, e.g.::
+   Describes a C function. The signature should be given as in C, e.g.:
 
-      .. c:function:: PyObject* PyType_GenericAlloc(PyTypeObject *type, Py_ssize_t nitems)
+   描述一个 C 的函数. 其签名应该是以 C 的形式给出, 比如:
+   
+   ::
+
+      .. c:function:: PyObject* PyType_GenericAlloc(PyTypeObject * type, Py_ssize_t nitems)
 
    This is also used to describe function-like preprocessor macros.  The names
    of the arguments should be given so they may be used in the description.
 
+   同样, 这也可以用于描述类似函数的预处理宏. 参数的名称也应该给出,
+   这样可以方便下面的描述. 
+
    Note that you don't have to backslash-escape asterisks in the signature,
    as it is not parsed by the reST inliner.
 
+   注意, 你不需要在签名中使用反斜杠来转义星号, 因为此处的不会被 reST 处理.
+   ( 译者注: 当然, 如果你不放心, 可以在星号两边留下一个空格. )
+
 .. describe:: c:member
 
-   Describes a C struct member. Example signature::
+   Describes a C struct member. Example signature:
+
+   描述 C 结构体的成员. 像下面的签名:
+   
+   ::
 
       .. c:member:: PyObject* PyTypeObject.tp_bases
 
    The text of the description should include the range of values allowed, how
    the value should be interpreted, and whether the value can be changed.
    References to structure members in text should use the ``member`` role.
+
+   此处的描述应该包含值所允许的范围, 这个值是如何被解释的, 以及这个值能否改变.
+   引用这个结构体的成员需要使用 ``member`` .
 
 .. describe:: c:macro
 
@@ -137,33 +207,53 @@ The directives are:
    of its use in the Python documentation include :c:macro:`PyObject_HEAD` and
    :c:macro:`Py_BEGIN_ALLOW_THREADS`.
 
+   描述一个 "简单的" C 宏. 简单的宏就是那些用于代码扩展, 但是不接受参数的宏.
+   这个不会用于简单的常量定义. 举个例子, 使用的有 :c:macro:`PyObject_HEAD`
+   和 :c:macro:`Py_BEGIN_ALLOW_THREADS` .
+
 .. describe:: c:type
 
    Describes a C type. The signature should just be the type name.
 
+   描述一个 C 的类型. 签名就是这个类型名.
+
 .. describe:: c:var
 
    Describes a global C variable.  The signature should include the type, such
-   as::
+   as:
+
+   描述一个全局的 C 变量. 这个签名应该包含其类型, 像这样:
+   
+   ::
 
       .. cvar:: PyObject* PyClass_Type
 
 .. describe:: data
 
    Describes global data in a module, including both variables and values used
-   as "defined constants."  Class and object attributes are not documented
+   as "defined constants".  Class and object attributes are not documented
    using this environment.
+
+   描述一个模块中的全局数据, 包括变量和那些当作常量的值.
+   类和对象的属性不应该在此环境中出现.
 
 .. describe:: exception
 
    Describes an exception class.  The signature can, but need not include
    parentheses with constructor arguments.
 
+   描述一个异常类. 这个签名可以, 但不需要包含构造是的参数及括号.
+
 .. describe:: function
 
    Describes a module-level function.  The signature should include the
    parameters, enclosing optional parameters in brackets.  Default values can be
-   given if it enhances clarity.  For example::
+   given if it enhances clarity.  For example:
+
+   描述一个模块级别的函数. 签名应该包含参数, 以方括号括起的可选参数.
+   默认的值可以给出. 例如:
+   
+   ::
 
       .. function:: Timer.repeat([repeat=3[, number=1000000]])
 
@@ -172,16 +262,25 @@ The directives are:
    are documented using this, as they are equivalent to normal functions for
    most purposes.
 
+   对象的方法不应该在此处使用. 作为模块命名空间中的接口的绑定对象的方法, 
+   应该使用这个, 因为大多时候它们与普通的函数相同.
+
    The description should include information about the parameters required and
    how they are used (especially whether mutable objects passed as parameters
    are modified), side effects, and possible exceptions.  A small example may be
    provided.
+
+   描述的信息应该包含如所需参数的信息, 它们如何被使用 (特别是那些对象被出过去后,
+   能否被改变), 副作用, 和可能的异常. 也应该提供一个简单的例子.
 
 .. describe:: decorator
 
    Describes a decorator function.  The signature should *not* represent the
    signature of the actual function, but the usage as a decorator.  For example,
    given the functions
+
+   描述一个修饰器函数. 此签名不应该给出真实函数的签名, 但是需要给出作为一个
+   修饰器应该如何使用. 举个例子给这样的函数
 
    .. code-block:: python
 
@@ -195,23 +294,36 @@ The directives are:
               return func
           return decorator
 
-   the descriptions should look like this::
+   the descriptions should look like this:
+
+   而其描述应该这样子:
+   
+   ::
 
       .. decorator:: removename
 
          Remove name of the decorated function.
 
+         移除被修饰函数的名程
+
       .. decorator:: setnewname(name)
 
          Set name of the decorated function to *name*.
 
+         设置被修饰的名称为 *name*.
+
    There is no ``deco`` role to link to a decorator that is marked up with
    this directive; rather, use the ``:func:`` role.
+
+   在此处, 没有 ``deco`` 这样的东西可以直接链接到一个修饰器;
+   但你可以使用 ``:func:`` .
 
 .. describe:: class
 
    Describes a class.  The signature can include parentheses with parameters
    which will be shown as the constructor arguments.
+
+   描述一个类. 这个签名应该包含构造时所需的参数.
 
 .. describe:: attribute
 
@@ -219,26 +331,42 @@ The directives are:
    information about the type of the data to be expected and whether it may be
    changed directly.
 
+   描述一个对象的数据属性. 此处的描述应该包含数据所需的类型,
+   以及是否可以直接改变.
+
 .. describe:: method
 
    Describes an object method.  The parameters should not include the ``self``
    parameter.  The description should include similar information to that
    described for ``function``.
 
+   描述一个对象的方法. 参数无须包含 ``self`` . 其描述和 ``function`` 类似就可以了. 
+
 .. describe:: decoratormethod
 
    Same as ``decorator``, but for decorators that are methods.
 
+   和 ``decorator`` 一样,但是修饰的是方法.
+
    Refer to a decorator method using the ``:meth:`` role.
+
+   引用修饰器方法要使用 ``:meth:`` .
 
 .. describe:: opcode
 
    Describes a Python :term:`bytecode` instruction.
 
+   描述 Python 的 :term:`bytecode` .
+
 .. describe:: cmdoption
 
    Describes a Python command line option or switch.  Option argument names
-   should be enclosed in angle brackets.  Example::
+   should be enclosed in angle brackets.  Example:
+
+   描述 Python 命令行选项. 选项参数的名称需要以尖括号括起来.
+   例子:
+   
+   ::
 
       .. cmdoption:: -m <module>
 
@@ -248,22 +376,31 @@ The directives are:
 
    Describes an environment variable that Python uses or defines.
 
+   描述一个 Python 使用或定义的环境变量.
+
 
 There is also a generic version of these directives:
+
+还有指示符的普遍版本:
 
 .. describe:: describe
 
    This directive produces the same formatting as the specific ones explained
    above but does not create index entries or cross-referencing targets.  It is
-   used, for example, to describe the directives in this document. Example::
+   used, for example, to describe the directives in this document. Example:
+
+   这个指示符和前面所说的产生的格式化效果一样, 但是 *不会* 创建索引项
+   或是交叉引用. 这一般用于描述文档中的指示符. 比如:
+   
+   ::
 
       .. describe:: opcode
 
          Describes a Python bytecode instruction.
 
 
-Showing code examples
----------------------
+Showing code examples 显示示例代码
+--------------------------------------
 
 Examples of Python source code or interactive sessions are represented using
 standard reST literal blocks.  They are started by a ``::`` at the end of the
