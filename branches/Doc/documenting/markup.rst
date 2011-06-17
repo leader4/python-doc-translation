@@ -406,10 +406,18 @@ Examples of Python source code or interactive sessions are represented using
 standard reST literal blocks.  They are started by a ``::`` at the end of the
 preceding paragraph and delimited by indentation.
 
+Python 的源码或者是交互的会话都以 reST 的 ``literal block`` 来表示.
+通过 ``::`` 开头, 然后内容要进行缩进, 最后以同级的缩进表示结束.
+
 Representing an interactive session requires including the prompts and output
 along with the Python code.  No special markup is required for interactive
 sessions.  After the last line of input or output presented, there should not be
-an "unused" primary prompt; this is an example of what *not* to do::
+an "unused" primary prompt; this is an example of what *not* to do:
+
+交互式会话的表示需要包含提示和输出. 此处不需要特殊的标记. 
+在输入和输出结束后, 最后一行不要放上一个未使用的提示符; 下面是一个不要那样的例子:
+
+::
 
    >>> 1 + 1
    2
@@ -417,22 +425,36 @@ an "unused" primary prompt; this is an example of what *not* to do::
 
 Syntax highlighting is handled in a smart way:
 
+语法的高亮会以一种智能的方式处理:
+
 * There is a "highlighting language" for each source file.  Per default,
   this is ``'python'`` as the majority of files will have to highlight Python
   snippets.
 
+  对于每个文档源文件, 都会有一个 "高亮的语言" . 在此处, 默认的都是设为 Python.
+
 * Within Python highlighting mode, interactive sessions are recognized
   automatically and highlighted appropriately.
 
+  在 Python 高亮的模式下, 交互会话会被自动识别并且进行合适的高亮.
+
 * The highlighting language can be changed using the ``highlightlang``
-  directive, used as follows::
+  directive, used as follows:
+
+  高亮的语言可以使用 ``highlightlang`` 进行控制, 像下面这样使用:
+  
+  ::
 
      .. highlightlang:: c
 
   This language is used until the next ``highlightlang`` directive is
   encountered.
 
+  这样这个语言就会被使用了, 直到遇到下一个 ``highlightlang`` 为止.
+
 * The values normally used for the highlighting language are:
+
+  一般会用到的:
 
   * ``python`` (the default)
   * ``c``
@@ -442,52 +464,87 @@ Syntax highlighting is handled in a smart way:
 * If highlighting with the current language fails, the block is not highlighted
   in any way.
 
+  如果以某种语言高亮失败了, 那么这个块就不被任何形式高亮.
+
 Longer displays of verbatim text may be included by storing the example text in
 an external file containing only plain text.  The file may be included using the
 ``literalinclude`` directive. [1]_ For example, to include the Python source file
-:file:`example.py`, use::
+:file:`example.py`, use:
+
+如果在使用时需要很大篇幅的源代码, 我们可以使用额外导入的方式将代码引入进来.
+需要导入的文件可以使用 ``literalinclude`` 指示符导入. [1]_ 举个例子, 
+要导入一个 Python 源码 :file:`example.py` , 使用:
+
+::
 
    .. literalinclude:: example.py
 
 The file name is relative to the current file's path.  Documentation-specific
 include files should be placed in the ``Doc/includes`` subdirectory.
 
+这个文件的路径是相对于当前文件的路径的. 包含的文件最好放到 ``Doc/includes`` 下面.
 
-Inline markup
--------------
+
+Inline markup 行内标记
+-----------------------
 
 As said before, Sphinx uses interpreted text roles to insert semantic markup in
 documents.
 
+在前面也说过, Sphinx 使用特殊的标记来指明语义.
+
 Names of local variables, such as function/method arguments, are an exception,
 they should be marked simply with ``*var*``.
 
+一个局部变量的名字, 比如函数/方法的参数, 它们是一个例外, 只需要用星号括起来即可,
+如 ``*var*`` .
+
 For all other roles, you have to write ``:rolename:`content```.
+
+对于其他的, 你需要写 ``:rolename:`content```.
 
 There are some additional facilities that make cross-referencing roles more
 versatile:
+
+有一些额外的设施可以以多种方式使交叉引用:
 
 * You may supply an explicit title and reference target, like in reST direct
   hyperlinks: ``:role:`title <target>``` will refer to *target*, but the link
   text will be *title*.
 
+  你可以提供一个显式的标题及一个引用对象, 像 reST 中直接的超链接: 
+  ``:role:`title <target>``` 将会指向 *target* , 但是链接显示的会是 *title*.
+
 * If you prefix the content with ``!``, no reference/hyperlink will be created.
+
+  如果你在内容前面加了个 ``!``, 那么将不会创建引用/链接.
 
 * For the Python object roles, if you prefix the content with ``~``, the link
   text will only be the last component of the target.  For example,
   ``:meth:`~Queue.Queue.get``` will refer to ``Queue.Queue.get`` but only
   display ``get`` as the link text.
 
+  对于 Python 对象来说, 如果你在内容前面放上一个 ``~`` , 链接的文字将只是最后一个.
+  比如 ``:meth:`~Queue.Queue.get``` 将会指向 ``Queue.Queue.get`` ,
+  但是将只显示 ``get`` .
+
   In HTML output, the link's ``title`` attribute (that is e.g. shown as a
   tool-tip on mouse-hover) will always be the full target name.
 
+  在输出的 HTML 中, 链接的 ``title`` 属性 (也就是在你将鼠标放到链接上时,
+  显示的文字) 将永远是全名.
+
 The following roles refer to objects in modules and are possibly hyperlinked if
 a matching identifier is found:
+
+下面的将会指向一个模块中的对象, 并且如果有匹配的标识符就会生成超链接:
 
 .. describe:: mod
 
    The name of a module; a dotted name may be used.  This should also be used for
    package names.
+
+   模块的名称; 有点的名称将被使用. 同样这也用于一个包名称.
 
 .. describe:: func
 
@@ -495,37 +552,58 @@ a matching identifier is found:
    should not include trailing parentheses to enhance readability.  The
    parentheses are stripped when searching for identifiers.
 
+   一个 Python 函数的名称; 有点的名称可以使用. 这里所用的内容
+   不应该包含后面的括号. 当搜索标识符时, 后面的括号是被去除了的.
+
 .. describe:: data
 
    The name of a module-level variable or constant.
+
+   模块级别的变量或常量的名称.
 
 .. describe:: const
 
    The name of a "defined" constant.  This may be a C-language ``#define``
    or a Python variable that is not intended to be changed.
 
+   一个定义过的常量的名称. 它可能是 C 语言中的 ``#define`` 
+   或是 Python 中设为不可变的变量.
+
 .. describe:: class
 
    A class name; a dotted name may be used.
+
+   一个类名; 可以使用有点的名称.
 
 .. describe:: meth
 
    The name of a method of an object.  The role text should include the type
    name and the method name.  A dotted name may be used.
 
+   一个对象方法的名称. 此处应该包括类型名和方法名. 有点的也可以使用.
+
 .. describe:: attr
 
    The name of a data attribute of an object.
 
+   一个对象的数据属性.
+
 .. describe:: exc
 
    The name of an exception. A dotted name may be used.
+
+   一个异常的名称. 有点的可以使用.
 
 The name enclosed in this markup can include a module name and/or a class name.
 For example, ``:func:`filter``` could refer to a function named ``filter`` in
 the current module, or the built-in function of that name.  In contrast,
 ``:func:`foo.filter``` clearly refers to the ``filter`` function in the ``foo``
 module.
+
+在这些标记中的名称可以包含一个模块名 和/或 一个类名称.
+举个例子, ``:func:`filter``` 可以指向一个名为 ``filter`` 的函数,
+或者指向内置的函数. 相反, ``:func:`foo.filter``` 很明确的指向 ``foo`` 模块中的
+``filter`` 函数.
 
 Normally, names in these roles are searched first without any further
 qualification, then with the current module name prepended, then with the
@@ -534,43 +612,68 @@ dot, this order is reversed.  For example, in the documentation of the
 :mod:`codecs` module, ``:func:`open``` always refers to the built-in function,
 while ``:func:`.open``` refers to :func:`codecs.open`.
 
+一般的, 这些名称将会先没有限制的搜索, 然后考虑当前的模块,
+然后是当前的模块和类. 如果你用有一个点号的前缀, 那么顺序会反转.
+举个例子, 在 :mod:`codecs` 这个模块的文档中, ``:func:`open``` 
+将总是指向内置的函数, 而 ``:func:`.open``` 将指向 :func:`codecs.open`.
+
 A similar heuristic is used to determine whether the name is an attribute of
 the currently documented class.
 
+一个类似的启发也用于决定当前的名称是否是当前编写文档类的属性.
+
 The following roles create cross-references to C-language constructs if they
 are defined in the API documentation:
+
+下面的这些将会创建到 C 语言的交叉引用, 前提是在 API 文档中有定义:
 
 .. describe:: c:data
 
    The name of a C-language variable.
 
+   C 中变量的名称.
+
 .. describe:: c:func
 
    The name of a C-language function. Should include trailing parentheses.
+
+   C 中的函数. 需要包含后面的括号.
 
 .. describe:: c:macro
 
    The name of a "simple" C macro, as defined above.
 
+   一个简单的宏的名称, 像前面那样定义.
+
 .. describe:: c:type
 
    The name of a C-language type.
+
+   C 中类型的名称.
 
 .. describe:: c:member
 
    The name of a C type member, as defined above.
 
+   C 中类型的成员.
+
 
 The following role does possibly create a cross-reference, but does not refer
 to objects:
+
+下面的会创建交叉引用, 但是不会指向对象:
 
 .. describe:: token
 
    The name of a grammar token (used in the reference manual to create links
    between production displays).
 
+   语法表示的名称 (在参考手册中创建链接).
+
 
 The following role creates a cross-reference to the term in the glossary:
+
+下面的会创建交叉引用至单词表中的一项:
 
 .. describe:: term
 
@@ -580,8 +683,15 @@ The following role creates a cross-reference to the term in the glossary:
    markup, in fact, by default the Python docs have one global glossary
    in the ``glossary.rst`` file.
 
+   指向单词表中的一项. 单词表在使用 ``glossary`` 指示符后会创建出来.
+   不需要再每个文件中都创建一个, 事实上, Python 文档默认就有个全局
+   的单词表, 就在 ``glossary.rst`` 文件中.
+
    If you use a term that's not explained in a glossary, you'll get a warning
    during build.
+
+   如果你使用了 ``term`` 但是却没有在单词表中解释, 
+   在建立时你将得到一个警告.
 
 ---------
 
