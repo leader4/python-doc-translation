@@ -1,11 +1,14 @@
 .. XXX document all delegations to __special__ methods
 .. _built-in-funcs:
 
-Built-in Functions
-==================
+Built-in Functions 内建函数
+===========================
 
 The Python interpreter has a number of functions and types built into it that
 are always available.  They are listed here in alphabetical order.
+
+Python 解释器有一些内建的函数和类型, 它们一直都是可用的.  下表以字母顺序把它
+列了出来.
 
 ===================  =================  ==================  ================  ====================
 ..                   ..                 Built-in Functions  ..                ..
@@ -31,6 +34,9 @@ are always available.  They are listed here in alphabetical order.
    Return the absolute value of a number.  The argument may be an
    integer or a floating point number.  If the argument is a complex number, its
    magnitude is returned.
+   
+   返回一个数的绝对值.  参数可以是一个整数或浮点数. 如果参数是复数, 那么返回它的
+   模.
 
 
 .. function:: all(iterable)
@@ -43,6 +49,14 @@ are always available.  They are listed here in alphabetical order.
               if not element:
                   return False
           return True
+		  
+   当 *iterable* 中所有元素都为真是返回 True (或者这个可迭代对象为空).  相当于::
+   
+      def all(iterable):
+	      for element in iterable:
+		      if not element:
+			      return False
+			  return True
 
 
 .. function:: any(iterable)
@@ -55,6 +69,15 @@ are always available.  They are listed here in alphabetical order.
               if element:
                   return True
           return False
+		  
+   只要 *iterable* 中有一个元素为真就返回 True.  如果这个可迭代对象为空, 则返回 
+   False.  相当于::
+
+      def any(iterable):
+	      for element in iterable:
+		      if element:
+			      return True
+		  return False
 
 
 .. function:: ascii(object)
@@ -63,6 +86,8 @@ are always available.  They are listed here in alphabetical order.
    object, but escape the non-ASCII characters in the string returned by
    :func:`repr` using ``\x``, ``\u`` or ``\U`` escapes.  This generates a string
    similar to that returned by :func:`repr` in Python 2.
+   
+   与 :func:`repr` 一样, 返回一个包含一个对象的可打印表示的字符串, # 本段未完
 
 
 .. function:: bin(x)
@@ -70,6 +95,9 @@ are always available.  They are listed here in alphabetical order.
    Convert an integer number to a binary string. The result is a valid Python
    expression.  If *x* is not a Python :class:`int` object, it has to define an
    :meth:`__index__` method that returns an integer.
+   
+   把一个整数转换为二进制的字符串. 返回值是个有效的 Python 表达式.  如果 *x* 不是 
+   Python :class:`int` 对象, 那它必须定义一个返回一个整数的 :meth:`__index__` 方法.
 
 
 .. function:: bool([x])
@@ -79,6 +107,11 @@ are always available.  They are listed here in alphabetical order.
    :const:`True`. :class:`bool` is also a class, which is a subclass of
    :class:`int`. Class :class:`bool` cannot be subclassed further.  Its only
    instances are :const:`False` and :const:`True`.
+   
+   把一个值转换为布尔型, 通过使用标准真值测试程序.  如果 *x* 为假或为空, 它会返回
+   :const:`False`; 否则返回 :const:`True`. :class:`bool` 也是一个类, 且是
+   :class:`int` 的一个子类. :class:`bool` 类不能被继承. 它仅有的实例是
+   :const:`False` 和 :const:`True`.
 
    .. index:: pair: Boolean; type
 
@@ -89,24 +122,44 @@ are always available.  They are listed here in alphabetical order.
    sequence of integers in the range 0 <= x < 256.  It has most of the usual
    methods of mutable sequences, described in :ref:`typesseq-mutable`, as well
    as most methods that the :class:`bytes` type has, see :ref:`bytes-methods`.
+   
+   返回一个新的字符数组.  :class:`bytearray` 类型是一个可变的整数序列, 它元素
+   的范围在 0 <= x < 256.  它几乎有可变序列的所有通常的方法, 它们在 
+   :ref:`typesseq-mutable` 处描述, 它同时也包含 :class:`bytes` 类型的几乎所有
+   方法. 参阅 :ref:`bytes-methods`.
 
    The optional *source* parameter can be used to initialize the array in a few
    different ways:
+   
+   可选的参数 *source* 可以用几个不同的方法来初始化数组.
 
    * If it is a *string*, you must also give the *encoding* (and optionally,
      *errors*) parameters; :func:`bytearray` then converts the string to
      bytes using :meth:`str.encode`.
+	 
+   * 如果它是一个*string*, 你必须给出 *encoding* (可选地, *errors*) 参数;
+     :func:`bytearray` 将使用 :meth:`str.encode` 把字符串转换为字节串.
 
    * If it is an *integer*, the array will have that size and will be
      initialized with null bytes.
+	 
+   * 如果它是一个*integer*, 那么它将是数组的大小, 数组会被空字节所初始化.
 
    * If it is an object conforming to the *buffer* interface, a read-only buffer
      of the object will be used to initialize the bytes array.
+	 
+   * 如果它是一个符合 *buffer* 接口的对象, 该对象的一个只读缓冲器将用来初始化这个
+     字节数组.
 
    * If it is an *iterable*, it must be an iterable of integers in the range
      ``0 <= x < 256``, which are used as the initial contents of the array.
 
+   * 如果它是一个 *iterable*, 那它就一定得是在范围 ``0 <= x <= 256`` 里的整数的
+     可迭代对象, 它将被用来初始化该数组的内容.
+
    Without an argument, an array of size 0 is created.
+   
+   如果没有参数, 将会创建一个大小为 0 的数组.
 
 
 .. function:: bytes([source[, encoding[, errors]]])
@@ -115,10 +168,18 @@ are always available.  They are listed here in alphabetical order.
    the range ``0 <= x < 256``.  :class:`bytes` is an immutable version of
    :class:`bytearray` -- it has the same non-mutating methods and the same
    indexing and slicing behavior.
+   
+   返回一个新的 "bytes" 对象, 它是一个元素在范围 ``0 <= x < 256`` 的不可变整数
+   序列.  :class:`bytes` 是 :class:`bytearray` 的不可变版本 -- 它有同样的只读
+   方法和同样的索引和切片行为.
 
    Accordingly, constructor arguments are interpreted as for :func:`bytearray`.
+   
+   因此, 构造器参数按照 :func:`bytearray` 的解释.
 
    Bytes objects can also be created with literals, see :ref:`strings`.
+   
+   Bytes 对象也可以用常量来创建, 参照 :ref:`strings`.
 
 
 .. function:: callable(object)
@@ -128,10 +189,17 @@ are always available.  They are listed here in alphabetical order.
    call fails, but if it is false, calling *object* will never succeed.
    Note that classes are callable (calling a class returns a new instance);
    instances are callable if their class has a :meth:`__call__` method.
+   
+   如果 *object* 参数是可调用的就返回 :const:`True`, 否则返回 :const:`False`. 
+   如果返回 true, 它还是有可能调用失败, 但是如果返回 false, 那么调用 *object*
+   永远不会成功. 注意类是可调用的 (调用一个类返回一个新的实例); 当实例的类有
+   :meth:`__call__` 方法时, 实例也是可以调用的.
 
    .. versionadded:: 3.2
       This function was first removed in Python 3.0 and then brought back
       in Python 3.2.
+	  
+	  这个函数在 Python 3.0 被移除, 在 Python 3.2 又移回了.
 
 
 .. function:: chr(i)
