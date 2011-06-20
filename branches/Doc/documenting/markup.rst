@@ -698,28 +698,43 @@ The following role creates a cross-reference to the term in the glossary:
 The following roles don't do anything special except formatting the text
 in a different style:
 
+后面的则不会做任何特殊的处理, 除了以不同的样式格式化文本:
+
 .. describe:: command
 
    The name of an OS-level command, such as ``rm``.
+
+   系统级别的命令, 比如 ``rm``.
 
 .. describe:: dfn
 
    Mark the defining instance of a term in the text.  (No index entries are
    generated.)
 
+   标记一个术语的定义实例. (不会有索引项生成.)
+
 .. describe:: envvar
 
    An environment variable.  Index entries are generated.
 
+   一个环境变量. 将生成索引项.
+
 .. describe:: file
 
    The name of a file or directory.  Within the contents, you can use curly
-   braces to indicate a "variable" part, for example::
+   braces to indicate a "variable" part, for example:
+
+   一个文件或目录的名称. 在内容中, 你可以使用大括号表示可变的部分,
+   举个例子:
+   
+   ::
 
       ... is installed in :file:`/usr/lib/python2.{x}/site-packages` ...
 
    In the built documentation, the ``x`` will be displayed differently to
    indicate that it is to be replaced by the Python minor version.
+
+   在建立文档时, ``x`` 将会以不同的样子显示, 以表示区别.
 
 .. describe:: guilabel
 
@@ -729,6 +744,10 @@ in a different style:
    used in the interface should be marked with this role, including button
    labels, window titles, field names, menu and menu selection names, and even
    values in selection lists.
+
+   作为交互式用户界面的标签应该使用 ``guilabel`` 标记. 这包括基于文本的界面,
+   像使用 :mod:`curses` 或其他库创建的. 任何标签都应该以此标记, 包括按钮的, 
+   窗口标题的, 域的名字, 菜单和菜单选择项, 以及选择列表中的值.
 
 .. describe:: kbd
 
@@ -740,28 +759,44 @@ in a different style:
    reference to a specific application or platform, the same sequence should be
    marked as ``:kbd:`Control-x Control-f```.
 
+   标记一系列的按键. 使用什么样的按键要取决于平台或程序的约定. 当没有相关的约定,
+   修饰的按键应该全拼, 以提高可读性. 举个例子, 一个 *xemacs* 的按键可以标记为
+   ``:kbd:`C-x C-f```, 但是如果没有其他的相关性, 就应该写为 
+   ``:kbd:`Control-x Control-f```.
+
 .. describe:: keyword
 
    The name of a keyword in Python.
+
+   在 Python 中的关键词.
 
 .. describe:: mailheader
 
    The name of an RFC 822-style mail header.  This markup does not imply that
    the header is being used in an email message, but can be used to refer to any
-   header of the same "style."  This is also used for headers defined by the
+   header of the same "style".  This is also used for headers defined by the
    various MIME specifications.  The header name should be entered in the same
    way it would normally be found in practice, with the camel-casing conventions
    being preferred where there is more than one common usage. For example:
-   ``:mailheader:`Content-Type```.
+   ``:mailheader:`Content-Type```. 
+
+   一个 RFC 822 式的邮件头名称. 这个标记没有暗指在邮件消息中被使用的头,
+   但是可以指示它们的样式. 这也用于那些 MIME 的值.
+   头的名称应该是以相同的方式输入, 并且应该按约定来使用.
+   举个例子: ``:mailheader:`Content-Type```. (译注: 不是很明白)
 
 .. describe:: makevar
 
    The name of a :command:`make` variable.
 
+   :command:`make` 变量的名称.
+
 .. describe:: manpage
 
    A reference to a Unix manual page including the section,
    e.g. ``:manpage:`ls(1)```.
+
+   Unix 上的参考手册, 包括那一节, 比如 ``:manpage:`ls(1)```.
 
 .. describe:: menuselection
 
@@ -771,9 +806,17 @@ in a different style:
    sequence.  The names of individual selections should be separated by
    ``-->``.
 
-   For example, to mark the selection "Start > Programs", use this markup::
+   菜单的选择应该用 ``menuselection`` 来标记. 
+   这用于标记一个完整的菜单选择项, 包括选择子菜单和选择特殊的操作,
+   或者是任何的一个子序列. 不同的选项之间应该以 ``-->`` 分割.
 
-      :menuselection:`Start --> Programs`
+   For example, to mark the selection "Start > Programs", use this markup:
+
+   比如, 要标记 "开始 > 程序", 那么就用:
+   
+   ::
+
+      :menuselection:`开始 --> 程序`
 
    When including a selection that includes some trailing indicator, such as the
    ellipsis some operating systems use to indicate that the command opens a
@@ -784,9 +827,13 @@ in a different style:
    The name of a MIME type, or a component of a MIME type (the major or minor
    portion, taken alone).
 
+   一个 MIME 类型的名字, 或者一个部分 (主要或最小的部分).
+
 .. describe:: newsgroup
 
    The name of a Usenet newsgroup.
+
+   一个 Usenet newsgroup 的名称.
 
 .. describe:: option
 
@@ -794,26 +841,41 @@ in a different style:
    If a matching ``cmdoption`` directive exists, it is linked to.  For options
    of other programs or scripts, use simple ````code```` markup.
 
+   一个命令行的选项. 选项前的横线必须要包括进来. 如果匹配到 ``cmdoption`` ,
+   那么就会自动链接过去. 对于其他语言或脚本, 使用 ````code```` 标记.
+
 .. describe:: program
 
    The name of an executable program.  This may differ from the file name for
    the executable for some platforms.  In particular, the ``.exe`` (or other)
    extension should be omitted for Windows programs.
 
+   可执行程序的名称. 这在不同的平台上, 可能会有所不同.
+   特别像在 Windows 平台, 后缀 ``.exe`` 就可以省略.
+
 .. describe:: regexp
 
    A regular expression. Quotes should not be included.
+
+   一个正则表达式. 引号不需要包括.
 
 .. describe:: samp
 
    A piece of literal text, such as code.  Within the contents, you can use
    curly braces to indicate a "variable" part, as in ``:file:``.
 
+   一个片段, 像代码之类. 在内容中, 你可以使用尖括号表示变的部分, 
+   像在 ``:file:`` 中一样.
+
    If you don't need the "variable part" indication, use the standard
    ````code```` instead.
 
+   如果你不需要可变的, 那么久使用 ````code```` 替代.
+
 
 The following roles generate external links:
+
+下面的用于产生外部链接:
 
 .. describe:: pep
 
@@ -821,30 +883,49 @@ The following roles generate external links:
    index entries. The text "PEP *number*\ " is generated; in the HTML output,
    this text is a hyperlink to an online copy of the specified PEP.
 
+   指向 Python Enhancement Proposal . 这将生成一个合适的索引项.
+   将会生成如 "PEP *number*\ " 的文字; 在 HTML 输出的结果中,
+   这个文字会链接到特定的 PEP 上.
+
 .. describe:: rfc
 
    A reference to an Internet Request for Comments.  This generates appropriate
    index entries. The text "RFC *number*\ " is generated; in the HTML output,
    this text is a hyperlink to an online copy of the specified RFC.
 
+   指向 Internet Request for Comments . 这也产生合适的索引项.
+   生成入 "RFC *number*\ " 的文字; 在 HTML 输出的结果中,
+   这个文字会链接到特定的 RFC 上.
+
 
 Note that there are no special roles for including hyperlinks as you can use
 the standard reST markup for that purpose.
 
+注意, 在标准的 reST 中, 是没有特殊的标记可以实现上面的功能.
+
 
 .. _doc-ref-role:
 
-Cross-linking markup
---------------------
+Cross-linking markup 交叉链接标记
+-----------------------------------
 
 To support cross-referencing to arbitrary sections in the documentation, the
 standard reST labels are "abused" a bit: Every label must precede a section
 title; and every label name must be unique throughout the entire documentation
 source.
 
+为了在文档中实现任意章节的交叉引用, 在标准的 reST 中这样的标签有些 "不好" :
+每个标签必须先于一个章节的标题; 每个标签的名字也必须在整篇文档中不同.
+
 You can then reference to these sections using the ``:ref:`label-name``` role.
 
-Example::
+你可以使用 ``:ref:`label-name``` 指向这些章节.
+
+Example:
+
+例如:
+
+::
 
    .. _my-reference-label:
 
@@ -857,14 +938,21 @@ Example::
 
 The ``:ref:`` invocation is replaced with the section title.
 
+此处的 ``:ref:`` 将被换成标题名.
+
 Alternatively, you can reference any label (not just section titles)
 if you provide the link text ``:ref:`link text <reference-label>```.
 
-Paragraph-level markup
-----------------------
+当然, 你也可以指向任意的标签 (不止是章节的题目)
+如果你提供链接的文字 ``:ref:`link text <reference-label>```.
+
+Paragraph-level markup 段落级别的标记
+----------------------------------------
 
 These directives create short paragraphs and can be used inside information
 units as well as normal text:
+
+这些指令创建短的段落并可以像正常的段落一样被包含:
 
 .. describe:: note
 
@@ -873,7 +961,13 @@ units as well as normal text:
    the directive should be written in complete sentences and include all
    appropriate punctuation.
 
-   Example::
+   当使用任何的 API 时所需要注意的问题及信息. 指令的内容应该写完整并包含合适的标点.
+
+   Example:
+
+   例子:
+   
+   ::
 
       .. note::
 
@@ -889,16 +983,27 @@ units as well as normal text:
    information regarding the possibility of crashes, data loss, or security
    implications.
 
+   和上面所描述的一样, 给出一些警告.
+   在不引起用户恐慌的情况下使用, 给出某些可能如冲突, 数据丢失或安全问题.
+
 .. describe:: versionadded
 
    This directive documents the version of Python which added the described
    feature to the library or C API. When this applies to an entire module, it
    should be placed at the top of the module section before any prose.
 
+   这个用于描述 Python 新版本引入的新特性, 如库或 C 的 API.
+   如果在一个完整的模块中使用, 请将此放到文档最前面.
+
    The first argument must be given and is the version in question; you can add
    a second argument consisting of a *brief* explanation of the change.
 
-   Example::
+   第一个参数必须要给定, 并且是那个版本号; 你可以增加第二个参数,
+   用以包含一个简明的改变.
+
+   Example:
+   
+   例如::
 
       .. versionadded:: 3.1
          The *spam* parameter.
@@ -906,10 +1011,15 @@ units as well as normal text:
    Note that there must be no blank line between the directive head and the
    explanation; this is to make these blocks visually continuous in the markup.
 
+   注意, 此处不能够有空行; 这是为了使得标记看起来连续.
+
 .. describe:: versionchanged
 
    Similar to ``versionadded``, but describes when and what changed in the named
    feature in some way (new parameters, changed side effects, etc.).
+
+   和 ``versionadded`` 类似, 但是描述了什么时候和什么东西改变了.
+   比如新的参数, 更改的副作用等等.
 
 --------------
 
@@ -918,30 +1028,42 @@ units as well as normal text:
    This directive is used to mark CPython-specific information.  Use either with
    a block content or a single sentence as an argument, i.e. either ::
 
+   这个用于标记 CPython 特定的信息. 参数可以是一个块或者只是一句.
+
       .. impl-detail::
 
          This describes some implementation detail.
 
          More explanation.
 
-   or ::
+   or 或者::
 
       .. impl-detail:: This shortly mentions an implementation detail.
 
    "\ **CPython implementation detail:**\ " is automatically prepended to the
    content.
 
+   "\ **CPython implementation detail:**\ " 会自动的增加.
+
 .. describe:: seealso
 
    Many sections include a list of references to module documentation or
    external documents.  These lists are created using the ``seealso`` directive.
 
+   很多章节包含了一个列表, 放着一些参考的文档.
+   它们就被放在 ``seealso`` 中.
+
    The ``seealso`` directive is typically placed in a section just before any
    sub-sections.  For the HTML output, it is shown boxed off from the main flow
    of the text.
 
+   ``seealso`` 指示符一般防在一个章节到另一个字章节的前面.
+   在 HTML 输出时, 它会防在一个悬浮的框中.
+
    The content of the ``seealso`` directive should be a reST definition list.
-   Example::
+   Example:
+   
+   在 ``seealso`` 中应该是一个 reST 的定义列表. 比如::
 
       .. seealso::
 
@@ -956,22 +1078,31 @@ units as well as normal text:
    This directive creates a paragraph heading that is not used to create a
    table of contents node.  It is currently used for the "Footnotes" caption.
 
+   这个控制符创建一个段落头, 但是不会放到目录下.
+   这个经常用于脚注的标题.
+
 .. describe:: centered
 
-   This directive creates a centered boldfaced paragraph.  Use it as follows::
+   This directive creates a centered boldfaced paragraph.  Use it as follows:
+   
+   这个指示符用于创建一个居中黑体的段落. 像下面这样使用::
 
       .. centered::
 
          Paragraph contents.
 
 
-Table-of-contents markup
-------------------------
+Table-of-contents markup 目录标记
+-----------------------------------
 
 Since reST does not have facilities to interconnect several documents, or split
 documents into multiple output files, Sphinx uses a custom directive to add
 relations between the single files the documentation is made of, as well as
 tables of contents.  The ``toctree`` directive is the central element.
+
+因为 reST 并没有将多个文档连在一起的能力, 或者是将文档拆分成多个输出文件,
+Sphinx 使用了自定义的指示符来讲多个文件联系起来, 
+就像一个目录一样. ``toctree`` 指示符是最主要的元素.
 
 .. describe:: toctree
 
@@ -980,7 +1111,13 @@ tables of contents.  The ``toctree`` directive is the central element.
    directive body.  A numeric ``maxdepth`` option may be given to indicate the
    depth of the tree; by default, all levels are included.
 
-   Consider this example (taken from the library reference index)::
+   这个用于插入一个 "TOC tree" 在当前的位置, 使用独立的给定文件的 TOC 
+   (包括 "sub-TOC tree") . 一个数字 ``maxdepth`` 选项可以用于指明其层数;
+   默认情况下会插入所有的.
+
+   Consider this example (taken from the library reference index):
+   
+   考虑下面的例子(z摘自库函数索引)::
 
       .. toctree::
          :maxdepth: 2
@@ -993,37 +1130,62 @@ tables of contents.  The ``toctree`` directive is the central element.
 
    This accomplishes two things:
 
+   这里完成了两件事情:
+
    * Tables of contents from all those files are inserted, with a maximum depth
      of two, that means one nested heading.  ``toctree`` directives in those
      files are also taken into account.
+
+     从所有这些文件生成的目录将被插入进去, 并且其层数是 2 ,
+     这意味只有一层嵌套的标题. 在这些文件中的 ``toctree`` 指示符也会被考虑进来.
+
    * Sphinx knows that the relative order of the files ``intro``,
      ``strings`` and so forth, and it knows that they are children of the
      shown file, the library index.  From this information it generates "next
      chapter", "previous chapter" and "parent chapter" links.
+
+     Sphinx 知道这些文件相对的顺序, 并且它知道它们之间的关系.
+     从这里, 会生成像 "next chapter" , "previous chapter" 和 "parent chapter" 
+     的链接.
 
    In the end, all files included in the build process must occur in one
    ``toctree`` directive; Sphinx will emit a warning if it finds a file that is
    not included, because that means that this file will not be reachable through
    standard navigation.
 
+   在最后, 所有被包含的文件都会被包含; Sphinx 在没找到文件时将会发出一个警告,
+   因为这意味着这个文件无法导航.
+
    The special file ``contents.rst`` at the root of the source directory is the
    "root" of the TOC tree hierarchy; from it the "Contents" page is generated.
 
+   在源目录的最顶层的特殊文件 ``contents.rst`` , 是整个层次的根;
+   在这里 "Contents" 页将被生成.
 
-Index-generating markup
------------------------
+
+Index-generating markup 索引标记
+------------------------------------
 
 Sphinx automatically creates index entries from all information units (like
 functions, classes or attributes) like discussed before.
+
+Sphinx 会自动生成索引, 从前面提及的所有的信息单元 (像函数, 类或属性) 产生.
 
 However, there is also an explicit directive available, to make the index more
 comprehensive and enable index entries in documents where information is not
 mainly contained in information units, such as the language reference.
 
+但是, 也有一个显示的指令, 来产生更易理解的索引, 并且开关在文档中的某些条目.
+
 The directive is ``index`` and contains one or more index entries.  Each entry
 consists of a type and a value, separated by a colon.
 
-For example::
+这个指令是 ``index`` 并且包含多个索引条目. 每个条目包含一个类型和值,
+以冒号分割.
+
+For example:
+
+举个例子::
 
    .. index::
       single: execution; context
@@ -1035,39 +1197,67 @@ This directive contains five entries, which will be converted to entries in the
 generated index which link to the exact location of the index statement (or, in
 case of offline media, the corresponding page number).
 
+这里包含了五个条目, 这将会转换到生成的索引中, 并且链接至真正出现的位置
+(或者, 在离线情况下, 将是其相应的页码).
+
 The possible entry types are:
+
+可能的类型有:
 
 single
    Creates a single index entry.  Can be made a subentry by separating the
    subentry text with a semicolon (this notation is also used below to describe
    what entries are created).
+
+   创建一个单独的索引项. 可以通用一个分号分割子项目 (这也用于下面描述的条目).
+
 pair
    ``pair: loop; statement`` is a shortcut that creates two index entries,
    namely ``loop; statement`` and ``statement; loop``.
+
+   ``pair: loop; statement`` 是一个快捷方式, 创建两个索引项,
+   叫做 ``loop; statement`` 和 ``statement; loop``.
+
 triple
    Likewise, ``triple: module; search; path`` is a shortcut that creates three
    index entries, which are ``module; search path``, ``search; path, module`` and
    ``path; module search``.
+
+   同样, ``triple: module; search; path`` 是一个快捷方式, 创建三个索引项,
+   ``module; search patch``, ``search; path module`` 和 ``path; module search``.
+
 module, keyword, operator, object, exception, statement, builtin
    These all create two index entries.  For example, ``module: hashlib`` creates
    the entries ``module; hashlib`` and ``hashlib; module``.
 
+   这些创建两个索引项. 举个例子, ``module: hashlib`` 将会创建
+   ``module; hashlib`` 和 ``hashlib; module`` 两项.
+
 For index directives containing only "single" entries, there is a shorthand
-notation::
+notation:
+
+对于之包含 "single" 的条目, 可以用下面的快捷方式::
 
    .. index:: BNF, grammar, syntax, notation
 
 This creates four index entries.
 
+这将创建四项索引项.
 
-Grammar production displays
----------------------------
+
+Grammar production displays 语法显示
+--------------------------------------
 
 Special markup is available for displaying the productions of a formal grammar.
 The markup is simple and does not attempt to model all aspects of BNF (or any
 derived forms), but provides enough to allow context-free grammars to be
 displayed in a way that causes uses of a symbol to be rendered as hyperlinks to
 the definition of the symbol.  There is this directive:
+
+现在有个特殊的标记, 可以用以显示一个正规的语法.
+这个标记很简单, 但是不尝试对所有 BNF (或继承的形式) 进行模仿,
+但是提供足够的东西, 允许显示自由内容的语法, 以一种方式, 
+可以链接至定义的符号列表中. 有一个这样的指示符:
 
 .. describe:: productionlist
 
@@ -1077,19 +1267,34 @@ the definition of the symbol.  There is this directive:
    continuation line must begin with a colon placed at the same column as in the
    first line.
 
+   这个指示符用于包括一组 production . 每个 production 都给定单独一行,
+   并包含一个名字, 以冒号分割, 接下来则是定义. 如果定义跨越多行, 
+   每个续行必须以一个与上面的冒号对齐的形式给出.
+
    Blank lines are not allowed within ``productionlist`` directive arguments.
+
+   在 ``productionlist`` 中空行是不允许的.
 
    The definition can contain token names which are marked as interpreted text
    (e.g. ``unaryneg ::= "-" `integer```) -- this generates cross-references
    to the productions of these tokens.
 
+   定义可以包含解释的文字, 像 ``unaryneg ::= "-" `integer``` , 
+   这样就会生成交叉引用.
+
    Note that no further reST parsing is done in the production, so that you
    don't have to escape ``*`` or ``|`` characters.
+
+   注意此处的没有其他会被 reST 解析了. 所有像 ``*`` 或 ``|`` 都不需要转义.
 
 
 .. XXX describe optional first parameter
 
-The following is an example taken from the Python Reference Manual::
+The following is an example taken from the Python Reference Manual:
+
+下面是一个例子:
+
+::
 
    .. productionlist::
       try_stmt: try1_stmt | try2_stmt
@@ -1101,16 +1306,22 @@ The following is an example taken from the Python Reference Manual::
                : "finally" ":" `suite`
 
 
-Substitutions
--------------
+Substitutions 替换
+-------------------
 
 The documentation system provides three substitutions that are defined by default.
 They are set in the build configuration file :file:`conf.py`.
+
+默认的定义下, 文档系统提供了三种替换.
+它们可以在配置文件 :file:`conf.py` 中设置.
 
 .. describe:: |release|
 
    Replaced by the Python release the documentation refers to.  This is the full
    version string including alpha/beta/release candidate tags, e.g. ``2.5.2b3``.
+
+   替换成此文档对应的 Python 发行版本. 这是一个完整版本的字符串, 包括 alpha/beta/release
+   candidate 标记, 比如 ``2.5.2.b3``.
 
 .. describe:: |version|
 
@@ -1118,13 +1329,21 @@ They are set in the build configuration file :file:`conf.py`.
    only of the major and minor version parts, e.g. ``2.5``, even for version
    2.5.1.
 
+   替换成对应的 Python 版本. 这只包含主要及次要的版本部分, 比如 ``2.5``,
+   也包含了 2.5.1.
+
 .. describe:: |today|
 
    Replaced by either today's date, or the date set in the build configuration
    file.  Normally has the format ``April 14, 2007``.
+
+   替换成当前的日期, 或者是在配置文件中设置的日期. 一般的格式为 ``April 14, 2007``.
 
 
 .. rubric:: Footnotes
 
 .. [1] There is a standard ``.. include`` directive, but it raises errors if the
        file is not found.  This one only emits a warning.
+
+       有一个标准的 ``.. include`` 指示符, 但是如果找不到文件就会产生一个错误.
+       而此处的指示一些提示.
