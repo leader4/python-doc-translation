@@ -1,5 +1,5 @@
+#summary 参与该项目的快速指南.
 #labels Featured
-#参与该项目的快速指南.
 
 = 入门指南 =
 
