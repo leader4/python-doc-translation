@@ -1,37 +1,3 @@
-  * [WhatsNew Whats New?]
+  * [WhatsNew 最近更新]
   * [GettingStarted 入门指南]
-  * [HowToJoinAProject Join a project]
-  * [FAQ Project Hosting FAQ]
-  * [MakingHostingBetter Making hosting better]
-  * Wiki
-    * [WikiFAQ Wiki FAQ]
-    * [WikiSyntax Wiki Syntax]
-    * [WorkingWithGoogleGadgets Google Gadgets]
-      * [InterestingDeveloperGadgets Interesting Gadgets]
-  * Issues 
-    * [IssueTrackerFAQ Issue Tracker FAQ]
-    * [IssueTracker Issue Tracker]
-    * Issue Tracker Data API ([IssueTrackerAPITerms Terms])
-      * [IssueTrackerAPI Issue Tracker API]
-      * [IssueTrackerAPIJava Issue Tracker API Java]
-      * [IssueTrackerAPIPython Issue Tracker API Python]
-      * [IssueTrackerAPIReference Issue Tracker API Reference]
-  * Downloads
-    * [DownloadsFAQ Downloads FAQ]
-    * [ScriptedUploads Scripted Uploads]
-  * Source
-    * [CodeReviews CodeReviews]
-    * [ChoosingAVersionControlSystem Choosing a VCS]
-    * [PostCommitWebHooks PostCommitWebHooks]
-    * Mercurial
-      * [MercurialFAQ Mercurial FAQ]
-      * [ConvertingSvnToHg SVN Conversion]
-    * Git
-      * [ExportingToGit Exporting to Git]
-      * [ImportingFromGit Importing from Git]
-    * Subversion
-      * [SubversionFAQ Subversion FAQ]
-  * Administer
-    * [InboundEmail Inbound Email]
-    * [UserGroups User Groups]
-    * [Permissions Permissions]
+  * [FAQ FAQ]
