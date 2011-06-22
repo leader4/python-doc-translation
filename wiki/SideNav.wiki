@@ -1,3 +1,5 @@
   * [WhatsNew 最近更新]
   * [GettingStarted 入门指南]
   * [FAQ FAQ]
+  * 翻译
+    * [Sample 示例]
