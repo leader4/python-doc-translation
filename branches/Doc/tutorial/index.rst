@@ -62,7 +62,7 @@ write Python modules and programs, and you will be ready to learn more about the
 various Python library modules described in :ref:`library-index`.
 
 该教程并不尝试变得全面而覆盖每一个特性, 甚至每一个常用的特性. 反而, 它介绍了许多
-Python 最值得注意的特性, 并会提供你一个该语言的风味和风格的好主意. 读完之后, 你将
+Python 最值得注意的特性, 并会提供您一个该语言的风味和风格的好主意. 读完之后, 您将
 能够阅读和书写 Python 模块和程序, 而且已经为学习更多关于在 :ref:`library-index` 
 中描述的各种各样的 Python 库模块做好了准备.
 
