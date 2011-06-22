@@ -1,14 +1,14 @@
-.. XXX document all delegations to __special__ methods
+ï»¿.. XXX document all delegations to __special__ methods
 .. _built-in-funcs:
 
-Built-in Functions ÄÚ½¨º¯Êı
+Built-in Functions å†…å»ºå‡½æ•°
 ===========================
 
 The Python interpreter has a number of functions and types built into it that
 are always available.  They are listed here in alphabetical order.
 
-Python ½âÊÍÆ÷ÓĞÒ»Ğ©ÄÚ½¨µÄº¯ÊıºÍÀàĞÍ, ËüÃÇÒ»Ö±¶¼ÊÇ¿ÉÓÃµÄ.  ÏÂ±íÒÔ×ÖÄ¸Ë³Ğò°ÑËü
-ÁĞÁË³öÀ´.
+Python è§£é‡Šå™¨æœ‰ä¸€äº›å†…å»ºçš„å‡½æ•°å’Œç±»å‹, å®ƒä»¬ä¸€ç›´éƒ½æ˜¯å¯ç”¨çš„.  ä¸‹è¡¨ä»¥å­—æ¯é¡ºåºæŠŠå®ƒ
+åˆ—äº†å‡ºæ¥.
 
 ===================  =================  ==================  ================  ====================
 ..                   ..                 Built-in Functions  ..                ..
@@ -35,8 +35,8 @@ Python ½âÊÍÆ÷ÓĞÒ»Ğ©ÄÚ½¨µÄº¯ÊıºÍÀàĞÍ, ËüÃÇÒ»Ö±¶¼ÊÇ¿ÉÓÃµÄ.  ÏÂ±íÒÔ×ÖÄ¸Ë³Ğò°ÑËü
    integer or a floating point number.  If the argument is a complex number, its
    magnitude is returned.
    
-   ·µ»ØÒ»¸öÊıµÄ¾ø¶ÔÖµ.  ²ÎÊı¿ÉÒÔÊÇÒ»¸öÕûÊı»ò¸¡µãÊı. Èç¹û²ÎÊıÊÇ¸´Êı, ÄÇÃ´·µ»ØËüµÄ
-   Ä£.
+   è¿”å›ä¸€ä¸ªæ•°çš„ç»å¯¹å€¼.  å‚æ•°å¯ä»¥æ˜¯ä¸€ä¸ªæ•´æ•°æˆ–æµ®ç‚¹æ•°. å¦‚æœå‚æ•°æ˜¯å¤æ•°, é‚£ä¹ˆè¿”å›å®ƒçš„
+   æ¨¡.
 
 
 .. function:: all(iterable)
@@ -50,7 +50,7 @@ Python ½âÊÍÆ÷ÓĞÒ»Ğ©ÄÚ½¨µÄº¯ÊıºÍÀàĞÍ, ËüÃÇÒ»Ö±¶¼ÊÇ¿ÉÓÃµÄ.  ÏÂ±íÒÔ×ÖÄ¸Ë³Ğò°ÑËü
                   return False
           return True
 		  
-   µ± *iterable* ÖĞËùÓĞÔªËØ¶¼ÎªÕæÊÇ·µ»Ø True (»òÕßÕâ¸ö¿Éµü´ú¶ÔÏóÎª¿Õ).  Ïàµ±ÓÚ::
+   å½“ *iterable* ä¸­æ‰€æœ‰å…ƒç´ éƒ½ä¸ºçœŸæ˜¯è¿”å› True (æˆ–è€…è¿™ä¸ªå¯è¿­ä»£å¯¹è±¡ä¸ºç©º).  ç›¸å½“äº::
    
       def all(iterable):
 	      for element in iterable:
@@ -70,8 +70,8 @@ Python ½âÊÍÆ÷ÓĞÒ»Ğ©ÄÚ½¨µÄº¯ÊıºÍÀàĞÍ, ËüÃÇÒ»Ö±¶¼ÊÇ¿ÉÓÃµÄ.  ÏÂ±íÒÔ×ÖÄ¸Ë³Ğò°ÑËü
                   return True
           return False
 		  
-   Ö»Òª *iterable* ÖĞÓĞÒ»¸öÔªËØÎªÕæ¾Í·µ»Ø True.  Èç¹ûÕâ¸ö¿Éµü´ú¶ÔÏóÎª¿Õ, Ôò·µ»Ø 
-   False.  Ïàµ±ÓÚ::
+   åªè¦ *iterable* ä¸­æœ‰ä¸€ä¸ªå…ƒç´ ä¸ºçœŸå°±è¿”å› True.  å¦‚æœè¿™ä¸ªå¯è¿­ä»£å¯¹è±¡ä¸ºç©º, åˆ™è¿”å› 
+   False.  ç›¸å½“äº::
 
       def any(iterable):
 	      for element in iterable:
@@ -87,7 +87,7 @@ Python ½âÊÍÆ÷ÓĞÒ»Ğ©ÄÚ½¨µÄº¯ÊıºÍÀàĞÍ, ËüÃÇÒ»Ö±¶¼ÊÇ¿ÉÓÃµÄ.  ÏÂ±íÒÔ×ÖÄ¸Ë³Ğò°ÑËü
    :func:`repr` using ``\x``, ``\u`` or ``\U`` escapes.  This generates a string
    similar to that returned by :func:`repr` in Python 2.
    
-   Óë :func:`repr` Ò»Ñù, ·µ»ØÒ»¸ö°üº¬Ò»¸ö¶ÔÏóµÄ¿É´òÓ¡±íÊ¾µÄ×Ö·û´®, # ±¾¶ÎÎ´Íê
+   ä¸ :func:`repr` ä¸€æ ·, è¿”å›ä¸€ä¸ªåŒ…å«ä¸€ä¸ªå¯¹è±¡çš„å¯æ‰“å°è¡¨ç¤ºçš„å­—ç¬¦ä¸², # æœ¬æ®µæœªå®Œ
 
 
 .. function:: bin(x)
@@ -96,8 +96,8 @@ Python ½âÊÍÆ÷ÓĞÒ»Ğ©ÄÚ½¨µÄº¯ÊıºÍÀàĞÍ, ËüÃÇÒ»Ö±¶¼ÊÇ¿ÉÓÃµÄ.  ÏÂ±íÒÔ×ÖÄ¸Ë³Ğò°ÑËü
    expression.  If *x* is not a Python :class:`int` object, it has to define an
    :meth:`__index__` method that returns an integer.
    
-   °ÑÒ»¸öÕûÊı×ª»»Îª¶ş½øÖÆµÄ×Ö·û´®. ·µ»ØÖµÊÇ¸öÓĞĞ§µÄ Python ±í´ïÊ½.  Èç¹û *x* ²»ÊÇ 
-   Python :class:`int` ¶ÔÏó, ÄÇËü±ØĞë¶¨ÒåÒ»¸ö·µ»ØÒ»¸öÕûÊıµÄ :meth:`__index__` ·½·¨.
+   æŠŠä¸€ä¸ªæ•´æ•°è½¬æ¢ä¸ºäºŒè¿›åˆ¶çš„å­—ç¬¦ä¸². è¿”å›å€¼æ˜¯ä¸ªæœ‰æ•ˆçš„ Python è¡¨è¾¾å¼.  å¦‚æœ *x* ä¸æ˜¯ 
+   Python :class:`int` å¯¹è±¡, é‚£å®ƒå¿…é¡»å®šä¹‰ä¸€ä¸ªè¿”å›ä¸€ä¸ªæ•´æ•°çš„ :meth:`__index__` æ–¹æ³•.
 
 
 .. function:: bool([x])
@@ -108,10 +108,10 @@ Python ½âÊÍÆ÷ÓĞÒ»Ğ©ÄÚ½¨µÄº¯ÊıºÍÀàĞÍ, ËüÃÇÒ»Ö±¶¼ÊÇ¿ÉÓÃµÄ.  ÏÂ±íÒÔ×ÖÄ¸Ë³Ğò°ÑËü
    :class:`int`. Class :class:`bool` cannot be subclassed further.  Its only
    instances are :const:`False` and :const:`True`.
    
-   °ÑÒ»¸öÖµ×ª»»Îª²¼¶ûĞÍ, Í¨¹ıÊ¹ÓÃ±ê×¼ÕæÖµ²âÊÔ³ÌĞò.  Èç¹û *x* Îª¼Ù»òÎª¿Õ, Ëü»á·µ»Ø
-   :const:`False`; ·ñÔò·µ»Ø :const:`True`. :class:`bool` Ò²ÊÇÒ»¸öÀà, ÇÒÊÇ
-   :class:`int` µÄÒ»¸ö×ÓÀà. :class:`bool` Àà²»ÄÜ±»¼Ì³Ğ. Ëü½öÓĞµÄÊµÀıÊÇ
-   :const:`False` ºÍ :const:`True`.
+   æŠŠä¸€ä¸ªå€¼è½¬æ¢ä¸ºå¸ƒå°”å‹, é€šè¿‡ä½¿ç”¨æ ‡å‡†çœŸå€¼æµ‹è¯•ç¨‹åº.  å¦‚æœ *x* ä¸ºå‡æˆ–ä¸ºç©º, å®ƒä¼šè¿”å›
+   :const:`False`; å¦åˆ™è¿”å› :const:`True`. :class:`bool` ä¹Ÿæ˜¯ä¸€ä¸ªç±», ä¸”æ˜¯
+   :class:`int` çš„ä¸€ä¸ªå­ç±». :class:`bool` ç±»ä¸èƒ½è¢«ç»§æ‰¿. å®ƒä»…æœ‰çš„å®ä¾‹æ˜¯
+   :const:`False` å’Œ :const:`True`.
 
    .. index:: pair: Boolean; type
 
@@ -123,43 +123,43 @@ Python ½âÊÍÆ÷ÓĞÒ»Ğ©ÄÚ½¨µÄº¯ÊıºÍÀàĞÍ, ËüÃÇÒ»Ö±¶¼ÊÇ¿ÉÓÃµÄ.  ÏÂ±íÒÔ×ÖÄ¸Ë³Ğò°ÑËü
    methods of mutable sequences, described in :ref:`typesseq-mutable`, as well
    as most methods that the :class:`bytes` type has, see :ref:`bytes-methods`.
    
-   ·µ»ØÒ»¸öĞÂµÄ×Ö·ûÊı×é.  :class:`bytearray` ÀàĞÍÊÇÒ»¸ö¿É±äµÄÕûÊıĞòÁĞ, ËüÔªËØ
-   µÄ·¶Î§ÔÚ 0 <= x < 256.  Ëü¼¸ºõÓĞ¿É±äĞòÁĞµÄËùÓĞÍ¨³£µÄ·½·¨, ËüÃÇÔÚ 
-   :ref:`typesseq-mutable` ´¦ÃèÊö, ËüÍ¬Ê±Ò²°üº¬ :class:`bytes` ÀàĞÍµÄ¼¸ºõËùÓĞ
-   ·½·¨. ²ÎÔÄ :ref:`bytes-methods`.
+   è¿”å›ä¸€ä¸ªæ–°çš„å­—ç¬¦æ•°ç»„.  :class:`bytearray` ç±»å‹æ˜¯ä¸€ä¸ªå¯å˜çš„æ•´æ•°åºåˆ—, å®ƒå…ƒç´ 
+   çš„èŒƒå›´åœ¨ 0 <= x < 256.  å®ƒå‡ ä¹æœ‰å¯å˜åºåˆ—çš„æ‰€æœ‰é€šå¸¸çš„æ–¹æ³•, å®ƒä»¬åœ¨ 
+   :ref:`typesseq-mutable` å¤„æè¿°, å®ƒåŒæ—¶ä¹ŸåŒ…å« :class:`bytes` ç±»å‹çš„å‡ ä¹æ‰€æœ‰
+   æ–¹æ³•. å‚é˜… :ref:`bytes-methods`.
 
    The optional *source* parameter can be used to initialize the array in a few
    different ways:
    
-   ¿ÉÑ¡µÄ²ÎÊı *source* ¿ÉÒÔÓÃ¼¸¸ö²»Í¬µÄ·½·¨À´³õÊ¼»¯Êı×é.
+   å¯é€‰çš„å‚æ•° *source* å¯ä»¥ç”¨å‡ ä¸ªä¸åŒçš„æ–¹æ³•æ¥åˆå§‹åŒ–æ•°ç»„.
 
    * If it is a *string*, you must also give the *encoding* (and optionally,
      *errors*) parameters; :func:`bytearray` then converts the string to
      bytes using :meth:`str.encode`.
 	 
-   * Èç¹ûËüÊÇÒ»¸ö*string*, Äã±ØĞë¸ø³ö *encoding* (¿ÉÑ¡µØ, *errors*) ²ÎÊı;
-     :func:`bytearray` ½«Ê¹ÓÃ :meth:`str.encode` °Ñ×Ö·û´®×ª»»Îª×Ö½Ú´®.
+   * å¦‚æœå®ƒæ˜¯ä¸€ä¸ª*string*, ä½ å¿…é¡»ç»™å‡º *encoding* (å¯é€‰åœ°, *errors*) å‚æ•°;
+     :func:`bytearray` å°†ä½¿ç”¨ :meth:`str.encode` æŠŠå­—ç¬¦ä¸²è½¬æ¢ä¸ºå­—èŠ‚ä¸².
 
    * If it is an *integer*, the array will have that size and will be
      initialized with null bytes.
 	 
-   * Èç¹ûËüÊÇÒ»¸ö*integer*, ÄÇÃ´Ëü½«ÊÇÊı×éµÄ´óĞ¡, Êı×é»á±»¿Õ×Ö½ÚËù³õÊ¼»¯.
+   * å¦‚æœå®ƒæ˜¯ä¸€ä¸ª*integer*, é‚£ä¹ˆå®ƒå°†æ˜¯æ•°ç»„çš„å¤§å°, æ•°ç»„ä¼šè¢«ç©ºå­—èŠ‚æ‰€åˆå§‹åŒ–.
 
    * If it is an object conforming to the *buffer* interface, a read-only buffer
      of the object will be used to initialize the bytes array.
 	 
-   * Èç¹ûËüÊÇÒ»¸ö·ûºÏ *buffer* ½Ó¿ÚµÄ¶ÔÏó, ¸Ã¶ÔÏóµÄÒ»¸öÖ»¶Á»º³åÆ÷½«ÓÃÀ´³õÊ¼»¯Õâ¸ö
-     ×Ö½ÚÊı×é.
+   * å¦‚æœå®ƒæ˜¯ä¸€ä¸ªç¬¦åˆ *buffer* æ¥å£çš„å¯¹è±¡, è¯¥å¯¹è±¡çš„ä¸€ä¸ªåªè¯»ç¼“å†²å™¨å°†ç”¨æ¥åˆå§‹åŒ–è¿™ä¸ª
+     å­—èŠ‚æ•°ç»„.
 
    * If it is an *iterable*, it must be an iterable of integers in the range
      ``0 <= x < 256``, which are used as the initial contents of the array.
 
-   * Èç¹ûËüÊÇÒ»¸ö *iterable*, ÄÇËü¾ÍÒ»¶¨µÃÊÇÔÚ·¶Î§ ``0 <= x <= 256`` ÀïµÄÕûÊıµÄ
-     ¿Éµü´ú¶ÔÏó, Ëü½«±»ÓÃÀ´³õÊ¼»¯¸ÃÊı×éµÄÄÚÈİ.
+   * å¦‚æœå®ƒæ˜¯ä¸€ä¸ª *iterable*, é‚£å®ƒå°±ä¸€å®šå¾—æ˜¯åœ¨èŒƒå›´ ``0 <= x <= 256`` é‡Œçš„æ•´æ•°çš„
+     å¯è¿­ä»£å¯¹è±¡, å®ƒå°†è¢«ç”¨æ¥åˆå§‹åŒ–è¯¥æ•°ç»„çš„å†…å®¹.
 
    Without an argument, an array of size 0 is created.
    
-   Èç¹ûÃ»ÓĞ²ÎÊı, ½«»á´´½¨Ò»¸ö´óĞ¡Îª 0 µÄÊı×é.
+   å¦‚æœæ²¡æœ‰å‚æ•°, å°†ä¼šåˆ›å»ºä¸€ä¸ªå¤§å°ä¸º 0 çš„æ•°ç»„.
 
 
 .. function:: bytes([source[, encoding[, errors]]])
@@ -169,17 +169,17 @@ Python ½âÊÍÆ÷ÓĞÒ»Ğ©ÄÚ½¨µÄº¯ÊıºÍÀàĞÍ, ËüÃÇÒ»Ö±¶¼ÊÇ¿ÉÓÃµÄ.  ÏÂ±íÒÔ×ÖÄ¸Ë³Ğò°ÑËü
    :class:`bytearray` -- it has the same non-mutating methods and the same
    indexing and slicing behavior.
    
-   ·µ»ØÒ»¸öĞÂµÄ "bytes" ¶ÔÏó, ËüÊÇÒ»¸öÔªËØÔÚ·¶Î§ ``0 <= x < 256`` µÄ²»¿É±äÕûÊı
-   ĞòÁĞ.  :class:`bytes` ÊÇ :class:`bytearray` µÄ²»¿É±ä°æ±¾ -- ËüÓĞÍ¬ÑùµÄÖ»¶Á
-   ·½·¨ºÍÍ¬ÑùµÄË÷ÒıºÍÇĞÆ¬ĞĞÎª.
+   è¿”å›ä¸€ä¸ªæ–°çš„ "bytes" å¯¹è±¡, å®ƒæ˜¯ä¸€ä¸ªå…ƒç´ åœ¨èŒƒå›´ ``0 <= x < 256`` çš„ä¸å¯å˜æ•´æ•°
+   åºåˆ—.  :class:`bytes` æ˜¯ :class:`bytearray` çš„ä¸å¯å˜ç‰ˆæœ¬ -- å®ƒæœ‰åŒæ ·çš„åªè¯»
+   æ–¹æ³•å’ŒåŒæ ·çš„ç´¢å¼•å’Œåˆ‡ç‰‡è¡Œä¸º.
 
    Accordingly, constructor arguments are interpreted as for :func:`bytearray`.
    
-   Òò´Ë, ¹¹ÔìÆ÷²ÎÊı°´ÕÕ :func:`bytearray` µÄ½âÊÍ.
+   å› æ­¤, æ„é€ å™¨å‚æ•°æŒ‰ç…§ :func:`bytearray` çš„è§£é‡Š.
 
    Bytes objects can also be created with literals, see :ref:`strings`.
    
-   Bytes ¶ÔÏóÒ²¿ÉÒÔÓÃ³£Á¿À´´´½¨, ²ÎÕÕ :ref:`strings`.
+   Bytes å¯¹è±¡ä¹Ÿå¯ä»¥ç”¨å¸¸é‡æ¥åˆ›å»º, å‚ç…§ :ref:`strings`.
 
 
 .. function:: callable(object)
@@ -190,16 +190,16 @@ Python ½âÊÍÆ÷ÓĞÒ»Ğ©ÄÚ½¨µÄº¯ÊıºÍÀàĞÍ, ËüÃÇÒ»Ö±¶¼ÊÇ¿ÉÓÃµÄ.  ÏÂ±íÒÔ×ÖÄ¸Ë³Ğò°ÑËü
    Note that classes are callable (calling a class returns a new instance);
    instances are callable if their class has a :meth:`__call__` method.
    
-   Èç¹û *object* ²ÎÊıÊÇ¿Éµ÷ÓÃµÄ¾Í·µ»Ø :const:`True`, ·ñÔò·µ»Ø :const:`False`. 
-   Èç¹û·µ»Ø true, Ëü»¹ÊÇÓĞ¿ÉÄÜµ÷ÓÃÊ§°Ü, µ«ÊÇÈç¹û·µ»Ø false, ÄÇÃ´µ÷ÓÃ *object*
-   ÓÀÔ¶²»»á³É¹¦. ×¢ÒâÀàÊÇ¿Éµ÷ÓÃµÄ (µ÷ÓÃÒ»¸öÀà·µ»ØÒ»¸öĞÂµÄÊµÀı); µ±ÊµÀıµÄÀàÓĞ
-   :meth:`__call__` ·½·¨Ê±, ÊµÀıÒ²ÊÇ¿ÉÒÔµ÷ÓÃµÄ.
+   å¦‚æœ *object* å‚æ•°æ˜¯å¯è°ƒç”¨çš„å°±è¿”å› :const:`True`, å¦åˆ™è¿”å› :const:`False`. 
+   å¦‚æœè¿”å› true, å®ƒè¿˜æ˜¯æœ‰å¯èƒ½è°ƒç”¨å¤±è´¥, ä½†æ˜¯å¦‚æœè¿”å› false, é‚£ä¹ˆè°ƒç”¨ *object*
+   æ°¸è¿œä¸ä¼šæˆåŠŸ. æ³¨æ„ç±»æ˜¯å¯è°ƒç”¨çš„ (è°ƒç”¨ä¸€ä¸ªç±»è¿”å›ä¸€ä¸ªæ–°çš„å®ä¾‹); å½“å®ä¾‹çš„ç±»æœ‰
+   :meth:`__call__` æ–¹æ³•æ—¶, å®ä¾‹ä¹Ÿæ˜¯å¯ä»¥è°ƒç”¨çš„.
 
    .. versionadded:: 3.2
       This function was first removed in Python 3.0 and then brought back
       in Python 3.2.
 	  
-	  Õâ¸öº¯ÊıÔÚ Python 3.0 ±»ÒÆ³ı, ÔÚ Python 3.2 ÓÖÒÆ»ØÁË.
+	  è¿™ä¸ªå‡½æ•°åœ¨ Python 3.0 è¢«ç§»é™¤, åœ¨ Python 3.2 åˆç§»å›äº†.
 
 
 .. function:: chr(i)
