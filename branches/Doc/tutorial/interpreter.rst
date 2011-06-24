@@ -310,24 +310,29 @@ and still use all characters in the Windows-1252 character set in the source
 files.  The special encoding comment must be in the *first or second* line
 within the file.
 
-例如, 如果你选择的编辑器不支持 UTF-8 编码的文件文件而坚持使用其它的编码, 
+例如, 如果你选择的编辑器不支持 UTF-8 编码的文件而坚持使用其它的编码, 
 比如 Windows-1252, 你可以写入::
 
    # -*- coding: cp-1252 -*-
    
-就会仍然
+而仍然可以在源文件中使用 Windows-1252 字符集里的所有字符.  特殊编码注释必须在
+文件中的*第一或第二*行.
 
 
 .. _tut-startup:
 
-The Interactive Startup File
-----------------------------
+The Interactive Startup File 交互式模式的启动文件
+-------------------------------------------------
 
 When you use Python interactively, it is frequently handy to have some standard
 commands executed every time the interpreter is started.  You can do this by
 setting an environment variable named :envvar:`PYTHONSTARTUP` to the name of a
 file containing your start-up commands.  This is similar to the :file:`.profile`
 feature of the Unix shells.
+
+当交互式地使用 Python 时, 在每一次启动解释器时运行一些标准的命令常常是很方便的.  
+你可以通过设置一个名为 :envvar:`PYTHONSTARTUP` 的环境变量赋予包含你的启动命令的文件名. 
+这类似于 Unix 脚本的 :file:`profile`.
 
 .. XXX This should probably be dumped in an appendix, since most people
    don't use Python interactively in non-trivial ways.
@@ -340,11 +345,25 @@ that it defines or imports can be used without qualification in the interactive
 session. You can also change the prompts ``sys.ps1`` and ``sys.ps2`` in this
 file.
 
+这个文件只有在交互会话时才被读入, 而在 Python 从一个脚本读取命令时或显示指定 
+:file:`/dev/tty` 为命令源 (它的表现像一个交互会话) 时并不会被读.  它与交互命令
+在同一个命名空间里执行, 因此它定义或者引入可以无条件地在交互会话里使用. 你也可以
+改变文件中的 ``sys.ps1`` 和 ``sys.ps2`` 提示.
+
 If you want to read an additional start-up file from the current directory, you
 can program this in the global start-up file using code like ``if
 os.path.isfile('.pythonrc.py'): exec(open('.pythonrc.py').read())``.
 If you want to use the startup file in a script, you must do this explicitly
 in the script::
+
+   import os
+   filename = os.environ.get('PYTHONSTARTUP')
+   if filename and os.path.isfile(filename):
+       exec(open(filename).read())
+
+如果你想从当前目录里读入一个额外的启动文件, 那么你可以在全局启动文件里使用如 ``if
+of.path.isfile('.pythonrc.py'): exec(open('.pythonrc.py').read())``. 如果你想在某个
+脚本里使用启动文件, 那么你必须在脚本里显式地加上::
 
    import os
    filename = os.environ.get('PYTHONSTARTUP')
@@ -357,6 +376,11 @@ in the script::
 .. [#] On Unix, the Python 3.x interpreter is by default not installed with the
    executable named ``python``, so that it does not conflict with a
    simultaneously installed Python 2.x executable.
+   
+.. [#] 在 Unix, Python 3.x 解释器默认不使用可执行文件名 ``python`` 安装, 所以同时
+   安装 Python 2.x 并不会发生冲突.
 
 .. [#] A problem with the GNU Readline package may prevent this.
+
+.. [#] 这可能会被一个 GNU Readline 包的问题阻止.
 
