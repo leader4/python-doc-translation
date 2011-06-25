@@ -11,8 +11,8 @@ with a prompt are output from the interpreter. Note that a secondary prompt on a
 line by itself in an example means you must type a blank line; this is used to
 end a multi-line command.
 
-在以下的例子中, 输入和输入通过提示符 (``>>>`` 和 ``...``) 来区分: 在测试例子时, 
-你必须在提示符出现后键入提示符后面的所有内容; 不以提示符开头的行是解释器的输入. 
+在以下的例子中, 输入和输入通过提示符 (``>>>`` 和 ``...``) 来区分: 在测试例子时,
+你必须在提示符出现后键入提示符后面的所有内容; 不以提示符开头的行是解释器的输入.
 注意, 在例子中有以一个次提示符独占一行时意味着你必须加入一个空行; 它用来结束一个
 多行命令.
 
@@ -35,6 +35,8 @@ Some examples::
 注释以一个井号, ``#`` 开头, 一直延伸到该物理行的最后. 注释既可以出现在一行的开头,
 也可以跟着空白或代码后面, 但不能在字符串里面.  在字符串里面的井号只是一个井号字符.
 因为注释使用来使代码清晰的, 而不会被 Python 解释, 所以在键入例子是可以省略它们.
+
+一些例子::
 
    # 这是第一个注释
    SPAM = 1                 # 这是第二个注释
@@ -143,7 +145,7 @@ A value can be assigned to several variables simultaneously::
    0
    >>> z
    0
-   
+
 一个值可以同时被赋给几个变量::
 
    >>> x = y = z = 0  # 给 x, y 和 z 赋值 0
@@ -227,7 +229,7 @@ and imaginary part.  To extract these parts from a complex number *z*, use
    >>> a.imag
    0.5
 
-复数总是可以表示为两个浮点数, 实部和虚部.  通过使用 ``z.real`` 和 ``z.imag`` 从复数 *z* 
+复数总是可以表示为两个浮点数, 实部和虚部.  通过使用 ``z.real`` 和 ``z.imag`` 从复数 *z*
 中抽取这些部分.   ::
 
    >>> a=1.5+0.5j
@@ -346,7 +348,7 @@ double quotes if the string contains a single quote and no double quotes, else
 it's enclosed in single quotes.  The :func:`print` function produces a more
 readable output for such input strings.
 
-解释器以字符串键入时相同的方式打印
+解释器以字符串键入时相同的方式打印它们: 内部引号,
 
 String literals can span multiple lines in several ways.  Continuation lines can
 be used, with a backslash as the last character on the line indicating that the
