@@ -20,8 +20,8 @@ Development of the documentation and its toolchain takes place on the
 docs@python.org mailing list.  We're always looking for volunteers wanting
 to help with the docs, so feel free to send a mail there!
 
-该文档和它的工具链的开发在 docs@python.org 发生在邮件列表上. 我们一直在寻找
-志愿者帮助我们管理文档, 请随意发送邮件到那里!
+该文档和它的工具链的开发在 docs@python.org 发生在邮件列表上. 
+我们一直在寻找志愿者帮助我们管理文档, 请随意发送邮件到那里!
 
 
 Many thanks go to:
@@ -37,7 +37,7 @@ Many thanks go to:
   ideas.
   
 * Fred L. Drake, Jr., 原始 Python 文档工具包的创造者, 也是大量内容的作者;
-* `Docutils <http://docutils.sf.net/>`_ 项目, 它创造了 reStructuredText 和 
+* `Docutils <http://docutils.sf.net/>`_ 项目, 它创造了 reStructuredText 和
   Docutils 套件;
 * Fredrik Lundh, 因为 `Alternative Python Reference
   <http://effbot.org/zone/pyref.htm>`_ 项目, 从中 Sphinx 获取了许多好点子.
@@ -53,4 +53,4 @@ documentation, or Python itself.
 It is only with the input and contributions of the Python community
 that Python has such wonderful documentation -- Thank You!
 
-只有 Python 社区的投入与奉献才使得 Python 拥有如此美妙的文档 -- 谢谢
+只有 Python 社区的投入与奉献才使得 Python 拥有如此美妙的文档 -- 谢谢!

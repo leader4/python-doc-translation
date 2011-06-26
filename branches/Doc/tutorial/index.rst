@@ -16,9 +16,10 @@ object-oriented programming. Python's elegant syntax and dynamic typing,
 together with its interpreted nature, make it an ideal language for scripting
 and rapid application development in many areas on most platforms.
 
-Python 是一门易学, 强大的程序语言. 它拥有高效的高级数据结构和一个简单但是有效
-的方法来面向对象编程. Python 优雅的语法, 动态类型, 以及自然的解释, 使得其成为
-在绝大数平台的很多领域撰写脚本和快速应用程序开发的理想语言.
+Python 是一门易学, 强大的程序语言. 
+它拥有高效的高级数据结构和一个简单但是有效的方法来面向对象编程. Python 优雅的语法, 
+动态类型, 以及自然的解释, 
+使得其成为在绝大数平台的很多领域撰写脚本和快速应用程序开发的理想语言.
 
 The Python interpreter and the extensive standard library are freely available
 in source or binary form for all major platforms from the Python Web site,
@@ -50,9 +51,9 @@ For a description of standard objects and modules, see :ref:`library-index`.
 extensions in C or C++, read :ref:`extending-index` and
 :ref:`c-api-index`. There are also several books covering Python in depth.
 
-对于标准对象和模块的描述, 参阅 :ref:`library-index`. :ref:`reference-index` 给出了
-该语言一个更为正式的定义.  要用 C 或 C++ 写扩展, 阅读 :ref:`extending-index` 和 
-:ref:`c-api-index`. 还有基本深度覆盖 Python 的书.
+对于标准对象和模块的描述, 参阅 :ref:`library-index`. :ref:`reference-index`
+给出了该语言一个更为正式的定义.  要用 C 或 C++ 写扩展, 阅读 :ref:`extending-index` 和 
+:ref:`c-api-index`. 这还有几本深度覆盖 Python 的书.
 
 This tutorial does not attempt to be comprehensive and cover every single
 feature, or even every commonly used feature. Instead, it introduces many of
@@ -61,9 +62,9 @@ language's flavor and style. After reading it, you will be able to read and
 write Python modules and programs, and you will be ready to learn more about the
 various Python library modules described in :ref:`library-index`.
 
-该教程并不尝试变得全面而覆盖每一个特性, 甚至每一个常用的特性. 反而, 它介绍了许多
-Python 最值得注意的特性, 并会提供您一个该语言的风味和风格的好主意. 读完之后, 您将
-能够阅读和书写 Python 模块和程序, 而且已经为学习更多关于在 :ref:`library-index` 
+该教程并不尝试变得全面而覆盖每一个特性, 甚至每一个常用的特性. 反而, 
+它介绍了许多Python 最值得注意的特性, 并会提供您一个该语言的风味和风格的好主意. 
+读完之后, 您将能够阅读和书写 Python 模块和程序, 而且已经为学习更多关于在 :ref:`library-index` 
 中描述的各种各样的 Python 库模块做好了准备.
 
 The :ref:`glossary` is also worth going through.

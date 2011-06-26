@@ -17,8 +17,8 @@ section lists these differences, in order to give those familiar with the old
 format a quick overview of what they might run into.
 
 但是, 在它们工作的方式上是有所不同的, 部分原因是标记语言的不同,
-另一部分原因是在 Sphinx 中的升级. 本节列出了这些不同, 为了使那些熟悉旧格式的
-可以快速地了解.
+另一部分原因是在 Sphinx 中的升级. 本节列出了这些不同, 
+为了使那些熟悉旧格式的可以快速地了解.
 
 Inline markup 行内标记
 -------------------------

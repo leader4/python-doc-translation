@@ -13,8 +13,8 @@ end a multi-line command.
 
 在以下的例子中, 输入和输入通过提示符 (``>>>`` 和 ``...``) 来区分: 在测试例子时,
 你必须在提示符出现后键入提示符后面的所有内容; 不以提示符开头的行是解释器的输入.
-注意, 在例子中有以一个次提示符独占一行时意味着你必须加入一个空行; 它用来结束一个
-多行命令.
+注意, 在例子中有以一个次提示符独占一行时意味着你必须加入一个空行; 
+它用来结束一个多行命令.
 
 Many of the examples in this manual, even those entered at the interactive
 prompt, include comments.  Comments in Python start with the hash character,
@@ -31,8 +31,8 @@ Some examples::
                             # ... and now a third!
    STRING = "# This is not a comment."
 
-该手册里的许多例子, 甚至是在交互式的提示符后输入的例子, 都包含注释.  Python 中的
-注释以一个井号, ``#`` 开头, 一直延伸到该物理行的最后. 注释既可以出现在一行的开头,
+该手册里的许多例子, 甚至是在交互式的提示符后输入的例子, 都包含注释.  Python 
+中的注释以一个井号, ``#`` 开头, 一直延伸到该物理行的最后. 注释既可以出现在一行的开头,
 也可以跟着空白或代码后面, 但不能在字符串里面.  在字符串里面的井号只是一个井号字符.
 因为注释使用来使代码清晰的, 而不会被 Python 解释, 所以在键入例子是可以省略它们.
 
@@ -52,7 +52,8 @@ Using Python as a Calculator 把 Python 当计算器使用
 Let's try some simple Python commands.  Start the interpreter and wait for the
 primary prompt, ``>>>``.  (It shouldn't take long.)
 
-让我们尝试一些简单的 Python 命令.  打开解释器, 等待主提示符, ``>>>``, 地出现. (不会很久)
+让我们尝试一些简单的 Python 命令.  打开解释器, 等待主提示符, ``>>>``, 地出现. 
+(不会很久)
 
 
 .. _tut-numbers:
@@ -77,9 +78,9 @@ operators ``+``, ``-``, ``*`` and ``/`` work just like in most other languages
    >>> 8/5 # Fractions aren't lost when dividing integers
    1.6
 
-解释器扮演一个简单计算器: 你键入一个表达式给它, 它将写出表达式的值.  表达式语法
-十分直接: 操作符 ``+``, ``-``, ``*``, ``/`` 就像大多数语言一样工作 (例如, Pasal 和 C);
-圆括号可以用来分组.  例如::
+解释器扮演一个简单计算器: 你键入一个表达式给它, 它将写出表达式的值.  
+表达式语法十分直接: 操作符 ``+``, ``-``, ``*``, ``/`` 就像大多数语言一样工作 
+(例如, Pasal 和 C); 圆括号可以用来分组.  例如::
 
    >>> 2+2
    4
@@ -99,9 +100,9 @@ the appearance of floating point output.  See also :ref:`tut-fp-issues` for a
 full discussion of some of the subtleties of floating point numbers and their
 representations.
 
-注意: 你可能没有看到完全一样的结果; 不同机器上的浮点数结果可能不同.  待会我们会
-讲如何控制浮点数输出地显示.  参见 :ref:`tut-fp-issues` 上的关于浮点数的细节和它
-们表示法的完整讨论.
+注意: 你可能没有看到完全一样的结果; 不同机器上的浮点数结果可能不同.  
+待会我们会讲如何控制浮点数输出地显示.  参见 :ref:`tut-fp-issues` 
+上的关于浮点数的细节和它们表示法的完整讨论.
 
 To do integer division and get an integer result,
 discarding any fractional result, there is another operator, ``//``::
@@ -128,8 +129,8 @@ result is displayed before the next interactive prompt::
    >>> width * height
    900
 
-等号 (``'='``) 用于把一个值分配给一个变量. 然后, 在下一个交互式提示符之前不会显示
-任何结果::
+等号 (``'='``) 用于把一个值分配给一个变量. 然后, 
+在下一个交互式提示符之前不会显示任何结果::
 
    >>> width = 20
    >>> height = 5*9
@@ -205,8 +206,9 @@ of ``j`` or ``J``.  Complex numbers with a nonzero real component are written as
    >>> (1+2j)/(1+1j)
    (1.5+0.5j)
 
-复数也是被支持的; 虚数部分写得时候要加上后缀, ``j`` 或 ``i``.  实部非零的复数被写
-作 ``(real+imagj)``, 也可以通过函数 ``complex(real, imag)`` 生成.
+复数也是被支持的; 虚数部分写得时候要加上后缀, ``j`` 或 ``i``.  
+实部非零的复数被写作 ``(real+imagj)``, 也可以通过函数 ``complex(real, imag)`` 生成.
+::
 
    >>> 1j * 1J
    (-1+0j)
@@ -229,8 +231,8 @@ and imaginary part.  To extract these parts from a complex number *z*, use
    >>> a.imag
    0.5
 
-复数总是可以表示为两个浮点数, 实部和虚部.  通过使用 ``z.real`` 和 ``z.imag`` 从复数 *z*
-中抽取这些部分.   ::
+复数总是可以表示为两个浮点数, 实部和虚部.  通过使用 ``z.real`` 和 ``z.imag`` 
+从复数 *z* 中抽取这些部分.   ::
 
    >>> a=1.5+0.5j
    >>> a.real
@@ -255,9 +257,9 @@ convert a complex number to a real number.  Use ``abs(z)`` to get its magnitude
    >>> abs(a)  # sqrt(a.real**2 + a.imag**2)
    5.0
 
-浮点数和整数的转换函数 (:func:`float`, :func:`int`) 不能为复数工作 --- 没有一个正确的
-方法能把一个复数转换为一个实数.  使用 ``abs(z)`` 得到它的模 (以一个浮点数), 使用 ``z.real`` 得到
-他的实部::
+浮点数和整数的转换函数 (:func:`float`, :func:`int`) 不能为复数工作 --- 
+没有一个正确的方法能把一个复数转换为一个实数.  使用 ``abs(z)`` 得到它的模 
+(以一个浮点数), 使用 ``z.real`` 得到他的实部::
 
    >>> a=3.0+4.0j
    >>> float(a)
@@ -288,8 +290,8 @@ This variable should be treated as read-only by the user.  Don't explicitly
 assign a value to it --- you would create an independent local variable with the
 same name masking the built-in variable with its magic behavior.
 
-在交互模式下, 最后一个打印出的表达式被分配给变量 ``_``.  这意味着但你把 Python 当成
-一个桌面计算器使用时, 继续计算会简单一些, 例如::
+在交互模式下, 最后一个打印出的表达式被分配给变量 ``_``.  这意味着但你把 Python 
+当成一个桌面计算器使用时, 连续计算会简单一些, 例如::
 
    >>> tax = 12.5 / 100
    >>> price = 100.50
@@ -300,8 +302,8 @@ same name masking the built-in variable with its magic behavior.
    >>> round(_, 2)
    113.06
 
-用户需要把这个变量当成是只读的. 不要显式地为它赋值 --- 否则你会创建一个同名的局部变量
-而隐藏了给内建变量以及它的魔法特性.
+用户需要把这个变量当成是只读的. 不要显式地为它赋值 --- 
+否则你会创建一个同名的局部变量而隐藏了给内建变量以及它的魔法特性.
 
 
 .. _tut-strings:
@@ -325,8 +327,8 @@ several ways.  They can be enclosed in single quotes or double quotes::
    >>> '"Isn\'t," she said.'
    '"Isn\'t," she said.'
 
-除了数字, Python 也可以操作字符串, 它们可以用几种方法表达.  它们被包在单引号或
-双引号中::
+除了数字, Python 也可以操作字符串, 它们可以用几种方法表达.  
+它们被包在单引号或双引号中::
 
    >>> 'spam eggs'
    'spam eggs'
