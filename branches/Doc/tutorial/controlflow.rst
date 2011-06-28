@@ -1,8 +1,8 @@
 .. _tut-morecontrol:
 
-***********************
-More Control Flow Tools
-***********************
+**************************************
+More Control Flow Tools 更多控制流工具
+**************************************
 
 Besides the :keyword:`while` statement just introduced, Python knows the usual
 control flow statements known from other languages, with some twists.
