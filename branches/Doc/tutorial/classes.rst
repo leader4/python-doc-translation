@@ -1,7 +1,7 @@
 .. _tut-classes:
 
 *******
-Classes
+Classes 类
 *******
 
 Compared with other programming languages, Python's class mechanism adds classes
@@ -14,6 +14,12 @@ name.  Objects can contain arbitrary amounts and kinds of data.  As is true for
 modules, classes partake of the dynamic nature of Python: they are created at
 runtime, and can be modified further after creation.
 
+同别的编程语言相比, Python 的类机制中增加了少量新的语法和语义. 它是 C++ 的类机制和 
+Modula-3 的类机制的混合体. Python 类提供了面向对象编程的所有基本特征: 允
+许多继承的类继承机制, 派生类可以重写它父类的任何方法, 一个方法可以调用父类中重名的
+方法. 对象可以包含任意数量和类型的数据成员. 作为模块, 类也拥有 Python 的动态特征: 
+他们可以被动态创建, 并且可以在创建之后被修改.
+
 In C++ terminology, normally class members (including the data members) are
 *public* (except see below :ref:`tut-private`), and all member functions are
 *virtual*.  As in Modula-3, there are no shorthands for referencing the object's
@@ -25,12 +31,20 @@ base classes for extension by the user.  Also, like in C++, most built-in
 operators with special syntax (arithmetic operators, subscripting etc.) can be
 redefined for class instances.
 
+从C++术语上讲, Python 类的成员 (包括数据成员) 通常都是 *public* 的 (例外见下 :ref:`tut-private`), 
+并且所有的成员函数都是 *virtual* 的. 和 Modula-3 中一样, Python中没有关联对象成员和方
+法的隐式表达: 所有方法函数在声明时显式地将第一个参数表示为对象, 这个参数的值在方法被调
+用时隐式赋值. 同 Smalltalk 类似, Python 类本身就是对象. 这就提供了导入和重命名的语义. 
+与 C++ 和 Modula-3 不同的是, Python 的内置类型可以被当做基类来让使用者扩展. 另外, 像 C++ 
+一样, 大多数有特殊语法的内置操作符(算数运算符, 下标操作符等等) 在类的实例中都可以重定义.
+
 (Lacking universally accepted terminology to talk about classes, I will make
 occasional use of Smalltalk and C++ terms.  I would use Modula-3 terms, since
 its object-oriented semantics are closer to those of Python than C++, but I
 expect that few readers have heard of it.)
 
-
+(由于在谈论类的时候缺乏公认的术语, 我会偶尔使用 Smalltalk 和 C++ 的术语. 我更愿意用 Modula-3 的
+术语, 因为它面向对象的语义比C++更贴近Python, 但是我估计没有读者听过这个说法.)
 .. _tut-object:
 
 A Word About Names and Objects
