@@ -1,8 +1,8 @@
-.. _tut-modules:
+﻿.. _tut-modules:
 
-*******
-Modules
-*******
+************
+Modules 模块
+************
 
 If you quit from the Python interpreter and enter it again, the definitions you
 have made (functions and variables) are lost. Therefore, if you want to write a
@@ -12,6 +12,12 @@ is known as creating a *script*.  As your program gets longer, you may want to
 split it into several files for easier maintenance.  You may also want to use a
 handy function that you've written in several programs without copying its
 definition into each program.
+
+如果你从退出 Python 解释器又重新打开它, 你之前所做的定义 (函数和变量) 都丢失了.
+因此, 如果你想写一个更长的程序, 你最好离线地使用文本编辑器来准备给解释器的输入,
+通过使用文件作为替代的输入运行它. 这被称作为创建一个*脚本*. 当你的程序变得更长,
+你可能想把它分割成几个文件以能够更简单地维护. 你也许还想使用你在几个程序里写过的程序,
+而不用把它的定义复制到每个程序里.
 
 To support this, Python has a way to put definitions in a file and use them in a
 script or in an interactive instance of the interpreter. Such a file is called a
