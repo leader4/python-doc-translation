@@ -66,13 +66,13 @@ a higher level interface that is easier to use::
 
 对于日常文件和目录的管理， :mod:`shutil` 模块提供了更便捷、更高层次的接口::
 
-   >>> import shutil
+>>> import shutil
    >>> shutil.copyfile('data.db', 'archive.db')
    >>> shutil.move('/build/executables', 'installdir')
 
 .. _tut-file-wildcards:
 
-File Wildcards 文件的能配符
+File Wildcards 文件的通配符
 =========================
 
 The :mod:`glob` module provides a function for making file lists from directory
@@ -83,7 +83,11 @@ wildcard searches::
    ['primes.py', 'random.py', 'quote.py']
 
 :mod:`glob` 模块提供了这样一个函数，这个函数使我们能以通配符的方式搜索某个目录下的特定文件，
-并列出它们。
+并列出它们::
+
+   >>> import glob
+   >>> glob.glob('*.py')
+   ['primes.py', 'random.py', 'quote.py']
 
 .. _tut-command-line-arguments:
 
@@ -101,7 +105,11 @@ three`` at the command line::
 
 一些实用的脚本通常需要处理命令行参数。这些参数被 :mod:`sys` 模块的 *argv* 
 属性以列表的方式存储起来。下例中，命令行中运行 ``python demo.py one two three`` ，其结果便能
-说明这一点。
+说明这一点::
+
+   >>> import sys
+   >>> print(sys.argv)
+   ['demo.py', 'one', 'two', 'three']
 
 The :mod:`getopt` module processes *sys.argv* using the conventions of the Unix
 :func:`getopt` function.  More powerful and flexible command line processing is
@@ -124,6 +132,9 @@ visible even when *stdout* has been redirected::
 
 :mod:`sys` 模块还包括了 *stdin*, *stdout*, *stderr* 属性。而最后一个属性 *stderr* 可以
 有效地使警告和出错信息以可见的方式传输出来，即使是 *stdout* 被重定向了。
+
+   >>> sys.stderr.write('Warning, log file not found starting a new one\n')
+   Warning, log file not found starting a new one
 
 The most direct way to terminate a script is to use ``sys.exit()``.
 
@@ -227,8 +238,8 @@ from urls and :mod:`smtplib` for sending mail::
 
    >>> from urllib.request import urlopen
    >>> for line in urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl'):
-   ...     line = line.decode('utf-8')  # Decoding the binary data to text.
-   ...     if 'EST' in line or 'EDT' in line:  # look for Eastern Time
+   ...     line = line.decode('utf-8')  # 将二进制文件解码成普通字符
+   ...     if 'EST' in line or 'EDT' in line:  # 查找西方国家的时间
    ...         print(line)
 
    <BR>Nov. 25, 09:43:32 PM EST
@@ -296,6 +307,7 @@ aware. ::
 
 :mod:`datetime` 模块提供了操作日期和时间的类，包括了简单和复杂两种方式。当我们知道了时间和日期的
 算法后，工作的重心便放在了如何有效地格式化输出和操作之上了。该模块也提供了区分时区的对象。::
+
    >>> # dates are easily constructed and formatted
    >>> from datetime import date
    >>> now = date.today()
@@ -369,7 +381,7 @@ module quickly demonstrates a modest performance advantage::
    0.54962537085770791
 
 例如，我们会使用tuple的打包和解包的特性而不是传统的方法去接收参数。 :mod:`timeit` 模块可以很快地
-显示出性能上的优势，即使这些优势很微小。
+显示出性能上的优势，即使这些优势很微小::
 
    >>> from timeit import Timer
    >>> Timer('t=a; a=b; b=t', 'a=1; b=2').timeit()
@@ -416,7 +428,7 @@ documentation::
 
 :mod:`doctest` 模块提供了工具去浏览一个模块并通过嵌入在文档中的测试程序进行有效性测试。
 测试的构成简单到只需将这个模块的调用过程和结果进行剪切和粘贴操作，保存到文档当中。通过在文档中
-给用户呈现一个例子，从而提高了文档的可读性。同时，它还确保了代码是忠实于文档的。
+给用户呈现一个例子，从而提高了文档的可读性。同时，它还确保了代码是忠实于文档的::
 
    def average(values):
        """Computes the arithmetic mean of a list of numbers.
@@ -501,7 +513,7 @@ Python有一个原理的充电区。这是你了解python原理和它的各种�
 * Internationalization is supported by a number of modules including
   :mod:`gettext`, :mod:`locale`, and the :mod:`codecs` package.
 
-* 一些模块如 :mode:`gettext` , :mod:`locale` 和包 :mod:`codecs`，为Python的国际，
+* 一些模块如 :mode:`gettext` , :mod:`locale` 和包 :mod:`codecs`，为Python的国际化，
   提供了支持。
 
 
