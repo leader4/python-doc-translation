@@ -131,7 +131,7 @@ visible even when *stdout* has been redirected::
    Warning, log file not found starting a new one
 
 :mod:`sys` 模块还包括了 *stdin*, *stdout*, *stderr* 属性。而最后一个属性 *stderr* 可以
-有效地使警告和出错信息以可见的方式传输出来，即使是 *stdout* 被重定向了。
+有效地使警告和出错信息以可见的方式传输出来，即使是 *stdout* 被重定向了::
 
    >>> sys.stderr.write('Warning, log file not found starting a new one\n')
    Warning, log file not found starting a new one
@@ -238,8 +238,8 @@ from urls and :mod:`smtplib` for sending mail::
 
    >>> from urllib.request import urlopen
    >>> for line in urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl'):
-   ...     line = line.decode('utf-8')  # 将二进制文件解码成普通字符
-   ...     if 'EST' in line or 'EDT' in line:  # 查找西方国家的时间
+   ...     line = line.decode('utf-8')  # Decoding the binary data to text.
+   ...     if 'EST' in line or 'EDT' in line:  # look for Eastern Time
    ...         print(line)
 
    <BR>Nov. 25, 09:43:32 PM EST
@@ -260,8 +260,8 @@ python里包含了许多访问互联网和处理互联网协议的模块。其�
 
    >>> from urllib.request import urlopen
    >>> for line in urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl'):
-   ...     line = line.decode('utf-8')  # Decoding the binary data to text.
-   ...     if 'EST' in line or 'EDT' in line:  # look for Eastern Time
+   ...     line = line.decode('utf-8')  # 将二进制文件解码成普通字符
+   ...     if 'EST' in line or 'EDT' in line:  # 查找西方国家的时间
    ...         print(line)
 
    <BR>Nov. 25, 09:43:32 PM EST
