@@ -513,7 +513,7 @@ Python有一个原理的充电区。这是你了解python原理和它的各种�
 * Internationalization is supported by a number of modules including
   :mod:`gettext`, :mod:`locale`, and the :mod:`codecs` package.
 
-* 一些模块如 :mode:`gettext` , :mod:`locale` 和包 :mod:`codecs`，为Python的国际化，
+* 一些模块如 :mode:`gettext` , :mod:`locale` 和包 :mod:`codecs`，为Python的国际化,
   提供了支持。
 
 
