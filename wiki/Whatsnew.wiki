@@ -1,0 +1,29 @@
+#summary 提供翻译进度的概况
+#labels Featured
+
+= 最近更新 =
+
+欢迎查看最近更新, 在在这里, 您可以看到我们项目最新的进展.
+
+= July 2011 =
+
+=== 完成翻译一些文件 ===
+
+包括:
+
+  * /tutorial/stdlib.rst
+
+= June 2011 =
+
+=== 完成翻译一些文件 ===
+
+包括:
+
+  * /tutorial/datastructures.rst
+  * /tutorial/controlflow.rst
+  * /tutorial/introduction.rst
+  * /documenting/building.rst
+  * /documenting/fromlatex.rst
+  * /tutorial/appetite.rst
+  * /tutorial/index.rst
+  * /documenting/markup.rst
