@@ -1,5 +1,5 @@
+#summary 提供一些常见问题及解答.
 #labels Featured
-#提供一些常见问题及解答.
 
 = FAQ =
 
