@@ -486,7 +486,7 @@ Python有一个原理的充电区。这是你了解python原理和它的各种�
   remote procedure calls into an almost trivial task.  Despite the modules
   names, no direct knowledge or handling of XML is needed.
 
-* :mod:`xmlrpc.client` 模块和 :mod:`xmlrpc.server` 模块使得远距离程序的调用变得简单
+  :mod:`xmlrpc.client` 模块和 :mod:`xmlrpc.server` 模块使得远距离程序的调用变得简单
   便捷。你不用去管任何模块的名字，也不必掌握XML的知识。
 
 * The :mod:`email` package is a library for managing email messages, including
@@ -496,7 +496,7 @@ Python有一个原理的充电区。这是你了解python原理和它的各种�
   (including attachments) and for implementing internet encoding and header
   protocols.
 
-* :mod:`email` 包是一个处理email消息的库，包括MIME和其它以RFC 2822为基准的消息文档。
+  :mod:`email` 包是一个处理email消息的库，包括MIME和其它以RFC 2822为基准的消息文档。
   它不像 :mod:`poplib` 模块和 :mod:`smtplib` 模块只发送和接收消息，email包有一个完整的
   工具集去创建或者解码复杂的消息结构（包括附件）和执和互联网编码和包头协议。
 
@@ -506,14 +506,14 @@ Python有一个原理的充电区。这是你了解python原理和它的各种�
   modules and packages greatly simplify data interchange between Python
   applications and other tools.
 
-* :mod:`xml.dom` 包和 :mod:`xml.sax` 包为解析这种流行的数据交换格式提供了强大的支持。
+  :mod:`xml.dom` 包和 :mod:`xml.sax` 包为解析这种流行的数据交换格式提供了强大的支持。
   同样地， :mod:`csv` 模块对读写常规的数据库文件提供了支持。这些包和模块结合在一起，大大
   简化了Python应用程序和其它工具的数据交换方法。
 
 * Internationalization is supported by a number of modules including
   :mod:`gettext`, :mod:`locale`, and the :mod:`codecs` package.
 
-* 一些模块如 :mode:`gettext` , :mod:`locale` 和包 :mod:`codecs`，为Python的国际化,
+  一些模块如 :mode:`gettext` , :mod:`locale` 和包 :mod:`codecs`，为Python的国际化,
   提供了支持。
 
 
