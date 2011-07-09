@@ -1,8 +1,8 @@
 .. _tut-classes:
 
-*******
+***********
 Classes 类
-*******
+***********
 
 Compared with other programming languages, Python's class mechanism adds classes
 with a minimum of new syntax and semantics.  It is a mixture of the class
@@ -14,11 +14,12 @@ name.  Objects can contain arbitrary amounts and kinds of data.  As is true for
 modules, classes partake of the dynamic nature of Python: they are created at
 runtime, and can be modified further after creation.
 
-同别的编程语言相比, Python 的类机制中增加了少量新的语法和语义. 它是 C++ 的类机制和 
-Modula-3 的类机制的混合体. Python 类提供了面向对象编程的所有基本特征: 允
-许多继承的类继承机制, 派生类可以重写它父类的任何方法, 一个方法可以调用父类中重名的
-方法. 对象可以包含任意数量和类型的数据成员. 作为模块, 类也拥有 Python 的动态特征: 
-他们可以被动态创建, 并且可以在创建之后被修改.
+同别的编程语言相比, Python 的类机制中增加了少量新的语法和语义. 它是 C++
+的类机制和 Modula-3 的类机制的混合体. Python 类提供了面向对象编程的所有基本特征:
+允许多继承的类继承机制, 派生类可以重写它父类的任何方法,
+一个方法可以调用父类中重名的方法. 对象可以包含任意数量和类型的数据成员.
+作为模块, 类也拥有 Python 的动态特征: 他们可以被动态创建,
+并且可以在创建之后被修改.
 
 In C++ terminology, normally class members (including the data members) are
 *public* (except see below :ref:`tut-private`), and all member functions are
@@ -32,23 +33,25 @@ operators with special syntax (arithmetic operators, subscripting etc.) can be
 redefined for class instances.
 
 从C++术语上讲, Python 类的成员 (包括数据成员) 通常都是 *public* 的 (例外见下 :ref:`tut-private`), 
-并且所有的成员函数都是 *virtual* 的. 和 Modula-3 中一样, Python中没有关联对象成员和方
-法的隐式表达: 所有方法函数在声明时显式地将第一个参数表示为对象, 这个参数的值在方法被调
-用时隐式赋值. 同 Smalltalk 类似, Python 类本身就是对象. 这就提供了导入和重命名的语义. 
-与 C++ 和 Modula-3 不同的是, Python 的内置类型可以被当做基类来让使用者扩展. 另外, 像 C++ 
-一样, 大多数有特殊语法的内置操作符(算数运算符, 下标操作符等等) 在类的实例中都可以重定义.
+并且所有的成员函数都是 *virtual* 的. 和 Modula-3 中一样, Python
+中没有关联对象成员和方法的隐式表达: 所有方法函数在声明时显式地将第一个参数表示为对象,
+这个参数的值在方法被调用时隐式赋值. 同 Smalltalk 类似, Python 类本身就是对象.
+这就提供了导入和重命名的语义. 与 C++ 和 Modula-3 不同的是, Python
+的内置类型可以被当做基类来让使用者扩展. 另外, 像 C++ 一样,
+大多数有特殊语法的内置操作符(算数运算符, 下标操作符等等) 在类的实例中都可以重定义.
 
 (Lacking universally accepted terminology to talk about classes, I will make
 occasional use of Smalltalk and C++ terms.  I would use Modula-3 terms, since
 its object-oriented semantics are closer to those of Python than C++, but I
 expect that few readers have heard of it.)
 
-(由于在谈论类的时候缺乏公认的术语, 我会偶尔使用 Smalltalk 和 C++ 的术语. 我更愿意用 Modula-3 的
-术语, 因为它面向对象的语义比C++更贴近Python, 但是我估计没有读者听过这个说法.)
+(由于在谈论类的时候缺乏公认的术语, 我会偶尔使用 Smalltalk 和 C++ 的术语.
+我更愿意用 Modula-3的术语, 因为它面向对象的语义比C++更贴近Python,
+但是我估计没有读者听过这个说法.)
 .. _tut-object:
 
-A Word About Names and Objects
-==============================
+A Word About Names and Objects 关于名称和对象的讨论
+====================================================
 
 Objects have individuality, and multiple names (in multiple scopes) can be bound
 to the same object.  This is known as aliasing in other languages.  This is
@@ -62,11 +65,19 @@ pointer is passed by the implementation; and if a function modifies an object
 passed as an argument, the caller will see the change --- this eliminates the
 need for two different argument passing mechanisms as in Pascal.
 
+对象都具有个别性, 多个名称(在多个作用域中) 可以被绑定到同一个对象上.
+这就是其他语言中所谓的别名. 通常第一次接触 Python 可能不会意识到这一点,
+而且在处理不变的基本类型(数值, 字符串, 元组)时这一点可能会被安全的忽略.
+但是, 在涉及到可变对象如 lists, dictionaries, 以及大多数其他类型时,
+别名可能会在 Python 代码的语义上起到惊人的效果. 别名通常对编程有益处,
+因为别名在某些方面表现得像指针. 比如, 由于在实现的时候传递的是指针,
+所以传递一个对象的开销很小;  又比如将对象作为参数传递给一个函数来对它进行修改,
+调用者将会看到对象的变化 --- 这就消除了像Pascal 语言中的两个不同参数之间的传递机制的必要.
 
 .. _tut-scopes:
 
-Python Scopes and Namespaces
-============================
+Python Scopes and Namespaces Python 的作用域和命名空间
+========================================================
 
 Before introducing classes, I first have to tell you something about Python's
 scope rules.  Class definitions play some neat tricks with namespaces, and you
@@ -74,7 +85,11 @@ need to know how scopes and namespaces work to fully understand what's going on.
 Incidentally, knowledge about this subject is useful for any advanced Python
 programmer.
 
-Let's begin with some definitions.
+在介绍类之前, 我必须先告诉你一些关于 Python 作用域规则的事.
+类定义用命名空间玩了一些巧妙的把戏, 而你为了完全理解发生了什么就必须知道命名空间和作用域是怎么工作的.
+顺便说一下, 这一主题的知识对任何高级 Python 程序员都是有用的.
+
+Let's begin with some definitions. 让我们从定义开始.
 
 A *namespace* is a mapping from names to objects.  Most namespaces are currently
 implemented as Python dictionaries, but that's normally not noticeable in any
@@ -87,6 +102,9 @@ absolutely no relation between names in different namespaces; for instance, two
 different modules may both define a function ``maximize`` without confusion ---
 users of the modules must prefix it with the module name.
 
+*命名空间* 是从名称到对象的映射. 大多数命名空间现在的实现就如同 Python 的字典,
+但通常这一点并不明显(除了在性能上), 而且它有可能在将来发生改变.
+
 By the way, I use the word *attribute* for any name following a dot --- for
 example, in the expression ``z.real``, ``real`` is an attribute of the object
 ``z``.  Strictly speaking, references to names in modules are attribute
@@ -95,11 +113,22 @@ object and ``funcname`` is an attribute of it.  In this case there happens to be
 a straightforward mapping between the module's attributes and the global names
 defined in the module: they share the same namespace!  [#]_
 
+顺便说一下, 我用了 *属性* 这个词来称呼任何点后面跟的名称 --- 比如,
+在表达式``z.real``中, ``real``就是对象``z``的属性. 更直接的说,
+对模块中名称的引用就是属性引用: 在表达式 ``modname.funcname`` 中, ``modname``
+是模块对象而 ``funcname`` 是它的一个属性.
+在这种情况下模块的属性和它里面所定义的全局名称之间就刚好有一个直接的映射关系:
+他们共享同一个命名空间!  [#]_
+
 Attributes may be read-only or writable.  In the latter case, assignment to
 attributes is possible.  Module attributes are writable: you can write
 ``modname.the_answer = 42``.  Writable attributes may also be deleted with the
 :keyword:`del` statement.  For example, ``del modname.the_answer`` will remove
 the attribute :attr:`the_answer` from the object named by ``modname``.
+
+属性可以是只读的或可写的. 在后一种情况下, 给属性赋值才是可能的. 模块属性是可写的:
+你可以写 ``modname.the_answer = 42``. 可以利用:keyword:`del` 语句来删除可写属性.
+例如, ``del modname.the_answer`` 将从名为 ``modname`` 的模块中移除属性 :attr:`the_answer`.
 
 Namespaces are created at different moments and have different lifetimes.  The
 namespace containing the built-in names is created when the Python interpreter
@@ -110,6 +139,12 @@ invocation of the interpreter, either read from a script file or interactively,
 are considered part of a module called :mod:`__main__`, so they have their own
 global namespace.  (The built-in names actually also live in a module; this is
 called :mod:`builtins`.)
+
+命名空间们是在不同时刻创建的,并且有着不同的生命期. 包含内置名称的命名空间是在 Python
+解释器启动时创建的, 而且它永远不被删除. 一个模块的全局命名空间在模块的定义被读取的时候创建;
+通常情况下, 模块的命名空间一直持续到解释器退出时. 被最高级别的解释器调用的语句,
+不论是从脚本还是从交互读取的, 都被认为是一个名叫 :mod:`__main__` 的模块的一部分,
+所以它们有自己的全局命名空间. (内置名称实际上也存在于一个模块中; 这个模块叫 :mod:`builtins`.)
 
 The local namespace for a function is created when the function is called, and
 deleted when the function returns or raises an exception that is not handled
