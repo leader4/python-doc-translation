@@ -217,6 +217,7 @@ A strange thing happens if you just print a range::
 
    >>> print(range(10))
    range(0, 10)
+
 当你输入如下的 range 时, 会发生一件奇怪的事::
 
    >>> print(range(10))
@@ -1181,7 +1182,7 @@ extracted for you:
 .. [#] Actually, *call by object reference* would be a better description,
    since if a mutable object is passed, the caller will see any changes the
    callee makes to it (items inserted into a list).
-   
+
 .. [#] 实际上, *通过对象引用调用*会是个更好的描述, 因为如果传入了一个可变参数,
    调用者将看到被调用者对它作出的任何改变 (项被插入到列表).
 

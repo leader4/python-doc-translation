@@ -1070,5 +1070,5 @@ interpreter will raise a :exc:`TypeError` exception.
        supports operations like membership test and iteration, but its contents
        are not independent of the original dictionary -- it is only a *view*.
 
-.. [2] 调用 ``d.keys()`` 将返回一个 :dfn:`dictionary view` 对象. 
+.. [#] 调用 ``d.keys()`` 将返回一个 :dfn:`dictionary view` 对象. 
        它支持类似成员关系测试以及迭代操作, 但是它的内容不是独立于原始字典的 -- 它只是一个*视图*.
