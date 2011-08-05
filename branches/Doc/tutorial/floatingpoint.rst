@@ -193,6 +193,11 @@ with "0.1" is explained in precise detail below, in the "Representation Error"
 section.  See `The Perils of Floating Point <http://www.lahey.com/float.htm>`_
 for a more complete account of other common surprises.
 
+像这样的浮点数算法, 会导致很多令人奇怪的事情. "0.1" 的问题将在后面更详细的解释,
+具体看 "Representation Error" 那节.
+更多常见的令人吃惊的事情, 可以参考
+`The Perils of Floating Point <http://www.lahey.com/float.htm>`_ .
+
 As that says near the end, "there are no easy answers."  Still, don't be unduly
 wary of floating-point!  The errors in Python float operations are inherited
 from the floating-point hardware, and on most machines are on the order of no
@@ -200,47 +205,77 @@ more than 1 part in 2\*\*53 per operation.  That's more than adequate for most
 tasks, but you do need to keep in mind that it's not decimal arithmetic and
 that every float operation can suffer a new rounding error.
 
+就像后面说的, "没有简单的答案." 但是, 对于浮点数请不要过度谨慎.
+在 Python 中这些浮点数的问题来源于其硬件, 在多数的机器中, 浮点的精度没有必要达到
+1/2\*\*53 . 对于普通的任务已经足够了, 你需要记住的就是, 这不是算数的问题,
+每个浮点数操作都会遇到这样的问题.
+
 While pathological cases do exist, for most casual use of floating-point
 arithmetic you'll see the result you expect in the end if you simply round the
 display of your final results to the number of decimal digits you expect.
 :func:`str` usually suffices, and for finer control see the :meth:`str.format`
 method's format specifiers in :ref:`formatstrings`.
 
+当不合理的情况真的存在时, 对于多数情况, 你最终还是能得到希望的结果,
+如果你将显示的数值进行四舍五入, 并确保你所需要的位数.
+:func:`str` 函数经常就能满足需要了, 使用 :meth:`str.format` 方法,
+来指明其 :ref:`formatstrings`.
+
 For use cases which require exact decimal representation, try using the
 :mod:`decimal` module which implements decimal arithmetic suitable for
 accounting applications and high-precision applications.
+
+在需要严格的数值表示时, 试试使用 :mod:`decimal` 模块, 
+这个模块实现了用于账目运算或更高精度时用到的数值算法.
 
 Another form of exact arithmetic is supported by the :mod:`fractions` module
 which implements arithmetic based on rational numbers (so the numbers like
 1/3 can be represented exactly).
 
+另一种就是 :mod:`fractions` 模块, 它实现了基于有理数的算法
+( 所以 1/3 就可以准确的表述 ).
+
 If you are a heavy user of floating point operations you should take a look
 at the Numerical Python package and many other packages for mathematical and
 statistical operations supplied by the SciPy project. See <http://scipy.org>.
 
+如果你有大量浮点数的运算, 那么你可以看看 Python 的数值库或其他的计算和统计的包,
+SciPy 这个项目对此有很好的支持. 参考 <http://scipy.org>.
+
+
 Python provides tools that may help on those rare occasions when you really
 *do* want to know the exact value of a float.  The
 :meth:`float.as_integer_ratio` method expresses the value of a float as a
-fraction::
+fraction:
+
+Python 提供了工具来帮助你获得浮点数的准确值.
+你可以使用 :meth:`float.as_integer_ratio` 方法来表示一个分数::
 
    >>> x = 3.14159
    >>> x.as_integer_ratio()
    (3537115888337719, 1125899906842624)
 
 Since the ratio is exact, it can be used to losslessly recreate the
-original value::
+original value:
+
+因为这个比率是准确的, 它就可以用来比较原始的数字::
 
     >>> x == 3537115888337719 / 1125899906842624
     True
 
 The :meth:`float.hex` method expresses a float in hexadecimal (base
-16), again giving the exact value stored by your computer::
+16), again giving the exact value stored by your computer:
+
+:meth:`float.hex` 方法以十六进制表述,
+这也同样给出了一个被你计算机准确存储的值::
 
    >>> x.hex()
    '0x1.921f9f01b866ep+1'
 
 This precise hexadecimal representation can be used to reconstruct
-the float value exactly::
+the float value exactly:
+
+前面的十六进制表示, 可以用来重新建立一个浮点值::
 
     >>> x == float.fromhex('0x1.921f9f01b866ep+1')
     True
@@ -249,11 +284,17 @@ Since the representation is exact, it is useful for reliably porting values
 across different versions of Python (platform independence) and exchanging
 data with other languages that support the same format (such as Java and C99).
 
+因为这个表示是严格的, 所以对于不同版本的 Python (跨平台) 都是兼容的,
+而且也可以和其他的语言进行交换 (比如 java 和 C99).
+
 Another helpful tool is the :func:`math.fsum` function which helps mitigate
 loss-of-precision during summation.  It tracks "lost digits" as values are
 added onto a running total.  That can make a difference in overall accuracy
 so that the errors do not accumulate to the point where they affect the
 final total:
+
+另一个有用的工具就是 :func:`math.fsum` 函数. 它可以在计算总和时减少精度的丢失.
+它会记录在求和时丢失的精度. 这样误差就不会积累而最终影响结果了.
 
    >>> sum([0.1] * 10) == 1.0
    False
@@ -269,48 +310,75 @@ This section explains the "0.1" example in detail, and shows how you can perform
 an exact analysis of cases like this yourself.  Basic familiarity with binary
 floating-point representation is assumed.
 
+本节会更详细的解释 "0.1" 的例子, 并且教你如何进行准确的分析.
+此处假设你已有了基本的二元浮点数表示的基础.
+
 :dfn:`Representation error` refers to the fact that some (most, actually)
 decimal fractions cannot be represented exactly as binary (base 2) fractions.
 This is the chief reason why Python (or Perl, C, C++, Java, Fortran, and many
 others) often won't display the exact decimal number you expect.
+
+:dfn:`Representation error` 涉及到这样的事实, 
+有些 (更准确来书是大多数) 小数的分数表示不能够以二进制为底的分数表述.
+这就是主要的原因, 为何 Python (或者 Perl, C, C++, Java, Fortran,
+还有更多的) 常常不能够如你所愿的表示.
 
 Why is that?  1/10 is not exactly representable as a binary fraction. Almost all
 machines today (November 2000) use IEEE-754 floating point arithmetic, and
 almost all platforms map Python floats to IEEE-754 "double precision".  754
 doubles contain 53 bits of precision, so on input the computer strives to
 convert 0.1 to the closest fraction it can of the form *J*/2**\ *N* where *J* is
-an integer containing exactly 53 bits.  Rewriting ::
+an integer containing exactly 53 bits.  Rewriting :
+
+为什么会那样? 1/10 不能够被二进制的分数准确表示.
+基本上全部的机器在今 (2000年11月) 来说都是使用了 IEEE-754 浮点数算法,
+并且几乎全部的平台将 Python 的浮点映射为 IEEE-754 "double精度".
+754 doubles 包含了 53 位的精度, 所以在计算机中, 0.1 被转成一个很接近的分数,
+而它又可以这种 *J*/2**\ *N* 的形式表示, 此处的 *J* 是一个包含 53 位的整数.
+重写::
 
    1 / 10 ~= J / (2**N)
 
-as ::
+as 为::
 
    J ~= 2**N / 10
 
 and recalling that *J* has exactly 53 bits (is ``>= 2**52`` but ``< 2**53``),
-the best value for *N* is 56::
+the best value for *N* is 56:
+
+并且记着 *J* 有严格的 53 位 (也就是 ``>= 2**52`` 但 ``< 2**53``),
+对于 *N* 最好的值就是 56::
 
     >>> 2**52 <=  2**56 // 10  < 2**53
     True
 
 That is, 56 is the only value for *N* that leaves *J* with exactly 53 bits.  The
-best possible value for *J* is then that quotient rounded::
+best possible value for *J* is then that quotient rounded:
+
+也就是说, 56 是唯一能让 *J* 为 53 位的 *N* 值.
+而 *J* 最有可能的值就是那个商::
 
    >>> q, r = divmod(2**56, 10)
    >>> r
    6
 
 Since the remainder is more than half of 10, the best approximation is obtained
-by rounding up::
+by rounding up:
+
+因为剩余的如果大于10的一半, 那么最好的近似就是进一位::
 
    >>> q+1
    7205759403792794
 
-Therefore the best possible approximation to 1/10 in 754 double precision is::
+Therefore the best possible approximation to 1/10 in 754 double precision is:
+
+所以以 754 double 精度表示的 1/10 最合适的值就是::
 
    7205759403792794 / 2 ** 56
 
-Dividing both the numerator and denominator by two reduces the fraction to::
+Dividing both the numerator and denominator by two reduces the fraction to:
+
+将分子分母约化::
 
    3602879701896397 / 2 ** 55
 
@@ -318,14 +386,22 @@ Note that since we rounded up, this is actually a little bit larger than 1/10;
 if we had not rounded up, the quotient would have been a little bit smaller than
 1/10.  But in no case can it be *exactly* 1/10!
 
+注意, 因为我们进了一位, 所以值会比 1/10 稍微大一点;
+如果我们没有进位, 那么商又会比 1/10 稍微小点. 但无论如何, 都不是准确的 1/10!
+
 So the computer never "sees" 1/10:  what it sees is the exact fraction given
-above, the best 754 double approximation it can get::
+above, the best 754 double approximation it can get:
+
+所以计算机从没有看过 1/10: 它看到的是前面给出的分数,
+以 754 双进度近似的结果::
 
    >>> 0.1 * 2 ** 55
    3602879701896397.0
 
 If we multiply that fraction by 10\*\*55, we can see the value out to
-55 decimal digits::
+55 decimal digits:
+   
+如果我们将这个分数乘以 10\*\*55, 我们可以看到55位的数字::
 
    >>> 3602879701896397 * 10 ** 55 // 2 ** 55
    1000000000000000055511151231257827021181583404541015625
@@ -333,13 +409,19 @@ If we multiply that fraction by 10\*\*55, we can see the value out to
 meaning that the exact number stored in the computer is equal to
 the decimal value 0.1000000000000000055511151231257827021181583404541015625.
 Instead of displaying the full decimal value, many languages (including
-older versions of Python), round the result to 17 significant digits::
+older versions of Python), round the result to 17 significant digits:
+
+这意味存于计算机中的准确值等于
+0.1000000000000000055511151231257827021181583404541015625.
+很多语言 (包括 Python 的旧版本) 不是直接显示所有的位数, 而是将其保留为17位有效数字::
 
    >>> format(0.1, '.17f')
    '0.10000000000000001'
 
 The :mod:`fractions` and :mod:`decimal` modules make these calculations
-easy::
+easy:
+
+:mod:`fractions` 和 :mod:`decimal` 模块使这些计算变得简单::
 
    >>> from decimal import Decimal
    >>> from fractions import Fraction
