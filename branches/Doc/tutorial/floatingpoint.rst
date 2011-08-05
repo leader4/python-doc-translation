@@ -172,14 +172,18 @@ Also, since the 0.1 cannot get any closer to the exact value of 1/10 and
 0.3 cannot get any closer to the exact value of 3/10, then pre-rounding with
 :func:`round` function cannot help:
 
-同样, 因为 0.1::
+同样, 因为 0.1 不能够得到更接近 1/10 的值, 而 0.3 不能得到更接近 3/10 的值,
+因此使用 :func:`round` 函数来进行四舍五入也是不起作用的::
 
    >>> round(.1, 1) + round(.1, 1) + round(.1, 1) == round(.3, 1)
    False
 
 Though the numbers cannot be made closer to their intended exact values,
 the :func:`round` function can be useful for post-rounding so that results
-with inexact values become comparable to one another::
+with inexact values become comparable to one another:
+
+尽管数字不能够更接近它们理想上的准确值, :func:`round` 函数在计算后使用,
+确实可以实现两个数字之间的比较::
 
     >>> round(.1 + .1 + .1, 10) == round(.3, 10)
     True
