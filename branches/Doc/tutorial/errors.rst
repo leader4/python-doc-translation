@@ -8,6 +8,10 @@ Until now error messages haven't been more than mentioned, but if you have tried
 out the examples you have probably seen some.  There are (at least) two
 distinguishable kinds of errors: *syntax errors* and *exceptions*.
 
+到现在为止, 没有更多的提及错误信息, 但是当你在尝试这些例子时,
+或多或少会碰到一些. 这里 (至少) 有两种可以分辨的错误:
+*syntax error* 和 *exception* , 按中文来说, 就是语法错误和异常.
+
 
 .. _tut-syntaxerrors:
 
@@ -15,7 +19,9 @@ Syntax Errors
 =============
 
 Syntax errors, also known as parsing errors, are perhaps the most common kind of
-complaint you get while you are still learning Python::
+complaint you get while you are still learning Python:
+
+语法错误, 也可以认为是解析时错误, 这是在你学习 Python 过程中最有可能碰到的::
 
    >>> while True print('Hello world')
      File "<stdin>", line 1, in ?
@@ -30,6 +36,11 @@ example, the error is detected at the function :func:`print`, since a colon
 (``':'``) is missing before it.  File name and line number are printed so you
 know where to look in case the input came from a script.
 
+解析器会重复出错的那行, 然后显示一个小箭头, 指出探测到错误时最早的那个点.
+错误一般是由箭头所指的地方导致 (或者至少是此处被探测到): 在这个例子中,
+错误是在 :func:`print` 函数这里被发现的, 因为在它之前少了一个冒号 (``':'``).
+文件的名称与行号会被打印出来, 以便于你能找到一个脚本中导致错误的地方.
+
 
 .. _tut-exceptions:
 
@@ -40,7 +51,12 @@ Even if a statement or expression is syntactically correct, it may cause an
 error when an attempt is made to execute it. Errors detected during execution
 are called *exceptions* and are not unconditionally fatal: you will soon learn
 how to handle them in Python programs.  Most exceptions are not handled by
-programs, however, and result in error messages as shown here::
+programs, however, and result in error messages as shown here:
+
+尽管语句或表达式语法上是没有问题的, 它同样也会在尝试运行时导致一个错误.
+在执行时探测到的错误被成为 *exception* , 也就是异常, 但它并不是致命的问题:
+你将会很快学到如何在 Python 程序中处理它们. 大多数异常并不会被程序处理,
+不过, 导致错误的信息会被显示出来::
 
    >>> 10 * (1/0)
    Traceback (most recent call last):
@@ -63,15 +79,29 @@ that occurred.  This is true for all built-in exceptions, but need not be true
 for user-defined exceptions (although it is a useful convention). Standard
 exception names are built-in identifiers (not reserved keywords).
 
+每个错误信息的最后一行或说明发生了什么. 异常会有很多的类型, 
+而这个类型会作为消息的一部分打印出来: 在此处的例子中的类型有
+:exc:`ZeroDivisionError`, :exc:`NameError` 和 :exc:`TypeError`.
+作为异常类型被输出的字符串其实是发生内建异常的名称.
+对于所有内建异常都是那样的, 但是对于用户自定义的异常, 则可能不是这样
+(尽管有某些约定). 标准异常的名字是内建的标识符 (但并不是关键字).
+
 The rest of the line provides detail based on the type of exception and what
 caused it.
+
+改行剩下的部分则提供更详细的信息, 是什么样的异常, 是怎么导致的.
 
 The preceding part of the error message shows the context where the exception
 happened, in the form of a stack traceback. In general it contains a stack
 traceback listing source lines; however, it will not display lines read from
 standard input.
 
+错误消息的前面部分指出了异常发生的上下文, 以 stack traceback (栈追踪) 的方式显示.
+一般来说列出了源代码的行数; 但是并不会显示从标准输入得到的行数.
+
 :ref:`bltin-exceptions` lists the built-in exceptions and their meanings.
+
+:ref:`bltin-exceptions` 列出了内建的异常和它们的意义.
 
 
 .. _tut-handling:
@@ -83,7 +113,11 @@ It is possible to write programs that handle selected exceptions. Look at the
 following example, which asks the user for input until a valid integer has been
 entered, but allows the user to interrupt the program (using :kbd:`Control-C` or
 whatever the operating system supports); note that a user-generated interruption
-is signalled by raising the :exc:`KeyboardInterrupt` exception. ::
+is signalled by raising the :exc:`KeyboardInterrupt` exception. :
+
+写程序来处理异常是可能的. 看看下面的例子, 它请求用户输入一个合法的整数,
+但是也允许用户来中断程序 (使用 :kbd:`Control-C` 或任何操作系统支持的);
+注意, 用户生成的中断是通过产生异常 :exc:`KeyboardInterrupt`::
 
    >>> while True:
    ...     try:
@@ -95,27 +129,46 @@ is signalled by raising the :exc:`KeyboardInterrupt` exception. ::
 
 The :keyword:`try` statement works as follows.
 
+:keyword:`try` 语句像下面这样使用.
+
 * First, the *try clause* (the statement(s) between the :keyword:`try` and
   :keyword:`except` keywords) is executed.
 
+  首先, *try clause* (在 :keyword:`try` 和 :keyword:`except` 之间的语句)
+  将被执行.
+
 * If no exception occurs, the *except clause* is skipped and execution of the
   :keyword:`try` statement is finished.
+
+  如果没有异常发生, *except clause* 将被跳过, :keyword:`try` 语句就算执行完了.
 
 * If an exception occurs during execution of the try clause, the rest of the
   clause is skipped.  Then if its type matches the exception named after the
   :keyword:`except` keyword, the except clause is executed, and then execution
   continues after the :keyword:`try` statement.
 
+  如果在 try 语句执行时, 出现了一个异常, 该语句的剩下部分将被跳过.
+  然后如果它的类型匹配到了 :keyword:`except` 后面的异常名,
+  那么该异常的语句将被执行, 而执行完后会运行 :keyword:`try` 后面的问题.
+
 * If an exception occurs which does not match the exception named in the except
   clause, it is passed on to outer :keyword:`try` statements; if no handler is
   found, it is an *unhandled exception* and execution stops with a message as
   shown above.
 
+  如果一个异常发生时并没有匹配到 except 语句中的异常名, 那么它就被传到
+  :keyword:`try` 语句外面; 如果没有处理, 那么它就是 *unhandled exception*
+  并且将会像前面那样给出一个消息然后执行.
+
 A :keyword:`try` statement may have more than one except clause, to specify
 handlers for different exceptions.  At most one handler will be executed.
 Handlers only handle exceptions that occur in the corresponding try clause, not
 in other handlers of the same :keyword:`try` statement.  An except clause may
-name multiple exceptions as a parenthesized tuple, for example::
+name multiple exceptions as a parenthesized tuple, for example:
+
+一个 :keyword:`try` 语句可以有多于一条的 except 语句, 用以指定不同的异常.
+但至多只有一个会被执行. 处理器仅仅处理在相应 try 语句中的异常,
+而不是::
 
    ... except (RuntimeError, TypeError, NameError):
    ...     pass
