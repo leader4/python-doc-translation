@@ -167,8 +167,9 @@ in other handlers of the same :keyword:`try` statement.  An except clause may
 name multiple exceptions as a parenthesized tuple, for example:
 
 一个 :keyword:`try` 语句可以有多于一条的 except 语句, 用以指定不同的异常.
-但至多只有一个会被执行. 处理器仅仅处理在相应 try 语句中的异常,
-而不是::
+但至多只有一个会被执行. Handler 仅仅处理在相应 try 语句中的异常,
+而不是在同一 :keyword:`try` 语句中的其他 Handler.
+一个异常的语句可以同时包括多个异常名, 但需要用括号括起来, 比如::
 
    ... except (RuntimeError, TypeError, NameError):
    ...     pass
@@ -176,7 +177,11 @@ name multiple exceptions as a parenthesized tuple, for example:
 The last except clause may omit the exception name(s), to serve as a wildcard.
 Use this with extreme caution, since it is easy to mask a real programming error
 in this way!  It can also be used to print an error message and then re-raise
-the exception (allowing a caller to handle the exception as well)::
+the exception (allowing a caller to handle the exception as well):
+
+最后的异常段可以忽略异常的名字, 用以处理其他的情况.
+使用这个时需要特别注意, 因为它很容易屏蔽了程序中的错误!
+它也用于输出错误消息, 然后重新产生异常 (让调用者处理该异常)::
 
    import sys
 
@@ -195,7 +200,11 @@ the exception (allowing a caller to handle the exception as well)::
 The :keyword:`try` ... :keyword:`except` statement has an optional *else
 clause*, which, when present, must follow all except clauses.  It is useful for
 code that must be executed if the try clause does not raise an exception.  For
-example::
+example:
+
+:keyword:`try` ... :keyword:`except` 语句可以有一个可选的 *else* 语句,
+在这里, 必须要放在所有 except 语句后面. 它常用于没有产生异常时必须执行的语句.
+例如::
 
    for arg in sys.argv[1:]:
        try:
@@ -211,16 +220,29 @@ the :keyword:`try` clause because it avoids accidentally catching an exception
 that wasn't raised by the code being protected by the :keyword:`try` ...
 :keyword:`except` statement.
 
+使用 :keyword:`else` 比额外的添加代码到 :keyword:`try` 中要好,
+因为这样可以避免偶然的捕获一个异常, 但却不是由于我们保护的代码所抛出的.
+
 When an exception occurs, it may have an associated value, also known as the
 exception's *argument*. The presence and type of the argument depend on the
 exception type.
+
+当一个异常发生了, 它可能有相关的值, 这也就是所谓的异常的参数.
+该参数是否出现及其类型依赖于异常的类型.
 
 The except clause may specify a variable after the exception name.  The
 variable is bound to an exception instance with the arguments stored in
 ``instance.args``.  For convenience, the exception instance defines
 :meth:`__str__` so the arguments can be printed directly without having to
 reference ``.args``.  One may also instantiate an exception first before
-raising it and add any attributes to it as desired. ::
+raising it and add any attributes to it as desired. 
+
+在 except 语句中可以在异常名后指定一个变量. 变量会绑定值这个异常的实例上,
+并且把参数存于 ``instance.args``. 为了方便, 异常的实例会定义 :meth:`__str__`
+来直接将参数打印出来, 而不用引用 ``.args``. 当然也可以在产生异常前,
+首先实例化一个异常, 然后把需要的属性绑定给它.
+
+::
 
    >>> try:
    ...    raise Exception('spam', 'eggs')
@@ -242,9 +264,14 @@ raising it and add any attributes to it as desired. ::
 If an exception has arguments, they are printed as the last part ('detail') of
 the message for unhandled exceptions.
 
+如果一个异常有参数, 它们将作为异常消息的最后一部分打印出来.
+
 Exception handlers don't just handle exceptions if they occur immediately in the
 try clause, but also if they occur inside functions that are called (even
-indirectly) in the try clause. For example::
+indirectly) in the try clause. For example:
+
+异常的 handler 处理的异常, 不仅仅是 try 语句中那些直接的异常, 
+也可以是在此处调用的函数所产生的异常. 例如::
 
    >>> def this_fails():
    ...     x = 1/0
@@ -263,7 +290,10 @@ Raising Exceptions
 ==================
 
 The :keyword:`raise` statement allows the programmer to force a specified
-exception to occur. For example::
+exception to occur. For example:
+
+:keyword:`raise` 语句允许程序员强制一个特定的异常的发生.
+举个例子::
 
    >>> raise NameError('HiThere')
    Traceback (most recent call last):
@@ -274,9 +304,15 @@ The sole argument to :keyword:`raise` indicates the exception to be raised.
 This must be either an exception instance or an exception class (a class that
 derives from :class:`Exception`).
 
+给 :keyword:`raise` 的唯一参数表示产生的异常.
+这必须是一个异常实例或类 (派生自 :class:`Exception` 的类).
+
 If you need to determine whether an exception was raised but don't intend to
 handle it, a simpler form of the :keyword:`raise` statement allows you to
-re-raise the exception::
+re-raise the exception:
+
+如果你需要决定产生一个异常, 但是不准备处理它, 那么一个简单的方式就是,
+重新抛出异常::
 
    >>> try:
    ...     raise NameError('HiThere')
@@ -298,7 +334,11 @@ User-defined Exceptions
 Programs may name their own exceptions by creating a new exception class (see
 :ref:`tut-classes` for more about Python classes).  Exceptions should typically
 be derived from the :exc:`Exception` class, either directly or indirectly.  For
-example::
+example:
+
+程序中可以通过定义一个新的异常类 (更多的类请参考 :ref:`tut-classes`) 
+来命名它们自己的异常. 异常需要从 :exc:`Exception` 类派生, 
+既可以是直接也可以是间接. 例如::
 
    >>> class MyError(Exception):
    ...     def __init__(self, value):
@@ -321,12 +361,22 @@ In this example, the default :meth:`__init__` of :class:`Exception` has been
 overridden.  The new behavior simply creates the *value* attribute.  This
 replaces the default behavior of creating the *args* attribute.
 
+在这个例子中, :class:`Exception` 的默认方法 :meth:`__init__` 被覆写了.
+现在新的行为就是创建 *value* 这个属性. 这就替换了原来默认的 *args* 属性.
+
 Exception classes can be defined which do anything any other class can do, but
 are usually kept simple, often only offering a number of attributes that allow
 information about the error to be extracted by handlers for the exception.  When
 creating a module that can raise several distinct errors, a common practice is
 to create a base class for exceptions defined by that module, and subclass that
-to create specific exception classes for different error conditions::
+to create specific exception classes for different error conditions:
+
+异常类可以像其他的类一样做任何的事, 但是常常会保持简单性, 
+仅仅提供一些可以被 handler 处理的异常信息.
+当创建一个模块时, 可能会有多种不同的异常, 一种常用的做法就是,
+创建一个基类, 然后派生出各种不同的异常:
+
+::
 
    class Error(Exception):
        """Base class for exceptions in this module."""
@@ -362,9 +412,14 @@ to create specific exception classes for different error conditions::
 Most exceptions are defined with names that end in "Error," similar to the
 naming of the standard exceptions.
 
+大多数异常定义时都会以 "Error" 结尾, 就像标准异常的命名.
+
 Many standard modules define their own exceptions to report errors that may
 occur in functions they define.  More information on classes is presented in
 chapter :ref:`tut-classes`.
+
+大多数标准模块都定义了它们自己的异常, 用于报告在它们定义的函数中发生的错误.
+关于更多类的信息请参考 :ref:`tut-classes`.
 
 
 .. _tut-cleanup:
@@ -374,7 +429,12 @@ Defining Clean-up Actions
 
 The :keyword:`try` statement has another optional clause which is intended to
 define clean-up actions that must be executed under all circumstances.  For
-example::
+example:
+
+:keyword:`try` 语句有另一种可选的从句, 用于定义一些扫尾的工作,
+此处定义的语句在任何情况下都会被执行. 例如:
+
+::
 
    >>> try:
    ...     raise KeyboardInterrupt
@@ -394,7 +454,17 @@ occurred in the :keyword:`try` clause and has not been handled by an
 been executed.  The :keyword:`finally` clause is also executed "on the way out"
 when any other clause of the :keyword:`try` statement is left via a
 :keyword:`break`, :keyword:`continue` or :keyword:`return` statement.  A more
-complicated example::
+complicated example:
+
+一个 finally 语句总是在离开 :keyword:`try` 语句前被执行, 而无论此处有无异常发生.
+当一个异常在 :keyword:`try` 中产生, 但是并没有被 :keyword:`except` 处理
+(或者它发生在 :keyword:`except` 或 :keyword:`else` 语句中),
+那么在 :keyword:`finally` 语句执行后会被重新抛出.
+:keyword:`finally` 语句在其他语句要退出 :keyword:`try` 时也会被执行,
+像是使用 :keyword:`break`, :keyword:`continue` 或者 :keyword:`return`.
+一个更复杂的例子:
+
+::
 
    >>> def divide(x, y):
    ...     try:
@@ -424,9 +494,16 @@ As you can see, the :keyword:`finally` clause is executed in any event.  The
 :keyword:`except` clause and therefore re-raised after the :keyword:`finally`
 clause has been executed.
 
+正如你所看到的, :keyword:`finally` 语句在任何情况下都被执行了.
+由于将两个字符串相除而产生的 :exc:`TypeError` 并没有被 :keyword:`except`
+语句处理, 因此在执行 :keyword:`finally` 后被重新抛出.
+
 In real world applications, the :keyword:`finally` clause is useful for
 releasing external resources (such as files or network connections), regardless
 of whether the use of the resource was successful.
+
+在真正的应用中, :keyword:`finally` 是非常有用的, 特别是释放额外的资源
+(想文件或网络连接), 无论此资源是否成功使用.
 
 
 .. _tut-cleanup-with:
@@ -437,7 +514,12 @@ Predefined Clean-up Actions
 Some objects define standard clean-up actions to be undertaken when the object
 is no longer needed, regardless of whether or not the operation using the object
 succeeded or failed. Look at the following example, which tries to open a file
-and print its contents to the screen. ::
+and print its contents to the screen. 
+
+有些对象定义了标准的清理工作, 特别是对象不再需要时, 
+无论对其使用的操作是否成功. 看看下面的例子, 它尝试打开一个文件并输出内容至屏幕.
+
+::
 
    for line in open("myfile.txt"):
        print(line)
@@ -446,7 +528,13 @@ The problem with this code is that it leaves the file open for an indeterminate
 amount of time after this part of the code has finished executing.
 This is not an issue in simple scripts, but can be a problem for larger
 applications. The :keyword:`with` statement allows objects like files to be
-used in a way that ensures they are always cleaned up promptly and correctly. ::
+used in a way that ensures they are always cleaned up promptly and correctly. 
+
+前面这段代码的问题在于, 在此代码成功执行后, 文件依然被打开着.
+在简单的脚本中这可能不是什么问题, 但是对于更大的应用来说却是个问题.
+:keyword:`with` 语句就允许像文件这样的对象在使用后会被正常的清理掉.
+
+::
 
    with open("myfile.txt") as f:
        for line in f:
@@ -456,4 +544,7 @@ After the statement is executed, the file *f* is always closed, even if a
 problem was encountered while processing the lines. Objects which, like files,
 provide predefined clean-up actions will indicate this in their documentation.
 
+
+在执行该语句后, 文件 *f* 就会被关闭, 就算是在读取时碰到了问题.
+像文件这样的对象, 总会提供预定义的清理工作, 更多的可以参考它们的文档.
 
