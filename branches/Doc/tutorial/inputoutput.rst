@@ -1,12 +1,15 @@
 .. _tut-io:
 
-*************************
-Input and Output 输入和输出
-*************************
+*****************
+Input and Output  
+*****************
 
 There are several ways to present the output of a program; data can be printed
 in a human-readable form, or written to a file for future use. This chapter will
 discuss some of the possibilities.
+
+有多种方式可以展现一个程序的输出; 数据可以以一种可读的形式输出,
+或者是保存于一个文件便于以后使用. 本章就将讨论几种可能.
 
 
 .. _tut-formatting:
