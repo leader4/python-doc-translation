@@ -486,7 +486,11 @@ the number of characters written.
    15
 
 To write something other than a string, it needs to be converted to a string
-first::
+first:
+
+如果要写入一些不是字符串的东西, 那么将需要先进行转换:
+
+::
 
    >>> value = ('the answer', 42)
    >>> s = str(value)
@@ -500,7 +504,14 @@ from adding *offset* to a reference point; the reference point is selected by
 the *from_what* argument.  A *from_what* value of 0 measures from the beginning
 of the file, 1 uses the current file position, and 2 uses the end of the file as
 the reference point.  *from_what* can be omitted and defaults to 0, using the
-beginning of the file as the reference point. ::
+beginning of the file as the reference point. 
+
+``f.tell()`` 返回文件对象当前所处的位置, 它是从文件开头开始算起的字节数.
+要改变文件当前的位置, 使用 ``f.seek(offset, from_what)``.
+这个位置是通过将当前位置加上 *offset* 所得. *from_what* 的值, 如果是 0 表示开头,
+如果是 1 表示当前位置, 2 表示文件的结尾. *from_what* 的默认为 0, 即从开头开始.
+
+::
 
    >>> f = open('/tmp/workfile', 'rb+')
    >>> f.write(b'0123456789abcdef')
@@ -518,9 +529,17 @@ In text files (those opened without a ``b`` in the mode string), only seeks
 relative to the beginning of the file are allowed (the exception being seeking
 to the very file end with ``seek(0, 2)``).
 
+在文本文件中 (那些打开文件的模式下没有 ``b`` 的), 只会相对于文件起始位置进行定位,
+(如果要定文件的最后面, 要用 ``seek(0, 2)`` ).
+
 When you're done with a file, call ``f.close()`` to close it and free up any
 system resources taken up by the open file.  After calling ``f.close()``,
-attempts to use the file object will automatically fail. ::
+attempts to use the file object will automatically fail. 
+
+当你处理完一个文件后, 调用 ``f.close()`` 会关闭它, 并释放系统的资源.
+在调用完 ``f.close()`` 之后, 尝试使用那个文件对象是会失败的.
+
+::
 
    >>> f.close()
    >>> f.read()
@@ -531,7 +550,13 @@ attempts to use the file object will automatically fail. ::
 It is good practice to use the :keyword:`with` keyword when dealing with file
 objects.  This has the advantage that the file is properly closed after its
 suite finishes, even if an exception is raised on the way.  It is also much
-shorter than writing equivalent :keyword:`try`\ -\ :keyword:`finally` blocks::
+shorter than writing equivalent :keyword:`try`\ -\ :keyword:`finally` blocks:
+
+当处理一个文件对象时, 使用 :keyword:`with` 关键字是非常好的方式.
+在结束后, 它会帮你正确的关闭文件, 即使发生了异常. 而且写起来也比 
+:keyword:`try` - :keyword:`finally` 语句块要简短:
+
+::
 
     >>> with open('/tmp/workfile', 'r') as f:
     ...     read_data = f.read()
@@ -541,6 +566,9 @@ shorter than writing equivalent :keyword:`try`\ -\ :keyword:`finally` blocks::
 File objects have some additional methods, such as :meth:`~file.isatty` and
 :meth:`~file.truncate` which are less frequently used; consult the Library
 Reference for a complete guide to file objects.
+
+文件对象有些额外的方法, 如 :meth:`~file.isatty` 和 :meth:`~file.trucate`,
+但它们都较少的使用; 更多的信息需要参考标准库手册.
 
 
 .. _tut-pickle:
@@ -557,6 +585,11 @@ and returns its numeric value 123.  However, when you want to save more complex
 data types like lists, dictionaries, or class instances, things get a lot more
 complicated.
 
+在文件中, 字符串可以很方便的读取写入. 数字可能稍微麻烦一些,
+因为 :meth:`read` 方法只返回字符串, 我们还需要将其传给 :func:`int` 这样的函数,
+使其将如 ``'123'`` 的字符串转为数字 123. 但是, 如果要保存更复杂的数据类型,
+如列表, 字典, 或者类的实例, 那么就会更复杂了.
+
 Rather than have users be constantly writing and debugging code to save
 complicated data types, Python provides a standard module called :mod:`pickle`.
 This is an amazing module that can take almost any Python object (even some
@@ -566,13 +599,28 @@ representation is called :dfn:`unpickling`.  Between pickling and unpickling,
 the string representing the object may have been stored in a file or data, or
 sent over a network connection to some distant machine.
 
+为了让用户在时常的编程和测试时保存复杂的数据类型, Python 提供了标准模块,
+称为 :mod:`pickle`. 这个模块可以将几乎任何的 Python 对象 (甚至是 Python 的代码),
+转换为字符串表示; 这个过程称为 :dfn:`pickling`. 而要从里面重新构造回原来的对象, 
+则称为 :dfn:`unpickling`. 在 pickling 和 unpickling 之间,
+表示这些对象的字符串表示, 可以存于一个文件, 也可以通过网络在远程机器间传输.
+
 If you have an object ``x``, and a file object ``f`` that's been opened for
-writing, the simplest way to pickle the object takes only one line of code::
+writing, the simplest way to pickle the object takes only one line of code:
+
+如果你有一个对象 ``x``, 和一个已经打开并用于写的文件对象 ``f``,
+pickle 这个对象最简单的方式就是使用:
+
+::
 
    pickle.dump(x, f)
 
 To unpickle the object again, if ``f`` is a file object which has been opened
-for reading::
+for reading:
+
+为了 uppickle 这个对象, 并且如果 ``f`` 以读取的形式打开:
+
+::
 
    x = pickle.load(f)
 
@@ -580,10 +628,18 @@ for reading::
 don't want to write the pickled data to a file; consult the complete
 documentation for :mod:`pickle` in the Python Library Reference.)
 
+(还有其他不同的形式, 比如 pickling 很多对象, 或这不想保存至文件;
+更多的信息参考 :mod:`pickle` 模块.)
+
 :mod:`pickle` is the standard way to make Python objects which can be stored and
 reused by other programs or by a future invocation of the same program; the
 technical term for this is a :dfn:`persistent` object.  Because :mod:`pickle` is
 so widely used, many authors who write Python extensions take care to ensure
 that new data types such as matrices can be properly pickled and unpickled.
+
+:mod:`pickle` 是 Python 中保存及重用对象的标准方式;
+标准的属于称为 :dfn:`persistent` 对象 (即持久化对象).
+因为 :mod:`pickle` 被广泛使用, 很多写 Python 扩展的作者都会确保,
+如矩阵这样的数据类型能被合理的 pickle 和 unpickle.
 
 
