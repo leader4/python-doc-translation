@@ -663,7 +663,12 @@ Odds and Ends
 
 Sometimes it is useful to have a data type similar to the Pascal "record" or C
 "struct", bundling together a few named data items.  An empty class definition
-will do nicely::
+will do nicely:
+
+有些时候, 有类似于 Pascal 的 "record" 或 C 的 "struct" 这样的数据类型非常有用,
+绑定一些命名的数据. 一个空的类定义就将很好:
+
+::
 
    class Employee:
        pass
@@ -681,6 +686,22 @@ instance, if you have a function that formats some data from a file object, you
 can define a class with methods :meth:`read` and :meth:`readline` that get the
 data from a string buffer instead, and pass it as an argument.
 
+一段 Python 代码中如果希望一个抽象的数据类型, 那么可以通过传递一个类给那个方法,
+就好像有了那个数据类型一样. 
+(译者注: 我难以理解此话应该如何翻译. 但我的想法, 这应该就如多态一样, 如:
+
+::
+
+    def handle(dt):
+        dt.i += 1
+
+在此处, 我们不需要知道 dt 具体是什么类型, 但是只要知道它有一个属性叫 i 就可以了.
+这正是 Python 动态绑定的强大之处. 如果大家看到, 请给出好的意见.
+)
+例如, 如果你有一个函数用于格式化某些从文件对象中读取的数据,
+你可以定义一个类, 然后有方法 :meth:`read` 和 :meth:`readline`
+用于读取数据, 然后将这个类作为一个参数传递给那个函数.
+
 .. (Unfortunately, this technique has its limitations: a class can't define
    operations that are accessed by special syntax such as sequence subscripting
    or arithmetic operators, and assigning such a "pseudo-file" to sys.stdin will
@@ -689,6 +710,9 @@ data from a string buffer instead, and pass it as an argument.
 Instance method objects have attributes, too: ``m.__self__`` is the instance
 object with the method :meth:`m`, and ``m.__func__`` is the function object
 corresponding to the method.
+
+实例方法对象也有属性: ``m.__self__`` 就是一个方法 :meth:`m` 的实例对象,
+而 ``m.__func__`` 是相应于该方法的函数对象.
 
 
 .. _tut-exceptionclasses:
@@ -699,21 +723,38 @@ Exceptions Are Classes Too
 User-defined exceptions are identified by classes as well.  Using this mechanism
 it is possible to create extensible hierarchies of exceptions.
 
-There are two new valid (semantic) forms for the :keyword:`raise` statement::
+用户定义的异常其实也是类. 使用这个机制, 就可以创建可扩展的异常继承体系.
+
+There are two new valid (semantic) forms for the :keyword:`raise` statement:
+
+有两种合法的形式用于 :keyword:`raise` 语句:
+
+::
 
    raise Class
 
    raise Instance
 
 In the first form, ``Class`` must be an instance of :class:`type` or of a
-class derived from it.  The first form is a shorthand for::
+class derived from it.  The first form is a shorthand for:
+
+在第一种形式下, ``Class`` 必须是 :class:`type` 的实例或者其派生.
+第一种形式可以简化为这样这样:
+
+::
 
    raise Class()
 
 A class in an :keyword:`except` clause is compatible with an exception if it is
 the same class or a base class thereof (but not the other way around --- an
 except clause listing a derived class is not compatible with a base class).  For
-example, the following code will print B, C, D in that order::
+example, the following code will print B, C, D in that order:
+
+一个在 :keyword:`except` 中的类, 可以与一个异常相容, 如果该异常是同样的类,
+或是它的基类 (但是并不是另一种 -- 一个 except 语句列出的派生类与其基类并不相容).
+如下面的代码, 以那种顺序打印出 B, C, D:
+
+::
 
    class B(Exception):
        pass
@@ -735,9 +776,15 @@ example, the following code will print B, C, D in that order::
 Note that if the except clauses were reversed (with ``except B`` first), it
 would have printed B, B, B --- the first matching except clause is triggered.
 
+但是注意, 如果 except 语句是反着的 (先用 ``except B``),
+那么打印的结果将是 B, B, B -- 第一个总是匹配.
+
 When an error message is printed for an unhandled exception, the exception's
 class name is printed, then a colon and a space, and finally the instance
 converted to a string using the built-in function :func:`str`.
+
+当因为一个未处理的异常发生时, 错误信息将被打印, 异常的类名将被打印,
+然后是一个冒号和空格, 最后是使用 :func:`str` 转换后的实例.
 
 
 .. _tut-iterators:
