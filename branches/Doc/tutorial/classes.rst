@@ -746,7 +746,11 @@ Iterators
 =========
 
 By now you have probably noticed that most container objects can be looped over
-using a :keyword:`for` statement::
+using a :keyword:`for` statement:
+
+到目前为止, 你可能注意到, 大多数的容器对象都可以使用 :keyword:`for` 来迭代:
+
+::
 
    for element in [1, 2, 3]:
        print(element)
@@ -766,7 +770,17 @@ object that defines the method :meth:`__next__` which accesses elements in the
 container one at a time.  When there are no more elements, :meth:`__next__`
 raises a :exc:`StopIteration` exception which tells the :keyword:`for` loop to
 terminate.  You can call the :meth:`__next__` method using the :func:`next`
-built-in function; this example shows how it all works::
+built-in function; this example shows how it all works:
+
+这种形式简洁, 明了并且方便. 迭代器的使用遍布于 Python 之中.
+在这个外表之下, :keyword:`for` 语句对容器对象调用了 :func:`iter`.
+这个函数返回一个迭代器对象, 它定义了 :meth:`__next__` 方法, 
+用以在每次访问时得到一个元素. 当没有任何元素时, :meth:`__next__`
+将产生 :exc:`StopIteration` 异常, 它告诉 :keyword:`for` 停止迭代.
+你可以使用内置函数 :func:`next` 来调用 :meth:`__next__` 方法;
+这个例子展示了它如何工作:
+
+::
 
    >>> s = 'abc'
    >>> it = iter(s)
@@ -788,7 +802,13 @@ built-in function; this example shows how it all works::
 Having seen the mechanics behind the iterator protocol, it is easy to add
 iterator behavior to your classes.  Define an :meth:`__iter__` method which
 returns an object with a :meth:`__next__` method.  If the class defines
-:meth:`__next__`, then :meth:`__iter__` can just return ``self``::
+:meth:`__next__`, then :meth:`__iter__` can just return ``self``:
+
+在看到迭代器的机制之后, 就可以很简单的将迭代行为增加到你的类中.
+定义一个 :meth:`__iter__` 方法用以返回一个具有 :meth:`__next__` 的对象.
+如果这个类定义了 :meth:`__next__` , 那么 :meth:`__iter__` 仅需要返回 ``self``:
+
+::
 
    class Reverse:
        "Iterator for looping over a sequence backwards"
@@ -825,7 +845,14 @@ are written like regular functions but use the :keyword:`yield` statement
 whenever they want to return data.  Each time :func:`next` is called on it, the
 generator resumes where it left-off (it remembers all the data values and which
 statement was last executed).  An example shows that generators can be trivially
-easy to create::
+easy to create:
+
+:term:`Generator` (生成器) 是一个用于创建迭代器简单而且强大的工具.
+它们和普通的函数很像, 但是当它们需要返回值时, 则使用 :keyword:`yield` 语句.
+每次 :func:`next` 被调用时, 生成器会从它上次离开的地方继续执行 (
+它会记住所有的数据值和最后一次执行的语句). 一个例子用以展示如何创建生成器:
+
+::
 
    def reverse(data):
        for index in range(len(data)-1, -1, -1):
@@ -844,15 +871,25 @@ iterators as described in the previous section.  What makes generators so
 compact is that the :meth:`__iter__` and :meth:`__next__` methods are created
 automatically.
 
+任何可用生成器实现的东西都能用基于迭代器的类实现, 这个在前面有所描述.
+让生成器看起来很紧密的原因是它自动创建了 :meth:`__iter` 和 :meth:`__next__`.
+
 Another key feature is that the local variables and execution state are
 automatically saved between calls.  This made the function easier to write and
 much more clear than an approach using instance variables like ``self.index``
 and ``self.data``.
 
+另一个关键的特性在于, 局部变量和执行状态都被自动保存下来.
+这就使函数更容易编写并且更加清晰, 相对于使用实例的变量, 如 ``self.index``
+和 ``self.data``.
+
 In addition to automatic method creation and saving program state, when
 generators terminate, they automatically raise :exc:`StopIteration`. In
 combination, these features make it easy to create iterators with no more effort
 than writing a regular function.
+
+除了自动创建方法和保存程序状态, 当生成器终止时, 它们会自动产生 :exc:`StopIteration`
+异常. 在这些结合起来后, 这就使得能够很简单的创建迭代器, 除了仅需要编写一个函数.
 
 
 .. _tut-genexps:
@@ -867,7 +904,11 @@ by an enclosing function.  Generator expressions are more compact but less
 versatile than full generator definitions and tend to be more memory friendly
 than equivalent list comprehensions.
 
-Examples::
+有些简单的生成器可以简洁的写出来, 而且和列表推导很类似, 仅仅是将方括号换成了圆括号.
+这些表达式设计用于在一个函数中正好可以用生成器的情况. 生成器表达式更加紧密,
+但是功能相对来说也少点, 并且与同样的列表推导式来说更节约内存.
+
+Examples 例子::
 
    >>> sum(i*i for i in range(10))                 # sum of squares
    285
