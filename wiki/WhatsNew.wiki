@@ -5,12 +5,25 @@
 
 欢迎查看最近更新, 在在这里, 您可以看到我们项目最新的进展.
 
+= August 2011 =
+
+=== 完成翻译一些文件 ===
+
+包括:
+
+  * /tutorial/whatnow.rst
+  * /tutorial/inputoutput.rst
+  * /tutorial/interactive.rst
+  * /tutorial/errors.rst
+  * /tutorial/floatingpoint.rst
+
 = July 2011 =
 
 === 完成翻译一些文件 ===
 
 包括:
 
+  * /tutorial/stdlib2.rst
   * /tutorial/stdlib.rst
 
 = June 2011 =
