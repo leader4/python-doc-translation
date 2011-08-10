@@ -27,7 +27,8 @@ script executed at the top level and in calculator mode).
 
 为了支持这点, Python 提供了一个方法, 能使得用户把定义放在一个文件里,
 而能够在一个脚本或一个交互式环境下使用它们. 这样的文件把称为*模块*;
-一个模块中的定义可以*被引入*到另一个模块或*主*模块 (
+一个模块中的定义可以*被引入*到另一个模块或*主*模块 (在脚本中,
+你有权限访问的变量在最高级别且以计算器模式执行).
 
 A module is a file containing Python definitions and statements.  The file name
 is the module name with the suffix :file:`.py` appended.  Within a module, the
@@ -128,7 +129,7 @@ These statements are intended to initialize the module. They are executed only
 the *first* time the module is imported somewhere. [#]_
 
 模块不仅包含函数定义, 还可以包含可执行的语句. 这些语句用来初始化模块.
-它只在模块在某个地方*第一*次被引入时被执行.
+它只在模块在某个地方*第一*次被引入时被执行. [#]_
 
 Each module has its own private symbol table, which is used as the global symbol
 table by all functions defined in the module. Thus, the author of a module can
@@ -139,7 +140,8 @@ refer to its functions, ``modname.itemname``.
 
 每个模块有它自己私有的符号表, 它被模块所定义的函数当成全局符号表来使用.
 因此, 模块的作者可以在模块中使用全局变量而无需担心与用户的全局变量发生意外的冲突.
-另一方面, 当你了解你在做什么的时候, 
+另一方面, 当你了解你在做什么的时候,  你可以访问模块的全局变量,
+通过访问它的函数一样的方法, ``modmame.itemname``.
 
 Modules can import other modules.  It is customary but not required to place all
 :keyword:`import` statements at the beginning of a module (or script, for that
@@ -174,7 +176,7 @@ There is even a variant to import all names that a module defines::
    >>> fib(500)
    1 1 2 3 5 8 13 21 34 55 89 144 233 377
 
-还有一种方法可以引入一个模块中定义的所有名字.
+还有一种方法可以引入一个模块中定义的所有名字::
 
    >>> from fibo import *
    >>> fib(500)
@@ -860,7 +862,10 @@ packages.  For example, if the module :mod:`sound.filters.vocoder` needs to use
 the :mod:`echo` module in the :mod:`sound.effects` package, it can use ``from
 sound.effects import echo``.
 
-当包被构造到子包时 (如例子中的 :mod:`sound` 包), 你可以独立地
+当包被构造到子包时 (如例子中的 :mod:`sound` 包), 
+你可以独立地引入来获取兄弟包的子模块的引用. 例如, 如果模块 :mod:`sound.filters.vocoder`
+需要使用 :mod:`sound.effects` 包下的 :mod:`echo` 模块, 就可以使用
+``from sound.effects import echo``.
 
 You can also write relative imports, with the ``from module import name`` form
 of import statement.  These imports use leading dots to indicate the current and
@@ -875,8 +880,16 @@ Note that relative imports are based on the name of the current module.  Since
 the name of the main module is always ``"__main__"``, modules intended for use
 as the main module of a Python application must always use absolute imports.
 
+你还可以使用相对引入, 通过 import 语句的 ``from module import name`` 格式.
+这些引入使用句点来表明涉及这次相对引入的当前包和父包. 从例子中的
+:mod:``surround`, 您可以使用::
 
+   from . import echo
+   from .. import formats
+   from ..filters import equalizer
 
+注意, 相对引入基于当前模块的名字. 因为主模块的名字总是 ``"__main__"``,
+有意用作一个 Python 程序的主模块的模块必须总使用相对引入.
 
 
 Packages in Multiple Directories 多目录的包
@@ -888,7 +901,9 @@ package's :file:`__init__.py` before the code in that file is executed.  This
 variable can be modified; doing so affects future searches for modules and
 subpackages contained in the package.
 
-包支持额外一个特殊的属性, :attr:`__path__`. 它被初始化为一个列表, 包含
+包支持额外一个特殊的属性, :attr:`__path__`. 它在文件中的代码执行之前,
+被初始化为一个列表, 它包含保存在这个包的 :file:`__init__.py` 文件中目录名.
+这个变量可以被更改; 这样做会影响以后对包中模块和子包的搜索.
 
 While this feature is not often needed, it can be used to extend the set of
 modules found in a package.
