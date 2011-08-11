@@ -449,6 +449,12 @@ conflicts.  Possible conventions include capitalizing method names, prefixing
 data attribute names with a small unique string (perhaps just an underscore), or
 using verbs for methods and nouns for data attributes.
 
+数据属性覆写了同名的方法属性; 为了避免这个偶然的名字冲突,
+在大型的程序中这会导致很难寻找的 bug, 使用某些命名约定是非常明智的,
+这样可以最小的避免冲突. 可能的约定包括大写方法名称, 
+在数据类型前增加特殊的前缀 (或者就是一个下划线),
+或对于方法使用动词, 而数据成员则使用名词.
+
 Data attributes may be referenced by methods as well as by ordinary users
 ("clients") of an object.  In other words, classes are not usable to implement
 pure abstract data types.  In fact, nothing in Python makes it possible to
@@ -457,16 +463,32 @@ the Python implementation, written in C, can completely hide implementation
 details and control access to an object if necessary; this can be used by
 extensions to Python written in C.)
 
+数据属性可以被该类的方法或者普通的用户 ("客户") 引用.
+换句话说, 类是不能实现完全的抽象数据类型.
+事实上, 在 Python 中没有任何东西是强制隐藏的 --- 这完全是基于约定.
+(在另一方面, Python 是用 C 实现的, 这样就可以实现细节的隐藏和控制访问;
+这可以通过编写 Python 的扩展实现.)
+
 Clients should use data attributes with care --- clients may mess up invariants
 maintained by the methods by stamping on their data attributes.  Note that
 clients may add data attributes of their own to an instance object without
 affecting the validity of the methods, as long as name conflicts are avoided ---
 again, a naming convention can save a lot of headaches here.
 
+客户需要小心地使用数据属性 --- 客户会弄乱被方法控制的不变量, 
+通过使用它们自己的方法属性. 注意用户可以增加它们自己的数据到实例对象上,
+而没有检查有没有影响方法的有效性, 只要避免名字冲突 --
+在说一次, 命名约定可以避免很多这样令人头疼的问题.
+
 There is no shorthand for referencing data attributes (or other methods!) from
 within methods.  I find that this actually increases the readability of methods:
 there is no chance of confusing local variables and instance variables when
 glancing through a method.
+
+在引用数据属性 (或其他方法 !) 并没有快速的方法.
+我发现这的确增加了方法的可读性: 这样就不会被局部变量和实例中的变量所困惑,
+特别是在随便看看一个方法时.
+
 
 Often, the first argument of a method is called ``self``.  This is nothing more
 than a convention: the name ``self`` has absolutely no special meaning to
@@ -474,10 +496,20 @@ Python.  Note, however, that by not following the convention your code may be
 less readable to other Python programmers, and it is also conceivable that a
 *class browser* program might be written that relies upon such a convention.
 
+通常, 方法的第一个参数称为 ``self``. 这更多的只是约定:
+``self`` 对于 Python 来说没有任何意义. 但注意, 如果不遵循这个约定,
+对于其他的程序员来说就比较难以理解了, 一个 *class browser* 程序可能会依赖此约定.
+
 Any function object that is a class attribute defines a method for instances of
 that class.  It is not necessary that the function definition is textually
 enclosed in the class definition: assigning a function object to a local
-variable in the class is also ok.  For example::
+variable in the class is also ok.  For example:
+
+作为类属性的任何函数对象, 定义了一个方法用于那个类的实例.
+函数是否在一个类体中其实并不重要: 指定一个函数对象给类中的局部变量也是可以的.
+例如:
+
+::
 
    # Function defined outside the class
    def f1(self, x, y):
@@ -494,8 +526,16 @@ function objects, and consequently they are all methods of instances of
 :class:`C` --- ``h`` being exactly equivalent to ``g``.  Note that this practice
 usually only serves to confuse the reader of a program.
 
+现在 ``f``, ``g`` 和 ``h`` 都是类 :class:`C` 的属性, 并且指向函数对象,
+而且都是类 :class:`C` 实例的方法 --- ``h`` 和 ``g`` 是等价的.
+注意这个只会是读者感到困惑.
+
 Methods may call other methods by using method attributes of the ``self``
-argument::
+argument:
+
+方法可以通过使用 ``self`` 参数调用其他的方法:
+
+::
 
    class Bag:
        def __init__(self):
@@ -516,8 +556,18 @@ classes defined in it.  Usually, the class containing the method is itself
 defined in this global scope, and in the next section we'll find some good
 reasons why a method would want to reference its own class.
 
+方法可以引用全局变量, 就像普通函数中那样. 与这个方法相关的全局作用域,
+是包含那个类定义的模块. (类本身永远不会作为全局作用域使用.)
+如果的确需要在方法中使用全局数据, 那么需要合法的使用:
+首先一件事, 被导入全局作用域的函数和模块可以被方法使用,
+就如定义在里面的函数和类一样. 通常来说, 定义在全局作用域中, 包含方法的类是它自己本身,
+并且在后面我们会知道为何方法应该引用自己的类.
+
 Each value is an object, and therefore has a *class* (also called its *type*).
 It is stored as ``object.__class__``.
+
+每个值都是一个对象, 所以对于 *class* (或称为它的 *type*) 也是这样.
+它存于 ``object.__class__``.
 
 
 .. _tut-inheritance:
@@ -527,7 +577,12 @@ Inheritance
 
 Of course, a language feature would not be worthy of the name "class" without
 supporting inheritance.  The syntax for a derived class definition looks like
-this::
+this:
+
+当然, 一个有 "class" 的语言如果没有继承就没有多大的价值了.
+派生类的定义如下:
+
+::
 
    class DerivedClassName(BaseClassName):
        <statement-1>
@@ -539,7 +594,13 @@ this::
 The name :class:`BaseClassName` must be defined in a scope containing the
 derived class definition.  In place of a base class name, other arbitrary
 expressions are also allowed.  This can be useful, for example, when the base
-class is defined in another module::
+class is defined in another module:
+
+:class:`BaseClassName` 的定义对于派生类而言必须是可见的.
+在基类的地方, 任意的表达式都是允许的. 这就会非常有用, 
+比如基类定义在另一个模块:
+
+::
 
    class DerivedClassName(modname.BaseClassName):
 
@@ -549,17 +610,29 @@ used for resolving attribute references: if a requested attribute is not found
 in the class, the search proceeds to look in the base class.  This rule is
 applied recursively if the base class itself is derived from some other class.
 
+派生类就可以像基类一样使用. 当一个类被构建, 那么它就会记下基类.
+这是用于解决属性引用的问题:  当一个属性在这个类中没有被找到,
+那么就会去基类中寻找. 然后搜索就会递归, 因为如果基类本身也是从其他的派生.
+
 There's nothing special about instantiation of derived classes:
 ``DerivedClassName()`` creates a new instance of the class.  Method references
 are resolved as follows: the corresponding class attribute is searched,
 descending down the chain of base classes if necessary, and the method reference
 is valid if this yields a function object.
 
+实例化一个派生类没有什么特别: ``DerivedClassName()`` 会创建这个类的新实例.
+方法的引用如下: 相应的类的属性会被搜寻, 如果需要回去搜寻基类,
+如果返回一个函数对象, 那么这个引用就是合法的.
+
 Derived classes may override methods of their base classes.  Because methods
 have no special privileges when calling other methods of the same object, a
 method of a base class that calls another method defined in the same base class
 may end up calling a method of a derived class that overrides it.  (For C++
 programmers: all methods in Python are effectively ``virtual``.)
+
+派生类会覆写基类的方法. 因为当调用同样的对象的其他方法时方法并没有什么特别的,
+基类的方法会因为先调用派生类的方法而被覆写.
+(对于 C++ 程序员: 所有的方法在 Python 中都是 ``vitual`` 的.)
 
 An overriding method in a derived class may in fact want to extend rather than
 simply replace the base class method of the same name. There is a simple way to
@@ -568,16 +641,30 @@ arguments)``.  This is occasionally useful to clients as well.  (Note that this
 only works if the base class is accessible as ``BaseClassName`` in the global
 scope.)
 
+一个在派生类中覆写的方法可能需要基类的方法.
+最简单的方式就是直接调用基类的方法: 调用 ``BaseClassName.methodname(self, arguments)``.
+这对于可续来说也是很方便的. (这仅在 ``BaseClassName`` 可访问时才有效.)
+
 Python has two built-in functions that work with inheritance:
+
+Python 有两个内置函数用于继承:
 
 * Use :func:`isinstance` to check an instance's type: ``isinstance(obj, int)``
   will be ``True`` only if ``obj.__class__`` is :class:`int` or some class
   derived from :class:`int`.
 
+  使用 :func:`isinstance` 检查实例的类型: ``isinstance(obj, int)``
+  只有在 ``obj.__class__`` 是 :class:`int` 或其派生类时才为 ``True``.
+
 * Use :func:`issubclass` to check class inheritance: ``issubclass(bool, int)``
   is ``True`` since :class:`bool` is a subclass of :class:`int`.  However,
   ``issubclass(float, int)`` is ``False`` since :class:`float` is not a
   subclass of :class:`int`.
+
+  使用 :func:`issubclass` 用于检查类的继承关系: ``issubclass(bool, int)``
+  会返回 ``True``, 因为 :class:`bool` 是 :class:`int` 的派生类.
+  但是, ``issubclass(float, int)`` 会是 ``False`` 因为 :class:`float`
+  并不是 :class:`int` 的派生类.
 
 
 
@@ -587,7 +674,11 @@ Multiple Inheritance
 --------------------
 
 Python supports a form of multiple inheritance as well.  A class definition with
-multiple base classes looks like this::
+multiple base classes looks like this:
+
+Python 支持多重继承. 一个多重继承的类定义看起来像这样:
+
+::
 
    class DerivedClassName(Base1, Base2, Base3):
        <statement-1>
@@ -603,11 +694,21 @@ Thus, if an attribute is not found in :class:`DerivedClassName`, it is searched
 for in :class:`Base1`, then (recursively) in the base classes of :class:`Base1`,
 and if it was not found there, it was searched for in :class:`Base2`, and so on.
 
+对于大多数目的, 在最简单的情况下, 你可以将属性搜寻的方式是,
+从下至上, 从左到右, 在继承体系中, 同样的类只会被搜寻一次.
+如果一个属性在 :class:`DerivedClassName` 中没有被找到,
+它就会搜寻 `Base1`, 然后 (递归地) 搜寻 :class:`Base1` 的基类,
+然后如果还是没有找到, 那么就会搜索 :class:`Base2`, 等等.
+
 In fact, it is slightly more complex than that; the method resolution order
 changes dynamically to support cooperative calls to :func:`super`.  This
 approach is known in some other multiple-inheritance languages as
 call-next-method and is more powerful than the super call found in
 single-inheritance languages.
+
+事实上, 这更加的复杂; 方法的搜寻顺序会根据调用 :func:`super` 而变化.
+这个方法在某些其他多重继承的语言中以 call-next-method 被熟知, 
+而且比单继承的语言中要有用.
 
 Dynamic ordering is necessary because all cases of multiple inheritance exhibit
 one or more diamond relationships (where at least one of the parent classes
@@ -622,6 +723,13 @@ Taken together, these properties make it possible to design reliable and
 extensible classes with multiple inheritance.  For more detail, see
 http://www.python.org/download/releases/2.3/mro/.
 
+动态的顺序是很有必要的, 因为在那些处于菱形继承体系中 (这里至少有个父类被多次派生).
+比如, 所有的类都从 :class:`object` 派生, 所以到达 :class:`object` 的路径不止一条.
+为了防止基类被多次访问, 动态的算法线性化了搜寻的路径, 先从左至右搜索指定的类,
+然后这样就可以让每个父类只搜寻一次, 并且单一 (这就意味一个类可以被派生,
+但是不会影响其父类的搜寻路径. 使用了这些, 就使得以多重继承设计的类更可靠和可扩展.
+具体参考http://www.python.org/download/releases/2.3/mro/.
+
 
 .. _tut-private:
 
@@ -635,6 +743,11 @@ be treated as a non-public part of the API (whether it is a function, a method
 or a data member).  It should be considered an implementation detail and subject
 to change without notice.
 
+在 Python 之中, 并不存在那种无法访问的 "私有" 变量.
+但是, 在多数的 Python 代码中有个约定: 以一个下划线带头的名字 (如 ``_spam``)
+应该作为非公共的 API (不管是函数, 方法或者数据成员).
+这应该作为具体的实现, 而且变化它也无须提醒.
+
 Since there is a valid use-case for class-private members (namely to avoid name
 clashes of names with names defined by subclasses), there is limited support for
 such a mechanism, called :dfn:`name mangling`.  Any identifier of the form
@@ -644,9 +757,18 @@ current class name with leading underscore(s) stripped.  This mangling is done
 without regard to the syntactic position of the identifier, as long as it
 occurs within the definition of a class.
 
+因为有一个合法的情况用于使用私有的成员 (名义上是说在派生类中避免名字的冲突),
+因此就有这样的一种机制称为 :dfn:`name mangling`. 任何如 ``__spam`` 形式的标识符,
+(在开头至少有两个下划线) 将被替换为 ``_classname__spam``, 此处的 ``classname``
+就是当前的类. 这样的处理无须关注标识符的句法上的位置,
+尽管它是在一个类的定义中.
+
 Note that the mangling rules are designed mostly to avoid accidents; it still is
 possible to access or modify a variable that is considered private.  This can
 even be useful in special circumstances, such as in the debugger.
+
+注意, 这样的规则只是用于防止冲突; 它仍然可以访问或修改, 尽管认为这是一个私有变量.
+在某些特殊情况下, 如测试等, 是有用的.
 
 Notice that code passed to ``exec()`` or ``eval()`` does not consider the
 classname of the invoking class to be the current class; this is similar to the
@@ -654,6 +776,12 @@ effect of the ``global`` statement, the effect of which is likewise restricted
 to code that is byte-compiled together.  The same restriction applies to
 ``getattr()``, ``setattr()`` and ``delattr()``, as well as when referencing
 ``__dict__`` directly.
+
+注意, 传递给 ``exec()`` 或 ``eval()`` 的代码并不会考虑被调用类的类名是当前的类;
+这个和 ``global`` 语句的效果一样, 字节编译的代码也有同样的限制.
+而对于 ``getattr()``, ``setattr()`` 和 ``delattr()`` 也有这种限制,
+直接访问 ``__dict__`` 也是有这样的问题.
+
 
 
 .. _tut-odds:
