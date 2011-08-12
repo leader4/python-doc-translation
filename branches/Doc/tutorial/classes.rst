@@ -253,13 +253,19 @@ A First Look at Classes
 Classes introduce a little bit of new syntax, three new object types, and some
 new semantics.
 
+类引入了一些新的语法, 三种新的对象类型, 和一些新的语义.
+
 
 .. _tut-classdefinition:
 
 Class Definition Syntax
 -----------------------
 
-The simplest form of class definition looks like this::
+The simplest form of class definition looks like this:
+
+最简单的类的定义形式看起来像这样:
+
+::
 
    class ClassName:
        <statement-1>
@@ -272,16 +278,27 @@ Class definitions, like function definitions (:keyword:`def` statements) must be
 executed before they have any effect.  (You could conceivably place a class
 definition in a branch of an :keyword:`if` statement, or inside a function.)
 
+类的定义, 和函数定义 (:keyword:`def` 语句) 一样必须在使用它们前执行.
+(你可以将一个类定义放置于 :keyword:`if` 语句的分支中, 或一个函数中.)
+
 In practice, the statements inside a class definition will usually be function
 definitions, but other statements are allowed, and sometimes useful --- we'll
 come back to this later.  The function definitions inside a class normally have
 a peculiar form of argument list, dictated by the calling conventions for
 methods --- again, this is explained later.
 
+事实上, 类定义内部的语句一般是函数的定义, 但其他的语句也是允许的,
+而且还很有用 --- 我们在后面将会继续讨论该问题. 
+类内的函数定义一般有一个特殊形式的参数列表, 习惯上称之为方法 --- 同样, 
+也将在后面解释.
+
 When a class definition is entered, a new namespace is created, and used as the
 local scope --- thus, all assignments to local variables go into this new
 namespace.  In particular, function definitions bind the name of the new
 function here.
+
+当进入一个类定义, 新的命名空间就被创建了, 这一般作为局部的作用域 --- 
+因此, 所有的局部变量都在这个新的作用域中. 特别是, 函数定义会绑定.
 
 When a class definition is left normally (via the end), a *class object* is
 created.  This is basically a wrapper around the contents of the namespace
@@ -290,6 +307,11 @@ next section.  The original local scope (the one in effect just before the class
 definition was entered) is reinstated, and the class object is bound here to the
 class name given in the class definition header (:class:`ClassName` in the
 example).
+
+当离开一个类定义后, 一个 *class object* 就被创建. 
+通过类的定义, 就将这个命名空间包装了起来; 我们将在后面学到更多关于类对象的知识.
+原来的局部作用域 (在进入一个类定义前的作用域) 将会复位,
+而类对象就会在这里绑定, 并且命名为类定义时的名字 (在此例中是 :class:`ClassName`).
 
 
 .. _tut-classobjects:
@@ -300,10 +322,18 @@ Class Objects
 Class objects support two kinds of operations: attribute references and
 instantiation.
 
+类对象支持两种操作: 属性引用和实例化.
+
 *Attribute references* use the standard syntax used for all attribute references
 in Python: ``obj.name``.  Valid attribute names are all the names that were in
 the class's namespace when the class object was created.  So, if the class
-definition looked like this::
+definition looked like this:
+
+*属性引用* 使用的语法和 Python 中所有的属性引用一样.
+合法的属性名是那些在类的命名空间中定义的名字.
+所以一个类定义如果是这样:
+
+::
 
    class MyClass:
        """A simple example class"""
@@ -317,32 +347,60 @@ assigned to, so you can change the value of ``MyClass.i`` by assignment.
 :attr:`__doc__` is also a valid attribute, returning the docstring belonging to
 the class: ``"A simple example class"``.
 
+那么, ``MyClass.i`` 和 ``MyClass.f`` 就是合法的属性引用,
+分别返回一个整数和一个函数对象. 类属性也可以被指定, 所以你可以给 ``MyClass.i``
+赋值以改变其数值. :attr:`__doc__` 也是一个合法的属性, 
+返回属于这个类的 docstring : ``"A simple example class"``.
+
 Class *instantiation* uses function notation.  Just pretend that the class
 object is a parameterless function that returns a new instance of the class.
-For example (assuming the above class)::
+For example (assuming the above class):
+
+类的 *实例化* 使用函数的形式. 只要当作一个无参的函数然后返回一个类的实例就可以了.
+比如 (假设有前面的类了):
+
+::
 
    x = MyClass()
 
 creates a new *instance* of the class and assigns this object to the local
 variable ``x``.
 
+创建了一个新的实例, 并且将其指定给局部变量 ``x``.
+
 The instantiation operation ("calling" a class object) creates an empty object.
 Many classes like to create objects with instances customized to a specific
 initial state. Therefore a class may define a special method named
-:meth:`__init__`, like this::
+:meth:`__init__`, like this:
+
+实例化的操作 ("调用" 一个类对象) 创建了空的对象.
+在创建实例时, 很多类可能都需要有特定的初始状态.
+所以一个类可以定义一个特殊的方法, 称为 :meth:`__init__`, 像这样:
+
+::
 
    def __init__(self):
        self.data = []
 
 When a class defines an :meth:`__init__` method, class instantiation
 automatically invokes :meth:`__init__` for the newly-created class instance.  So
-in this example, a new, initialized instance can be obtained by::
+in this example, a new, initialized instance can be obtained by:
+
+当一个类定义了 :meth:`__init__` 方法, 类在实例化时会自动调用 :meth:`__init__`
+方法, 用于创建新的类实例. 所以在这个例子中, 一个新的初始化过的实例被创建:
+
+::
 
    x = MyClass()
 
 Of course, the :meth:`__init__` method may have arguments for greater
 flexibility.  In that case, arguments given to the class instantiation operator
-are passed on to :meth:`__init__`.  For example, ::
+are passed on to :meth:`__init__`.  For example, 
+
+当然, 为了更大的灵活性, 方法 :meth:`__init__` 可以有更多的参数.
+在这种情况下, 给类的参数会传给 :meth:`__init__`. 例如,
+
+::
 
    >>> class Complex:
    ...     def __init__(self, realpart, imagpart):
@@ -363,11 +421,21 @@ Now what can we do with instance objects?  The only operations understood by
 instance objects are attribute references.  There are two kinds of valid
 attribute names, data attributes and methods.
 
+那么我们现在可以对实例对象做什么? 实例对象唯一能理解的操作就是属性引用.
+有两种合法的属性, 数据属性和方法.
+
 *data attributes* correspond to "instance variables" in Smalltalk, and to "data
 members" in C++.  Data attributes need not be declared; like local variables,
 they spring into existence when they are first assigned to.  For example, if
 ``x`` is the instance of :class:`MyClass` created above, the following piece of
-code will print the value ``16``, without leaving a trace::
+code will print the value ``16``, without leaving a trace:
+
+*data attribute* 在 Smalltalk 中相应于 "instance variable",
+在 C++ 中相应于 "data member". 数据属性不需要声明; 像局部变量,
+当它们第一次指定时就会被引入. 比如, 如果 ``x`` 是前面创建的 :class:`MyClass`
+的实例, 那么下面的例子就会打印出 ``16``, 而不会有问题:
+
+::
 
    x.counter = 1
    while x.counter < 10:
@@ -382,6 +450,11 @@ list objects have methods called append, insert, remove, sort, and so on.
 However, in the following discussion, we'll use the term method exclusively to
 mean methods of class instance objects, unless explicitly stated otherwise.)
 
+实例属性引用的另一种是方法. 一个方法就是 "属于" 一个对象的函数.
+(在 Python 中, 方法的概念并不是类实例所特有: 其他对象类型也可以有方法.
+例如, 列表对象有 append, insert, remove, sort, 及等等的方法.
+但是, 在下面的讨论中, 我们指的就是类实例对象的方法, 除非特别指出.)
+
 .. index:: object: method
 
 Valid method names of an instance object depend on its class.  By definition,
@@ -391,19 +464,35 @@ reference, since ``MyClass.f`` is a function, but ``x.i`` is not, since
 ``MyClass.i`` is not.  But ``x.f`` is not the same thing as ``MyClass.f`` --- it
 is a *method object*, not a function object.
 
+合法的方法名依赖于实例的类. 在定义中, 类的属性如果是那些定义的函数对象,
+而这也就是实例的方法. 所以在我们的例子中, ``x.f`` 是一个合法的方法引用,
+因为 ``MyClass.f`` 是一个函数, 但是 ``x.i`` 就不是, 因为 ``MyClass.i`` 就不是.
+但是 ``x.f`` 和 ``MyClass.f`` 并不一样 --- 它是一个 *method object*,
+而不是 *function object*.
+
 
 .. _tut-methodobjects:
 
 Method Objects
 --------------
 
-Usually, a method is called right after it is bound::
+Usually, a method is called right after it is bound:
+
+通常, 一个方法在其绑定后就可以调用了:
+
+::
 
    x.f()
 
 In the :class:`MyClass` example, this will return the string ``'hello world'``.
 However, it is not necessary to call a method right away: ``x.f`` is a method
-object, and can be stored away and called at a later time.  For example::
+object, and can be stored away and called at a later time.  For example:
+
+在 :class:`MyClass` 这个例子中, 这将会返回字符串 ``'hello world'``.
+但是, 像这样的调用并不是必须的: ``x.f`` 是一个方法对象,
+它可以被保存起来以供下次调用. 例如:
+
+::
 
    xf = x.f
    while True:
@@ -411,11 +500,19 @@ object, and can be stored away and called at a later time.  For example::
 
 will continue to print ``hello world`` until the end of time.
 
+将会齿数的打印 ``'hello world'``.
+
 What exactly happens when a method is called?  You may have noticed that
 ``x.f()`` was called without an argument above, even though the function
 definition for :meth:`f` specified an argument.  What happened to the argument?
 Surely Python raises an exception when a function that requires an argument is
 called without any --- even if the argument isn't actually used...
+
+那么在方法调用是发生了什么? 你可能注意到 ``x.f()`` 调用时并没有参数,
+尽管 :meth:`f` 定义时是有一个参数的. 那么这个参数怎么了?
+当然, Python 在一个参数缺少时调用一个函数是会发生异常的 ---
+就算这个参数没有真正用到...
+
 
 Actually, you may have guessed the answer: the special thing about methods is
 that the object is passed as the first argument of the function.  In our
@@ -423,6 +520,11 @@ example, the call ``x.f()`` is exactly equivalent to ``MyClass.f(x)``.  In
 general, calling a method with a list of *n* arguments is equivalent to calling
 the corresponding function with an argument list that is created by inserting
 the method's object before the first argument.
+
+事实上, 你会猜想到: 关于方法, 特殊的东西就是, 对象作为参数传递给了函数的第一个参数.
+在我们的例子中, ``x.f()`` 是严格等价于 ``MyClass.f(x)``. 在多数情况下,
+调用一个方法 (有个 *n* 个参数), 和调用相应的函数 (也有那 n 个参数, 
+但是再额外加入一个使用该方法的对象), 是等价的.
 
 If you still don't understand how methods work, a look at the implementation can
 perhaps clarify matters.  When an instance attribute is referenced that isn't a
@@ -433,6 +535,15 @@ an abstract object: this is the method object.  When the method object is called
 with an argument list, a new argument list is constructed from the instance
 object and the argument list, and the function object is called with this new
 argument list.
+
+如果你仍然不知道方法如何工作, 那么看看实现或许会解决这些问题.
+当一个实例属性被引用时, 但是不是数据属性, 那么它的类将被搜索.
+如果该名字代表一个合法的类属性并且是一个函数对象, 一个方法对象就会被创建, 
+通过包装 (指向) 实例对象, 
+而函数对象仍然只是在抽象的对象中: 这就是方法对象.
+当方法对象用一个参数列表调用, 新的参数列表会从实例对象中重新构建,
+然后函数对象则调用新的参数列表.
+
 
 
 .. _tut-remarks:
