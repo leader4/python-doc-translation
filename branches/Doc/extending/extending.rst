@@ -3,19 +3,27 @@
 
 .. _extending-intro:
 
-******************************
-Extending Python with C or C++
-******************************
+********************************************************
+Extending Python with C or C++ 使用 C 或 C++ 扩展 Python
+********************************************************
 
 It is quite easy to add new built-in modules to Python, if you know how to
 program in C.  Such :dfn:`extension modules` can do two things that can't be
 done directly in Python: they can implement new built-in object types, and they
 can call C library functions and system calls.
 
+为 Python 添加新的内建模块十分简单, 如果你知道如何使用 C 编程的话.
+这些 :dfn:`extension modules` 可以做两件不能直接用 Python 做的事:
+它们可以实现新的内建对象类型, 并且他们可以调用 C 库函数和系统调用.
+
 To support extensions, the Python API (Application Programmers Interface)
 defines a set of functions, macros and variables that provide access to most
 aspects of the Python run-time system.  The Python API is incorporated in a C
 source file by including the header ``"Python.h"``.
+
+为支持扩展, Python API (应用程序接口) 定义了一系列的函数, 宏和变量来提供 Python
+运行时系统的大多数方面的访问. 通过在 C 源文件里包含头文件 ``"Python.h"``,
+来包含 Python API.
 
 The compilation of an extension module depends on its intended use as well as on
 your system setup; details are given in later chapters.
