@@ -89,7 +89,9 @@ programmer.
 类定义用命名空间玩了一些巧妙的把戏, 而你为了完全理解发生了什么就必须知道命名空间和作用域是怎么工作的.
 顺便说一下, 这一主题的知识对任何高级 Python 程序员都是有用的.
 
-Let's begin with some definitions. 让我们从定义开始.
+Let's begin with some definitions. 
+
+让我们从定义开始.
 
 A *namespace* is a mapping from names to objects.  Most namespaces are currently
 implemented as Python dictionaries, but that's normally not noticeable in any
@@ -152,19 +154,41 @@ within the function.  (Actually, forgetting would be a better way to describe
 what actually happens.)  Of course, recursive invocations each have their own
 local namespace.
 
+函数的局部命名空间在函数调用时被创建, 在函数返回时或者发生异常而终止时被删除.
+(事实上, 忘记可能是更好的方式来描述真正发生了什么.)
+当然, 递归调用会有它们自己的局部命名空间.
+
 A *scope* is a textual region of a Python program where a namespace is directly
 accessible.  "Directly accessible" here means that an unqualified reference to a
 name attempts to find the name in the namespace.
+
+在 Python 中, 一个作用域只是一个结构上的区域, 在这里命名空间可以直接访问.
+"直接访问" 就意味着无须特殊的指明引用.
 
 Although scopes are determined statically, they are used dynamically. At any
 time during execution, there are at least three nested scopes whose namespaces
 are directly accessible:
 
+尽管作用域是静态的决定的, 它们使用时却是动态的.
+在执行时的任何时刻, 至少有三个嵌套的作用域其命名空间可以直接访问:
+
 * the innermost scope, which is searched first, contains the local names
+
+  最内层的作用域, 首先被搜索, 包含局部变量名
+
 * the scopes of any enclosing functions, which are searched starting with the
   nearest enclosing scope, contains non-local, but also non-global names
+
+  任意函数的作用域, 它从最接近的作用域开始搜索, 包括非局部的, 
+  但也是非全局的名字
+
 * the next-to-last scope contains the current module's global names
+
+  紧邻最后的作用域包含了当前模块的全局变量
+
 * the outermost scope (searched last) is the namespace containing built-in names
+
+  最外层的作用域 (最后搜索) 是包含内置名字的命名空间
 
 If a name is declared global, then all references and assignments go directly to
 the middle scope containing the module's global names.  To rebind variables
@@ -173,10 +197,19 @@ used; if not declared nonlocal, those variable are read-only (an attempt to
 write to such a variable will simply create a *new* local variable in the
 innermost scope, leaving the identically named outer variable unchanged).
 
+如果一个名字在全局声明, 那么所有的引用和赋值都直接到这个模块的全局名中.
+为了在最内部作用域中重新绑定变量, :keyword:`nonlocal` 语句就可以使用了;
+如果没有声明 :keyword:`nonlocal` , 那些变量只是只读 (尝试给这样的变量赋值,
+只是会简单的创建一个新的局部变量, 而外部的并没有什么改变)重新绑定.
+
 Usually, the local scope references the local names of the (textually) current
 function.  Outside functions, the local scope references the same namespace as
 the global scope: the module's namespace. Class definitions place yet another
 namespace in the local scope.
+
+一般来说, 局部作用域引用当前函数的局部变量名. 在函数外部, 
+局部变量引用和全局作用域相同的命名空间: 模块的命名空间.
+类定义又放置了另一个命名空间.
 
 It is important to realize that scopes are determined textually: the global
 scope of a function defined in a module is that module's namespace, no matter
@@ -186,6 +219,12 @@ language definition is evolving towards static name resolution, at "compile"
 time, so don't rely on dynamic name resolution!  (In fact, local variables are
 already determined statically.)
 
+意识到作用域是在结构上被决定的这很重要. 一个定义在模块中的函数的全局作用域,
+就是模块的命名空间, 无论它从哪里被访问. 另一个方面, 
+搜寻名字的过程是动态完成的, 在运行时 --- 但是, 语言的定义一般是静态的,
+在 "编译" 时完成, 所以不要依赖动态命名!
+(事实上, 局部变量都是静态的被决定的.)
+
 A special quirk of Python is that -- if no :keyword:`global` statement is in
 effect -- assignments to names always go into the innermost scope.  Assignments
 do not copy data --- they just bind names to objects.  The same is true for
@@ -194,10 +233,19 @@ namespace referenced by the local scope.  In fact, all operations that introduce
 new names use the local scope: in particular, :keyword:`import` statements and
 function definitions bind the module or function name in the local scope.
 
+Python 的一个怪事就是 -- 如果 :keyword:`global` 语句没有起效果 --
+赋值总是会使用最里层作用域的值. 赋值并没有拷贝数据 --- 它们仅仅是绑定名字到对象上.
+删除也是如此: ``del x`` 移除了 ``x`` 从局部作用域的绑定. 事实上, 
+所有操作引入新的名字都使用局部作用域: 特别的, :keyword:`import` 语句,
+和函数定义都将模块或函数绑定到了当前作用域.
+
 The :keyword:`global` statement can be used to indicate that particular
 variables live in the global scope and should be rebound there; the
 :keyword:`nonlocal` statement indicates that particular variables live in
 an enclosing scope and should be rebound there.
+
+:keyword:`global` 语句可以用于指示, 在全局作用域中的变量可以在这里重新绑定;
+:keyword:`nonlocal` 则表示在一个闭合的作用域中的变量可以在此处绑定.
 
 .. _tut-scopeexample:
 
@@ -206,7 +254,12 @@ Scopes and Namespaces Example
 
 This is an example demonstrating how to reference the different scopes and
 namespaces, and how :keyword:`global` and :keyword:`nonlocal` affect variable
-binding::
+binding:
+
+这是一个例子用于说明如何引用不同的作用域和命名空间, 
+:keyword:`global` 和 :keyword:`nonlocal` 如何影响变量绑定:
+
+::
 
    def scope_test():
        def do_local():
@@ -229,7 +282,11 @@ binding::
    scope_test()
    print("In global scope:", spam)
 
-The output of the example code is::
+The output of the example code is:
+
+输出的结果是:
+
+::
 
    After local assignment: test spam
    After nonlocal assignment: nonlocal spam
@@ -241,8 +298,14 @@ binding of *spam*.  The :keyword:`nonlocal` assignment changed *scope_test*\'s
 binding of *spam*, and the :keyword:`global` assignment changed the module-level
 binding.
 
+注意局部的赋值 (默认) 并没有改变 *scope_test* 绑定的 *spam*.
+而 :keyword:`nonlocal` 则改变了 *scope_test* 中的 *spam*,
+而 :keyword:`global` 则改变了模块级别的绑定.
+
 You can also see that there was no previous binding for *spam* before the
 :keyword:`global` assignment.
+
+你可以看到在 :keyword:`global` 赋值之前并没有绑定 *spam* 的值.
 
 
 .. _tut-firstclasses:
