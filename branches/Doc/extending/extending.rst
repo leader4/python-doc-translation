@@ -28,18 +28,26 @@ source file by including the header ``"Python.h"``.
 The compilation of an extension module depends on its intended use as well as on
 your system setup; details are given in later chapters.
 
+扩展模块的编译依赖于它的用途以及您系统的设置; 在后面的章节里会给出详细信息.
+
 Do note that if your use case is calling C library functions or system calls,
 you should consider using the :mod:`ctypes` module rather than writing custom
 C code. Not only does :mod:`ctypes` let you write Python code to interface
 with C code, but it is more portable between implementations of Python than
 writing and compiling an extension module which typically ties you to CPython.
 
+注意, 如果你使用的情况是调用 C 库函数或者系统调用, 你应当考虑使用 :mod:`ctypes`
+模块, 而不是写自定的 C 代码. :mod:`ctypes` 不仅使您可以让 Python 代码使用 C
+写的接口, 而且, 相比于编写和编译一个扩展模块从而您与 CPython 联系的方法,
+这种实现更具备可移植性.
 
+.. %
+    这段翻译的自己都觉得不好, 希望有人能够改进一下.
 
 .. _extending-simpleexample:
 
-A Simple Example
-================
+A Simple Example 一个简单的例子
+===============================
 
 Let's create an extension module called ``spam`` (the favorite food of Monty
 Python fans...) and let's say we want to create a Python interface to the C
@@ -50,10 +58,22 @@ be callable from Python as follows::
    >>> import spam
    >>> status = spam.system("ls -l")
 
+让我们来创建一个名为 ``spam`` (Monty Python 粉丝最爱的食物) 的扩展模块,
+并且我们想要为 C 库函数 :c:func:`system` 创建一个 Python 接口.
+[#]_ 这个函数接受一个以空白字符结尾的字符串作为参数, 并返回一个整数.
+我们想要这个函数可以如下地被 Python 调用::
+
+   >>> import spam
+   >>> status = spam.system("ls -l")
+
 Begin by creating a file :file:`spammodule.c`.  (Historically, if a module is
 called ``spam``, the C file containing its implementation is called
 :file:`spammodule.c`; if the module name is very long, like ``spammify``, the
 module name can be just :file:`spammify.c`.)
+
+首先创建一个文件, :file:`spammodule.c`. (从历史上看, 如果一个模块名为 ``spam``,
+那么包含它的实现的 C 文件就命名为 :file:`spammodule.c`; 如果模块名非常长, 如
+``spammify``, 那么可以相应的 C 文件名可以就是 :file:`spammify.c`.)
 
 The first line of our file can be::
 
@@ -62,11 +82,20 @@ The first line of our file can be::
 which pulls in the Python API (you can add a comment describing the purpose of
 the module and a copyright notice if you like).
 
+我们文件的第一行可以是::
+
+   #include <Python.h>
+
+这样可以包含 Python API （如果喜欢的话, 你可以添加描述该模块目的的注释和版权声明).
+
 .. note::
 
    Since Python may define some pre-processor definitions which affect the standard
    headers on some systems, you *must* include :file:`Python.h` before any standard
    headers are included.
+
+   因为在一些系统上, Python 可能定义了一些影响标准头文件的预处理器定义, 因此,
+   你*必须*在任何包含标准头文件之前包含 :file:`Python.h`.
 
 All user-visible symbols defined by :file:`Python.h` have a prefix of ``Py`` or
 ``PY``, except those defined in standard header files. For convenience, and
@@ -75,6 +104,12 @@ includes a few standard header files: ``<stdio.h>``, ``<string.h>``,
 ``<errno.h>``, and ``<stdlib.h>``.  If the latter header file does not exist on
 your system, it declares the functions :c:func:`malloc`, :c:func:`free` and
 :c:func:`realloc` directly.
+
+除了在标准头文件里定义的符号, :file:`Python.h` 定义的所有用户可见符号都有一个前缀,
+``Py`` 或 ``PY``. 为了方便， 而且因为它们被 Python 解释器广泛地使用, ``"Python.h"``
+包含几个标准头文件: ``<stdio.h>``, ``string.h``, ``<errno.h``, 和 ``<stdlib.h>``.
+如果后面的头文件在你的系统里不存在的话, 它会直接地声明函数 :c:func:`malloc`,
+:c:func:`free` 和 :c:func:`realloc`.
 
 The next thing we add to our module file is the C function that will be called
 when the Python expression ``spam.system(string)`` is evaluated (we'll see
@@ -92,13 +127,36 @@ shortly how it ends up being called)::
        return PyLong_FromLong(sts);
    }
 
+下一个被添加到我们模块文件的东西是一个 C 函数, 这个函数将在计算表达式
+``spam.system(string)`` 时被调用 (不久, 我们将看到它在被调用的时候如何结束)::
+
+   static PyObject *
+   spam_system(PyObject *self, PyObject *args)
+   {
+       const char *command;
+       int sts;
+
+       if (!PyArg_ParseTuple(args, "s", &command))
+           return NULL;
+       sts = system(command);
+       return PyLong_FromLong(sts);
+   }
+
+.. %
+    括号里不知道是不是这样翻译
+
 There is a straightforward translation from the argument list in Python (for
 example, the single expression ``"ls -l"``) to the arguments passed to the C
 function.  The C function always has two arguments, conventionally named *self*
 and *args*.
 
+从 Python 中的参数列表 (本例中, 简单的表达式 ``"ls -l"``) 到传递给 C
+函数的参数之间有一个明确的转换. C 函数通常有两个参数, 约定命名为 *self* 和 *args*.
+
 The *self* argument points to the module object for module-level functions;
 for a method it would point to the object instance.
+
+对于模块级别的函数, 参数 *self* 指向这个模块对象; 而对于方法, 它将指向这个对象实例.
 
 The *args* argument will be a pointer to a Python tuple object containing the
 arguments.  Each item of the tuple corresponds to an argument in the call's
@@ -109,17 +167,28 @@ converts them to C values.  It uses a template string to determine the required
 types of the arguments as well as the types of the C variables into which to
 store the converted values.  More about this later.
 
+参数 *args* 是一个指针, 它指向一个包含参数的 Python 元组对象.
+该元组里的每一项对应于调用的参数表里的一个参数. 这些参数是 Python 对象 ---
+为了能在我们的 C 函数里对它们做任何事, 我们必须把它们转化为 C 值.
+包含于 Python API 的函数 :c:func:`PyArg_ParseTuple` 检查参数的类型并把它们转化为 C 值.
+它使用一个模板字符串来确定参数所需的类型, 以及储存转换后的值的 C 变量的类型.
+后面会有更多相关内容.
+
 :c:func:`PyArg_ParseTuple` returns true (nonzero) if all arguments have the right
 type and its components have been stored in the variables whose addresses are
 passed.  It returns false (zero) if an invalid argument list was passed.  In the
 latter case it also raises an appropriate exception so the calling function can
 return *NULL* immediately (as we saw in the example).
 
+:c:func:`PyArg_ParseTuple`在所有参数的类型正确, 并且它的组件被储存在地址被传递的变量里的情况下,
+会返回真 (非零值). 如果被传递一个无效的参数表, 它返回假 (0).
+后一种情况, 它也抛出一个适当的异常, 因此调用函数可以立即返回 *NULL* (就如我们在这个例子里看到的). 
+
 
 .. _extending-errors:
 
-Intermezzo: Errors and Exceptions
-=================================
+Intermezzo: Errors and Exceptions 插曲: 错误和异常
+==================================================
 
 An important convention throughout the Python interpreter is the following: when
 a function fails, it should set an exception condition and return an error value
