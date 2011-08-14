@@ -201,13 +201,26 @@ are the C equivalents of the result in Python of :meth:`sys.exc_info` (see the
 section on module :mod:`sys` in the Python Library Reference).  It is important
 to know about them to understand how errors are passed around.
 
+有一个重要的约定贯穿整个 Python 解释器: 当一个函数失败时, 它应当设置一个异常条件,
+并且返回一个错误值 (通常是一个 *NULL* 指针). 异常存储在解释器内部的一个静态全局变量里;
+如果这个值为 *NULL*, 那么没有发生任何异常. 第二个全局变量存储了异常的 "相关值"
+(传递给 :keyword:`raise` 的第二个参数). 如果错误的源头在 Python 代码里, 那么第三个变量包含堆栈跟踪.
+这三个变量是 Python 中 :meth:`sys.exc_info` (参阅 Python 库参考关于 :mod:`sys` 模块的部分)
+的结果等价. 了解这些对于理解错误如何到处传递是重要的.
+
 The Python API defines a number of functions to set various types of exceptions.
+
+Python API 定义了一些函数来设置异常的各种类型.
 
 The most common one is :c:func:`PyErr_SetString`.  Its arguments are an exception
 object and a C string.  The exception object is usually a predefined object like
 :c:data:`PyExc_ZeroDivisionError`.  The C string indicates the cause of the error
 and is converted to a Python string object and stored as the "associated value"
 of the exception.
+
+最常见的一个是 :c:func:`PyErr_SetString`.  它的参数是一个异常对象和一个 C 字符串.
+异常对象通常是一个预先定义的对象, 如 :c:data:`PyExc_ZeroDivisionError`. C
+字符串表明错误的起因, 它被转换为一个 Python 字符串对象, 并存作异常的 "相关值".
 
 Another useful function is :c:func:`PyErr_SetFromErrno`, which only takes an
 exception argument and constructs the associated value by inspection of the
@@ -216,11 +229,20 @@ global variable :c:data:`errno`.  The most general function is
 its associated value.  You don't need to :c:func:`Py_INCREF` the objects passed
 to any of these functions.
 
+另一个有用的函数是 :c:func:`PyErr_SetFromErrno`, 它只需要一个异常参数, 
+并且通过全局变量 :c:data:`errno` 构造相关值. 最为一般的函数是 :c:func:`PyErr_SetObject`,
+它需要两个参数, 异常以及它的相关值. 你不需要 :c:func:`Py_INCREF` 被传递给这些函数的对象.
+
 You can test non-destructively whether an exception has been set with
 :c:func:`PyErr_Occurred`.  This returns the current exception object, or *NULL*
 if no exception has occurred.  You normally don't need to call
 :c:func:`PyErr_Occurred` to see whether an error occurred in a function call,
 since you should be able to tell from the return value.
+
+无论是否已经设置了一个异常, 你都可以使用 :c:func:`PyErr_Occurred` 来无破坏的测试.
+这会返回当前的异常对象, 如果没有异常发生就返回 *NULL*, 通常, 你不需要调用
+:c:func:`PyErr_Occurred` 来查看是否在一次函数调用中发生了错误,
+因为你应该可以从返回值中知道这点.
 
 When a function *f* that calls another function *g* detects that the latter
 fails, *f* should itself return an error value (usually *NULL* or ``-1``).  It
@@ -231,6 +253,9 @@ indication to *its* caller, again *without* calling :c:func:`PyErr_\*`, and so o
 that first detected it.  Once the error reaches the Python interpreter's main
 loop, this aborts the currently executing Python code and tries to find an
 exception handler specified by the Python programmer.
+
+当函数 *f* 调用函数 *g*, *g* 失败了, *f* 自己应当返回一个错误值 (通常是 *NULL* 或 ``-1``).
+不应当调用 :c:func:`PyErr_\*` 中的任何一个 --- 有一个已经被 *g* 调用.  
 
 (There are situations where a module can actually give a more detailed error
 message by calling another :c:func:`PyErr_\*` function, and in such cases it is
