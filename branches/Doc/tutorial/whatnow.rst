@@ -1,8 +1,8 @@
 .. _tut-whatnow:
 
-*********
-What Now?
-*********
+*********************
+What Now? 现在干什么?
+*********************
 
 Reading this tutorial has probably reinforced your interest in using Python ---
 you should be eager to apply Python to solving your real-world problems. Where
@@ -27,6 +27,8 @@ the set are:
   and many other tasks. Skimming through the Library Reference will give you an
   idea of what's available.
 
+* :ref:`library-index`:
+
   你应该浏览这个手册, 这里给出了完整 (虽然简洁) 的参考资料,
   包括类型, 函数, 标准库模块. 在标准 Python 的发布版本中, 
   包含了 *大量* 的额外代码. 比如读取 Unix 的邮箱, 通过 HTTP 获取文档,
@@ -36,13 +38,13 @@ the set are:
 * :ref:`install-index` explains how to install external modules written by other
   Python users. 
   
-  这里解释了如何安装其他 Python 用户编写的额外的模块.
+* :ref:`install-index` 解释了如何安装其他 Python 用户编写的额外的模块.
 
 * :ref:`reference-index`: A detailed explanation of Python's syntax and
   semantics.  It's heavy reading, but is useful as a complete guide to the
   language itself. 
   
-  更详细的介绍了 Python 的语法和语义.
+* :ref:`reference-index`: 更详细的介绍了 Python 的语法和语义.
   这里可能有大量的需要阅读, 但是作为语言本身来说是非常详细的指导.
 
 More Python resources:
@@ -55,20 +57,20 @@ More Python resources:
   Australia; a mirror may be faster than the main site, depending on your
   geographical location.
 
-  Python 主要的网站. 这里包含了代码, 文档, 和各种指向 Python 相关的网页.
+* http://www.python.org:  Python 主要的网站. 这里包含了代码, 文档, 和各种指向 Python 相关的网页.
   这个网站在世界各地都有镜像, 比如欧洲, 日本, 和澳大利亚;
   依赖于你的地理位置, 镜像会比主网站更快.
 
 * http://docs.python.org:  Fast access to Python's  documentation.
 
-  快速的参考 Python 手册.
+* http://docs.python.org:  快速的参考 Python 手册.
 
 * http://pypi.python.org: The Python Package Index, previously also nicknamed
   the Cheese Shop, is an index of user-created Python modules that are available
   for download.  Once you begin releasing code, you can register it here so that
   others can find it.
 
-  Python Package Index, 先前命名为 Cheese Shop, 是用户创建的 Python 模块的索引,
+* http://pypi.python.org: Python 包索引, 先前命名为 Cheese Shop, 是用户创建的 Python 模块的索引,
   此处就可以提供下载. 如果你开始发布代码, 你可以在这里注册一个帐号,
   以便其他用户可以找到它.
 
@@ -77,15 +79,15 @@ More Python resources:
   Particularly notable contributions are collected in a book also titled Python
   Cookbook (O'Reilly & Associates, ISBN 0-596-00797-3.)
 
-  Python Cookbook 是一个收集了大量代码的地方, 此处有很多模块, 有用的脚本.
-  很多收集于此的优秀的代码被收录到一本名为 Python Cookbook 的书中.
+* http://aspn.activestate.com/ASPN/Python/Cookbook/:  Python Cookbook 是一个收集了大量代码的地方, 
+  此处有很多模块, 有用的脚本. 很多收集于此的优秀的代码被收录到一本名为 Python Cookbook 的书中.
 
 * http://scipy.org: The Scientific Python project includes modules for fast
   array computations and manipulations plus a host of packages for such
   things as linear algebra, Fourier transforms, non-linear solvers,
   random number distributions, statistical analysis and the like.
 
-  科学计算的 Python 项目. 包括更快的数组运算和操作,
+* http://scipy.org: 科学计算的 Python 项目. 包括更快的数组运算和操作,
   还有像线性代数, 傅立叶变换, 非线性解, 随机数, 统计及等等.
 
 For Python-related questions and problem reports, you can post to the newsgroup

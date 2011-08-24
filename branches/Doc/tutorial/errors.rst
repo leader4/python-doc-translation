@@ -1,8 +1,8 @@
 .. _tut-errors:
 
-*********************
-Errors and Exceptions
-*********************
+********************************
+Errors and Exceptions 错误和异常
+********************************
 
 Until now error messages haven't been more than mentioned, but if you have tried
 out the examples you have probably seen some.  There are (at least) two
@@ -15,8 +15,8 @@ distinguishable kinds of errors: *syntax errors* and *exceptions*.
 
 .. _tut-syntaxerrors:
 
-Syntax Errors
-=============
+Syntax Errors 语法错误
+======================
 
 Syntax errors, also known as parsing errors, are perhaps the most common kind of
 complaint you get while you are still learning Python:
@@ -44,8 +44,8 @@ know where to look in case the input came from a script.
 
 .. _tut-exceptions:
 
-Exceptions
-==========
+Exceptions 异常
+===============
 
 Even if a statement or expression is syntactically correct, it may cause an
 error when an attempt is made to execute it. Errors detected during execution
@@ -106,8 +106,8 @@ standard input.
 
 .. _tut-handling:
 
-Handling Exceptions
-===================
+Handling Exceptions 处理异常
+============================
 
 It is possible to write programs that handle selected exceptions. Look at the
 following example, which asks the user for input until a valid integer has been
@@ -134,20 +134,20 @@ The :keyword:`try` statement works as follows.
 * First, the *try clause* (the statement(s) between the :keyword:`try` and
   :keyword:`except` keywords) is executed.
 
-  首先, *try clause* (在 :keyword:`try` 和 :keyword:`except` 之间的语句)
+* 首先, *try clause* (在 :keyword:`try` 和 :keyword:`except` 之间的语句)
   将被执行.
 
 * If no exception occurs, the *except clause* is skipped and execution of the
   :keyword:`try` statement is finished.
 
-  如果没有异常发生, *except clause* 将被跳过, :keyword:`try` 语句就算执行完了.
+* 如果没有异常发生, *except clause* 将被跳过, :keyword:`try` 语句就算执行完了.
 
 * If an exception occurs during execution of the try clause, the rest of the
   clause is skipped.  Then if its type matches the exception named after the
   :keyword:`except` keyword, the except clause is executed, and then execution
   continues after the :keyword:`try` statement.
 
-  如果在 try 语句执行时, 出现了一个异常, 该语句的剩下部分将被跳过.
+* 如果在 try 语句执行时, 出现了一个异常, 该语句的剩下部分将被跳过.
   然后如果它的类型匹配到了 :keyword:`except` 后面的异常名,
   那么该异常的语句将被执行, 而执行完后会运行 :keyword:`try` 后面的问题.
 
@@ -156,7 +156,7 @@ The :keyword:`try` statement works as follows.
   found, it is an *unhandled exception* and execution stops with a message as
   shown above.
 
-  如果一个异常发生时并没有匹配到 except 语句中的异常名, 那么它就被传到
+* 如果一个异常发生时并没有匹配到 except 语句中的异常名, 那么它就被传到
   :keyword:`try` 语句外面; 如果没有处理, 那么它就是 *unhandled exception*
   并且将会像前面那样给出一个消息然后执行.
 
@@ -235,14 +235,29 @@ variable is bound to an exception instance with the arguments stored in
 ``instance.args``.  For convenience, the exception instance defines
 :meth:`__str__` so the arguments can be printed directly without having to
 reference ``.args``.  One may also instantiate an exception first before
-raising it and add any attributes to it as desired. 
+raising it and add any attributes to it as desired. ::
+
+   >>> try:
+   ...    raise Exception('spam', 'eggs')
+   ... except Exception as inst:
+   ...    print(type(inst))    # the exception instance
+   ...    print(inst.args)     # arguments stored in .args
+   ...    print(inst)          # __str__ allows args to be printed directly,
+   ...                         # but may be overridden in exception subclasses
+   ...    x, y = inst.args     # unpack args
+   ...    print('x =', x)
+   ...    print('y =', y)
+   ...
+   <class 'Exception'>
+   ('spam', 'eggs')
+   ('spam', 'eggs')
+   x = spam
+   y = eggs
 
 在 except 语句中可以在异常名后指定一个变量. 变量会绑定值这个异常的实例上,
 并且把参数存于 ``instance.args``. 为了方便, 异常的实例会定义 :meth:`__str__`
 来直接将参数打印出来, 而不用引用 ``.args``. 当然也可以在产生异常前,
-首先实例化一个异常, 然后把需要的属性绑定给它.
-
-::
+首先实例化一个异常, 然后把需要的属性绑定给它. ::
 
    >>> try:
    ...    raise Exception('spam', 'eggs')
@@ -268,10 +283,20 @@ the message for unhandled exceptions.
 
 Exception handlers don't just handle exceptions if they occur immediately in the
 try clause, but also if they occur inside functions that are called (even
-indirectly) in the try clause. For example:
+indirectly) in the try clause. For example: ::
+
+   >>> def this_fails():
+   ...     x = 1/0
+   ...
+   >>> try:
+   ...     this_fails()
+   ... except ZeroDivisionError as err:
+   ...     print('Handling run-time error:', err)
+   ...
+   Handling run-time error: int division or modulo by zero
 
 异常的 handler 处理的异常, 不仅仅是 try 语句中那些直接的异常, 
-也可以是在此处调用的函数所产生的异常. 例如::
+也可以是在此处调用的函数所产生的异常. 例如: ::
 
    >>> def this_fails():
    ...     x = 1/0
@@ -286,14 +311,19 @@ indirectly) in the try clause. For example:
 
 .. _tut-raising:
 
-Raising Exceptions
-==================
+Raising Exceptions 抛出异常
+===========================
 
 The :keyword:`raise` statement allows the programmer to force a specified
-exception to occur. For example:
+exception to occur. For example: ::
+
+   >>> raise NameError('HiThere')
+   Traceback (most recent call last):
+     File "<stdin>", line 1, in ?
+   NameError: HiThere
 
 :keyword:`raise` 语句允许程序员强制一个特定的异常的发生.
-举个例子::
+举个例子: ::
 
    >>> raise NameError('HiThere')
    Traceback (most recent call last):
@@ -309,10 +339,21 @@ derives from :class:`Exception`).
 
 If you need to determine whether an exception was raised but don't intend to
 handle it, a simpler form of the :keyword:`raise` statement allows you to
-re-raise the exception:
+re-raise the exception: ::
+
+   >>> try:
+   ...     raise NameError('HiThere')
+   ... except NameError:
+   ...     print('An exception flew by!')
+   ...     raise
+   ...
+   An exception flew by!
+   Traceback (most recent call last):
+     File "<stdin>", line 2, in ?
+   NameError: HiThere
 
 如果你需要决定产生一个异常, 但是不准备处理它, 那么一个简单的方式就是,
-重新抛出异常::
+重新抛出异常: ::
 
    >>> try:
    ...     raise NameError('HiThere')
@@ -328,17 +369,34 @@ re-raise the exception:
 
 .. _tut-userexceptions:
 
-User-defined Exceptions
-=======================
+User-defined Exceptions 自定义异常
+==================================
 
 Programs may name their own exceptions by creating a new exception class (see
 :ref:`tut-classes` for more about Python classes).  Exceptions should typically
 be derived from the :exc:`Exception` class, either directly or indirectly.  For
-example:
+example: ::
+
+   >>> class MyError(Exception):
+   ...     def __init__(self, value):
+   ...         self.value = value
+   ...     def __str__(self):
+   ...         return repr(self.value)
+   ...
+   >>> try:
+   ...     raise MyError(2*2)
+   ... except MyError as e:
+   ...     print('My exception occurred, value:', e.value)
+   ...
+   My exception occurred, value: 4
+   >>> raise MyError('oops!')
+   Traceback (most recent call last):
+     File "<stdin>", line 1, in ?
+   __main__.MyError: 'oops!'
 
 程序中可以通过定义一个新的异常类 (更多的类请参考 :ref:`tut-classes`) 
 来命名它们自己的异常. 异常需要从 :exc:`Exception` 类派生, 
-既可以是直接也可以是间接. 例如::
+既可以是直接也可以是间接. 例如: ::
 
    >>> class MyError(Exception):
    ...     def __init__(self, value):
@@ -369,14 +427,43 @@ are usually kept simple, often only offering a number of attributes that allow
 information about the error to be extracted by handlers for the exception.  When
 creating a module that can raise several distinct errors, a common practice is
 to create a base class for exceptions defined by that module, and subclass that
-to create specific exception classes for different error conditions:
+to create specific exception classes for different error conditions: ::
+
+   class Error(Exception):
+       """Base class for exceptions in this module."""
+       pass
+
+   class InputError(Error):
+       """Exception raised for errors in the input.
+
+       Attributes:
+           expression -- input expression in which the error occurred
+           message -- explanation of the error
+       """
+
+       def __init__(self, expression, message):
+           self.expression = expression
+           self.message = message
+
+   class TransitionError(Error):
+       """Raised when an operation attempts a state transition that's not
+       allowed.
+
+       Attributes:
+           previous -- state at beginning of transition
+           next -- attempted new state
+           message -- explanation of why the specific transition is not allowed
+       """
+
+       def __init__(self, previous, next, message):
+           self.previous = previous
+           self.next = next
+           self.message = message
 
 异常类可以像其他的类一样做任何的事, 但是常常会保持简单性, 
 仅仅提供一些可以被 handler 处理的异常信息.
 当创建一个模块时, 可能会有多种不同的异常, 一种常用的做法就是,
-创建一个基类, 然后派生出各种不同的异常:
-
-::
+创建一个基类, 然后派生出各种不同的异常: ::
 
    class Error(Exception):
        """Base class for exceptions in this module."""
@@ -424,17 +511,25 @@ chapter :ref:`tut-classes`.
 
 .. _tut-cleanup:
 
-Defining Clean-up Actions
-=========================
+Defining Clean-up Actions 定义清理动作
+======================================
 
 The :keyword:`try` statement has another optional clause which is intended to
 define clean-up actions that must be executed under all circumstances.  For
-example:
+example: ::
+
+   >>> try:
+   ...     raise KeyboardInterrupt
+   ... finally:
+   ...     print('Goodbye, world!')
+   ...
+   Goodbye, world!
+   Traceback (most recent call last):
+     File "<stdin>", line 2, in ?
+   KeyboardInterrupt
 
 :keyword:`try` 语句有另一种可选的从句, 用于定义一些扫尾的工作,
-此处定义的语句在任何情况下都会被执行. 例如:
-
-::
+此处定义的语句在任何情况下都会被执行. 例如: ::
 
    >>> try:
    ...     raise KeyboardInterrupt
@@ -454,17 +549,38 @@ occurred in the :keyword:`try` clause and has not been handled by an
 been executed.  The :keyword:`finally` clause is also executed "on the way out"
 when any other clause of the :keyword:`try` statement is left via a
 :keyword:`break`, :keyword:`continue` or :keyword:`return` statement.  A more
-complicated example:
+complicated example: ::
 
-一个 finally 语句总是在离开 :keyword:`try` 语句前被执行, 而无论此处有无异常发生.
+   >>> def divide(x, y):
+   ...     try:
+   ...         result = x / y
+   ...     except ZeroDivisionError:
+   ...         print("division by zero!")
+   ...     else:
+   ...         print("result is", result)
+   ...     finally:
+   ...         print("executing finally clause")
+   ...
+   >>> divide(2, 1)
+   result is 2.0
+   executing finally clause
+   >>> divide(2, 0)
+   division by zero!
+   executing finally clause
+   >>> divide("2", "1")
+   executing finally clause
+   Traceback (most recent call last):
+     File "<stdin>", line 1, in ?
+     File "<stdin>", line 3, in divide
+   TypeError: unsupported operand type(s) for /: 'str' and 'str'
+
+一个 *finally 语句*总是在离开 :keyword:`try` 语句前被执行, 而无论此处有无异常发生.
 当一个异常在 :keyword:`try` 中产生, 但是并没有被 :keyword:`except` 处理
 (或者它发生在 :keyword:`except` 或 :keyword:`else` 语句中),
 那么在 :keyword:`finally` 语句执行后会被重新抛出.
 :keyword:`finally` 语句在其他语句要退出 :keyword:`try` 时也会被执行,
 像是使用 :keyword:`break`, :keyword:`continue` 或者 :keyword:`return`.
-一个更复杂的例子:
-
-::
+一个更复杂的例子: ::
 
    >>> def divide(x, y):
    ...     try:
@@ -508,18 +624,19 @@ of whether the use of the resource was successful.
 
 .. _tut-cleanup-with:
 
-Predefined Clean-up Actions
-===========================
+Predefined Clean-up Actions 预定义的清理动作
+============================================
 
 Some objects define standard clean-up actions to be undertaken when the object
 is no longer needed, regardless of whether or not the operation using the object
 succeeded or failed. Look at the following example, which tries to open a file
-and print its contents to the screen. 
+and print its contents to the screen. ::
+
+   for line in open("myfile.txt"):
+       print(line)
 
 有些对象定义了标准的清理工作, 特别是对象不再需要时, 
-无论对其使用的操作是否成功. 看看下面的例子, 它尝试打开一个文件并输出内容至屏幕.
-
-::
+无论对其使用的操作是否成功. 看看下面的例子, 它尝试打开一个文件并输出内容至屏幕. ::
 
    for line in open("myfile.txt"):
        print(line)
@@ -528,13 +645,15 @@ The problem with this code is that it leaves the file open for an indeterminate
 amount of time after this part of the code has finished executing.
 This is not an issue in simple scripts, but can be a problem for larger
 applications. The :keyword:`with` statement allows objects like files to be
-used in a way that ensures they are always cleaned up promptly and correctly. 
+used in a way that ensures they are always cleaned up promptly and correctly. ::
+
+   with open("myfile.txt") as f:
+       for line in f:
+           print(line)
 
 前面这段代码的问题在于, 在此代码成功执行后, 文件依然被打开着.
 在简单的脚本中这可能不是什么问题, 但是对于更大的应用来说却是个问题.
-:keyword:`with` 语句就允许像文件这样的对象在使用后会被正常的清理掉.
-
-::
+:keyword:`with` 语句就允许像文件这样的对象在使用后会被正常的清理掉. ::
 
    with open("myfile.txt") as f:
        for line in f:

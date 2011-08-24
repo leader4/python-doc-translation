@@ -8,13 +8,17 @@ Floating Point Arithmetic:  Issues and Limitations 浮点算术: 问题和限制
 
 
 Floating-point numbers are represented in computer hardware as base 2 (binary)
-fractions.  For example, the decimal fraction :
+fractions.  For example, the decimal fraction::
+
+   0.125
 
 浮点数在计算机中以二进制的除法表示. 比如, 十进制的::
 
    0.125
 
-has value 1/10 + 2/100 + 5/1000, and in the same way the binary fraction :
+has value 1/10 + 2/100 + 5/1000, and in the same way the binary fraction::
+
+   0.001
 
 其值为 1/10 + 2/100 + 5/1000, 同样, 以二进制表示则为::
 
@@ -36,21 +40,15 @@ actually stored in the machine.
 一个结果就是, 普遍来说, 你输入的十进制的小数, 通常只是以接近的二进制数表示.
 
 The problem is easier to understand at first in base 10.  Consider the fraction
-1/3.  You can approximate that as a base 10 fraction:
-
-在十进制中这个问题很容易理解. 考虑分数 1/3 . 你可以用一个接近的十进制数表示::
+1/3.  You can approximate that as a base 10 fraction::
 
    0.3
 
-or, better, :
-
-如果要更好点, ::
+or, better, ::
 
    0.33
 
-or, better, :
-
-更好一些, ::
+or better, ::
 
    0.333
 
@@ -58,14 +56,29 @@ and so on.  No matter how many digits you're willing to write down, the result
 will never be exactly 1/3, but will be an increasingly better approximation of
 1/3.
 
+在十进制中这个问题很容易理解. 考虑分数 1/3 . 你可以用一个接近的十进制数表示::
+
+   0.3
+
+要更一些, ::
+
+   0.33
+
+更好一些, ::
+
+   0.333
+
+
 等等. 但是不管你怎么写, 都不是严格的等于 1/3, 但是可以使结果更接近于 1/3.
 
 In the same way, no matter how many base 2 digits you're willing to use, the
 decimal value 0.1 cannot be represented exactly as a base 2 fraction.  In base
-2, 1/10 is the infinitely repeating fraction :
-   
+2, 1/10 is the infinitely repeating fraction ::
+
+   0.0001100110011001100110011001100110011001100110011...
+
 同样, 无论你用了多少位, 二进制的数也无法精确表示十进制的 0.1 .
-在以二为底的情况下, 将是个无限循环::
+在以二为底的情况下, 将是个无限循环 ::
 
    0.0001100110011001100110011001100110011001100110011...
 
@@ -85,11 +98,14 @@ Many users are not aware of the approximation because of the way values are
 displayed.  Python only prints a decimal approximation to the true decimal
 value of the binary approximation stored by the machine.  On most machines, if
 Python were to print the true decimal value of the binary approximation stored
-for 0.1, it would have to display :
+for 0.1, it would have to display ::
+
+   >>> 0.1
+   0.1000000000000000055511151231257827021181583404541015625
 
 很多用户因为这些值显示的方法而并不知道近似. Python 仅仅打印一个合适的十进制分数,
 而真正的二进制近似还是存储于机器中. 在大多数情况下, 如果让 Python 打印一个十进制小数,
-那么其会以真实存储的数字显示, 例如 0.1::
+那么其会以真实存储的数字显示, 例如 0.1 ::
 
    >>> 0.1
    0.1000000000000000055511151231257827021181583404541015625
