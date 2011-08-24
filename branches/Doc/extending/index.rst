@@ -1,7 +1,7 @@
-.. _extending-index:
+ï»¿.. _extending-index:
 
 ###########################################################################
-  Extending and Embedding the Python Interpreter À©Õ¹ºÍÇ¶Èë Python ½âÊÍÆ÷
+  Extending and Embedding the Python Interpreter æ‰©å±•å’ŒåµŒå…¥ Python è§£é‡Šå™¨
 ###########################################################################
 
 :Release: |version|
@@ -18,10 +18,10 @@ Finally, it shows how to compile and link extension modules so that they can be
 loaded dynamically (at run time) into the interpreter, if the underlying
 operating system supports this feature.
 
-Õâ·İÎÄµµÃèÊöÁËÈçºÎÊ¹ÓÃ C »ò C++ Îª Python ½âÊÍÆ÷Ğ´À©Õ¹Ä£¿é. ÕâĞ©Ä£¿é²»½ö¿ÉÒÔ¶¨ÒåĞÂµÄº¯Êı,
-»¹¿ÉÒÔÊÇĞÂµÄ¶ÔÏóÀàĞÍÒÔ¼°ËüÃÇµÄ·½·¨.  Õâ·İÎÄµµÒ²¶¨ÒåÈçºÎÇ¶Èë Python ½âÊÍÆ÷µ½ÁíÒ»¸öÓ¦ÓÃÀï,
-¶ø×÷ÎªÒ»¸öÀ©Õ¹ÓïÑÔ. ×îºó, Ëü¸æËßÁËÈçºÎ±àÒëºÍÁ´½ÓÀ©Õ¹Ä£¿éÒÔÊ¹µÃËüÃÇ¿ÉÒÔ¶¯Ì¬µØ (ÔÚÔËĞĞÊ±¿Ì)
-ÔØÈëµ½½âÊÍÆ÷Àï, ÕâĞèÒªµ×²ãµÄ²Ù×÷ÏµÍ³Ö§³ÖÕâ¸öÌØĞÔ.
+è¿™ä»½æ–‡æ¡£æè¿°äº†å¦‚ä½•ä½¿ç”¨ C æˆ– C++ ä¸º Python è§£é‡Šå™¨å†™æ‰©å±•æ¨¡å—. è¿™äº›æ¨¡å—ä¸ä»…å¯ä»¥å®šä¹‰æ–°çš„å‡½æ•°,
+è¿˜å¯ä»¥æ˜¯æ–°çš„å¯¹è±¡ç±»å‹ä»¥åŠå®ƒä»¬çš„æ–¹æ³•.  è¿™ä»½æ–‡æ¡£ä¹Ÿå®šä¹‰å¦‚ä½•åµŒå…¥ Python è§£é‡Šå™¨åˆ°å¦ä¸€ä¸ªåº”ç”¨é‡Œ,
+è€Œä½œä¸ºä¸€ä¸ªæ‰©å±•è¯­è¨€. æœ€å, å®ƒå‘Šè¯‰äº†å¦‚ä½•ç¼–è¯‘å’Œé“¾æ¥æ‰©å±•æ¨¡å—ä»¥ä½¿å¾—å®ƒä»¬å¯ä»¥åŠ¨æ€åœ° (åœ¨è¿è¡Œæ—¶åˆ»)
+è½½å…¥åˆ°è§£é‡Šå™¨é‡Œ, è¿™éœ€è¦åº•å±‚çš„æ“ä½œç³»ç»Ÿæ”¯æŒè¿™ä¸ªç‰¹æ€§.
 
 This document assumes basic knowledge about Python.  For an informal
 introduction to the language, see :ref:`tutorial-index`.  :ref:`reference-index`
@@ -29,15 +29,15 @@ gives a more formal definition of the language.  :ref:`library-index` documents
 the existing object types, functions and modules (both built-in and written in
 Python) that give the language its wide application range.
 
-Õâ·İÎÄµµĞèÒª¶ÁÕßÓµÓĞ Python µÄ»ù´¡ÖªÊ¶. ÏëµÃµ½ÕâÃÅÓïÑÔµÄ·ÇÕıÊ½½éÉÜ,
-²ÎÔÄ :ref:`tutorial-index`. :ref:`library-index` ¸ø³öÁËÕâÃÅÓïÑÔµÄÒ»¸ö¸üÎªÕıÊ½µÄ¶¨Òå.
-:ref:`library-index` ÃèÊöÁËÒÑÓĞµÄ¶ÔÏóÀàĞÍ, º¯ÊıºÍÄ£¿é (ÄÚ½¨µÄºÍÊ¹ÓÃ Python Ğ´µÄ),
-ËüÃÇ¸øÁËÕâÃÅÓïÑÔ¿í·ºµÄÊ¹ÓÃ·¶Î§.
+è¿™ä»½æ–‡æ¡£éœ€è¦è¯»è€…æ‹¥æœ‰ Python çš„åŸºç¡€çŸ¥è¯†. æƒ³å¾—åˆ°è¿™é—¨è¯­è¨€çš„éæ­£å¼ä»‹ç»,
+å‚é˜… :ref:`tutorial-index`. :ref:`library-index` ç»™å‡ºäº†è¿™é—¨è¯­è¨€çš„ä¸€ä¸ªæ›´ä¸ºæ­£å¼çš„å®šä¹‰.
+:ref:`library-index` æè¿°äº†å·²æœ‰çš„å¯¹è±¡ç±»å‹, å‡½æ•°å’Œæ¨¡å— (å†…å»ºçš„å’Œä½¿ç”¨ Python å†™çš„),
+å®ƒä»¬ç»™äº†è¿™é—¨è¯­è¨€å®½æ³›çš„ä½¿ç”¨èŒƒå›´.
 
 For a detailed description of the whole Python/C API, see the separate
 :ref:`c-api-index`.
 
-ÏëÒªÕû¸ö Python/C API µÄÏêÏ¸ÃèÊö, ²ÎÔÄµ¥¶ÀµÄ :ref:`c-api-index`.
+æƒ³è¦æ•´ä¸ª Python/C API çš„è¯¦ç»†æè¿°, å‚é˜…å•ç‹¬çš„ :ref:`c-api-index`.
 
 .. toctree::
    :maxdepth: 2
