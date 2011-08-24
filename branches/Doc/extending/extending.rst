@@ -1,10 +1,10 @@
-.. highlightlang:: c
+ï»¿.. highlightlang:: c
 
 
 .. _extending-intro:
 
 ********************************************************
-Extending Python with C or C++ Ê¹ÓÃ C »ò C++ À©Õ¹ Python
+Extending Python with C or C++ ä½¿ç”¨ C æˆ– C++ æ‰©å±• Python
 ********************************************************
 
 It is quite easy to add new built-in modules to Python, if you know how to
@@ -12,23 +12,23 @@ program in C.  Such :dfn:`extension modules` can do two things that can't be
 done directly in Python: they can implement new built-in object types, and they
 can call C library functions and system calls.
 
-Îª Python Ìí¼ÓĞÂµÄÄÚ½¨Ä£¿éÊ®·Ö¼òµ¥, Èç¹ûÄãÖªµÀÈçºÎÊ¹ÓÃ C ±à³ÌµÄ»°.
-ÕâĞ© :dfn:`extension modules` ¿ÉÒÔ×öÁ½¼ş²»ÄÜÖ±½ÓÓÃ Python ×öµÄÊÂ:
-ËüÃÇ¿ÉÒÔÊµÏÖĞÂµÄÄÚ½¨¶ÔÏóÀàĞÍ, ²¢ÇÒËûÃÇ¿ÉÒÔµ÷ÓÃ C ¿âº¯ÊıºÍÏµÍ³µ÷ÓÃ.
+ä¸º Python æ·»åŠ æ–°çš„å†…å»ºæ¨¡å—ååˆ†ç®€å•, å¦‚æœä½ çŸ¥é“å¦‚ä½•ä½¿ç”¨ C ç¼–ç¨‹çš„è¯.
+è¿™äº› :dfn:`extension modules` å¯ä»¥åšä¸¤ä»¶ä¸èƒ½ç›´æ¥ç”¨ Python åšçš„äº‹:
+å®ƒä»¬å¯ä»¥å®ç°æ–°çš„å†…å»ºå¯¹è±¡ç±»å‹, å¹¶ä¸”ä»–ä»¬å¯ä»¥è°ƒç”¨ C åº“å‡½æ•°å’Œç³»ç»Ÿè°ƒç”¨.
 
 To support extensions, the Python API (Application Programmers Interface)
 defines a set of functions, macros and variables that provide access to most
 aspects of the Python run-time system.  The Python API is incorporated in a C
 source file by including the header ``"Python.h"``.
 
-ÎªÖ§³ÖÀ©Õ¹, Python API (Ó¦ÓÃ³ÌĞò½Ó¿Ú) ¶¨ÒåÁËÒ»ÏµÁĞµÄº¯Êı, ºêºÍ±äÁ¿À´Ìá¹© Python
-ÔËĞĞÊ±ÏµÍ³µÄ´ó¶àÊı·½ÃæµÄ·ÃÎÊ. Í¨¹ıÔÚ C Ô´ÎÄ¼şÀï°üº¬Í·ÎÄ¼ş ``"Python.h"``,
-À´°üº¬ Python API.
+ä¸ºæ”¯æŒæ‰©å±•, Python API (åº”ç”¨ç¨‹åºæ¥å£) å®šä¹‰äº†ä¸€ç³»åˆ—çš„å‡½æ•°, å®å’Œå˜é‡æ¥æä¾› Python
+è¿è¡Œæ—¶ç³»ç»Ÿçš„å¤§å¤šæ•°æ–¹é¢çš„è®¿é—®. é€šè¿‡åœ¨ C æºæ–‡ä»¶é‡ŒåŒ…å«å¤´æ–‡ä»¶ ``"Python.h"``,
+æ¥åŒ…å« Python API.
 
 The compilation of an extension module depends on its intended use as well as on
 your system setup; details are given in later chapters.
 
-À©Õ¹Ä£¿éµÄ±àÒëÒÀÀµÓÚËüµÄÓÃÍ¾ÒÔ¼°ÄúÏµÍ³µÄÉèÖÃ; ÔÚºóÃæµÄÕÂ½ÚÀï»á¸ø³öÏêÏ¸ĞÅÏ¢.
+æ‰©å±•æ¨¡å—çš„ç¼–è¯‘ä¾èµ–äºå®ƒçš„ç”¨é€”ä»¥åŠæ‚¨ç³»ç»Ÿçš„è®¾ç½®; åœ¨åé¢çš„ç« èŠ‚é‡Œä¼šç»™å‡ºè¯¦ç»†ä¿¡æ¯.
 
 Do note that if your use case is calling C library functions or system calls,
 you should consider using the :mod:`ctypes` module rather than writing custom
@@ -36,17 +36,17 @@ C code. Not only does :mod:`ctypes` let you write Python code to interface
 with C code, but it is more portable between implementations of Python than
 writing and compiling an extension module which typically ties you to CPython.
 
-×¢Òâ, Èç¹ûÄãÊ¹ÓÃµÄÇé¿öÊÇµ÷ÓÃ C ¿âº¯Êı»òÕßÏµÍ³µ÷ÓÃ, ÄãÓ¦µ±¿¼ÂÇÊ¹ÓÃ :mod:`ctypes`
-Ä£¿é, ¶ø²»ÊÇĞ´×Ô¶¨µÄ C ´úÂë. :mod:`ctypes` ²»½öÊ¹Äú¿ÉÒÔÈÃ Python ´úÂëÊ¹ÓÃ C
-Ğ´µÄ½Ó¿Ú, ¶øÇÒ, Ïà±ÈÓÚ±àĞ´ºÍ±àÒëÒ»¸öÀ©Õ¹Ä£¿é´Ó¶øÄúÓë CPython ÁªÏµµÄ·½·¨,
-ÕâÖÖÊµÏÖ¸ü¾ß±¸¿ÉÒÆÖ²ĞÔ.
+æ³¨æ„, å¦‚æœä½ ä½¿ç”¨çš„æƒ…å†µæ˜¯è°ƒç”¨ C åº“å‡½æ•°æˆ–è€…ç³»ç»Ÿè°ƒç”¨, ä½ åº”å½“è€ƒè™‘ä½¿ç”¨ :mod:`ctypes`
+æ¨¡å—, è€Œä¸æ˜¯å†™è‡ªå®šçš„ C ä»£ç . :mod:`ctypes` ä¸ä»…ä½¿æ‚¨å¯ä»¥è®© Python ä»£ç ä½¿ç”¨ C
+å†™çš„æ¥å£, è€Œä¸”, ç›¸æ¯”äºç¼–å†™å’Œç¼–è¯‘ä¸€ä¸ªæ‰©å±•æ¨¡å—ä»è€Œæ‚¨ä¸ CPython è”ç³»çš„æ–¹æ³•,
+è¿™ç§å®ç°æ›´å…·å¤‡å¯ç§»æ¤æ€§.
 
 .. %
-    Õâ¶Î·­ÒëµÄ×Ô¼º¶¼¾õµÃ²»ºÃ, Ï£ÍûÓĞÈËÄÜ¹»¸Ä½øÒ»ÏÂ.
+    è¿™æ®µç¿»è¯‘çš„è‡ªå·±éƒ½è§‰å¾—ä¸å¥½, å¸Œæœ›æœ‰äººèƒ½å¤Ÿæ”¹è¿›ä¸€ä¸‹.
 
 .. _extending-simpleexample:
 
-A Simple Example Ò»¸ö¼òµ¥µÄÀı×Ó
+A Simple Example ä¸€ä¸ªç®€å•çš„ä¾‹å­
 ===============================
 
 Let's create an extension module called ``spam`` (the favorite food of Monty
@@ -58,10 +58,10 @@ be callable from Python as follows::
    >>> import spam
    >>> status = spam.system("ls -l")
 
-ÈÃÎÒÃÇÀ´´´½¨Ò»¸öÃûÎª ``spam`` (Monty Python ·ÛË¿×î°®µÄÊ³Îï) µÄÀ©Õ¹Ä£¿é,
-²¢ÇÒÎÒÃÇÏëÒªÎª C ¿âº¯Êı :c:func:`system` ´´½¨Ò»¸ö Python ½Ó¿Ú.
-[#]_ Õâ¸öº¯Êı½ÓÊÜÒ»¸öÒÔ¿Õ°××Ö·û½áÎ²µÄ×Ö·û´®×÷Îª²ÎÊı, ²¢·µ»ØÒ»¸öÕûÊı.
-ÎÒÃÇÏëÒªÕâ¸öº¯Êı¿ÉÒÔÈçÏÂµØ±» Python µ÷ÓÃ::
+è®©æˆ‘ä»¬æ¥åˆ›å»ºä¸€ä¸ªåä¸º ``spam`` (Monty Python ç²‰ä¸æœ€çˆ±çš„é£Ÿç‰©) çš„æ‰©å±•æ¨¡å—,
+å¹¶ä¸”æˆ‘ä»¬æƒ³è¦ä¸º C åº“å‡½æ•° :c:func:`system` åˆ›å»ºä¸€ä¸ª Python æ¥å£.
+[#]_ è¿™ä¸ªå‡½æ•°æ¥å—ä¸€ä¸ªä»¥ç©ºç™½å­—ç¬¦ç»“å°¾çš„å­—ç¬¦ä¸²ä½œä¸ºå‚æ•°, å¹¶è¿”å›ä¸€ä¸ªæ•´æ•°.
+æˆ‘ä»¬æƒ³è¦è¿™ä¸ªå‡½æ•°å¯ä»¥å¦‚ä¸‹åœ°è¢« Python è°ƒç”¨::
 
    >>> import spam
    >>> status = spam.system("ls -l")
@@ -71,9 +71,9 @@ called ``spam``, the C file containing its implementation is called
 :file:`spammodule.c`; if the module name is very long, like ``spammify``, the
 module name can be just :file:`spammify.c`.)
 
-Ê×ÏÈ´´½¨Ò»¸öÎÄ¼ş, :file:`spammodule.c`. (´ÓÀúÊ·ÉÏ¿´, Èç¹ûÒ»¸öÄ£¿éÃûÎª ``spam``,
-ÄÇÃ´°üº¬ËüµÄÊµÏÖµÄ C ÎÄ¼ş¾ÍÃüÃûÎª :file:`spammodule.c`; Èç¹ûÄ£¿éÃû·Ç³£³¤, Èç
-``spammify``, ÄÇÃ´¿ÉÒÔÏàÓ¦µÄ C ÎÄ¼şÃû¿ÉÒÔ¾ÍÊÇ :file:`spammify.c`.)
+é¦–å…ˆåˆ›å»ºä¸€ä¸ªæ–‡ä»¶, :file:`spammodule.c`. (ä»å†å²ä¸Šçœ‹, å¦‚æœä¸€ä¸ªæ¨¡å—åä¸º ``spam``,
+é‚£ä¹ˆåŒ…å«å®ƒçš„å®ç°çš„ C æ–‡ä»¶å°±å‘½åä¸º :file:`spammodule.c`; å¦‚æœæ¨¡å—åéå¸¸é•¿, å¦‚
+``spammify``, é‚£ä¹ˆå¯ä»¥ç›¸åº”çš„ C æ–‡ä»¶åå¯ä»¥å°±æ˜¯ :file:`spammify.c`.)
 
 The first line of our file can be::
 
@@ -82,11 +82,11 @@ The first line of our file can be::
 which pulls in the Python API (you can add a comment describing the purpose of
 the module and a copyright notice if you like).
 
-ÎÒÃÇÎÄ¼şµÄµÚÒ»ĞĞ¿ÉÒÔÊÇ::
+æˆ‘ä»¬æ–‡ä»¶çš„ç¬¬ä¸€è¡Œå¯ä»¥æ˜¯::
 
    #include <Python.h>
 
-ÕâÑù¿ÉÒÔ°üº¬ Python API £¨Èç¹ûÏ²»¶µÄ»°, Äã¿ÉÒÔÌí¼ÓÃèÊö¸ÃÄ£¿éÄ¿µÄµÄ×¢ÊÍºÍ°æÈ¨ÉùÃ÷).
+è¿™æ ·å¯ä»¥åŒ…å« Python API ï¼ˆå¦‚æœå–œæ¬¢çš„è¯, ä½ å¯ä»¥æ·»åŠ æè¿°è¯¥æ¨¡å—ç›®çš„çš„æ³¨é‡Šå’Œç‰ˆæƒå£°æ˜).
 
 .. note::
 
@@ -94,8 +94,8 @@ the module and a copyright notice if you like).
    headers on some systems, you *must* include :file:`Python.h` before any standard
    headers are included.
 
-   ÒòÎªÔÚÒ»Ğ©ÏµÍ³ÉÏ, Python ¿ÉÄÜ¶¨ÒåÁËÒ»Ğ©Ó°Ïì±ê×¼Í·ÎÄ¼şµÄÔ¤´¦ÀíÆ÷¶¨Òå, Òò´Ë,
-   Äã*±ØĞë*ÔÚÈÎºÎ°üº¬±ê×¼Í·ÎÄ¼şÖ®Ç°°üº¬ :file:`Python.h`.
+   å› ä¸ºåœ¨ä¸€äº›ç³»ç»Ÿä¸Š, Python å¯èƒ½å®šä¹‰äº†ä¸€äº›å½±å“æ ‡å‡†å¤´æ–‡ä»¶çš„é¢„å¤„ç†å™¨å®šä¹‰, å› æ­¤,
+   ä½ *å¿…é¡»*åœ¨ä»»ä½•åŒ…å«æ ‡å‡†å¤´æ–‡ä»¶ä¹‹å‰åŒ…å« :file:`Python.h`.
 
 All user-visible symbols defined by :file:`Python.h` have a prefix of ``Py`` or
 ``PY``, except those defined in standard header files. For convenience, and
@@ -105,11 +105,11 @@ includes a few standard header files: ``<stdio.h>``, ``<string.h>``,
 your system, it declares the functions :c:func:`malloc`, :c:func:`free` and
 :c:func:`realloc` directly.
 
-³ıÁËÔÚ±ê×¼Í·ÎÄ¼şÀï¶¨ÒåµÄ·ûºÅ, :file:`Python.h` ¶¨ÒåµÄËùÓĞÓÃ»§¿É¼û·ûºÅ¶¼ÓĞÒ»¸öÇ°×º,
-``Py`` »ò ``PY``. ÎªÁË·½±ã£¬ ¶øÇÒÒòÎªËüÃÇ±» Python ½âÊÍÆ÷¹ã·ºµØÊ¹ÓÃ, ``"Python.h"``
-°üº¬¼¸¸ö±ê×¼Í·ÎÄ¼ş: ``<stdio.h>``, ``string.h``, ``<errno.h``, ºÍ ``<stdlib.h>``.
-Èç¹ûºóÃæµÄÍ·ÎÄ¼şÔÚÄãµÄÏµÍ³Àï²»´æÔÚµÄ»°, Ëü»áÖ±½ÓµØÉùÃ÷º¯Êı :c:func:`malloc`,
-:c:func:`free` ºÍ :c:func:`realloc`.
+é™¤äº†åœ¨æ ‡å‡†å¤´æ–‡ä»¶é‡Œå®šä¹‰çš„ç¬¦å·, :file:`Python.h` å®šä¹‰çš„æ‰€æœ‰ç”¨æˆ·å¯è§ç¬¦å·éƒ½æœ‰ä¸€ä¸ªå‰ç¼€,
+``Py`` æˆ– ``PY``. ä¸ºäº†æ–¹ä¾¿ï¼Œ è€Œä¸”å› ä¸ºå®ƒä»¬è¢« Python è§£é‡Šå™¨å¹¿æ³›åœ°ä½¿ç”¨, ``"Python.h"``
+åŒ…å«å‡ ä¸ªæ ‡å‡†å¤´æ–‡ä»¶: ``<stdio.h>``, ``string.h``, ``<errno.h``, å’Œ ``<stdlib.h>``.
+å¦‚æœåé¢çš„å¤´æ–‡ä»¶åœ¨ä½ çš„ç³»ç»Ÿé‡Œä¸å­˜åœ¨çš„è¯, å®ƒä¼šç›´æ¥åœ°å£°æ˜å‡½æ•° :c:func:`malloc`,
+:c:func:`free` å’Œ :c:func:`realloc`.
 
 The next thing we add to our module file is the C function that will be called
 when the Python expression ``spam.system(string)`` is evaluated (we'll see
@@ -127,8 +127,8 @@ shortly how it ends up being called)::
        return PyLong_FromLong(sts);
    }
 
-ÏÂÒ»¸ö±»Ìí¼Óµ½ÎÒÃÇÄ£¿éÎÄ¼şµÄ¶«Î÷ÊÇÒ»¸ö C º¯Êı, Õâ¸öº¯Êı½«ÔÚ¼ÆËã±í´ïÊ½
-``spam.system(string)`` Ê±±»µ÷ÓÃ (²»¾Ã, ÎÒÃÇ½«¿´µ½ËüÔÚ±»µ÷ÓÃµÄÊ±ºòÈçºÎ½áÊø)::
+ä¸‹ä¸€ä¸ªè¢«æ·»åŠ åˆ°æˆ‘ä»¬æ¨¡å—æ–‡ä»¶çš„ä¸œè¥¿æ˜¯ä¸€ä¸ª C å‡½æ•°, è¿™ä¸ªå‡½æ•°å°†åœ¨è®¡ç®—è¡¨è¾¾å¼
+``spam.system(string)`` æ—¶è¢«è°ƒç”¨ (ä¸ä¹…, æˆ‘ä»¬å°†çœ‹åˆ°å®ƒåœ¨è¢«è°ƒç”¨çš„æ—¶å€™å¦‚ä½•ç»“æŸ)::
 
    static PyObject *
    spam_system(PyObject *self, PyObject *args)
@@ -143,20 +143,20 @@ shortly how it ends up being called)::
    }
 
 .. %
-    À¨ºÅÀï²»ÖªµÀÊÇ²»ÊÇÕâÑù·­Òë
+    æ‹¬å·é‡Œä¸çŸ¥é“æ˜¯ä¸æ˜¯è¿™æ ·ç¿»è¯‘
 
 There is a straightforward translation from the argument list in Python (for
 example, the single expression ``"ls -l"``) to the arguments passed to the C
 function.  The C function always has two arguments, conventionally named *self*
 and *args*.
 
-´Ó Python ÖĞµÄ²ÎÊıÁĞ±í (±¾ÀıÖĞ, ¼òµ¥µÄ±í´ïÊ½ ``"ls -l"``) µ½´«µİ¸ø C
-º¯ÊıµÄ²ÎÊıÖ®¼äÓĞÒ»¸öÃ÷È·µÄ×ª»». C º¯ÊıÍ¨³£ÓĞÁ½¸ö²ÎÊı, Ô¼¶¨ÃüÃûÎª *self* ºÍ *args*.
+ä» Python ä¸­çš„å‚æ•°åˆ—è¡¨ (æœ¬ä¾‹ä¸­, ç®€å•çš„è¡¨è¾¾å¼ ``"ls -l"``) åˆ°ä¼ é€’ç»™ C
+å‡½æ•°çš„å‚æ•°ä¹‹é—´æœ‰ä¸€ä¸ªæ˜ç¡®çš„è½¬æ¢. C å‡½æ•°é€šå¸¸æœ‰ä¸¤ä¸ªå‚æ•°, çº¦å®šå‘½åä¸º *self* å’Œ *args*.
 
 The *self* argument points to the module object for module-level functions;
 for a method it would point to the object instance.
 
-¶ÔÓÚÄ£¿é¼¶±ğµÄº¯Êı, ²ÎÊı *self* Ö¸ÏòÕâ¸öÄ£¿é¶ÔÏó; ¶ø¶ÔÓÚ·½·¨, Ëü½«Ö¸ÏòÕâ¸ö¶ÔÏóÊµÀı.
+å¯¹äºæ¨¡å—çº§åˆ«çš„å‡½æ•°, å‚æ•° *self* æŒ‡å‘è¿™ä¸ªæ¨¡å—å¯¹è±¡; è€Œå¯¹äºæ–¹æ³•, å®ƒå°†æŒ‡å‘è¿™ä¸ªå¯¹è±¡å®ä¾‹.
 
 The *args* argument will be a pointer to a Python tuple object containing the
 arguments.  Each item of the tuple corresponds to an argument in the call's
@@ -167,12 +167,12 @@ converts them to C values.  It uses a template string to determine the required
 types of the arguments as well as the types of the C variables into which to
 store the converted values.  More about this later.
 
-²ÎÊı *args* ÊÇÒ»¸öÖ¸Õë, ËüÖ¸ÏòÒ»¸ö°üº¬²ÎÊıµÄ Python Ôª×é¶ÔÏó.
-¸ÃÔª×éÀïµÄÃ¿Ò»Ïî¶ÔÓ¦ÓÚµ÷ÓÃµÄ²ÎÊı±íÀïµÄÒ»¸ö²ÎÊı. ÕâĞ©²ÎÊıÊÇ Python ¶ÔÏó ---
-ÎªÁËÄÜÔÚÎÒÃÇµÄ C º¯ÊıÀï¶ÔËüÃÇ×öÈÎºÎÊÂ, ÎÒÃÇ±ØĞë°ÑËüÃÇ×ª»¯Îª C Öµ.
-°üº¬ÓÚ Python API µÄº¯Êı :c:func:`PyArg_ParseTuple` ¼ì²é²ÎÊıµÄÀàĞÍ²¢°ÑËüÃÇ×ª»¯Îª C Öµ.
-ËüÊ¹ÓÃÒ»¸öÄ£°å×Ö·û´®À´È·¶¨²ÎÊıËùĞèµÄÀàĞÍ, ÒÔ¼°´¢´æ×ª»»ºóµÄÖµµÄ C ±äÁ¿µÄÀàĞÍ.
-ºóÃæ»áÓĞ¸ü¶àÏà¹ØÄÚÈİ.
+å‚æ•° *args* æ˜¯ä¸€ä¸ªæŒ‡é’ˆ, å®ƒæŒ‡å‘ä¸€ä¸ªåŒ…å«å‚æ•°çš„ Python å…ƒç»„å¯¹è±¡.
+è¯¥å…ƒç»„é‡Œçš„æ¯ä¸€é¡¹å¯¹åº”äºè°ƒç”¨çš„å‚æ•°è¡¨é‡Œçš„ä¸€ä¸ªå‚æ•°. è¿™äº›å‚æ•°æ˜¯ Python å¯¹è±¡ ---
+ä¸ºäº†èƒ½åœ¨æˆ‘ä»¬çš„ C å‡½æ•°é‡Œå¯¹å®ƒä»¬åšä»»ä½•äº‹, æˆ‘ä»¬å¿…é¡»æŠŠå®ƒä»¬è½¬åŒ–ä¸º C å€¼.
+åŒ…å«äº Python API çš„å‡½æ•° :c:func:`PyArg_ParseTuple` æ£€æŸ¥å‚æ•°çš„ç±»å‹å¹¶æŠŠå®ƒä»¬è½¬åŒ–ä¸º C å€¼.
+å®ƒä½¿ç”¨ä¸€ä¸ªæ¨¡æ¿å­—ç¬¦ä¸²æ¥ç¡®å®šå‚æ•°æ‰€éœ€çš„ç±»å‹, ä»¥åŠå‚¨å­˜è½¬æ¢åçš„å€¼çš„ C å˜é‡çš„ç±»å‹.
+åé¢ä¼šæœ‰æ›´å¤šç›¸å…³å†…å®¹.
 
 :c:func:`PyArg_ParseTuple` returns true (nonzero) if all arguments have the right
 type and its components have been stored in the variables whose addresses are
@@ -180,14 +180,14 @@ passed.  It returns false (zero) if an invalid argument list was passed.  In the
 latter case it also raises an appropriate exception so the calling function can
 return *NULL* immediately (as we saw in the example).
 
-:c:func:`PyArg_ParseTuple`ÔÚËùÓĞ²ÎÊıµÄÀàĞÍÕıÈ·, ²¢ÇÒËüµÄ×é¼ş±»´¢´æÔÚµØÖ·±»´«µİµÄ±äÁ¿ÀïµÄÇé¿öÏÂ,
-»á·µ»ØÕæ (·ÇÁãÖµ). Èç¹û±»´«µİÒ»¸öÎŞĞ§µÄ²ÎÊı±í, Ëü·µ»Ø¼Ù (0).
-ºóÒ»ÖÖÇé¿ö, ËüÒ²Å×³öÒ»¸öÊÊµ±µÄÒì³£, Òò´Ëµ÷ÓÃº¯Êı¿ÉÒÔÁ¢¼´·µ»Ø *NULL* (¾ÍÈçÎÒÃÇÔÚÕâ¸öÀı×ÓÀï¿´µ½µÄ). 
+:c:func:`PyArg_ParseTuple`åœ¨æ‰€æœ‰å‚æ•°çš„ç±»å‹æ­£ç¡®, å¹¶ä¸”å®ƒçš„ç»„ä»¶è¢«å‚¨å­˜åœ¨åœ°å€è¢«ä¼ é€’çš„å˜é‡é‡Œçš„æƒ…å†µä¸‹,
+ä¼šè¿”å›çœŸ (éé›¶å€¼). å¦‚æœè¢«ä¼ é€’ä¸€ä¸ªæ— æ•ˆçš„å‚æ•°è¡¨, å®ƒè¿”å›å‡ (0).
+åä¸€ç§æƒ…å†µ, å®ƒä¹ŸæŠ›å‡ºä¸€ä¸ªé€‚å½“çš„å¼‚å¸¸, å› æ­¤è°ƒç”¨å‡½æ•°å¯ä»¥ç«‹å³è¿”å› *NULL* (å°±å¦‚æˆ‘ä»¬åœ¨è¿™ä¸ªä¾‹å­é‡Œçœ‹åˆ°çš„). 
 
 
 .. _extending-errors:
 
-Intermezzo: Errors and Exceptions ²åÇú: ´íÎóºÍÒì³£
+Intermezzo: Errors and Exceptions æ’æ›²: é”™è¯¯å’Œå¼‚å¸¸
 ==================================================
 
 An important convention throughout the Python interpreter is the following: when
@@ -201,16 +201,16 @@ are the C equivalents of the result in Python of :meth:`sys.exc_info` (see the
 section on module :mod:`sys` in the Python Library Reference).  It is important
 to know about them to understand how errors are passed around.
 
-ÓĞÒ»¸öÖØÒªµÄÔ¼¶¨¹á´©Õû¸ö Python ½âÊÍÆ÷: µ±Ò»¸öº¯ÊıÊ§°ÜÊ±, ËüÓ¦µ±ÉèÖÃÒ»¸öÒì³£Ìõ¼ş,
-²¢ÇÒ·µ»ØÒ»¸ö´íÎóÖµ (Í¨³£ÊÇÒ»¸ö *NULL* Ö¸Õë). Òì³£´æ´¢ÔÚ½âÊÍÆ÷ÄÚ²¿µÄÒ»¸ö¾²Ì¬È«¾Ö±äÁ¿Àï;
-Èç¹ûÕâ¸öÖµÎª *NULL*, ÄÇÃ´Ã»ÓĞ·¢ÉúÈÎºÎÒì³£. µÚ¶ş¸öÈ«¾Ö±äÁ¿´æ´¢ÁËÒì³£µÄ "Ïà¹ØÖµ"
-(´«µİ¸ø :keyword:`raise` µÄµÚ¶ş¸ö²ÎÊı). Èç¹û´íÎóµÄÔ´Í·ÔÚ Python ´úÂëÀï, ÄÇÃ´µÚÈı¸ö±äÁ¿°üº¬¶ÑÕ»¸ú×Ù.
-ÕâÈı¸ö±äÁ¿ÊÇ Python ÖĞ :meth:`sys.exc_info` (²ÎÔÄ Python ¿â²Î¿¼¹ØÓÚ :mod:`sys` Ä£¿éµÄ²¿·Ö)
-µÄ½á¹ûµÈ¼Û. ÁË½âÕâĞ©¶ÔÓÚÀí½â´íÎóÈçºÎµ½´¦´«µİÊÇÖØÒªµÄ.
+æœ‰ä¸€ä¸ªé‡è¦çš„çº¦å®šè´¯ç©¿æ•´ä¸ª Python è§£é‡Šå™¨: å½“ä¸€ä¸ªå‡½æ•°å¤±è´¥æ—¶, å®ƒåº”å½“è®¾ç½®ä¸€ä¸ªå¼‚å¸¸æ¡ä»¶,
+å¹¶ä¸”è¿”å›ä¸€ä¸ªé”™è¯¯å€¼ (é€šå¸¸æ˜¯ä¸€ä¸ª *NULL* æŒ‡é’ˆ). å¼‚å¸¸å­˜å‚¨åœ¨è§£é‡Šå™¨å†…éƒ¨çš„ä¸€ä¸ªé™æ€å…¨å±€å˜é‡é‡Œ;
+å¦‚æœè¿™ä¸ªå€¼ä¸º *NULL*, é‚£ä¹ˆæ²¡æœ‰å‘ç”Ÿä»»ä½•å¼‚å¸¸. ç¬¬äºŒä¸ªå…¨å±€å˜é‡å­˜å‚¨äº†å¼‚å¸¸çš„ "ç›¸å…³å€¼"
+(ä¼ é€’ç»™ :keyword:`raise` çš„ç¬¬äºŒä¸ªå‚æ•°). å¦‚æœé”™è¯¯çš„æºå¤´åœ¨ Python ä»£ç é‡Œ, é‚£ä¹ˆç¬¬ä¸‰ä¸ªå˜é‡åŒ…å«å †æ ˆè·Ÿè¸ª.
+è¿™ä¸‰ä¸ªå˜é‡æ˜¯ Python ä¸­ :meth:`sys.exc_info` (å‚é˜… Python åº“å‚è€ƒå…³äº :mod:`sys` æ¨¡å—çš„éƒ¨åˆ†)
+çš„ç»“æœç­‰ä»·. äº†è§£è¿™äº›å¯¹äºç†è§£é”™è¯¯å¦‚ä½•åˆ°å¤„ä¼ é€’æ˜¯é‡è¦çš„.
 
 The Python API defines a number of functions to set various types of exceptions.
 
-Python API ¶¨ÒåÁËÒ»Ğ©º¯ÊıÀ´ÉèÖÃÒì³£µÄ¸÷ÖÖÀàĞÍ.
+Python API å®šä¹‰äº†ä¸€äº›å‡½æ•°æ¥è®¾ç½®å¼‚å¸¸çš„å„ç§ç±»å‹.
 
 The most common one is :c:func:`PyErr_SetString`.  Its arguments are an exception
 object and a C string.  The exception object is usually a predefined object like
@@ -218,9 +218,9 @@ object and a C string.  The exception object is usually a predefined object like
 and is converted to a Python string object and stored as the "associated value"
 of the exception.
 
-×î³£¼ûµÄÒ»¸öÊÇ :c:func:`PyErr_SetString`.  ËüµÄ²ÎÊıÊÇÒ»¸öÒì³£¶ÔÏóºÍÒ»¸ö C ×Ö·û´®.
-Òì³£¶ÔÏóÍ¨³£ÊÇÒ»¸öÔ¤ÏÈ¶¨ÒåµÄ¶ÔÏó, Èç :c:data:`PyExc_ZeroDivisionError`. C
-×Ö·û´®±íÃ÷´íÎóµÄÆğÒò, Ëü±»×ª»»ÎªÒ»¸ö Python ×Ö·û´®¶ÔÏó, ²¢´æ×÷Òì³£µÄ "Ïà¹ØÖµ".
+æœ€å¸¸è§çš„ä¸€ä¸ªæ˜¯ :c:func:`PyErr_SetString`.  å®ƒçš„å‚æ•°æ˜¯ä¸€ä¸ªå¼‚å¸¸å¯¹è±¡å’Œä¸€ä¸ª C å­—ç¬¦ä¸².
+å¼‚å¸¸å¯¹è±¡é€šå¸¸æ˜¯ä¸€ä¸ªé¢„å…ˆå®šä¹‰çš„å¯¹è±¡, å¦‚ :c:data:`PyExc_ZeroDivisionError`. C
+å­—ç¬¦ä¸²è¡¨æ˜é”™è¯¯çš„èµ·å› , å®ƒè¢«è½¬æ¢ä¸ºä¸€ä¸ª Python å­—ç¬¦ä¸²å¯¹è±¡, å¹¶å­˜ä½œå¼‚å¸¸çš„ "ç›¸å…³å€¼".
 
 Another useful function is :c:func:`PyErr_SetFromErrno`, which only takes an
 exception argument and constructs the associated value by inspection of the
@@ -229,9 +229,9 @@ global variable :c:data:`errno`.  The most general function is
 its associated value.  You don't need to :c:func:`Py_INCREF` the objects passed
 to any of these functions.
 
-ÁíÒ»¸öÓĞÓÃµÄº¯ÊıÊÇ :c:func:`PyErr_SetFromErrno`, ËüÖ»ĞèÒªÒ»¸öÒì³£²ÎÊı, 
-²¢ÇÒÍ¨¹ıÈ«¾Ö±äÁ¿ :c:data:`errno` ¹¹ÔìÏà¹ØÖµ. ×îÎªÒ»°ãµÄº¯ÊıÊÇ :c:func:`PyErr_SetObject`,
-ËüĞèÒªÁ½¸ö²ÎÊı, Òì³£ÒÔ¼°ËüµÄÏà¹ØÖµ. Äã²»ĞèÒª :c:func:`Py_INCREF` ±»´«µİ¸øÕâĞ©º¯ÊıµÄ¶ÔÏó.
+å¦ä¸€ä¸ªæœ‰ç”¨çš„å‡½æ•°æ˜¯ :c:func:`PyErr_SetFromErrno`, å®ƒåªéœ€è¦ä¸€ä¸ªå¼‚å¸¸å‚æ•°, 
+å¹¶ä¸”é€šè¿‡å…¨å±€å˜é‡ :c:data:`errno` æ„é€ ç›¸å…³å€¼. æœ€ä¸ºä¸€èˆ¬çš„å‡½æ•°æ˜¯ :c:func:`PyErr_SetObject`,
+å®ƒéœ€è¦ä¸¤ä¸ªå‚æ•°, å¼‚å¸¸ä»¥åŠå®ƒçš„ç›¸å…³å€¼. ä½ ä¸éœ€è¦ :c:func:`Py_INCREF` è¢«ä¼ é€’ç»™è¿™äº›å‡½æ•°çš„å¯¹è±¡.
 
 You can test non-destructively whether an exception has been set with
 :c:func:`PyErr_Occurred`.  This returns the current exception object, or *NULL*
@@ -239,10 +239,10 @@ if no exception has occurred.  You normally don't need to call
 :c:func:`PyErr_Occurred` to see whether an error occurred in a function call,
 since you should be able to tell from the return value.
 
-ÎŞÂÛÊÇ·ñÒÑ¾­ÉèÖÃÁËÒ»¸öÒì³£, Äã¶¼¿ÉÒÔÊ¹ÓÃ :c:func:`PyErr_Occurred` À´ÎŞÆÆ»µµÄ²âÊÔ.
-Õâ»á·µ»Øµ±Ç°µÄÒì³£¶ÔÏó, Èç¹ûÃ»ÓĞÒì³£·¢Éú¾Í·µ»Ø *NULL*, Í¨³£, Äã²»ĞèÒªµ÷ÓÃ
-:c:func:`PyErr_Occurred` À´²é¿´ÊÇ·ñÔÚÒ»´Îº¯Êıµ÷ÓÃÖĞ·¢ÉúÁË´íÎó,
-ÒòÎªÄãÓ¦¸Ã¿ÉÒÔ´Ó·µ»ØÖµÖĞÖªµÀÕâµã.
+æ— è®ºæ˜¯å¦å·²ç»è®¾ç½®äº†ä¸€ä¸ªå¼‚å¸¸, ä½ éƒ½å¯ä»¥ä½¿ç”¨ :c:func:`PyErr_Occurred` æ¥æ— ç ´åçš„æµ‹è¯•.
+è¿™ä¼šè¿”å›å½“å‰çš„å¼‚å¸¸å¯¹è±¡, å¦‚æœæ²¡æœ‰å¼‚å¸¸å‘ç”Ÿå°±è¿”å› *NULL*, é€šå¸¸, ä½ ä¸éœ€è¦è°ƒç”¨
+:c:func:`PyErr_Occurred` æ¥æŸ¥çœ‹æ˜¯å¦åœ¨ä¸€æ¬¡å‡½æ•°è°ƒç”¨ä¸­å‘ç”Ÿäº†é”™è¯¯,
+å› ä¸ºä½ åº”è¯¥å¯ä»¥ä»è¿”å›å€¼ä¸­çŸ¥é“è¿™ç‚¹.
 
 When a function *f* that calls another function *g* detects that the latter
 fails, *f* should itself return an error value (usually *NULL* or ``-1``).  It
@@ -254,14 +254,19 @@ that first detected it.  Once the error reaches the Python interpreter's main
 loop, this aborts the currently executing Python code and tries to find an
 exception handler specified by the Python programmer.
 
-µ±º¯Êı *f* µ÷ÓÃº¯Êı *g*, *g* Ê§°ÜÁË, *f* ×Ô¼ºÓ¦µ±·µ»ØÒ»¸ö´íÎóÖµ (Í¨³£ÊÇ *NULL* »ò ``-1``).
-²»Ó¦µ±µ÷ÓÃ :c:func:`PyErr_\*` ÖĞµÄÈÎºÎÒ»¸ö --- ÓĞÒ»¸öÒÑ¾­±» *g* µ÷ÓÃ.  
+å½“å‡½æ•° *f* è°ƒç”¨å‡½æ•° *g*, *g* å¤±è´¥äº†, *f* è‡ªå·±åº”å½“è¿”å›ä¸€ä¸ªé”™è¯¯å€¼ (é€šå¸¸æ˜¯ *NULL* æˆ– ``-1``).
+ä¸åº”å½“è°ƒç”¨ :c:func:`PyErr_\*` ä¸­çš„ä»»ä½•ä¸€ä¸ª --- æœ‰ä¸€ä¸ªå·²ç»è¢« *g* è°ƒç”¨.
+*f* çš„è°ƒç”¨è€…è¢«å‡å®šä¹Ÿè¿”å›ä¸€ä¸ªé”™è¯¯æŒ‡ç¤ºç»™*å®ƒçš„*è°ƒç”¨è€…, *æ²¡æœ‰*è°ƒç”¨ :c:func:`PyErr_\*`,
+ç­‰ç­‰ --- é”™è¯¯æœ€ä¸ºè¯¦ç»†çš„èµ·å› å·²ç»è¢«ç¬¬ä¸€ä¸ªæ£€æµ‹åˆ°å®ƒçš„å‡½æ•°æŠ¥å‘Šäº†. ä¸€æ—¦é”™è¯¯åˆ°è¾¾äº† Python
+è§£é‡Šå™¨çš„ä¸»å¾ªç¯, è¿™ä¼šä¸­æ­¢å½“å‰ Python ä»£ç çš„æ‰§è¡Œ, å¹¶ä¸”å°è¯•å¯»æ‰¾ç”± Python ç¨‹åºå‘˜æŒ‡å®šçš„å¼‚å¸¸å¤„ç†å™¨.
 
 (There are situations where a module can actually give a more detailed error
 message by calling another :c:func:`PyErr_\*` function, and in such cases it is
 fine to do so.  As a general rule, however, this is not necessary, and can cause
 information about the cause of the error to be lost: most operations can fail
 for a variety of reasons.)
+
+(
 
 To ignore an exception set by a function call that failed, the exception
 condition must be cleared explicitly by calling :c:func:`PyErr_Clear`.  The only
