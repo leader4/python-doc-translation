@@ -12,14 +12,18 @@ Python on Windows FAQ
    XXX need review for Windows Vista/Seven?
 
 
-How do I run a Python program under Windows?
---------------------------------------------
+How do I run a Python program under Windows? 如何在 Windows 下运行 Python 程序
+----------------------------------------------------------------------------------------
 
 This is not necessarily a straightforward question. If you are already familiar
 with running programs from the Windows command line then everything will seem
 obvious; otherwise, you might need a little more guidance.  There are also
 differences between Windows 95, 98, NT, ME, 2000 and XP which can add to the
 confusion.
+
+这并不是一个易懂的问题. 如果你对于命令行有一定的了解, 那么看起来会比较简单;
+否则, 你可能需要一点点的帮助. 而在 Windows 的不同系统下, 也会有不同,
+这就增加了更多的困扰.
 
 .. sidebar:: |Python Development on XP|_
    :subtitle: `Python Development on XP`_
@@ -28,6 +32,10 @@ confusion.
    Windows XP.  The knowledge is distilled into 1.5 hours and will get you up
    and running with the right Python distribution, coding in your choice of IDE,
    and debugging and writing solid code with unit-tests.
+
+   这一系列的截图是为了帮助你在 Windows XP 下运行 Python.
+   此处会使用 1.5 个小时来帮助你获得并运行正确的发行版,
+   在你选的 IDE 中进行编码, 调试和进行单元测试.
 
 .. |Python Development on XP| image:: python-video-icon.png
 .. _`Python Development on XP`:
@@ -39,12 +47,25 @@ or "Command prompt window".  Usually you can create such a window from your
 Start menu; under Windows 2000 the menu selection is :menuselection:`Start -->
 Programs --> Accessories --> Command Prompt`.  You should be able to recognize
 when you have started such a window because you will see a Windows "command
-prompt", which usually looks like this::
+prompt", which usually looks like this:
+
+除非你使用 IDE (Integrated Development Environment), 你一般需要键入 Windows
+的命令到所谓的 "DOS 窗口" 或 "命令提示窗口". 通常, 你可以从你的开始菜单中创建;
+在 Windows 2000 下菜单的选择过程是 :menuselection:`开始 --> 程序 -->
+附件 --> 命令提示符`. 你应该能够知道, 因为你将会看到一个 "命令提示符",
+通常看起来是这样的:
+
+::
 
    C:\>
 
 The letter may be different, and there might be other things after it, so you
-might just as easily see something like::
+might just as easily see something like:
+
+字母可能看起来并不相同, 并且会有其他的东西跟着它,
+你很容易看到这样的东西:
+
+::
 
    D:\Steve\Projects\Python>
 
@@ -52,15 +73,28 @@ depending on how your computer has been set up and what else you have recently
 done with it.  Once you have started such a window, you are well on the way to
 running Python programs.
 
+这依赖于你的计算机是如何设置的, 还有就是你对他做了什么.
+如果你启动了这样的窗口, 那么你就会了解运行 Python 程序的方法.
+
 You need to realize that your Python scripts have to be processed by another
 program called the Python interpreter.  The interpreter reads your script,
 compiles it into bytecodes, and then executes the bytecodes to run your
 program. So, how do you arrange for the interpreter to handle your Python?
 
+你需要知道, 你的 Python 脚本是被另一个称为 Python 解释器的程序运行.
+这个解释器会读取你的脚本, 把它编译为字节码, 然后再执行这个字节码.
+所以, 你应该如何让这个解释器来处理你的 Python 呢?
+
 First, you need to make sure that your command window recognises the word
 "python" as an instruction to start the interpreter.  If you have opened a
 command window, you should try entering the command ``python`` and hitting
-return.  You should then see something like::
+return.  You should then see something like:
+
+首先, 你需要确保你的命令提示符能够认识 "python" 并且能启动解释器.
+如果你已经打开了一个命令提示符窗口, 你应该尝试输入 "python"
+并且敲回车. 然后就会看到这样的东西:
+
+::
 
    Python 2.2 (#28, Dec 21 2001, 12:21:22) [MSC 32 bit (Intel)] on win32
    Type "help", "copyright", "credits" or "license" for more information.
@@ -69,7 +103,13 @@ return.  You should then see something like::
 You have started the interpreter in "interactive mode". That means you can enter
 Python statements or expressions interactively and have them executed or
 evaluated while you wait.  This is one of Python's strongest features.  Check it
-by entering a few expressions of your choice and seeing the results::
+by entering a few expressions of your choice and seeing the results:
+
+你以 "交互模式" 启动了解释器. 这意味着, 你可以交互式地输入 Python 的语句或者表达式,
+然后执行它们. 这就是 Python 其中的一个强项. 你可以通过输入几个表达式, 
+然后看看结果来检验这点强项:
+
+::
 
     >>> print("Hello")
     Hello
@@ -81,14 +121,26 @@ calculator.  When you want to end your interactive Python session, hold the Ctrl
 key down while you enter a Z, then hit the "Enter" key to get back to your
 Windows command prompt.
 
+很多人使用交互模式作为简单但是强大的可编程计算器.
+当你要结束此次交互会话时, 你可以按 Ctrl-Z 后, 输入回车回到命令提示符窗口.
+
 You may also find that you have a Start-menu entry such as :menuselection:`Start
 --> Programs --> Python 2.2 --> Python (command line)` that results in you
 seeing the ``>>>`` prompt in a new window.  If so, the window will disappear
 after you enter the Ctrl-Z character; Windows is running a single "python"
 command in the window, and closes it when you terminate the interpreter.
 
+你也可能发现在你的开始菜单项中就有了这一项, 比如 :menuselection:`开始 -->
+程序 --> Python 2.2 --> Python (command line)` 就可以是你直接打开一个窗口.
+如果这样, 你按了 Ctrl-Z 后窗口就会消失; Windows 就运行了一个 "python",
+当关掉解释器后就会自动关闭窗口.
+
 If the ``python`` command, instead of displaying the interpreter prompt ``>>>``,
-gives you a message like::
+gives you a message like:
+
+如果出现的不是提示符 ``>>>``, 而是:
+
+::
 
    'python' is not recognized as an internal or external command,
    operable program or batch file.
@@ -100,12 +152,16 @@ gives you a message like::
    you through the steps to add the correct entry to the `System Path`, allowing
    Python to be executed from the command-line by all users.
 
+   Python 默认下并不会添加到 DOS 的搜索路径中.
+   此处的截图会帮你了解如何添加合适的项到 `系统路径`,
+   运行所有的用户都能直接运行 Python.
+
 .. |Adding Python to DOS Path| image:: python-video-icon.png
 .. _`Adding Python to DOS Path`:
    http://showmedo.com/videos/video?name=960000&fromSeriesID=96
 
 
-or::
+or 或者::
 
    Bad command or filename
 
@@ -113,9 +169,17 @@ then you need to make sure that your computer knows where to find the Python
 interpreter.  To do this you will have to modify a setting called PATH, which is
 a list of directories where Windows will look for programs.
 
+那么你就需要确保你的计算机知道从何处查找 Python 的解释器.
+你需要修改一个称为 PATH 的设置, 这里面存放了 Windows 查找程序时的路径.
+
 You should arrange for Python's installation directory to be added to the PATH
 of every command window as it starts.  If you installed Python fairly recently
-then the command ::
+then the command:
+
+你需要将 Python 的安装路径添加到 PATH 变量中.
+如果你正确的安装了, 那么命令:
+
+::
 
    dir C:\py*
 
@@ -124,7 +188,15 @@ like ``C:\Python23``.  Otherwise you will be reduced to a search of your whole
 disk ... use :menuselection:`Tools --> Find` or hit the :guilabel:`Search`
 button and look for "python.exe".  Supposing you discover that Python is
 installed in the ``C:\Python23`` directory (the default at the time of writing),
-you should make sure that entering the command ::
+you should make sure that entering the command :
+
+将会告诉你它装在什么地方; 一般的路径是类似于 ``C:\Python23`` 这样的东西.
+否则你就需要搜索这个硬盘. 使用 :menuselection:`工具 --> 查找` 或点击
+:guilabel:`Search` 按钮进行查找 "python.exe". 加入你发现 Python
+被安装于 ``C:\Python23`` 目录 (那个时候的默认值),
+你需要确保输入命令:
+
+::
 
    c:\Python23\python
 
@@ -132,11 +204,21 @@ starts up the interpreter as above (and don't forget you'll need a "CTRL-Z" and
 an "Enter" to get out of it). Once you have verified the directory, you need to
 add it to the start-up routines your computer goes through.  For older versions
 of Windows the easiest way to do this is to edit the ``C:\AUTOEXEC.BAT``
-file. You would want to add a line like the following to ``AUTOEXEC.BAT``::
+file. You would want to add a line like the following to ``AUTOEXEC.BAT``:
+
+像前面那样正确的启动了解释器 (不要忘记需要用 "CTRL-Z" 再加个回车进行退出).
+一旦你找到了这样的目录, 你就需要添加到启动项中. 对于早期版本的 Windows,
+你要编辑 ``C:\AUTOEXEC.BAT`` 文件. 你需要在这个文件中添加类似下面的一行:
+
+::
 
    PATH C:\Python23;%PATH%
 
-For Windows NT, 2000 and (I assume) XP, you will need to add a string such as ::
+For Windows NT, 2000 and (I assume) XP, you will need to add a string such as :
+
+对于 Windows NT, 2000 和 XP 之类的, 你需要增加下面的字符串:
+
+::
 
    ;C:\Python23
 
@@ -146,19 +228,36 @@ you have sufficient privilege you might get a choice of installing the settings
 either for the Current User or for System.  The latter is preferred if you want
 everybody to be able to run Python on the machine.
 
+到 PATH 环境变量中 (右击 "我的电脑" 点属性, 然后 "高级"). 
+注意如需要有一定的权限才能够进行设置. 这里有当前用户和系统的环境变量.
+系统的环境变量会作用于该机器上的每个用户.
+
 If you aren't confident doing any of these manipulations yourself, ask for help!
 At this stage you may want to reboot your system to make absolutely sure the new
 setting has taken effect.  You probably won't need to reboot for Windows NT, XP
 or 2000.  You can also avoid it in earlier versions by editing the file
 ``C:\WINDOWS\COMMAND\CMDINIT.BAT`` instead of ``AUTOEXEC.BAT``.
 
+如果你对此并不是很有信心, 那么就寻求帮助!
+然后你还可能需要重启计算机以确保设置都有效了.
+在 Windows NT, 2000 或 XP 等更高的版本中可能并不需要炒年糕其.
+你也可以通过编辑 ``C:\WINDOWS\COMMAND\CMDINIT.BAT`` 来避免重启.
+
 You should now be able to start a new command window, enter ``python`` at the
 ``C:\>`` (or whatever) prompt, and see the ``>>>`` prompt that indicates the
 Python interpreter is reading interactive commands.
 
+你现在应该可以启动一个新的命令提示符, 然后输入 ``python`` 并可以看到 ``>>>``
+这样的提示符, 这就说明 Python 解释器已经进入交换模式了.
+
 Let's suppose you have a program called ``pytest.py`` in directory
 ``C:\Steve\Projects\Python``.  A session to run that program might look like
-this::
+this:
+
+我们假设有一个称为 ``pytest.py`` 的程序在目录 ``C:\Steve\Projects\Python`` 中.
+这段会话看起来像这样:
+
+::
 
    C:\> cd \Steve\Projects\Python
    C:\Steve\Projects\Python> python pytest.py
@@ -492,8 +591,7 @@ cgi.py (or other CGI programming) doesn't work sometimes on NT or win95!
 ------------------------------------------------------------------------
 
 Be sure you have the latest python.exe, that you are using python.exe rather
-than a GUI version of Python and that you have configured the server to execute
-::
+than a GUI version of Python and that you have configured the server to execute::
 
    "...\python.exe -u ..."
 
