@@ -265,11 +265,19 @@ this:
 Because you added a file name to the command to start the interpreter, when it
 starts up it reads the Python script in the named file, compiles it, executes
 it, and terminates, so you see another ``C:\>`` prompt.  You might also have
-entered ::
+entered :
+
+因为在你启动解释器时额外添加了一个文件名, 解释器就会读取这个脚本,
+编译它, 然后执行, 最后终止并返回至 ``C:\>`` 提示符.
+你也可以输入:
+
+::
 
    C:\> python \Steve\Projects\Python\pytest.py
 
 if you hadn't wanted to change your current directory.
+
+如果你不想更改你的当前目录.
 
 Under NT, 2000 and XP you may well find that the installation process has also
 arranged that the command ``pytest.py`` (or, if the file isn't in the current
@@ -279,10 +287,22 @@ feature is fine, but *some* versions of Windows have bugs which mean that this
 form isn't exactly equivalent to using the interpreter explicitly, so be
 careful.
 
+在 NT, 2000 和 XP 下面, 你会发现可以直接运行 ``pytest.py`` (或者,
+如果文件不在当前目录, ``C:\Steve\Projects\Python\pytest.py``),
+它会自动认出 ".py" 后缀并且使用 Python 解释器去运行.
+使用这个特性很不错, 但是有些 Windows 版本是有些 bug 的, 
+所以可能并不等于显示的使用解释器, 所以小心.
+
 The important things to remember are:
 
+有些事情最好记住:
+
 1. Start Python from the Start Menu, or make sure the PATH is set correctly so
-   Windows can find the Python interpreter. ::
+   Windows can find the Python interpreter. 
+
+   从开始菜单中启动 Python, 或者保证 PATH 已经正确设置.
+   
+   ::
 
       python
 
@@ -290,25 +310,42 @@ The important things to remember are:
    CTRL-Z and ENTER to terminate the interpreter (and, if you started the window
    from the Start Menu, make the window disappear).
 
-2. Once this works, you run programs with commands::
+   从 Python 解释器应该会给出 '>>>' 提示符. 不要忘了用 CTRL-Z 和回车来退出 (
+   并且, 如果你从开始菜单启动, 窗口将会消失).
+
+2. Once this works, you run programs with commands:
+
+   如果可以, 可以用下面的命令运行程序:
+   
+   ::
 
       python {program-file}
 
 3. When you know the commands to use you can build Windows shortcuts to run the
    Python interpreter on any of your scripts, naming particular working
-   directories, and adding them to your menus.  Take a look at ::
+   directories, and adding them to your menus.  Take a look at :
+
+   当你知道了要使用的命令, 那么你可以建立一个快捷方式,
+   指明工作的目录并且增加到你的菜单中. 看看:
+   
+   ::
 
       python --help
 
    if your needs are complex.
 
+   如果你的需求很复杂.
+
 4. Interactive mode (where you see the ``>>>`` prompt) is best used for checking
    that individual statements and expressions do what you think they will, and
    for developing code by experiment.
 
+   交互模式 (就是你可以看到 ``>>>``` 提示符) 最适合于,
+   检查单独的语句和表达式, 和进行一些测试.
 
-How do I make Python scripts executable?
-----------------------------------------
+
+How do I make Python scripts executable? 如何让 Python 脚本可执行?
+-----------------------------------------------------------------------
 
 On Windows 2000, the standard Python installer already associates the .py
 extension with a file type (Python.File) and gives that file type an open
@@ -317,13 +354,27 @@ command that runs the interpreter (``D:\Program Files\Python\python.exe "%1"
 'foo.py'.  If you'd rather be able to execute the script by simple typing 'foo'
 with no extension you need to add .py to the PATHEXT environment variable.
 
+在 Windows 2000 下, 标准的 Python 安装包已经将 .py 后缀的文件和 Python.File
+类型绑定, 在执行时会运行解释器 (``D:\Program Files\Python\python.exe "%1" %*``).
+这样就可以在命令行下直接运行 'foo.py' 了. 如果你想用 'foo' 来运行这个脚本,
+那么你只需要将 .py 添加到 PATHEXT 环境变量中就可以了.
+
 On Windows NT, the steps taken by the installer as described above allow you to
 run a script with 'foo.py', but a longtime bug in the NT command processor
 prevents you from redirecting the input or output of any script executed in this
 way.  This is often important.
 
+在 Windows NT 下, 步骤和上面所说的一样, 但是此处有一个长期以来的 bug ,
+就是当你进行重定向输入或输出时, NT 的命令解释器会对你进行阻止.
+这经常很重要.
+
 The incantation for making a Python script executable under WinNT is to give the
-file an extension of .cmd and add the following as the first line::
+file an extension of .cmd and add the following as the first line:
+
+一个在 WinNT 下让 Python 脚本可执行的方法, 就是给这个文件一个 .cmd 后缀,
+并且增加下面这一行.
+
+::
 
    @setlocal enableextensions & python -x %~f0 %* & goto :EOF
 
