@@ -1,4 +1,7 @@
-﻿.. highlightlang:: c
+﻿.. %
+    hhdxlx@gmail.com 正在翻译...
+
+.. highlightlang:: c
 
 
 .. _extending-intro:
@@ -180,7 +183,7 @@ passed.  It returns false (zero) if an invalid argument list was passed.  In the
 latter case it also raises an appropriate exception so the calling function can
 return *NULL* immediately (as we saw in the example).
 
-:c:func:`PyArg_ParseTuple`在所有参数的类型正确, 并且它的组件被储存在地址被传递的变量里的情况下,
+:c:func:`PyArg_ParseTuple` 在所有参数的类型正确, 并且它的组件被储存在地址被传递的变量里的情况下,
 会返回真 (非零值). 如果被传递一个无效的参数表, 它返回假 (0).
 后一种情况, 它也抛出一个适当的异常, 因此调用函数可以立即返回 *NULL* (就如我们在这个例子里看到的). 
 
