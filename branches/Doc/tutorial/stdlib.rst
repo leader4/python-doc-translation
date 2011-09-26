@@ -34,7 +34,7 @@ Be sure to use the ``import os`` style instead of ``from os import *``.  This
 will keep :func:`os.open` from shadowing the built-in :func:`open` function which
 operates much differently.
 
-记住要使用 ``import os`` 这种风格而不是 ``from os import *``.  这样会避免使得 :fun:`os.open`
+记住要使用 ``import os`` 这种风格而不是 ``from os import *``.  这样会避免使得 :func:`os.open`
 覆盖了功能截然不同的 :func:`open`. 
 
 .. index:: builtin: help
@@ -66,7 +66,7 @@ a higher level interface that is easier to use::
 
 对于日常文件和目录的管理,  :mod:`shutil` 模块提供了更便捷、更高层次的接口::
 
->>> import shutil
+   >>> import shutil 
    >>> shutil.copyfile('data.db', 'archive.db')
    >>> shutil.move('/build/executables', 'installdir')
 
@@ -513,7 +513,7 @@ Python有一个原理的充电区. 这是你了解python原理和它的各种包
 * Internationalization is supported by a number of modules including
   :mod:`gettext`, :mod:`locale`, and the :mod:`codecs` package.
 
-* 一些模块如 :mode:`gettext` , :mod:`locale` 和包 :mod:`codecs`, 为Python的国际化,
+* 一些模块如 :mod:`gettext` , :mod:`locale` 和包 :mod:`codecs`, 为Python的国际化,
   提供了支持. 
 
 
