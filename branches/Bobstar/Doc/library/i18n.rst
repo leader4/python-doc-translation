@@ -1,0 +1,29 @@
+.. _i18n:
+
+********************
+Internationalization
+
+国际化 译者 Lemon,゛ღ
+
+
+********************
+
+The modules described in this chapter help you write software that is
+independent of language and locale by providing mechanisms for selecting a
+language to be used in  program messages or by tailoring output to match local
+conventions.
+
+本章描述的这个模块能够帮助你写出独立于语言和地区的软件,通过提供的机制在程序
+信息中选择使用的语言或者定制符合本地习惯的输出.
+
+
+
+The list of modules described in this chapter is:
+
+本章中所描述的模块列表：
+
+
+.. toctree::
+
+   gettext.rst
+   locale.rst
