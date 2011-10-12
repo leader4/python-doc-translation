@@ -1,3 +1,6 @@
+﻿.. %
+    Translator: hhdxlx@gmail.com
+
 :mod:`random` --- Generate pseudo-random numbers
 ================================================
 
@@ -11,10 +14,14 @@
 This module implements pseudo-random number generators for various
 distributions.
 
+本模块实现了各种形式的伪随机数生成器.
+
 For integers, there is uniform selection from a range. For sequences, there is
 uniform selection of a random element, a function to generate a random
 permutation of a list in-place, and a function for random sampling without
 replacement.
+
+对于整型数, 有一个从某个范围里均衡选择一个的方法. 对于序列, 有一个
 
 On the real line, there are functions to compute uniform, normal (Gaussian),
 lognormal, negative exponential, gamma, and beta distributions. For generating
