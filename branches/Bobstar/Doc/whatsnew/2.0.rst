@@ -9,7 +9,7 @@
 .. $Id: whatsnew20.tex 50964 2006-07-30 03:03:43Z fred.drake $
 
 
-Introduction
+介绍
 ============
 
 A new release of Python, version 2.0, was released on October 16, 2000. This
