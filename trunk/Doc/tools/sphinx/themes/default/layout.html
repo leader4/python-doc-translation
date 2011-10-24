@@ -1,0 +1,14 @@
+{#
+    default/layout.html
+    ~~~~~~~~~~~~~~~~~~~
+
+    Sphinx 采用此缺省模板.
+
+    :版权: Copyright 2007-2011 by the Sphinx team, see AUTHORS.
+    :声明: BSD, see LICENSE for details.
+#}
+{% extends "basic/layout.html" %}
+
+{% if theme_collapsiblesidebar|tobool %}
+{% set script_files = script_files + ['_static/sidebar.js'] %}
+{% endif %}
