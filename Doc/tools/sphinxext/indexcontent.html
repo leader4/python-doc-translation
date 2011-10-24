@@ -1,0 +1,67 @@
+{% extends "defindex.html" %}
+{% block tables %}
+  <p><strong>Parts of the documentation:</strong></p>
+  <table class="contentstable" align="center"><tr>
+    <td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("whatsnew/" + version) }}">Python {{ version }}新改进</a><br/>
+         <span class="linkdescr">or <a href="{{ pathto("whatsnew/index") }}">all "What's new" documents</a> since 2.0</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("tutorial/index") }}">入门教程</a><br/>
+         <span class="linkdescr">从这里开始学习</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("library/index") }}">标准库</a><br/>
+         <span class="linkdescr">随时放在你枕头下面吧</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("librarys") }}">第三方库</a><br/>
+         <span class="linkdescr">Python的库，都很酷</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("reference/index") }}">语言核心</a><br/>
+         <span class="linkdescr">语言和语法细节</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("howto/index") }}">编程指南</a><br/>
+         <span class="linkdescr">深入编程专题解析</span></p>
+    </td><td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("extending/index") }}">扩展和嵌入</a><br/>
+         <span class="linkdescr">针对C/C++程序员的入门教程</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("c-api/index") }}">Python/C API</a><br/>
+         <span class="linkdescr">针对C/C++程序员的参考手册</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("install/index") }}">安装Python模块</a><br/>
+         <span class="linkdescr">information for installers &amp; sys-admins</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("distutils/index") }}">发布Python模块</a><br/>
+         <span class="linkdescr">与他人共享你的模块</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("documenting/index") }}">Python文档相关</a><br/>
+         <span class="linkdescr">文档生成指南</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("faq/index") }}">最常见问题</a><br/>
+         <span class="linkdescr">最常见问题</span></p>
+    </td></tr>
+  </table>
+
+  <p><strong>Indices and tables:</strong></p>
+  <table class="contentstable" align="center"><tr>
+    <td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("glossary") }}">术语</a><br/>
+         <span class="linkdescr">the most important terms explained</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("py-modindex") }}">模块索引</a><br/>
+         <span class="linkdescr">快速了解任何模块</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("genindex") }}">全局索引</a><br/>
+         <span class="linkdescr">所有对函数，类，terms</span></p>
+      
+    </td><td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("search") }}">查找</a><br/>
+         <span class="linkdescr">可以快速查找本文档内任何内容</span></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("contents") }}">改动索引</a><br/>
+         <span class="linkdescr">列举了所有改进项目</span></p>
+       <p class="biglink"><a class="biglink" href="{{ pathto("using/index") }}">安装使用</a><br/>
+         <span class="linkdescr">在不同平台上使用Python</span></p>
+    </td></tr>
+  </table>
+
+  <p><strong>Meta information:</strong></p>
+  <table class="contentstable" align="center"><tr>
+    <td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("bugs") }}">报告BUG</a></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("about") }}">关于本文档</a></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("thinking") }}">编后寄语</a></p>
+    </td><td width="50%">
+      <p class="biglink"><a class="biglink" href="{{ pathto("license") }}">历史和许可</a></p>
+      <p class="biglink"><a class="biglink" href="{{ pathto("translatelist") }}">贡献者名单</a></p>
+       <p class="biglink"><a class="biglink" href="{{ pathto("copyright") }}">版权声明</a></p>
+      
+    </td></tr>
+  </table>
+{% endblock %}
