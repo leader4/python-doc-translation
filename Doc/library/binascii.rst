@@ -1,4 +1,4 @@
-:mod:``binascii`` --- 二进制和ASCII之间转换
+:mod: ``binascii`` --- 二进制和ASCII之间转换
 ====================================================
 
 .. module:: binascii
