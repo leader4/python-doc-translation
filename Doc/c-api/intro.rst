@@ -82,7 +82,7 @@ is no need to do anything special to use the API from C++.
 
 .. _api-objects:
 
-对象,类型,引用计数
+对象, 类型, 引用计数
 ===================================
 
 .. index:: object: type

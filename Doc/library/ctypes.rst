@@ -331,7 +331,7 @@ unicode characters of the C type :c:type:`wchar_t` use the
 
 .. _ctypes-calling-functions-continued:
 
-调用函数,继续! 
+调用函数, 继续! 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Note that printf prints to the real standard output channel, *not* to

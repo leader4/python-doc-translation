@@ -16,9 +16,9 @@ class` (ABCs) in Python, as outlined in :pep:`3119`; see the PEP for why this
 was added to Python. (See also :pep:`3141` and the :mod:`numbers` module
 regarding a type hierarchy for numbers based on ABCs.)
 
-**这个模块提供了一个在Python中定义抽象基类的基础设施,参见PEP 3119,可以明白
+**这个模块提供了一个在Python中定义抽象基类的基础设施, 参见PEP 3119, 可以明白
 为什么这个会被添加到Python中. 
- (也可以见*PEP 3141*,``numbers``模块的类型层次的基础就是ABCs. **
+ (也可以见*PEP 3141*, ``numbers``模块的类型层次的基础就是ABCs. **
 
 The :mod:`collections` module has some concrete classes that derive from
 ABCs; these can, of course, be further derived. In addition the
@@ -27,9 +27,9 @@ a class or instance provides a particular interface, for example, is it
 hashable or a mapping.
 
 **``collections``模块有一些具体的基于ABCs的派生类; 
-他们当然也可以被进一步派生. 此外,
-``collections``模块有一些抽象基类,可以用来测试
-一个类或实例是否提供了某个特定的接口,例如哈希或映射. **
+他们当然也可以被进一步派生. 此外, 
+``collections``模块有一些抽象基类, 可以用来测试
+一个类或实例是否提供了某个特定的接口, 例如哈希或映射. **
 
 
 这个模块提供以下类: 
@@ -49,12 +49,12 @@ hashable or a mapping.
    implementations defined by the registering ABC be callable (not even via
    :func:`super`). [#]_
 
-   **使用这个元类来创建一个抽象基类. ABC可以被直接继承,
-   ,然后作为一个mix-in类. 您也可以注册
+   **使用这个元类来创建一个抽象基类. ABC可以被直接继承, 
+   , 然后作为一个mix-in类. 您也可以注册
    无关的具体类 (甚至内置类) 和无关
    ABC作为 "虚拟子类"  - 这些和他们的后代将
-   通过内置的 "issubclass () " 函数被处理为已注册抽象基类的子类,但注册的抽象基类将不会显示在
-   他们的MRO (方法解析顺序) ,也没有具体的由注册的ABC定义来调用方法实现 (不是通过
+   通过内置的 "issubclass () " 函数被处理为已注册抽象基类的子类, 但注册的抽象基类将不会显示在
+   他们的MRO (方法解析顺序) , 也没有具体的由注册的ABC定义来调用方法实现 (不是通过
    ``super()``).**
 
    Classes created with a metaclass of :class:`ABCMeta` have the following method:
@@ -92,7 +92,7 @@ hashable or a mapping.
       :meth:`__subclasscheck__` method of the ABC.)
 
       **检查子类是否被认为是这个ABC的一个子类. 
-      这意味着,您可以自定义的 "issubclass行为" 
+      这意味着, 您可以自定义的 "issubclass行为" 
       而不需要在每个你想让其作为ABC子类的类上都调用 "register () " .
       (这个类的方法
       其实调用的是ABC的 "__subclasscheck__ () " 方法. ) **
@@ -104,11 +104,11 @@ hashable or a mapping.
       ``NotImplemented``, the subclass check is continued with the usual
       mechanism.
       
-         这个方法应该返回 "True" , "False" 或
-       "NotImplemented" . 如果它返回``True``,这个*子类*会被
-      认为是ABC的一个子类. 如果返回 "False``,
-      子类则不是这个ABC的一个子类,虽然
-      通常不会发生这样的事. 如果它返回的`` NotImplemented``,
+         这个方法应该返回 "True" ,  "False" 或
+       "NotImplemented" . 如果它返回``True``, 这个*子类*会被
+      认为是ABC的一个子类. 如果返回 "False``, 
+      子类则不是这个ABC的一个子类, 虽然
+      通常不会发生这样的事. 如果它返回的`` NotImplemented``, 
       子类的检查将采用普通的机制. 
 
 
@@ -151,10 +151,10 @@ hashable or a mapping.
    part of the ``MyIterable`` abstract base class, but it does not have to be
    overridden in non-abstract derived classes.
    
-   ABC "MyIterable" 定义的标准迭代的方法,
+   ABC "MyIterable" 定义的标准迭代的方法, 
     "__iter__()``,作为一个抽象的方法. 
    这里仍然可以被子类调用执行.  ``get_iterator () ``
-   方法也是`` MyIterable "抽象基类的一部分,但
+   方法也是`` MyIterable "抽象基类的一部分, 但
    它不必在非抽象的派生类中重写. 
 
    The :meth:`__subclasshook__` class method defined here says that any class
@@ -162,7 +162,7 @@ hashable or a mapping.
    one of its base classes, accessed via the :attr:`__mro__` list) is
    considered a ``MyIterable`` too.
 
-   这里定义类方法``__subclasshook__ ()  "表明,任何
+   这里定义类方法``__subclasshook__ ()  "表明, 任何
    类只要有一个 "__iter__ () " 方法在其``__dict__ " (或
    通过访问其基类的 "__mro__" 列表) 
    都可被认为是一个``MyIterable`` . 
@@ -173,11 +173,11 @@ hashable or a mapping.
    :meth:`__getitem__`).  Note that this will not make ``get_iterator``
    available as a method of ``Foo``, so it is provided separately.
    
-  最后,最后一行创建的 "Foo" , "MyIterable" 的虚拟子类
-   ,甚至没有定义一个``__iter__ () ``
-   方法 (它使用的旧式迭代的协议,在条款中定义
-    "__len__ () " 和 "__getitem__()``).请注意,这不会
-   使 "get_iterator" 成为一个 "Foo" 的可用方法,所以它的方法
+  最后, 最后一行创建的 "Foo" , "MyIterable" 的虚拟子类
+   , 甚至没有定义一个``__iter__ () ``
+   方法 (它使用的旧式迭代的协议, 在条款中定义
+    "__len__ () " 和 "__getitem__()``).请注意, 这不会
+   使 "get_iterator" 成为一个 "Foo" 的可用方法, 所以它的方法
    另行规定,单独提供. 
 
 
@@ -196,8 +196,8 @@ It also provides the following decorators:
    mechanisms.
 
    使用这种装饰类的要求是其类的元类是
-    "ABCMeta" ,或者是从它派生的.  A类,有一个元类
-   从 "派生ABCMeta" 不能被实例化,除非其所有
+    "ABCMeta" , 或者是从它派生的.  A类, 有一个元类
+   从 "派生ABCMeta" 不能被实例化, 除非其所有
    抽象方法和属性被覆盖. 这些抽象方法
    可以使用任何正常的 "super" 调用机制来调用.
 
@@ -207,9 +207,9 @@ It also provides the following decorators:
    regular inheritance; "virtual subclasses" registered with the ABC's
    :meth:`register` method are not affected.
    
-     动态添加一类的抽象方法,或试图
+     动态添加一类的抽象方法, 或试图
    修改已创建的一个方法或类的抽象状态
-   ,是不被支持的.   "abstractmethod () ``只影响
+   , 是不被支持的.   "abstractmethod () ``只影响
    使用常规继承的派生子类, "虚拟子类" 
    通过ABC的 "register () " 方法不会受到影响. 
 
@@ -229,7 +229,7 @@ It also provides the following decorators:
       super-call in a framework that uses cooperative
       multiple-inheritance.
 
-     不同于Java的抽象方法,这些抽象的方法可能有一个
+     不同于Java的抽象方法, 这些抽象的方法可能有一个
      实现. 这个实现可以通过调用
      类的 "super () " 机制来覆盖它.这
      可作为在一个使用合作的多重继承框架super-call 的终点. 
@@ -282,8 +282,8 @@ It also provides the following decorators:
    'super' call mechanisms.
 
    使用此功能需要的类的元类是
-    "ABCMeta" ,或者是从它派生的.  A类,有一个元类
-   从 "派生ABCMeta" 不能被实例化,除非其所有
+    "ABCMeta" , 或者是从它派生的.  A类, 有一个元类
+   从 "派生ABCMeta" 不能被实例化, 除非其所有
    抽象方法和属性被覆盖. 这些抽象属性
    可以使用任何正常的 "super" 调用机制来调用.
 

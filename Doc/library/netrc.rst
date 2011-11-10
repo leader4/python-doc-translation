@@ -14,7 +14,7 @@
 The :class:`netrc` class parses and encapsulates the netrc file format used by
 the Unix :program:`ftp` program and other FTP clients.
 
-``netrc`` 类分析和封装netrc文件格式,用于Unix **ftp** 编程和其它的 FTP客户端.
+``netrc`` 类分析和封装netrc文件格式, 用于Unix **ftp** 编程和其它的 FTP客户端.
 
 
 .. class:: netrc([file])
@@ -27,7 +27,7 @@ the Unix :program:`ftp` program and other FTP clients.
    
     一个``netrc``实例或子类的实例封装一个netrc文件的数据. 如果提供初始化参数, 初始化
    参数为一个文件用于分析. 如果没有提供参数, 在用户home目录下面的``.netrc``将被读取.  
-   分析错误将抛出``NetrcParseError``,它提供了包含名字,行数,中断标志的诊断信息. 
+   分析错误将抛出``NetrcParseError``, 它提供了包含名字, 行数, 中断标志的诊断信息. 
 
 
 .. exception:: NetrcParseError
@@ -38,7 +38,7 @@ the Unix :program:`ftp` program and other FTP clients.
    :attr:`filename` is the name of the source file, and :attr:`lineno` gives the
    line number on which the error was found.
    
-    当源文本中出现语法错误,``netrc`` class抛出异常. 这个异常的实例提供3个有趣的属性:  
+    当源文本中出现语法错误, ``netrc`` class抛出异常. 这个异常的实例提供3个有趣的属性:  
    ``msg``是错误的一个文字性描述, ``filename``是源文件的文件名,  ``lineno``给出
    发现错误的行号
 
@@ -60,7 +60,7 @@ A :class:`netrc` instance has the following methods:
    is available, return ``None``.
    
    返回一个*host*身份认证的3元素元组``(login, account, password)``. 如果netrc
-   文件没有包含给定主机的项,返回关联默认项的元组. 如果既没有匹配的主机,也没有可用的默认项,
+   文件没有包含给定主机的项, 返回关联默认项的元组. 如果既没有匹配的主机, 也没有可用的默认项,
    返回``None``.
    
 
@@ -84,7 +84,7 @@ Instances of :class:`netrc` have public instance variables:
    Dictionary mapping host names to ``(login, account, password)`` tuples.  The
    'default' entry, if any, is represented as a pseudo-host by that name.
    
-    一个主机名到``(login, account, password)``元组映射的字典. 如果有默认值,
+    一个主机名到``(login, account, password)``元组映射的字典. 如果有默认值, 
    表示提供一个伪主机到名字的隐射字典. 
 
 
@@ -102,8 +102,8 @@ Instances of :class:`netrc` have public instance variables:
    non-printable characters are not allowed in passwords.  This is a limitation
    of the way the .netrc file is parsed and may be removed in the future.
    
-   注意: 密码是ASCII字符集中的一个有限的子集. 所有的ASCII标点都被允许出现在密码中. 但是,
-注意空白字符和非打印字符不允许出现在密码中. 这是一个对 .netrc 文件分析的限制,可能在
+   注意: 密码是ASCII字符集中的一个有限的子集. 所有的ASCII标点都被允许出现在密码中. 但是, 
+注意空白字符和非打印字符不允许出现在密码中. 这是一个对 .netrc 文件分析的限制, 可能在
 未来被移除. 
 
 

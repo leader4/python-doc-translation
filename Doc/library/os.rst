@@ -14,8 +14,8 @@ module, and for high-level file and directory handling see the :mod:`shutil`
 module.
 
 这个模块提供了一种能够应用独立于操作系统的功能的可移植的方法. 如果你只是想读写一个
-文件,可以看``open()``那一块,如果你想操作或者使用路径,可以参考``os.path``模块. 
-如果你想在命令行读取所有文件里的所有行,可以参考``fileinput``模块. 如果想创建临时
+文件, 可以看``open()``那一块,如果你想操作或者使用路径, 可以参考``os.path``模块. 
+如果你想在命令行读取所有文件里的所有行, 可以参考``fileinput``模块. 如果想创建临时
 的文件和目录的话可以参考	``tempfile``模块. 如果想进行关于文件和目录的高级操作的话
 可以参考``shutil``模块. 
 
@@ -29,15 +29,15 @@ Notes on the availability of these functions:
   information about *path* in the same format (which happens to have originated
   with the POSIX interface).
   
-  那些关于独立于操作系统的python所有内建的模块的设计,                               //
-它使用的是同样的接口. 比如说,函数``os.stat (path)``使用相同的格式返回关于*path*
+  那些关于独立于操作系统的python所有内建的模块的设计,                                //
+它使用的是同样的接口. 比如说, 函数``os.stat (path)``使用相同的格式返回关于*path*
 的状态信息. 这刚好是源自POSIX的接口标准. 
 
 * Extensions peculiar to a particular operating system are also available
   through the :mod:`os` module, but using them is of course a threat to
   portability.
   
-  一些系统独有的功能扩展可以通过``os``模块,不过这必然会有损于可移植性. 
+  一些系统独有的功能扩展可以通过``os``模块, 不过这必然会有损于可移植性. 
 
 * All functions accepting path or file names accept both bytes and string
   objects, and result in an object of the same type, if a path or file name is
@@ -55,13 +55,13 @@ Notes on the availability of these functions:
   operating system.
   
   一个"Availability:Unix" 标记表明那个函数可以在大多数的类UNIX的操作系统上
-	使用. 当然,也不要对它在任何一个特定的操作系统上都存在保佑太大的期望. 
+	使用. 当然, 也不要对它在任何一个特定的操作系统上都存在保佑太大的期望. 
 	 (注: 比如windows)
 
 * If not separately noted, all functions that claim "Availability: Unix" are
   supported on Mac OS X, which builds on a Unix core.
   
-  如果没有特别的说明,所有的标记了"Availablity:Unix"的函数都被 Mac OX X
+  如果没有特别的说明, 所有的标记了"Availablity:Unix"的函数都被 Mac OX X
 	支持 (它是基于UNIX的内核) . 
 
 .. Availability notes get their own line and occur at the end of the function
@@ -73,8 +73,8 @@ Notes on the availability of these functions:
    inaccessible file names and paths, or other arguments that have the correct
    type, but are not accepted by the operating system.
    
-   注: 这个模块里的所有函数在接收到无效或不可访问的文件名或路径,或者其他那些虽然
-	拥有正确的类型,但是不被操作系统接受的参数时都会抛出``OSError``异常. 
+   注: 这个模块里的所有函数在接收到无效或不可访问的文件名或路径, 或者其他那些虽然
+	拥有正确的类型, 但是不被操作系统接受的参数时都会抛出``OSError``异常. 
 
 .. exception:: error
 
@@ -133,7 +133,7 @@ process and user.
    ``environ['HOME']`` is the pathname of your home directory (on some platforms),
    and is equivalent to ``getenv("HOME")`` in C.
    
-   比如说,``environ['HOME']`` 返回你的家目录 (在某些操作系统上) ,它和C语言中
+   比如说, ``environ['HOME']`` 返回你的家目录 (在某些操作系统上) , 它和C语言中
 	的``getenv("HOME")是等价的. 
 
    一个表示字符串环境的映射对象.
@@ -143,15 +143,15 @@ process and user.
    to the environment made after this time are not reflected in ``os.environ``,
    except for changes made by modifying ``os.environ`` directly.
    
-   这种映射在``os``模块一导入时就会建立,典型的场景是python作为使用``site.py``
+   这种映射在``os``模块一导入时就会建立, 典型的场景是python作为使用``site.py``
 	进行某些处理的进程的一部分启动的时候. 这时候关于环境的这些改变并不会立即在
-	``os.environ``中表现出来,除非是那些直接对``os.environ``所做的改变. 
+	``os.environ``中表现出来, 除非是那些直接对``os.environ``所做的改变. 
 
    If the platform supports the :func:`putenv` function, this mapping may be used
    to modify the environment as well as query the environment.  :func:`putenv` will
    be called automatically when the mapping is modified.
    
-   如果系统支持``putenv()``函数,这种映射可以被用来在查询环境信息的时候改变
+   如果系统支持``putenv()``函数, 这种映射可以被用来在查询环境信息的时候改变
 	环境. ``putenv()``会在映射变化时自动被调用. 
 
    On Unix, keys and values use :func:`sys.getfilesystemencoding` and
@@ -172,23 +172,23 @@ process and user.
       cause memory leaks.  Refer to the system documentation for
       :c:func:`putenv`.
       
-      注: 在某些系统上,包括FreeBSD和Mac OS X,设置``environ``可能会导致内存
+      注: 在某些系统上, 包括FreeBSD和Mac OS X,设置``environ``可能会导致内存
 	泄漏. 详细信息请参考``putenv()``的系统文档. 
 
    If :func:`putenv` is not provided, a modified copy of this mapping  may be
    passed to the appropriate process-creation functions to cause  child processes
    to use a modified environment.
    
-   如果``putenv()``函数没有提供,一个关于这种映射的一个改动过的副本可以被传递
-	给一个合适的可以创建进程函数,这可以使它所创建的子进程使用改动过的环境信息. 
+   如果``putenv()``函数没有提供, 一个关于这种映射的一个改动过的副本可以被传递
+	给一个合适的可以创建进程函数, 这可以使它所创建的子进程使用改动过的环境信息. 
 
    If the platform supports the :func:`unsetenv` function, you can delete items in
    this mapping to unset environment variables. :func:`unsetenv` will be called
    automatically when an item is deleted from ``os.environ``, and when
    one of the :meth:`pop` or :meth:`clear` methods is called.
    
-   如果系统支持``unsetenv()``函数,你可以通过删除映射中的元素来取消环境
-	变量,``unsetenv()``会在一个元素从``os.environ()中删除时自动被调用. 
+   如果系统支持``unsetenv()``函数, 你可以通过删除映射中的元素来取消环境
+	变量, ``unsetenv()``会在一个元素从``os.environ()中删除时自动被调用. 
 	当``pop()``或``clear()``函数中的任一个函数被调用时也是如此. 
 
 
@@ -659,11 +659,11 @@ process and user.
    取消 (删除) 名为*varname*的环境变量. 这种对环境变量的改变对由``os.system()``
    ``popen()``,或者``fork()``和``execv()``生成的子进程都有影响. 
    
-   当系统支持``unsetenv()``的时候,在``os.environ``里删除元素会自动地调用相应
-   的``unsetenv()``函数. 然而,直接对``unsetenv()``的调用则不会影响到``os.env
+   当系统支持``unsetenv()``的时候, 在``os.environ``里删除元素会自动地调用相应
+   的``unsetenv()``函数. 然而, 直接对``unsetenv()``的调用则不会影响到``os.env
    iron``,所以建议直接对``os.environ``进行操作. 
    
-   UNIX的大多数发行版,WINDOWS上可用. 
+   UNIX的大多数发行版, WINDOWS上可用. 
 
 
 .. _os-newstreams:
@@ -698,12 +698,12 @@ These functions create new :term:`file objects <file object>`. (See also :func:`
    返回一个与文件描述符*fd*相关的打开的文件对象. *mode*和*bufsize*参数和内
    建``open()``函数的相应参数具有相同的意义. 
    
-   UNIX,WINDOSWS上可用
+   UNIX, WINDOSWS上可用
    
-   2.3版中的改变: 当*mode*参数指定的时候,它必须以字母``'r'``,``'w'``,或者
-   ``'a'``开头,否则会抛出一个``ValueError``异常. 
+   2.3版中的改变: 当*mode*参数指定的时候, 它必须以字母``'r'``,``'w'``,或者
+   ``'a'``开头, 否则会抛出一个``ValueError``异常. 
    
-   2.5版中的改变: 在UNIX上,当*mode*参数以``'a'``开头时,文件描述符的
+   2.5版中的改变: 在UNIX上, 当*mode*参数以``'a'``开头时, 文件描述符的
    *O_APPEND*标志位会被置位. (大多数平台的``fopen()``函数实现也会这样做) . 
 
 
@@ -879,7 +879,7 @@ as internal buffering of data.
 
    Availability: Unix, Windows.
    
-   设置文件的当前位置,返回当前位置的字节数. 
+   设置文件的当前位置, 返回当前位置的字节数. 
 
 
 .. data:: SEEK_SET
@@ -1188,7 +1188,7 @@ Files and Directories
 
    Availability: Unix, Windows.
    
-   改变文件的访问权限,mode用UNIX系统中的权限代号表示. 
+   改变文件的访问权限, mode用UNIX系统中的权限代号表示. 
 
    .. note::
 
@@ -1321,7 +1321,7 @@ Files and Directories
 
    Availability: Unix, Windows.
    
-   创建path制定对目录,mode参数默认为0O777.
+   创建path制定对目录, mode参数默认为0O777.
 
 
 .. function:: makedirs(path, mode=0o777, exist_ok=False)
@@ -1438,7 +1438,7 @@ Files and Directories
 
    Availability: Unix, Windows.
    
-   重用名一个文件或目录,两参数分别表示原路径和目标路径. 
+   重用名一个文件或目录, 两参数分别表示原路径和目标路径. 
 
 
 .. function:: renames(old, new)
@@ -2152,7 +2152,7 @@ written in Python, such as a mail server's external command delivery program.
    doesn't work if it is.  Use the :func:`os.path.normpath` function to ensure that
    the path is properly encoded for Win32.
    
-   启动关联程序打开文件,例如打开一个html文件,将默认启动IE浏览器. 
+   启动关联程序打开文件, 例如打开一个html文件, 将默认启动IE浏览器. 
 
    Availability: Windows.
 

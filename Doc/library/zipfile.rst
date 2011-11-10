@@ -131,10 +131,10 @@ ZipFile Objects
    and :program:`unzip` commands on Unix (the InfoZIP utilities) don't support
    these extensions.
    
-   创建一个ZipFile对象,表示一个zip文件. 参数file表示文件的路径或类文件对象(file-like object); 
-   参数mode指示打开zip文件的模式,默认值为'r',表示读已经存在的zip文件,也可以为'w'或'a','w'表示新建一个zip文档或覆盖一个已经存在的zip文档,
-   'a'表示将数据附加到一个现存的zip文档中. 参数compression表示在写zip文档时使用的压缩方法,它的值可以是zipfile. ZIP_STORED 或zipfile.
-    ZIP_DEFLATED. 如果要操作的zip文件大小超过2G,应该将allowZip64设置为True. 
+   创建一个ZipFile对象, 表示一个zip文件. 参数file表示文件的路径或类文件对象(file-like object); 
+   参数mode指示打开zip文件的模式, 默认值为'r', 表示读已经存在的zip文件, 也可以为'w'或'a', 'w'表示新建一个zip文档或覆盖一个已经存在的zip文档, 
+   'a'表示将数据附加到一个现存的zip文档中. 参数compression表示在写zip文档时使用的压缩方法, 它的值可以是zipfile. ZIP_STORED 或zipfile.
+    ZIP_DEFLATED. 如果要操作的zip文件大小超过2G, 应该将allowZip64设置为True. 
 
    If the file is created with mode ``'a'`` or ``'w'`` and then
    :meth:`close`\ d without adding any files to the archive, the appropriate
@@ -163,7 +163,7 @@ ZipFile Objects
    *name*.  Calling :meth:`getinfo` for a name not currently contained in the
    archive will raise a :exc:`KeyError`.
    
-   获取zip文档内指定文件的信息. 返回一个zipfile.ZipInfo对象,它包括文件的详细信息. 将在下面 具体介绍该对象. 
+   获取zip文档内指定文件的信息. 返回一个zipfile.ZipInfo对象, 它包括文件的详细信息. 将在下面 具体介绍该对象. 
 
 
 .. method:: ZipFile.infolist()
@@ -172,7 +172,7 @@ ZipFile Objects
    archive.  The objects are in the same order as their entries in the actual ZIP
    file on disk if an existing archive was opened.
    
-   获取zip文档内所有文件的信息,返回一个zipfile.ZipInfo的列表. 
+   获取zip文档内所有文件的信息, 返回一个zipfile.ZipInfo的列表. 
 
 
 .. method:: ZipFile.namelist()
@@ -234,7 +234,7 @@ ZipFile Objects
    be a subset of the list returned by :meth:`namelist`.  *pwd* is the password
    used for encrypted files.
    
-   解压zip文档中的所有文件到当前目录. 参数members的默认值为zip文档内的所有文件名称列表,也可以自己设置,选择要解压的文件名称. 
+   解压zip文档中的所有文件到当前目录. 参数members的默认值为zip文档内的所有文件名称列表, 也可以自己设置, 选择要解压的文件名称. 
 
    .. warning::
 
@@ -266,7 +266,7 @@ ZipFile Objects
    it will override the default password set with :meth:`setpassword`.  Calling
    :meth:`read` on a closed ZipFile  will raise a :exc:`RuntimeError`.
    
-   获取zip文档内指定文件的二进制数据. 下面的例子演示了read()的使用,zip文档内包括一个txt.txt的文本文件,使用read()方法读取其二进制数据,然后保存到D:/txt.txt. 
+   获取zip文档内指定文件的二进制数据. 下面的例子演示了read()的使用, zip文档内包括一个txt.txt的文本文件, 使用read()方法读取其二进制数据, 然后保存到D:/txt.txt. 
 
 
 .. method:: ZipFile.testzip()
@@ -287,8 +287,8 @@ ZipFile Objects
    :exc:`RuntimeError`.  Calling  :meth:`write` on a closed ZipFile will raise a
    :exc:`RuntimeError`.
    
-   将指定文件添加到zip文档中. filename为文件路径,arcname为添加到zip文档之后保存的名称, 
-   参数compress_type表示压缩方法,它的值可以是zipfile. ZIP_STORED 或zipfile. ZIP_DEFLATED. 
+   将指定文件添加到zip文档中. filename为文件路径, arcname为添加到zip文档之后保存的名称, 
+   参数compress_type表示压缩方法, 它的值可以是zipfile. ZIP_STORED 或zipfile. ZIP_DEFLATED. 
 
    .. note::
 
@@ -334,7 +334,7 @@ ZipFile Objects
    .. versionchanged:: 3.2
       The *compression_type* argument.
       
-ZipFile.getinfo(name) 方法返回的是一个ZipInfo对象,表示zip文档中相应文件的信息. 它支持如下属性: 
+ZipFile.getinfo(name) 方法返回的是一个ZipInfo对象, 表示zip文档中相应文件的信息. 它支持如下属性: 
 
 ZipInfo.filename:  获取文件名称. 
 ZipInfo.date_time:  获取文件最后修改时间. 返回一个包含6个元素的元组: (年, 月, 日, 时, 分, 秒)
@@ -344,7 +344,7 @@ ZipInfo.extr:  扩展项数据.
 ZipInfo.create_system:  获取创建该zip文档的系统. 
 ZipInfo.create_version:  获取 创建zip文档的PKZIP版本. 
 ZipInfo.extract_version:  获取 解压zip文档所需的PKZIP版本. 
-ZipInfo.reserved:  预留字段,当前实现总是返回0. 
+ZipInfo.reserved:  预留字段, 当前实现总是返回0. 
 ZipInfo.flag_bits:  zip标志位. 
 ZipInfo.volume:  文件头的卷标. 
 ZipInfo.internal_attr:  内部属性. 
@@ -535,19 +535,19 @@ Instances have the following attributes:
    Size of the uncompressed file.
    
    
-Python标准模块中,有多个模块用于数据的压缩与解压缩,如zipfile,gzip, bz2等等. 上次介绍了zipfile模块,今天就来讲讲zlib模块. 
+Python标准模块中, 有多个模块用于数据的压缩与解压缩, 如zipfile, gzip, bz2等等. 上次介绍了zipfile模块, 今天就来讲讲zlib模块. 
 zlib.compress(string[, level])
 zlib.decompress(string[, wbits[, bufsize]])
 
-　　zlib.compress用于压缩流数据. 参数string指定了要压缩的数据流,参数level指定了压缩的级别,它的取值范围是1到9. 
-压缩速度与压缩率成反比,1表示压缩速度最快,而压缩率最低,而9则表示压缩速度最慢但压缩率最高. zlib.decompress用于解压数据. 
-参数string指定了需要解压的数据,wbits和bufsize分别用于设置系统缓冲区大小(window buffer )与输出缓冲区大小(output buffer). 
+　　zlib.compress用于压缩流数据. 参数string指定了要压缩的数据流, 参数level指定了压缩的级别, 它的取值范围是1到9. 
+压缩速度与压缩率成反比, 1表示压缩速度最快, 而压缩率最低, 而9则表示压缩速度最慢但压缩率最高. zlib.decompress用于解压数据. 
+参数string指定了需要解压的数据, wbits和bufsize分别用于设置系统缓冲区大小(window buffer )与输出缓冲区大小(output buffer). 
 
 　我们也可以使用Compress/Decompress对象来对数据进行压缩/解压缩. zlib.compressobj([level]) 与zlib.decompress(string[, wbits[, bufsize]]) 
-分别创建Compress/Decompress缩对象. 通过对象对数据进行压缩和解压缩的使用方式与上面介绍的zlib.compress,zlib.decompress非常类似. 但两者对数据的压缩还是有区别的,
-这主要体现在对大量数据进行操作的情况下. 假如现在要压缩一个非常大的数据文件 (上百M) ,如果使用zlib.compress来压缩的话,必须先一次性将文件里的数据读到内存里,然后将数据进行压缩. 
-这样势必会战用太多的内存. 如果使用对象来进行压缩,那么没有必要一次性读取文件的所有数据,可以先读一部分数据到内存里进行压缩,压缩完后写入文件,然后再读其他部分的数据压缩,
-如此循环重复,只到压缩完整个文件. 
+分别创建Compress/Decompress缩对象. 通过对象对数据进行压缩和解压缩的使用方式与上面介绍的zlib.compress,zlib.decompress非常类似. 但两者对数据的压缩还是有区别的, 
+这主要体现在对大量数据进行操作的情况下. 假如现在要压缩一个非常大的数据文件 (上百M) , 如果使用zlib.compress来压缩的话, 必须先一次性将文件里的数据读到内存里, 然后将数据进行压缩. 
+这样势必会战用太多的内存. 如果使用对象来进行压缩, 那么没有必要一次性读取文件的所有数据, 可以先读一部分数据到内存里进行压缩, 压缩完后写入文件, 然后再读其他部分的数据压缩, 
+如此循环重复, 只到压缩完整个文件. 
 
 
 

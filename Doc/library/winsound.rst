@@ -25,9 +25,9 @@ provided by Windows platforms.  It includes functions and several constants.
    system is not able to beep the speaker, :exc:`RuntimeError` is raised.
 
    PC扬声器蜂鸣.
-   *frequency* 参数规定了声音的赫兹频率,必须在37到32767的范围. 
+   *frequency* 参数规定了声音的赫兹频率, 必须在37到32767的范围. 
    *duration* 参数规定了声音的持续毫秒数.
-        如果系统扬声器不能蜂鸣,抛出``RuntimeError``. 
+        如果系统扬声器不能蜂鸣, 抛出``RuntimeError``. 
 
 ---------------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ provided by Windows platforms.  It includes functions and several constants.
 
    从平台API调用底层的``PlaySound()``方法.
    *sound* 参数可能是一个文件名, 音频数据的一个字符串, 或者``None``.
-   其解释依赖于*flags*的值,这个值能够是一个位级别的或者位级别组合的常量. 如下文的
+   其解释依赖于*flags*的值, 这个值能够是一个位级别的或者位级别组合的常量. 如下文的
    描述. 如果*sound*参数是``None``, 停止任何当前正在播放的声音. 如果系统出现一个错误,
    ``RuntimeError``将被抛出. 
 
@@ -62,7 +62,7 @@ provided by Windows platforms.  It includes functions and several constants.
 
    从平台API调用底层的``PlaySound()``方法.
    *sound* 参数可能是一个文件名, 音频数据的一个字符串, 或者``None``.
-   其解释依赖于*flags*的值,这个值能够是一个位级别的或者位级别组合的常量. 如下文的
+   其解释依赖于*flags*的值, 这个值能够是一个位级别的或者位级别组合的常量. 如下文的
    描述. 如果*sound*参数是``None``, 停止任何当前正在播放的声音. 如果系统出现一个错误,
    ``RuntimeError``将被抛出. 
 
@@ -88,7 +88,7 @@ provided by Windows platforms.  It includes functions and several constants.
    raise :exc:`RuntimeError`. Do not use with :const:`SND_FILENAME`.
 
    *sound*是注册表中关联的一个声音. 如果注册表没有它, ``SND_NODEFAULT``也没有
-   指定,播放系统默认声音. 如果没有注册默认声音,抛出``RuntimeError``. 不要使用
+   指定, 播放系统默认声音. 如果没有注册默认声音, 抛出``RuntimeError``. 不要使用
    ``SND_FILENAME``.
 
 ---------------------------------------------------------------------------
@@ -210,7 +210,7 @@ provided by Windows platforms.  It includes functions and several constants.
 
    Return immediately, allowing sounds to play asynchronously.
 
-   立即返回,允许异步播放声音
+   立即返回, 允许异步播放声音
 
 ---------------------------------------------------------------------------
 
@@ -219,7 +219,7 @@ provided by Windows platforms.  It includes functions and several constants.
 
    If the specified sound cannot be found, do not play the system default sound.
 
-    如果制定的声音没有被找到,不会播放系统默认声音. 
+    如果制定的声音没有被找到, 不会播放系统默认声音. 
 
 ---------------------------------------------------------------------------
 

@@ -66,9 +66,9 @@ It defines the following constants and functions:
    unhandled exception, a stack trace is printed and then the thread exits (but
    other threads continue to run).
    
-   函数将创建一个新的线程,并返回该线程的标识符 (标识符为整数) . 参数 function 表示线程创建之后,
-   立即执行的函数,参数 args 是该函数的参数,它是一个元组类型; 第二个参数 kwargs 是可选的,它为函数提供了命名参数字典. 
-   函数执行完毕之后,线程将自动退出. 如果函数在执行过程中遇到未处理的异常,该线程将退出,但不会影响其他线程的执行. 
+   函数将创建一个新的线程, 并返回该线程的标识符 (标识符为整数) . 参数 function 表示线程创建之后, 
+   立即执行的函数, 参数 args 是该函数的参数, 它是一个元组类型; 第二个参数 kwargs 是可选的, 它为函数提供了命名参数字典. 
+   函数执行完毕之后, 线程将自动退出. 如果函数在执行过程中遇到未处理的异常, 该线程将退出, 但不会影响其他线程的执行. 
 
 
 .. function:: interrupt_main()
@@ -84,7 +84,7 @@ It defines the following constants and functions:
    Raise the :exc:`SystemExit` exception.  When not caught, this will cause the
    thread to exit silently.
    
-   结束当前线程. 调用该函数会触发 SystemExit 异常,如果没有处理该异常,线程将结束. 
+   结束当前线程. 调用该函数会触发 SystemExit 异常, 如果没有处理该异常, 线程将结束. 
 
 ..
    function:: exit_prog(status)
@@ -108,7 +108,7 @@ It defines the following constants and functions:
    be used e.g. to index a dictionary of thread-specific data.  Thread identifiers
    may be recycled when a thread exits and another thread is created.
    
-   返回当前线程的标识符,标识符是一个非零整数. 
+   返回当前线程的标识符, 标识符是一个非零整数. 
 
 
 .. function:: stack_size([size])
@@ -157,9 +157,9 @@ Lock objects have the following methods:
    *timeout* argument specifies an unbounded wait.  You cannot specify
    a *timeout* if *waitflag* is zero.
    
-   　获取琐. 函数返回一个布尔值,如果获取成功,返回 True ,否则返回 False . 参数 waitflag 的默认值是一个非零整数,
-   表示如果琐已经被其他线程占用,那么当前线程将一直等待,只到其他线程释放,然后获取访琐. 如果将参数 waitflag 置为 0 ,
-   那么当前线程会尝试获取琐,不管琐是否被其他线程占用,当前线程都不会等待. 
+   　获取琐. 函数返回一个布尔值, 如果获取成功, 返回 True , 否则返回 False . 参数 waitflag 的默认值是一个非零整数, 
+   表示如果琐已经被其他线程占用, 那么当前线程将一直等待, 只到其他线程释放, 然后获取访琐. 如果将参数 waitflag 置为 0 , 
+   那么当前线程会尝试获取琐, 不管琐是否被其他线程占用, 当前线程都不会等待. 
 
 
    The return value is ``True`` if the lock is acquired successfully,

@@ -79,7 +79,7 @@ Template 对象有下面的方法:
    debugging is on, commands to be executed are printed, and the shell is given
    ``set -x`` command to be more verbose.
 
-    如果*flag*是true, 打开调试. . 其他情况, 调试关闭. 当调试打开,执行的命令被打印,
+    如果*flag*是true, 打开调试. . 其他情况, 调试关闭. 当调试打开, 执行的命令被打印, 
    shell给了一个``set -x``命令, 用于提供更多信息. 
 
 
@@ -100,7 +100,7 @@ Template 对象有下面的方法:
    must be first.)
 
    第一个字幕可以是``'-'`` (意味着从标准输入读取命令), ``'f'`` (意味着从命令行提供
-   一个文件读取命令) 或``'.'`` (意味着不从命令不读读任何输入,因而必须是第一个参数)
+   一个文件读取命令) 或``'.'`` (意味着不从命令不读读任何输入, 因而必须是第一个参数)
 
 
 
@@ -109,7 +109,7 @@ Template 对象有下面的方法:
    the command line) or ``'.'`` (which means the command does not write anything,
    and hence must be last.)
 
-   类似的,第2个字母可以是``'-'``(意味着命令写入标准输出), ``'f'`` (意味着命令写入
+   类似的, 第2个字母可以是``'-'``(意味着命令写入标准输出), ``'f'`` (意味着命令写入
    一个命令行提供的文件) 或者``'.'`` (意味者命令不写入任何东西, 因而必须是最后一个参数.)
 
 

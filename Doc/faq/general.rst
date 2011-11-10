@@ -185,7 +185,7 @@ for the documentation is part of the Python source distribution.
 
 
 
-我从未接触过Python,哪里有教程? 
+我从未接触过Python, 哪里有教程? 
 ---------------------------------------------------------
 
 There are numerous tutorials and books available.  The standard documentation

@@ -7,9 +7,9 @@
 
 本模块提供对Python所有内置标识符的访问. 比如 ``builtins.open`` 是内置函数 ``open``的全称. 
 
-这个模块通常不会明确用于大多数应用程序,
+这个模块通常不会明确用于大多数应用程序, 
 但在模块具有与内置对象相同名称且内置对象的名称也必须保留情况下很有用. 
-例如,一个模块,要用内置函数``open()``来实现普通函数``open()``,则可以这样写::
+例如, 一个模块, 要用内置函数``open()``来实现普通函数``open()``, 则可以这样写::
 
    import builtins
 
@@ -34,9 +34,9 @@ either this module or the value of this modules's :attr:`__dict__` attribute.
 Since this is an implementation detail, it may not be used by alternate
 implementations of Python.
 
-作为一个实现细节,大多数模块都包含
+作为一个实现细节, 大多数模块都包含
 ``__builtins__``提供作为其全局命名空间的一部分. 
 ``__builtins__``的值通常就是该模块名或
 这个模块的``__dict__``的属性. 由于这是一个细节实现
-,所以不会有替代的Python.
+, 所以不会有替代的Python.
 

@@ -33,9 +33,9 @@ always available.
    命令行参数列表会被传递给一个Python脚本. 
    `` argv的[0]``是该脚本的名称 (它依赖于具体操作系统
    无论是否是一个完整的路径名) . 如果命令
-   使用*-ç*命令行选项,
+   使用*-ç*命令行选项, 
    `` argv的[0]``则为字符串``'- c'``. 如果没有脚本的名字
-   传递到Python解释器,`` argv的[0]``是空字符串. 
+   传递到Python解释器, `` argv的[0]``是空字符串. 
 
    To loop over the standard input, or the list of files given on the
    command line, see the :mod:`fileinput` module.
@@ -48,7 +48,7 @@ always available.
    little-endian (least-significant byte first) platforms.
    
     本地机器的字节顺序指示器. 
-   ``'big'``针对大端 (最高有效字节在前) 平台,
+   ``'big'``针对大端 (最高有效字节在前) 平台, 
    ``'little'针对小尾数`` (最低有效字节在前) 平台. 
 
 

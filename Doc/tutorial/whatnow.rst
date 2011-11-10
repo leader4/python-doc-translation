@@ -40,7 +40,7 @@ the set are:
   semantics.  It's heavy reading, but is useful as a complete guide to the
   language itself.
 
-  Python参考详细介绍了语法和用法,它内容较多,但绝对非常有用. 
+  Python参考详细介绍了语法和用法,它内容较多, 但绝对非常有用. 
 
 More Python resources:
 
@@ -51,7 +51,7 @@ More Python resources:
   geographical location.
 
 
-  http://www.python.org:主要Python网站. 其包括: 代码,文档,以及周Python相关网页,这个网站是在世界各地的镜像,如欧洲,日本和澳大利亚镜像可能快于主站点,根据您的地理位置. 
+  http://www.python.org:主要Python网站. 其包括: 代码, 文档, 以及周Python相关网页, 这个网站是在世界各地的镜像, 如欧洲, 日本和澳大利亚镜像可能快于主站点, 根据您的地理位置. 
 
 * http://docs.python.org:  Fast access to Python's  documentation.
 

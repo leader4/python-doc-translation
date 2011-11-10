@@ -12,14 +12,14 @@ This module provides a comprehensive interface for the bz2 compression library.
 It implements a complete file interface, one-shot (de)compression functions, and
 types for sequential (de)compression.
 
-这个模块提供了一个全面的接口bz2压缩库. 它实现了一个完整的文件接口,一次性
+这个模块提供了一个全面的接口bz2压缩库. 它实现了一个完整的文件接口, 一次性
  (DE) 的压缩功能和顺序 (DE) 压缩的类型. 
 
 
 For other archive formats, see the :mod:`gzip`, :mod:`zipfile`, and
 :mod:`tarfile` modules.
 
-对于其他存档格式,请参阅 "GZIP" ,``zipfile``,和``tarfile``模块. 
+对于其他存档格式, 请参阅 "GZIP" , ``zipfile``, 和``tarfile``模块. 
 
 
 Here is a summary of the features offered by the bz2 module:
@@ -31,7 +31,7 @@ Here is a summary of the features offered by the bz2 module:
   :meth:`~BZ2File.readline`, :meth:`~BZ2File.readlines`,
   :meth:`~BZ2File.writelines`, :meth:`~BZ2File.seek`, etc;
   
-  *`` BZ2File``类实现了一个完整的文件接口,包括
+  *`` BZ2File``类实现了一个完整的文件接口, 包括
  ``readline()``, ``readlines()``, ``writelines()``, ``seek()``,等;
  
 
@@ -96,15 +96,15 @@ Handling of compressed files is offered by the :class:`BZ2File` class.
    reading. Instances support iteration in the same way as normal :class:`file`
    instances.
    
-    打开一个BZ2文件. 模式可以是``'r'`` 或 ``'w'``,(默认)阅读或写. 
-   当文件打开写时,文件将被创建,如果该文件不存在将被截断. 
-   如果是*buffering*,``0`` 代表无缓冲. 较大的数字指定缓冲区大小,
+    打开一个BZ2文件. 模式可以是``'r'`` 或 ``'w'``, (默认)阅读或写. 
+   当文件打开写时, 文件将被创建, 如果该文件不存在将被截断. 
+   如果是*buffering*, ``0`` 代表无缓冲. 较大的数字指定缓冲区大小, 
    默认为 "0" . 如果是* compresslevel*,它必须是一个`` 1 "到" 9 "之间的数
    默认为"9";添加一个``'U'``模式给开放的具有普遍性的输入文件新行的支持. 
-   输入文件中的任何行结束,将在Python中被视为一个 ``'\n'``.
-   同样,打开一个属性``newlines``;这个属性的值是``None`` (无换行符可读) ,
-   ``'\r'``, ``'\n'``, ``'\r\n'`` 或者一个元组包含所有可见的换行符类型,
-   只有当阅读普遍换行,实例支持迭代一样正常``file``实例. 
+   输入文件中的任何行结束, 将在Python中被视为一个 ``'\n'``.
+   同样,打开一个属性``newlines``;这个属性的值是``None`` (无换行符可读) , 
+   ``'\r'``, ``'\n'``, ``'\r\n'`` 或者一个元组包含所有可见的换行符类型, 
+   只有当阅读普遍换行, 实例支持迭代一样正常``file``实例. 
 
 
 
@@ -135,8 +135,8 @@ Handling of compressed files is offered by the :class:`BZ2File` class.
       Read at most *size* uncompressed bytes, returned as a byte string. If the
       *size* argument is negative or omitted, read until EOF is reached.
 
- 大多数*size*在阅读未压缩字节,返回一个字节字符串.
-      如果*size* 参数为负或省略,读到EOF就达到了. 
+ 大多数*size*在阅读未压缩字节, 返回一个字节字符串.
+      如果*size* 参数为负或省略, 读到EOF就达到了. 
       
 
    .. method:: readline([size])
@@ -146,7 +146,7 @@ Handling of compressed files is offered by the :class:`BZ2File` class.
       return (an incomplete line may be returned then). Return an empty byte
       string at EOF.
       
-       从文件中的下一行返回,作为一个字节的字符串,保留换行符. 
+       从文件中的下一行返回, 作为一个字节的字符串, 保留换行符. 
       一个非负的*size* 参数限制返回最大字节数.  (然后可能会返回
       一个不完整的行) 在EOF返回一个空字节的字符串. 
 
@@ -156,7 +156,7 @@ Handling of compressed files is offered by the :class:`BZ2File` class.
       Return a list of lines read. The optional *size* argument, if given, is an
       approximate bound on the total number of bytes in the lines returned.
 
-      读取行返回一个列表.可选的*size*参数,
+      读取行返回一个列表.可选的*size*参数, 
       如果给定的是一个近似约束中的字节总数线路的返回. 
       
 
@@ -172,22 +172,22 @@ Handling of compressed files is offered by the :class:`BZ2File` class.
       
        移动到新的文件位置. 参数*offset*是一个字节计数. 
       可选参数*whence*默认为``os.SEEK_SET``或 "0" ;其他值是 "os.SEEK_CUR
-      " 或 "1"  (相对于当前移动位置;偏移可以是正或负) ,和 "os.SEEK_END" 
-      或 "2"  (相对移动的结束文件;偏移量通常是负的,尽管很多平台允许寻求
+      " 或 "1"  (相对于当前移动位置;偏移可以是正或负) , 和 "os.SEEK_END" 
+      或 "2"  (相对移动的结束文件;偏移量通常是负的, 尽管很多平台允许寻求
       的文件超出末尾) . 
       
 
       Note that seeking of bz2 files is emulated, and depending on the
       parameters the operation may be extremely slow.
       
-      请注意,寻求的bz2文件是模拟的,并取决于参数的操作可能会非常缓慢. 
+      请注意, 寻求的bz2文件是模拟的, 并取决于参数的操作可能会非常缓慢. 
 
 
    .. method:: tell()
 
       Return the current file position, an integer.
       
-      返回当前的文件位置,一个整数. 
+      返回当前的文件位置, 一个整数. 
 
 
    .. method:: write(data)
@@ -196,7 +196,7 @@ Handling of compressed files is offered by the :class:`BZ2File` class.
       :meth:`close` may be needed before the file on disk reflects the data
       written.
 
-  给文件写入字节串*data* . 请注意由于缓冲,``close() "可能需要,
+  给文件写入字节串*data* . 请注意由于缓冲, ``close() "可能需要, 
       在磁盘上反映文件写入的数据. 
       
       
@@ -227,7 +227,7 @@ Sequential compression and decompression is done using the classes
 
  创建一个新的压缩对象.  这个对象可以用来压缩数据的顺序. 
    如果你想一次性压缩数据使用 ``compress()``函数来代替. 
-   如果给出* compresslevel*参数,必须有一个数是在1和9之间,默认为 "9" . 
+   如果给出* compresslevel*参数, 必须有一个数是在1和9之间, 默认为 "9" . 
 
 
 
@@ -239,7 +239,7 @@ Sequential compression and decompression is done using the classes
       and return what is left in internal buffers.
 
  为压缩对象提供更多的数据.  它将尽可能返回压缩数据块. 
-      当你为压缩提供完数据,调用``flush()`` 方法去完成压缩过程,
+      当你为压缩提供完数据, 调用``flush()`` 方法去完成压缩过程, 
       并返回还剩下什么留在内部缓冲区. 
       
       
@@ -260,7 +260,7 @@ Sequential compression and decompression is done using the classes
    :func:`decompress` function instead.
     
    创建一个新的解压缩对象.    这个对象可以用来解压缩数据的顺序. 
-   如果你想一次性解压缩数据,使用``decompress()``函数来代替. 
+   如果你想一次性解压缩数据, 使用``decompress()``函数来代替. 
 
 
    .. method:: decompress(data)
@@ -272,7 +272,7 @@ Sequential compression and decompression is done using the classes
       :attr:`unused_data` attribute.
       
       为解压缩对象提供更多的数据. 如果你试着在数据流结束后解压数据
-      将会发现``EOFError``得到提升. 如果发现任何数据流结束后,
+      将会发现``EOFError``得到提升. 如果发现任何数据流结束后, 
       ``unused_data`` 属性将被忽略并保存. 
 
 
@@ -292,8 +292,8 @@ and :func:`decompress` functions.
    an instance of :class:`BZ2Compressor` instead. The *compresslevel* parameter,
    if given, must be a number between ``1`` and ``9``; the default is ``9``.
    
-   一次促成*data*压缩. 如果你想按顺序压缩,使用实例``BZ2Compressor``
-   代替.  如果给定* compresslevel*参数,必须是1~9之间的数字,默认为 "9" . 
+   一次促成*data*压缩. 如果你想按顺序压缩, 使用实例``BZ2Compressor``
+   代替.  如果给定* compresslevel*参数, 必须是1~9之间的数字, 默认为 "9" . 
    
 
 
@@ -301,6 +301,6 @@ and :func:`decompress` functions.
 
    Decompress *data* in one shot. If you want to decompress data sequentially,
    use an instance of :class:`BZ2Decompressor` instead.
-   一次促成*data*解压缩. 如果你想按顺序解压缩,用实例``BZ2Decompressor``
+   一次促成*data*解压缩. 如果你想按顺序解压缩, 用实例``BZ2Decompressor``
    代替. 
 

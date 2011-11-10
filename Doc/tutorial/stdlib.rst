@@ -41,7 +41,7 @@ aids for working with large modules like :mod:`os`::
 For daily file and directory management tasks, the :mod:`shutil` module provides
 a higher level interface that is easier to use::
 
-针对日常的文件和目录管理任务,:mod:shutil 模块提供了一个易于使用的高级接口:
+针对日常的文件和目录管理任务, :mod:shutil 模块提供了一个易于使用的高级接口:
 
    >>> import shutil
    >>> shutil.copyfile('data.db', 'archive.db')
@@ -95,7 +95,7 @@ The :mod:`sys` module also has attributes for *stdin*, *stdout*, and *stderr*.
 The latter is useful for emitting warnings and error messages to make them
 visible even when *stdout* has been redirected::
 
-sys 还有 stdin,stdout 和 stderr 属性,即使在 stdout 被重定向时,后者也可以用于显示警告和错误信息. 
+sys 还有 stdin, stdout 和 stderr 属性, 即使在 stdout 被重定向时, 后者也可以用于显示警告和错误信息. 
 
    >>> sys.stderr.write('Warning, log file not found starting a new one\n')
    Warning, log file not found starting a new one
@@ -114,7 +114,7 @@ The :mod:`re` module provides regular expression tools for advanced string
 processing. For complex matching and manipulation, regular expressions offer
 succinct, optimized solutions::
 
-re模块为高级字符串处理提供了正则表达式工具. 对于复杂的匹配和处理,正则表达式提供了简洁、优化的解决方案:
+re模块为高级字符串处理提供了正则表达式工具. 对于复杂的匹配和处理, 正则表达式提供了简洁、优化的解决方案:
 
    >>> import re
    >>> re.findall(r'\bf[a-z]*', 'which foot or hand fell fastest')
@@ -125,7 +125,7 @@ re模块为高级字符串处理提供了正则表达式工具. 对于复杂的�
 When only simple capabilities are needed, string methods are preferred because
 they are easier to read and debug::
 
-如果只需要简单的功能,应该首先考虑字符串方法,因为它们非常简单,易于阅读和调试:
+如果只需要简单的功能, 应该首先考虑字符串方法, 因为它们非常简单, 易于阅读和调试:
 
    >>> 'tea for too'.replace('too', 'two')
    'tea for two'
@@ -211,7 +211,7 @@ focus of the implementation is on efficient member extraction for output
 formatting and manipulation.  The module also supports objects that are timezone
 aware. ::
 
-datetime模块为日期和时间处理同时提供了简单和复杂的方法. 支持日期和时间算法的同时,实现的重点放在更有效的处理和格式化输出. 该模块还支持时区处理. ::
+datetime模块为日期和时间处理同时提供了简单和复杂的方法. 支持日期和时间算法的同时, 实现的重点放在更有效的处理和格式化输出. 该模块还支持时区处理. ::
 
    >>> # dates are easily constructed and formatted
    >>> from datetime import date
@@ -237,7 +237,7 @@ Common data archiving and compression formats are directly supported by modules
 including: :mod:`zlib`, :mod:`gzip`, :mod:`bz2`, :mod:`zipfile` and
 :mod:`tarfile`. ::
 
-以下模块直接支持通用的数据打包和压缩格式: zlib,gzip,bz2,zipfile,以及 tarfile.
+以下模块直接支持通用的数据打包和压缩格式: zlib, gzip, bz2, zipfile, 以及 tarfile.
 
    >>> import zlib
    >>> s = b'witch which has which witches wrist watch'
@@ -261,13 +261,13 @@ Some Python users develop a deep interest in knowing the relative performance of
 different approaches to the same problem. Python provides a measurement tool
 that answers those questions immediately.
 
-有些用户对了解解决同一问题的不同方法之间的性能差异很感兴趣. Python 提供了一个度量工具,为这些问题提供了直接答案. 
+有些用户对了解解决同一问题的不同方法之间的性能差异很感兴趣. Python 提供了一个度量工具, 为这些问题提供了直接答案. 
 
 For example, it may be tempting to use the tuple packing and unpacking feature
 instead of the traditional approach to swapping arguments. The :mod:`timeit`
 module quickly demonstrates a modest performance advantage::
 
-例如,使用元组封装和拆封来交换元素看起来要比使用传统的方法要诱人的多,timeit 证明了现代的方法更快一些. 
+例如, 使用元组封装和拆封来交换元素看起来要比使用传统的方法要诱人的多,timeit 证明了现代的方法更快一些. 
 
    >>> from timeit import Timer
    >>> Timer('t=a; a=b; b=t', 'a=1; b=2').timeit()
@@ -279,7 +279,7 @@ In contrast to :mod:`timeit`'s fine level of granularity, the :mod:`profile` and
 :mod:`pstats` modules provide tools for identifying time critical sections in
 larger blocks of code.
 
-相对于 timeit 的细粒度,:mod:profile 和 pstats 模块提供了针对更大代码块的时间度量工具. 
+相对于 timeit 的细粒度, :mod:profile 和 pstats 模块提供了针对更大代码块的时间度量工具. 
 
 
 .. _tut-quality-control:
@@ -291,7 +291,7 @@ One approach for developing high quality software is to write tests for each
 function as it is developed and to run those tests frequently during the
 development process.
 
-开发高质量软件的方法之一是为每一个函数开发测试代码,并且在开发过程中经常进行测试
+开发高质量软件的方法之一是为每一个函数开发测试代码, 并且在开发过程中经常进行测试
 
 The :mod:`doctest` module provides a tool for scanning a module and validating
 tests embedded in a program's docstrings.  Test construction is as simple as
@@ -300,8 +300,8 @@ This improves the documentation by providing the user with an example and it
 allows the doctest module to make sure the code remains true to the
 documentation::
 
-doctest模块提供了一个工具,扫描模块并根据程序中内嵌的文档字符串执行测试. 
-测试构造如同简单的将它的输出结果剪切并粘贴到文档字符串中. 通过用户提供的例子,它强化了文档,允许 doctest 模块确认代码的结果是否与文档一致::
+doctest模块提供了一个工具, 扫描模块并根据程序中内嵌的文档字符串执行测试. 
+测试构造如同简单的将它的输出结果剪切并粘贴到文档字符串中. 通过用户提供的例子, 它强化了文档, 允许 doctest 模块确认代码的结果是否与文档一致::
 
    def average(values):
        """Computes the arithmetic mean of a list of numbers.
@@ -318,7 +318,7 @@ The :mod:`unittest` module is not as effortless as the :mod:`doctest` module,
 but it allows a more comprehensive set of tests to be maintained in a separate
 file::
 
-unittest模块不像 doctest模块那么容易使用,不过它可以在一
+unittest模块不像 doctest模块那么容易使用, 不过它可以在一
 个独立的文件里提供一个更全面的测试集::
 
    import unittest
@@ -342,14 +342,14 @@ unittest模块不像 doctest模块那么容易使用,不过它可以在一
 Python has a "batteries included" philosophy.  This is best seen through the
 sophisticated and robust capabilities of its larger packages. For example:
 
-Python 体现了 "电池已备" 哲学. Python 可以通过更大的包的来得到应付各种复杂情况的强大能力,从这一点我们可以看出该思想的应用. 例如: 
+Python 体现了 "电池已备" 哲学. Python 可以通过更大的包的来得到应付各种复杂情况的强大能力, 从这一点我们可以看出该思想的应用. 例如: 
 
 * The :mod:`xmlrpc.client` and :mod:`xmlrpc.server` modules make implementing
   remote procedure calls into an almost trivial task.  Despite the modules
   names, no direct knowledge or handling of XML is needed.
 
   xmlrpc.client 和 xmlrpc.server模块实现了在琐碎的任务中
-  调用远程过程. 尽管有这样的名字,其实用户不需要直接处理 XML ,也不需要这方面的知识. 
+  调用远程过程. 尽管有这样的名字, 其实用户不需要直接处理 XML , 也不需要这方面的知识. 
 
 * The :mod:`email` package is a library for managing email messages, including
   MIME and other RFC 2822-based message documents. Unlike :mod:`smtplib` and
@@ -358,8 +358,8 @@ Python 体现了 "电池已备" 哲学. Python 可以通过更大的包的来得
   (including attachments) and for implementing internet encoding and header
   protocols.
 
-  email 包是一个邮件消息管理库,可以处理 MIME 或其它基于 RFC 2822 的消息文
-  档. 不同于实际发送和接收消息的 smtplib 和 poplib 模块,email 包有一个用于构建或解析复杂消息结构 (包括附件) 以及实现互联网编码和头协议的完整工具集. 
+  email 包是一个邮件消息管理库, 可以处理 MIME 或其它基于 RFC 2822 的消息文
+  档. 不同于实际发送和接收消息的 smtplib 和 poplib 模块, email 包有一个用于构建或解析复杂消息结构 (包括附件) 以及实现互联网编码和头协议的完整工具集. 
 
 * The :mod:`xml.dom` and :mod:`xml.sax` packages provide robust support for
   parsing this popular data interchange format. Likewise, the :mod:`csv` module
@@ -368,12 +368,12 @@ Python 体现了 "电池已备" 哲学. Python 可以通过更大的包的来得
   applications and other tools.
 
   xml.dom 和 xml.sax 包为流行的信息交换格式提供了强大的支持. 同
-  样,csv 模块支持在通用数据库格式中直接读写. 综合起来,这些模块和包大大简化了 Python 应用程序和其它工具之间的数据交换. 
+  样, csv 模块支持在通用数据库格式中直接读写. 综合起来, 这些模块和包大大简化了 Python 应用程序和其它工具之间的数据交换. 
 
 * Internationalization is supported by a number of modules including
   :mod:`gettext`, :mod:`locale`, and the :mod:`codecs` package.
 
-  国际化由 gettext,locale和 codecs 包支持
+  国际化由 gettext, locale和 codecs 包支持
 
 
 

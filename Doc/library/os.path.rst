@@ -56,7 +56,7 @@ applications should use string objects to access all files.
    ``'/foo/bar/'`` returns ``'bar'``, the :func:`basename` function returns an
    empty string (``''``).
    
-   返回本层级路径名,相当与split(path)的第二部分. 
+   返回本层级路径名, 相当与split(path)的第二部分. 
 
 
 .. function:: commonprefix(list)
@@ -71,7 +71,7 @@ applications should use string objects to access all files.
    Return the directory name of pathname *path*.  This is the first half of the
    pair returned by ``split(path)``.
    
-   返回path对路径名,相当于split(path)第一部分. 
+   返回path对路径名, 相当于split(path)第一部分. 
 
 
 .. function:: exists(path)
@@ -196,8 +196,8 @@ applications should use string objects to access all files.
    Return ``True`` if *path* refers to a directory entry that is a symbolic link.
    Always ``False`` if symbolic links are not supported.
    
-   返回 "真" ,如果*路径*指的是一个符号链接到一个目录条目. 
-   返回``假,``如果不支持符号链接. 
+   返回 "真" , 如果*路径*指的是一个符号链接到一个目录条目. 
+   返回``假, ``如果不支持符号链接. 
 
 
 .. function:: ismount(path)
@@ -232,10 +232,10 @@ applications should use string objects to access all files.
    lowercase.  On Windows, it also converts forward slashes to backward slashes.
    Raise a TypeError if the type of *path* is not ``str`` or ``bytes``.
    
-   返回规范的路径名. 在Unix和Mac OS X,这将返回
-   路径不变;在不区分大小写的文件系统,它转换为路径
-   小写. 在Windows上,它也将斜线转为反斜线. 
-   路径的类型如果不是 "str" 或 "bytes" ,引发TypeError. 
+   返回规范的路径名. 在Unix和Mac OS X, 这将返回
+   路径不变;在不区分大小写的文件系统, 它转换为路径
+   小写. 在Windows上, 它也将斜线转为反斜线. 
+   路径的类型如果不是 "str" 或 "bytes" , 引发TypeError. 
 
 
 .. function:: normpath(path)
@@ -254,7 +254,7 @@ applications should use string objects to access all files.
    Return the canonical path of the specified filename, eliminating any symbolic
    links encountered in the path (if they are supported by the operating system).
    
-   返回指定的文件名的规范路径,消除了任何符号环节中遇到的路径 (如果它们是由操作系统支持) . 
+   返回指定的文件名的规范路径, 消除了任何符号环节中遇到的路径 (如果它们是由操作系统支持) . 
 
 
 .. function:: relpath(path, start=None)
@@ -313,7 +313,7 @@ applications should use string objects to access all files.
    all cases, ``join(head, tail)`` returns a path to the same location as *path*
    (but the strings may differ).
    
-   分割路径path,并以列表形式返回. 
+   分割路径path, 并以列表形式返回. 
 
 
 .. function:: splitdrive(path)

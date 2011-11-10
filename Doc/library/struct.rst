@@ -14,8 +14,8 @@ stored in files or from network connections, among other sources.  It uses
 :ref:`struct-format-strings` as compact descriptions of the layout of the C
 structs and the intended conversion to/from Python values.
 
-当Python需要通过网络与其他的平台进行交互的时候,必须考虑到将这些数据类型与其他平台或语言之间的类型进行互相转换问题. 
-打个比方: C++写的客户端发送一个int型(4字节)变量的数据到Python写的服务器,Python接收到表示这个整数的4个字节数据,
+当Python需要通过网络与其他的平台进行交互的时候, 必须考虑到将这些数据类型与其他平台或语言之间的类型进行互相转换问题. 
+打个比方: C++写的客户端发送一个int型(4字节)变量的数据到Python写的服务器, Python接收到表示这个整数的4个字节数据, 
 怎么解析成Python认识的整数呢?  Python的标准模块struct就用来解决这个问题. 
 
 .. note::
@@ -53,9 +53,9 @@ The module defines the following exception and functions:
    write the packed bytes into the writable buffer *buffer* starting at
    position *offset*. Note that *offset* is a required argument.
    
-   struct.pack用于将Python的值根据格式符,转换为字符串 (因为Python中没有字节(Byte)类型,
-   可以把这里的字符串理解为字节流,或字节数组) . 其函数原型为: struct.pack(fmt, v1, v2, ...),
-   参数fmt是格式字符串,关于格式字符串的相关信息在下面有所介绍. v1, v2, ...表示要转换的python值. 
+   struct.pack用于将Python的值根据格式符, 转换为字符串 (因为Python中没有字节(Byte)类型, 
+   可以把这里的字符串理解为字节流, 或字节数组) . 其函数原型为: struct.pack(fmt, v1, v2, ...), 
+   参数fmt是格式字符串, 关于格式字符串的相关信息在下面有所介绍. v1, v2, ...表示要转换的python值. 
 
 
 .. function:: unpack(fmt, buffer)
@@ -65,7 +65,7 @@ The module defines the following exception and functions:
    contains exactly one item.  The buffer must contain exactly the amount of
    data required by the format (``len(bytes)`` must equal ``calcsize(fmt)``).
    
-   struct.unpack做的工作刚好与struct.pack相反,用于将字节流转换成python数据类型. 它的函数原型为: struct.unpack(fmt, string),该函数返回一个元组. 
+   struct.unpack做的工作刚好与struct.pack相反, 用于将字节流转换成python数据类型. 它的函数原型为: struct.unpack(fmt, string), 该函数返回一个元组. 
 
 
 .. function:: unpack_from(fmt, buffer, offset=0)
@@ -81,7 +81,7 @@ The module defines the following exception and functions:
    Return the size of the struct (and hence of the bytes object produced by
    ``pack(fmt, ...)``) corresponding to the format string *fmt*.
    
-   struct.calcsize用于计算格式字符串所对应的结果的长度,如: struct.calcsize('ii'),返回8. 因为两个int类型所占用的长度是8个字节. 
+   struct.calcsize用于计算格式字符串所对应的结果的长度, 如: struct.calcsize('ii'), 返回8. 因为两个int类型所占用的长度是8个字节. 
 
 .. _struct-format-strings:
 

@@ -16,7 +16,7 @@ modes.
 
 Because it requires the :mod:`termios` module, it will work only on Unix.
 
-因为它要求 "termios的" 模块,它将仅在UNIX上工作. 
+因为它要求 "termios的" 模块, 它将仅在UNIX上工作. 
 
 
 The :mod:`tty` module defines the following functions:
@@ -31,7 +31,7 @@ The :mod:`tty` module defines the following functions:
    :func:`termios.tcsetattr`.
 
    文件描述符模式* FD* row . 如果*when*
-   省略,则默认为 "termios.TCSAFLUSH``,并传递给
+   省略, 则默认为 "termios.TCSAFLUSH``, 并传递给
    `` termios.tcsetattr()``.
 
 
@@ -42,7 +42,7 @@ The :mod:`tty` module defines the following functions:
    :func:`termios.tcsetattr`.
 
    更改模式的文件的描述符* FD* cbreak. 如果*when*
-   省略,则默认为 "termios.TCSAFLUSH``,并传递给
+   省略, 则默认为 "termios.TCSAFLUSH``, 并传递给
    `` termios.tcsetattr()``.
 
 

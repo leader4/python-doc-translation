@@ -9,7 +9,7 @@
 .. sectionauthor:: Shriphani Palakodety
 
 
- 获取,安装最新版本
+ 获取, 安装最新版本
 ===================================================
 
 On Linux

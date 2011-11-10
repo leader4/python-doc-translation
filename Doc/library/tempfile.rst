@@ -266,30 +266,30 @@ Here are some examples of typical usage of the :mod:`tempfile` module::
     # directory and contents have been removed
     
 #################
-应用程序经常要保存一些临时的信息,这些信息不是特别重要,没有必要写在配置文件里,但又不能没有,这时候就可以把这些信息写到临时文件里. 其实很多程序在运行的时候,都会产生一大堆临时文件,有些用于保存日志,有些用于保存一些临时数据,还有一些保存一些无关紧要的设置. 在windows操作系统中,临时文件一般被保存在这个文件夹下: C:/Documents and Settings/User/Local Settings/Temp. 其实我们最常用的IE浏览器在浏览网页的时候,会产生大量的临时文件,这些临时文件一般是我们浏览过的网页的本地副本. Python提供了一个tempfile模块,用来对临时数据进行操作. 查阅Python手册,里面介绍了如下常用的方法: 
+应用程序经常要保存一些临时的信息, 这些信息不是特别重要, 没有必要写在配置文件里, 但又不能没有, 这时候就可以把这些信息写到临时文件里. 其实很多程序在运行的时候, 都会产生一大堆临时文件, 有些用于保存日志, 有些用于保存一些临时数据, 还有一些保存一些无关紧要的设置. 在windows操作系统中, 临时文件一般被保存在这个文件夹下: C:/Documents and Settings/User/Local Settings/Temp. 其实我们最常用的IE浏览器在浏览网页的时候, 会产生大量的临时文件, 这些临时文件一般是我们浏览过的网页的本地副本. Python提供了一个tempfile模块, 用来对临时数据进行操作. 查阅Python手册, 里面介绍了如下常用的方法: 
 tempfile.mkstemp([suffix=''[, prefix='tmp'[, dir=None[, text=False]]]])
 
-    mkstemp方法用于创建一个临时文件. 该方法仅仅用于创建临时文件,调用tempfile.mkstemp函数后,返回包含两个元素的元组,第一个元素指示操作该临时文件的安全级别,第二个元素指示该临时文件的路径. 参数suffix和prefix分别表示临时文件名称的后缀和前缀; dir指定了临时文件所在的目录,如果没有指定目录,将根据系统环境变量TMPDIR, TEMP或者TMP的设置来保存临时文件; 参数text指定了是否以文本的形式来操作文件,默认为False,表示以二进制的形式来操作文件. 
+    mkstemp方法用于创建一个临时文件. 该方法仅仅用于创建临时文件, 调用tempfile.mkstemp函数后, 返回包含两个元素的元组, 第一个元素指示操作该临时文件的安全级别, 第二个元素指示该临时文件的路径. 参数suffix和prefix分别表示临时文件名称的后缀和前缀; dir指定了临时文件所在的目录, 如果没有指定目录, 将根据系统环境变量TMPDIR, TEMP或者TMP的设置来保存临时文件; 参数text指定了是否以文本的形式来操作文件, 默认为False, 表示以二进制的形式来操作文件. 
 tempfile.mkdtemp([suffix=''[, prefix='tmp'[, dir=None]]])
 
     该函数用于创建一个临时文件夹. 参数的意思与tempfile.mkdtemp一样. 它返回临时文件夹的绝对路径. 
 tempfile.mktemp([suffix=''[, prefix='tmp'[, dir=None]]])
 
-    mktemp用于返回一个临时文件的路径,但并不创建该临时文件. 
+    mktemp用于返回一个临时文件的路径, 但并不创建该临时文件. 
 tempfile.tempdir
 
-    该属性用于指定创建的临时文件 (夹) 所在的默认文件夹. 如果没有设置该属性或者将其设为None,Python将返回以下环境变量TMPDIR, TEMP, TEMP指定的目录,如果没有定义这些环境变量,临时文件将被创建在当前工作目录. 
+    该属性用于指定创建的临时文件 (夹) 所在的默认文件夹. 如果没有设置该属性或者将其设为None, Python将返回以下环境变量TMPDIR, TEMP, TEMP指定的目录, 如果没有定义这些环境变量, 临时文件将被创建在当前工作目录. 
 tempfile.gettempdir()
 
     gettempdir()则用于返回保存临时文件的文件夹路径. 
 tempfile.TemporaryFile([mode='w+b'[, bufsize=-1[, suffix=''[, prefix='tmp'[, dir=None]]]]])
 
-    该函数返回一个 类文件 对象(file-like)用于临时数据保存 (实际上对应磁盘上的一个临时文件) . 当文件对象被close或者被del的时候,临时文件将从磁盘上删除. mode、bufsize参数的单方与open()函数一样; suffix和prefix指定了临时文件名的后缀和前缀; dir用于设置临时文件默认的保存路径. 返回的类文件对象有一个file属性,它指向真正操作的底层的file对象. 
+    该函数返回一个 类文件 对象(file-like)用于临时数据保存 (实际上对应磁盘上的一个临时文件) . 当文件对象被close或者被del的时候, 临时文件将从磁盘上删除. mode、bufsize参数的单方与open()函数一样; suffix和prefix指定了临时文件名的后缀和前缀; dir用于设置临时文件默认的保存路径. 返回的类文件对象有一个file属性, 它指向真正操作的底层的file对象. 
 tempfile.NamedTemporaryFile([mode='w+b'[, bufsize=-1[, suffix=''[, prefix='tmp'[, dir=None[, delete=True]]]]]])
 
-    tempfile.NamedTemporaryFile函数的行为与tempfile.TemporaryFile类似,只不过它多了一个delete参数,用于指定类文件对象close或者被del之后,是否也一同删除磁盘上的临时文件 (当delete = True的时候,行为与TemporaryFile一样) . 
+    tempfile.NamedTemporaryFile函数的行为与tempfile.TemporaryFile类似, 只不过它多了一个delete参数, 用于指定类文件对象close或者被del之后, 是否也一同删除磁盘上的临时文件 (当delete = True的时候, 行为与TemporaryFile一样) . 
 tempfile.SpooledTemporaryFile([max_size=0[, mode='w+b'[, bufsize=-1[, suffix=''[, prefix='tmp'[, dir=None]]]]]])
 
-    tempfile.SpooledTemporaryFile函数的行为与tempfile.TemporaryFile类似. 不同的是向类文件对象写数据的时候,数据长度只有到达参数max_size指定大小时,或者调用类文件对象的fileno()方法,数据才会真正写入到磁盘的临时文件中. 
+    tempfile.SpooledTemporaryFile函数的行为与tempfile.TemporaryFile类似. 不同的是向类文件对象写数据的时候, 数据长度只有到达参数max_size指定大小时, 或者调用类文件对象的fileno()方法, 数据才会真正写入到磁盘的临时文件中. 
 
 
