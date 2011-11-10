@@ -8,7 +8,7 @@
 This chapter describes modules which support handling data formats commonly used
 on the Internet.
 
-本章节描述了在Internet上通常的处理数据格式的方法。
+本章节描述了在Internet上通常的处理数据格式的方法. 
 
 
 .. toctree::
@@ -23,3 +23,4 @@ on the Internet.
    binascii.rst
    quopri.rst
    uu.rst
+

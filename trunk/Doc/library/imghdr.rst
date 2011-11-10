@@ -68,3 +68,4 @@ Example::
    >>> imghdr.what('/tmp/bass.gif')
    'gif'
 
+

@@ -370,3 +370,4 @@ Finally, the module defines the following functions:
 .. function:: set_trace()
 
    Start debugging with a :class:`Bdb` instance from caller's frame.
+

@@ -184,3 +184,4 @@ accessible to C code.  They all work with the current interpreter thread's
    function registered last is called first. Each cleanup function will be called
    at most once.  Since Python's internal finalization will have completed before
    the cleanup function, no Python APIs should be called by *func*.
+

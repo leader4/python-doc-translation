@@ -56,7 +56,7 @@ applications should use string objects to access all files.
    ``'/foo/bar/'`` returns ``'bar'``, the :func:`basename` function returns an
    empty string (``''``).
    
-   返回本层级路径名，相当与split(path)的第二部分。
+   返回本层级路径名,相当与split(path)的第二部分. 
 
 
 .. function:: commonprefix(list)
@@ -71,7 +71,7 @@ applications should use string objects to access all files.
    Return the directory name of pathname *path*.  This is the first half of the
    pair returned by ``split(path)``.
    
-   返回path对路径名，相当于split(path)第一部分。
+   返回path对路径名,相当于split(path)第一部分. 
 
 
 .. function:: exists(path)
@@ -132,7 +132,7 @@ applications should use string objects to access all files.
    If :func:`os.stat_float_times` returns True, the result is a floating point
    number.
    
-   返回该path最后对访问时间。
+   返回该path最后对访问时间. 
 
 
 .. function:: getmtime(path)
@@ -144,7 +144,7 @@ applications should use string objects to access all files.
    If :func:`os.stat_float_times` returns True, the result is a floating point
    number.
    
-   返回该path最后修改时间。
+   返回该path最后修改时间. 
 
 
 .. function:: getctime(path)
@@ -155,7 +155,7 @@ applications should use string objects to access all files.
    the  :mod:`time` module).  Raise :exc:`os.error` if the file does not exist or
    is inaccessible.
    
-   返回path指定文件的创建时间。
+   返回path指定文件的创建时间. 
 
 
 .. function:: getsize(path)
@@ -163,7 +163,7 @@ applications should use string objects to access all files.
    Return the size, in bytes, of *path*.  Raise :exc:`os.error` if the file does
    not exist or is inaccessible.
    
-   返回该path文件大小。
+   返回该path文件大小. 
 
 
 .. function:: isabs(path)
@@ -172,7 +172,7 @@ applications should use string objects to access all files.
    begins with a slash, on Windows that it begins with a (back)slash after chopping
    off a potential drive letter.
    
-   检验path是否为绝对路径。
+   检验path是否为绝对路径. 
 
 
 .. function:: isfile(path)
@@ -180,7 +180,7 @@ applications should use string objects to access all files.
    Return ``True`` if *path* is an existing regular file.  This follows symbolic
    links, so both :func:`islink` and :func:`isfile` can be true for the same path.
    
-   检验path是否是文件。
+   检验path是否是文件. 
 
 
 .. function:: isdir(path)
@@ -188,7 +188,7 @@ applications should use string objects to access all files.
    Return ``True`` if *path* is an existing directory.  This follows symbolic
    links, so both :func:`islink` and :func:`isdir` can be true for the same path.
    
-   检验path是否是一个文件夹目录。
+   检验path是否是一个文件夹目录. 
 
 
 .. function:: islink(path)
@@ -196,8 +196,8 @@ applications should use string objects to access all files.
    Return ``True`` if *path* refers to a directory entry that is a symbolic link.
    Always ``False`` if symbolic links are not supported.
    
-   返回“真”，如果*路径*指的是一个符号链接到一个目录条目。
-   返回``假，``如果不支持符号链接。
+   返回 "真" ,如果*路径*指的是一个符号链接到一个目录条目. 
+   返回``假,``如果不支持符号链接. 
 
 
 .. function:: ismount(path)
@@ -208,7 +208,7 @@ applications should use string objects to access all files.
    or whether :file:`path/..` and *path* point to the same i-node on the same
    device --- this should detect mount points for all Unix and POSIX variants.
    
-   检验path是否为作为挂载出现对其他类型的文件系统。
+   检验path是否为作为挂载出现对其他类型的文件系统. 
 
 
 .. function:: join(path1[, path2[, ...]])
@@ -222,7 +222,7 @@ applications should use string objects to access all files.
    ``os.path.join("c:", "foo")`` represents a path relative to the current
    directory on drive :file:`C:` (:file:`c:foo`), not :file:`c:\\foo`.
    
-   连接前后路径。
+   连接前后路径. 
 
 
 .. function:: normcase(path)
@@ -232,10 +232,10 @@ applications should use string objects to access all files.
    lowercase.  On Windows, it also converts forward slashes to backward slashes.
    Raise a TypeError if the type of *path* is not ``str`` or ``bytes``.
    
-   返回规范的路径名。在Unix和Mac OS X，这将返回
-   路径不变;在不区分大小写的文件系统，它转换为路径
-   小写。在Windows上，它也将斜线转为反斜线。
-   路径的类型如果不是“str”或“bytes”，引发TypeError。
+   返回规范的路径名. 在Unix和Mac OS X,这将返回
+   路径不变;在不区分大小写的文件系统,它转换为路径
+   小写. 在Windows上,它也将斜线转为反斜线. 
+   路径的类型如果不是 "str" 或 "bytes" ,引发TypeError. 
 
 
 .. function:: normpath(path)
@@ -254,7 +254,7 @@ applications should use string objects to access all files.
    Return the canonical path of the specified filename, eliminating any symbolic
    links encountered in the path (if they are supported by the operating system).
    
-   返回指定的文件名的规范路径，消除了任何符号环节中遇到的路径（如果它们是由操作系统支持）。
+   返回指定的文件名的规范路径,消除了任何符号环节中遇到的路径 (如果它们是由操作系统支持) . 
 
 
 .. function:: relpath(path, start=None)
@@ -313,7 +313,7 @@ applications should use string objects to access all files.
    all cases, ``join(head, tail)`` returns a path to the same location as *path*
    (but the strings may differ).
    
-   分割路径path，并以列表形式返回。
+   分割路径path,并以列表形式返回. 
 
 
 .. function:: splitdrive(path)
@@ -333,7 +333,7 @@ applications should use string objects to access all files.
    and share, up to but not including the fourth separator.
    e.g. ``splitdrive("//host/computer/dir")`` returns ``("//host/computer", "/dir")``
    
-   从路径中分割驱动器对名称。
+   从路径中分割驱动器对名称. 
 
 
 .. function:: splitext(path)
@@ -343,7 +343,7 @@ applications should use string objects to access all files.
    period. Leading periods on the basename are  ignored; ``splitext('.cshrc')``
    returns  ``('.cshrc', '')``.
    
-   分割path本体和文件扩展名。
+   分割path本体和文件扩展名. 
 
 
 .. function:: splitunc(path)
@@ -364,4 +364,5 @@ applications should use string objects to access all files.
    True if arbitrary Unicode strings can be used as file names (within limitations
    imposed by the file system).
    
-   返回True如果任意Unicode字符串可以作为文件名（根据文件系统的限制）。
+   返回True如果任意Unicode字符串可以作为文件名 (根据文件系统的限制) . 
+

@@ -128,3 +128,4 @@ split across multiple lines for readability.
 .. [#] This ideal probably won't be achieved until auto-configuration is fully
    supported by the Distutils.
 
+

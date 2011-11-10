@@ -13,20 +13,20 @@ is maintained at ActiveState.) You can check that :mod:`tkinter` is properly
 installed on your system by running ``python -m tkinter`` from the command line;
 this should open a window demonstrating a simple Tk interface.
 
-Tkinter 是 Python 中的一种比较流行的图形编程接口。
-Tkinter 模块 “TK 接口” 是 Python
-的标准 Tk GUI 工具包的接口。TK 和 Tkinter 是为数不多的跨平台的脚本图形界面接口,
-被应用在多个系统中,如 Unix、Windows 和 Macintosh 系统。
-Tkinter 包含了若干模块。 Tk 接口被封装在一个名为 _tkinter 二进制模块里( tkinter 的
+Tkinter 是 Python 中的一种比较流行的图形编程接口. 
+Tkinter 模块  "TK 接口"  是 Python
+的标准 Tk GUI 工具包的接口. TK 和 Tkinter 是为数不多的跨平台的脚本图形界面接口,
+被应用在多个系统中,如 Unix、Windows 和 Macintosh 系统. 
+Tkinter 包含了若干模块.  Tk 接口被封装在一个名为 _tkinter 二进制模块里( tkinter 的
 早期版本)
-。这个模块包含了 Tk 的低级接口,因而它不会被程序员直接应用。它通常表
+. 这个模块包含了 Tk 的低级接口,因而它不会被程序员直接应用. 它通常表
 现为一个共享库(或 DLL 文件)
 ,通过 Tkinter.py 来使用,但在一些版本中它与 Python
-解释器结合在一起。
+解释器结合在一起. 
 不管你是主动还是被动获得,Tkinter 中的 GUI 总是有一个 root 窗口,主窗口就是程序开
-始运行的时候创建的,在主窗口中你通常放置主要的部件。另外,Tkinter 脚本可以依据
-需要创建很多独立的窗口,主要的方法就是通过创建 Toplevel 对象。每一个 Toplevel 对
-象都创建一个显示的窗口,无须通过 mainloop 方法调用。
+始运行的时候创建的,在主窗口中你通常放置主要的部件. 另外,Tkinter 脚本可以依据
+需要创建很多独立的窗口,主要的方法就是通过创建 Toplevel 对象. 每一个 Toplevel 对
+象都创建一个显示的窗口,无须通过 mainloop 方法调用. 
 
 
 .. seealso::
@@ -819,4 +819,5 @@ some widget (e.g. labels, buttons, menus). In these cases, Tk will not keep a
 reference to the image. When the last Python reference to the image object is
 deleted, the image data is deleted as well, and Tk will display an empty box
 wherever the image was used.
+
 

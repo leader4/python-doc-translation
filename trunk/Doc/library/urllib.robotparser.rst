@@ -65,3 +65,4 @@ The following example demonstrates basic use of the RobotFileParser class.
    >>> rp.can_fetch("*", "http://www.musi-cal.com/")
    True
 
+

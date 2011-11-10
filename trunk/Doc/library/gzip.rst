@@ -11,40 +11,40 @@
 This module provides a simple interface to compress and decompress files just
 like the GNU programs :program:`gzip` and :program:`gunzip` would.
 
-这个模块提供了一个类似 GNU 程序（gzip,gunzip)的压缩和解压缩的简单接口。
+这个模块提供了一个类似 GNU 程序 (gzip,gunzip)的压缩和解压缩的简单接口. 
 
 The data compression is provided by the :mod:`zlib` module.
 
-数据压缩由``zlib``模块提供。
+数据压缩由``zlib``模块提供. 
 
 
 The :mod:`gzip` module provides the :class:`GzipFile` class. The :class:`GzipFile`
 class reads and writes :program:`gzip`\ -format files, automatically compressing
 or decompressing the data so that it looks like an ordinary :term:`file object`.
 
-'gzip'模块提供``GzipFile``类。
-``GzipFile``类读写 **gzip**格式的文件，
-就像普通的*file object*一样自动压缩和解压缩数据。
+'gzip'模块提供``GzipFile``类. 
+``GzipFile``类读写 **gzip**格式的文件,
+就像普通的*file object*一样自动压缩和解压缩数据. 
 
 
 Note that additional file formats which can be decompressed by the
 :program:`gzip` and :program:`gunzip` programs, such  as those produced by
 :program:`compress` and :program:`pack`, are not supported by this module.
 
-注意：
-那些**gzip** & **gunzip**追加的可解压文件格式是不可以使用这个模块。
-如：**compress** （精简）& **pack**（包）。
+注意: 
+那些**gzip** & **gunzip**追加的可解压文件格式是不可以使用这个模块. 
+如: **compress**  (精简) & **pack** (包) . 
 
 
 For other archive formats, see the :mod:`bz2`, :mod:`zipfile`, and
 :mod:`tarfile` modules.
 
-对于其他的格式，请参阅 ``bz2``, ``zipfile``, &``tarfile``模块
+对于其他的格式,请参阅 ``bz2``, ``zipfile``, &``tarfile``模块
 
 
 The module defines the following items:
 
-模块定义了如下规则：
+模块定义了如下规则: 
 
 
 .. class:: GzipFile(filename=None, mode=None, compresslevel=9, fileobj=None, mtime=None)
@@ -54,8 +54,8 @@ The module defines the following items:
    method.  At least one of *fileobj* and *filename* must be given a non-trivial
    value.
 
-   ``GzipFile``类的构造器，模拟除了``truncate()``以外的大部分的
-   *file object*函数。*fileobj* & *filename*中至少有一个必须给于值。
+   ``GzipFile``类的构造器,模拟除了``truncate()``以外的大部分的
+   *file object*函数. *fileobj* & *filename*中至少有一个必须给于值. 
 
 
    The new class instance is based on *fileobj*, which can be a regular file, a
@@ -63,9 +63,9 @@ The module defines the following items:
    defaults to ``None``, in which case *filename* is opened to provide a file
    object.
 
-    新的类的实例建立在*fileobj*基础之上。它可以是一个普通文档，或者是
-   一个``StringIO``对象，又或者是其它的模拟文档对象。
-   而在当*filename*被作为一个文件对象打开时，*fileobj*的模认值为``None``。
+    新的类的实例建立在*fileobj*基础之上. 它可以是一个普通文档,或者是
+   一个``StringIO``对象,又或者是其它的模拟文档对象. 
+   而在当*filename*被作为一个文件对象打开时,*fileobj*的模认值为``None``. 
 
 
    When *fileobj* is not ``None``, the *filename* argument is only used to be
@@ -74,10 +74,10 @@ The module defines the following items:
    discernible; otherwise, it defaults to the empty string, and in this case the
    original filename is not included in the header.
 
-   当*fileobj*值不为``None``时，
-   *filename*参数只能在含有未解压文档原文件名的**gzip**的文件名中被保含。
-   它如果可以识别，那么默认为*fileobj*的文件名；
-   否则它默认为空字符串，在这种情况下，原文件名不包含在标题里。
+   当*fileobj*值不为``None``时,
+   *filename*参数只能在含有未解压文档原文件名的**gzip**的文件名中被保含. 
+   它如果可以识别,那么默认为*fileobj*的文件名; 
+   否则它默认为空字符串,在这种情况下,原文件名不包含在标题里. 
 
 
    The *mode* argument can be any of ``'r'``, ``'rb'``, ``'a'``, ``'ab'``, ``'w'``,
@@ -87,18 +87,18 @@ The module defines the following items:
    in binary mode for cross-platform portability.
 
    *mode*参数可以是``'r'``, ``'rb'``, ``'a'``, ``'ab'``, ``'w'``, or
-   `'wb'``的任意一个，取决于文件是否可以被读取。如果 *fileobj*可
-  被识别，它默认为 *fileobj*的模式；否则，默认为``'rb'``。如果
-  没有被给出，在模式里会添加`b`以保证文件可以在跨平台时以二进
-  制模式打开。
+   `'wb'``的任意一个,取决于文件是否可以被读取. 如果 *fileobj*可
+  被识别,它默认为 *fileobj*的模式; 否则,默认为``'rb'``. 如果
+  没有被给出,在模式里会添加`b`以保证文件可以在跨平台时以二进
+  制模式打开. 
 
 
    The *compresslevel* argument is an integer from ``1`` to ``9`` controlling the
    level of compression; ``1`` is fastest and produces the least compression, and
    ``9`` is slowest and produces the most compression.  The default is ``9``.
 
-   *compresslevel*参数是一个表示压缩等级的整数，由``1``到``9``来分别表示
-   ``1``为最快最少的压缩比率，而``9``则是最慢最大的压缩比率。默认为``9``
+   *compresslevel*参数是一个表示压缩等级的整数,由``1``到``9``来分别表示
+   ``1``为最快最少的压缩比率,而``9``则是最慢最大的压缩比率. 默认为``9``
 
 
    The *mtime* argument is an optional numeric timestamp to be written to
@@ -110,11 +110,11 @@ The module defines the following items:
    ``time.time()`` and of the ``st_mtime`` member of the object returned
    by ``os.stat()``.
 
-   *mtime*参数是可选项，当压缩完成后可将数字时间戳写在数据流里。
-   所有的**gzip**压缩流都被要求包含时间戳。如果缺少或者为``None``，
-   则使用即时时间。当解压时，这个模块将忽略时间戳；但是，诸如
-   **gunzip**类的程序依然在使用它。时间戳的格式如``time.time()``的返回值，
-   及由``os.stat()``返回的对象中的``st_mtime``成员。
+   *mtime*参数是可选项,当压缩完成后可将数字时间戳写在数据流里. 
+   所有的**gzip**压缩流都被要求包含时间戳. 如果缺少或者为``None``,
+   则使用即时时间. 当解压时,这个模块将忽略时间戳; 但是,诸如
+   **gunzip**类的程序依然在使用它. 时间戳的格式如``time.time()``的返回值,
+   及由``os.stat()``返回的对象中的``st_mtime``成员. 
 
 
    Calling a :class:`GzipFile` object's :meth:`close` method does not close
@@ -123,23 +123,23 @@ The module defines the following items:
    writing as *fileobj*, and retrieve the resulting memory buffer using the
    :class:`io.BytesIO` object's :meth:`~io.BytesIO.getvalue` method.
 
-    调用 ``GzipFile``对象中的``close()``函数无法关闭*fileobj*，
-   因为你也许希望在压缩的数据后加入更多的内容。这可以允许你通过一个
-   ``io.BytesIO``项目像*fileobj*一样打开写入，然后使用``io.BytesIO``对象
-   中的``getvalue()``函数检索内存缓冲结果。
+    调用 ``GzipFile``对象中的``close()``函数无法关闭*fileobj*,
+   因为你也许希望在压缩的数据后加入更多的内容. 这可以允许你通过一个
+   ``io.BytesIO``项目像*fileobj*一样打开写入,然后使用``io.BytesIO``对象
+   中的``getvalue()``函数检索内存缓冲结果. 
 
 
    :class:`GzipFile` supports the :class:`io.BufferedIOBase` interface,
    including iteration and the :keyword:`with` statement.  Only the
    :meth:`truncate` method isn't implemented.
 
-   ``GzipFile``支持``io.BufferedIOBase``接口。包括交互式图标
-   和``with``声明。只有``read1()``和 ``truncate()``不被执行。
+   ``GzipFile``支持``io.BufferedIOBase``接口. 包括交互式图标
+   和``with``声明. 只有``read1()``和 ``truncate()``不被执行. 
 
 
    :class:`GzipFile` also provides the following method:
 
-   ``GzipFile``也提供了如下方法：
+   ``GzipFile``也提供了如下方法: 
 
 
    .. method:: peek([n])
@@ -149,9 +149,9 @@ The module defines the following items:
       the call.  The number of bytes returned may be more or less than
       requested.
 
-      读取*n*未压缩字节，而不推进文件位置。
-      大多数时候，可以根据要求单独读取压缩流。
-      返回的字节数可能比要求多或少。
+      读取*n*未压缩字节,而不推进文件位置. 
+      大多数时候,可以根据要求单独读取压缩流. 
+      返回的字节数可能比要求多或少. 
 
 
       .. versionadded:: 3.2
@@ -172,8 +172,8 @@ The module defines the following items:
    The *filename* argument is required; *mode* defaults to ``'rb'`` and
    *compresslevel* defaults to ``9``.
 
- 这是``GzipFile(filename,`` ``mode,`` ``compresslevel)``的简写。
-   *filename*是必需的，*mode*默认``'rb'``，*compresslevel*默认``9``
+ 这是``GzipFile(filename,`` ``mode,`` ``compresslevel)``的简写. 
+   *filename*是必需的,*mode*默认``'rb'``,*compresslevel*默认``9``
 
 
 .. function:: compress(data, compresslevel=9)
@@ -182,7 +182,7 @@ The module defines the following items:
    the compressed data.  *compresslevel* has the same meaning as in
    the :class:`GzipFile` constructor above.
 
-    压缩*data*，返回一个包含被压缩数据的``bytes``对象。
+    压缩*data*,返回一个包含被压缩数据的``bytes``对象. 
    *compresslevel* 意义同上面``GzipFile``介绍
 
 
@@ -193,7 +193,7 @@ The module defines the following items:
    Decompress the *data*, returning a :class:`bytes` object containing the
    uncompressed data.
 
-   解压缩*data*，返回一个包含被解压数据的``bytes``对象。
+   解压缩*data*,返回一个包含被解压数据的``bytes``对象. 
 
 
    .. versionadded:: 3.2
@@ -206,7 +206,7 @@ Examples of usage
 
 Example of how to read a compressed file::
 
-读取压缩文件：
+读取压缩文件: 
 
 
 
@@ -216,7 +216,7 @@ Example of how to read a compressed file::
 
 Example of how to create a compressed GZIP file::
 
-如何建立一个GZIP压缩文档：
+如何建立一个GZIP压缩文档: 
 
 
    import gzip
@@ -248,7 +248,8 @@ Example of how to GZIP compress a binary string::
       format.
 
         模块``zlib``
-      基础的数据压缩模块必须要支持**gzip**文件格式。
+      基础的数据压缩模块必须要支持**gzip**文件格式. 
+
 
 
 

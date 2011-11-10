@@ -1300,3 +1300,4 @@ method and that returns headers and a ``geturl()`` method that returns the url.
 Functions defined by this module are used internally by the
 :mod:`urllib.request` module.
 
+

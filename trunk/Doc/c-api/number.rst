@@ -261,3 +261,4 @@
 
    Returns True if *o* is an index integer (has the nb_index slot of  the
    tp_as_number structure filled in).
+

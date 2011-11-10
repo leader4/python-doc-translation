@@ -8,7 +8,7 @@ The modules described in this chapter provide a wide range of services related
 to the Python interpreter and its interaction with its environment.  Here's an
 overview:
 
-本章节描述了和Python解释器关联的驱动服务和它们与运行时环境的交互。
+本章节描述了和Python解释器关联的驱动服务和它们与运行时环境的交互. 
 
 
 .. toctree::
@@ -28,3 +28,4 @@ overview:
    site.rst
    fpectl.rst
    distutils.rst
+

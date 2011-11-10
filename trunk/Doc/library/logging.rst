@@ -43,23 +43,23 @@ listed below.
   to output.
 * Formatters specify the layout of log records in the final output.
 
-logger: 日志类，应用程序往往通过调用它提供的api来记录日志；
+logger: 日志类,应用程序往往通过调用它提供的api来记录日志; 
 
-handler: 对日志信息处理，可以将日志发送(保存)到不同的目标域中；
+handler: 对日志信息处理,可以将日志发送(保存)到不同的目标域中; 
 
-filter: 对日志信息进行过滤；
+filter: 对日志信息进行过滤; 
 
-formatter:日志的格式化；
+formatter:日志的格式化; 
 
 logging.basicConfig([**kwargs]):
 
-为日志模块配置基本信息。kwargs 支持如下几个关键字参数：
-filename ：日志文件的保存路径。如果配置了些参数，将自动创建一个FileHandler作为Handler；
-filemode ：日志文件的打开模式。 默认值为'a'，表示日志消息以追加的形式添加到日志文件中。如果设为'w', 那么每次程序启动的时候都会创建一个新的日志文件；
-format ：设置日志输出格式；
-datefmt ：定义日期格式；
-level ：设置日志的级别.对低于该级别的日志消息将被忽略；
-stream ：设置特定的流用于初始化StreamHandler；
+为日志模块配置基本信息. kwargs 支持如下几个关键字参数: 
+filename : 日志文件的保存路径. 如果配置了些参数,将自动创建一个FileHandler作为Handler; 
+filemode : 日志文件的打开模式.  默认值为'a',表示日志消息以追加的形式添加到日志文件中. 如果设为'w', 那么每次程序启动的时候都会创建一个新的日志文件; 
+format : 设置日志输出格式; 
+datefmt : 定义日期格式; 
+level : 设置日志的级别.对低于该级别的日志消息将被忽略; 
+stream : 设置特定的流用于初始化StreamHandler; 
 
 
 .. _logger:
@@ -1088,7 +1088,7 @@ with the :mod:`warnings` module.
 ################
 logging.getLogger([name])
 
-　　创建Logger对象。日志记录的工作主要由Logger对象来完成。在调用getLogger时要提供Logger的名称（注：多次使用相同名称来调用getLogger，返回的是同一个对象的引用。），Logger实例之间有层次关系，这些关系通过Logger名称来体现，如：
+　　创建Logger对象. 日志记录的工作主要由Logger对象来完成. 在调用getLogger时要提供Logger的名称 (注: 多次使用相同名称来调用getLogger,返回的是同一个对象的引用. ) ,Logger实例之间有层次关系,这些关系通过Logger名称来体现,如: 
 
 p = logging.getLogger("root")
 
@@ -1096,14 +1096,14 @@ c1 = logging.getLogger("root.c1")
 
 c2 = logging.getLogger("root.c2")
 
-例子中，p是父logger, c1,c2分别是p的子logger。c1, c2将继承p的设置。如果省略了name参数, getLogger将返回日志对象层次关系中的根Logger。
+例子中,p是父logger, c1,c2分别是p的子logger. c1, c2将继承p的设置. 如果省略了name参数, getLogger将返回日志对象层次关系中的根Logger. 
 logging.setLoggerClass(klass)
 logging.getLoggerClass()
 
-　　获取/设置日志类型。用户可以自定义日志类来代替系统提供的logging.Logger类。
+　　获取/设置日志类型. 用户可以自定义日志类来代替系统提供的logging.Logger类. 
 logging.getLevelName(lvl)
 
-　　获取日志级别对应的名称。例如：
+　　获取日志级别对应的名称. 例如: 
 
     print logging.getLevelName(logging.NOTSET)  
     print logging.getLevelName(10) #logging.DEBUG  
@@ -1114,14 +1114,14 @@ logging.getLevelName(lvl)
 
 logging.shutdown()
 
-　　当不再使用日志系统的时候，调用该方法，它会将日志flush到对应的目标域上。一般在系统退出的时候调用。
+　　当不再使用日志系统的时候,调用该方法,它会将日志flush到对应的目标域上. 一般在系统退出的时候调用. 
 
  
 
-Logger对象 通过调用logging.getLogger(name)来创建，它有如下常用的方法和属性：
+Logger对象 通过调用logging.getLogger(name)来创建,它有如下常用的方法和属性: 
 Logger.setLevel(lvl):
 
-　　设置日志的级别。对于低于该级别的日志消息将被忽略。下面一个例子演示setLevel方法：
+　　设置日志的级别. 对于低于该级别的日志消息将被忽略. 下面一个例子演示setLevel方法: 
 
  
 
@@ -1137,7 +1137,7 @@ Logger.setLevel(lvl):
 
 Logger.debug(msg [ ,*args [, **kwargs]])
 
-　　记录DEBUG级别的日志信息。参数msg是信息的格式，args与kwargs分别是格式参数。
+　　记录DEBUG级别的日志信息. 参数msg是信息的格式,args与kwargs分别是格式参数. 
 
     import logging  
     logging.basicConfig(filename = os.path.join(os.getcwd(), 'log.txt'), level = logging.DEBUG)  
@@ -1150,13 +1150,13 @@ Logger.warnning(msg[ , *args[ , **kwargs] ] )
 Logger.error(msg[ , *args[ , **kwargs] ] )
 Logger.critical(msg[ , *args[ , **kwargs] ] )
 
-　　记录相应级别的日志信息。参数的含义与Logger.debug一样。
+　　记录相应级别的日志信息. 参数的含义与Logger.debug一样. 
 Logger.log(lvl, msg[ , *args[ , **kwargs] ] )
 
-　　记录日志，参数lvl用户设置日志信息的级别。参数msg, *args, **kwargs的含义与Logger.debug一样。
+　　记录日志,参数lvl用户设置日志信息的级别. 参数msg, *args, **kwargs的含义与Logger.debug一样. 
 Logger.exception(msg[, *args]) 
 
-　　以ERROR级别记录日志消息，异常跟踪信息将被自动添加到日志消息里。Logger.exception通过用在异常处理块中，如：
+　　以ERROR级别记录日志消息,异常跟踪信息将被自动添加到日志消息里. Logger.exception通过用在异常处理块中,如: 
 
     import logging  
     logging.basicConfig(filename = os.path.join(os.getcwd(), 'log.txt'), level = logging.DEBUG)  
@@ -1169,11 +1169,12 @@ Logger.exception(msg[, *args])
 Logger.addFilter(filt)
 Logger.removeFilter(filt)
 
-　　添加/移除日志消息过滤器。在讲述Filter时具体介绍。
+　　添加/移除日志消息过滤器. 在讲述Filter时具体介绍. 
 Logger.addHandler(hdlr)
 Logger.removeHandler(hdlr)
 
-　　添加/移除日志消息处理器。在讲述Handler时具体介绍。
+　　添加/移除日志消息处理器. 在讲述Handler时具体介绍. 
 Logger.makeRecord(name, lvl, fn, lno, msg, args, exc_info[, func, extra])
 
-　　创建LogRecord对象。日志消息被实例为一个LogRecord对象，并在日志类内处理。
+　　创建LogRecord对象. 日志消息被实例为一个LogRecord对象,并在日志类内处理. 
+

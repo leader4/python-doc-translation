@@ -132,3 +132,4 @@ Scheduler Objects
    Read-only attribute returning a list of upcoming events in the order they
    will be run.  Each event is shown as a :term:`named tuple` with the
    following fields:  time, priority, action, argument.
+

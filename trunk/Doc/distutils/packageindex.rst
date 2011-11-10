@@ -102,3 +102,4 @@ For convenience, the name of the section that describes the repository
 may also be used::
 
     python setup.py register -r other
+

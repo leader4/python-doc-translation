@@ -378,3 +378,4 @@ the previous example, this serves files relative to the current directory. ::
 
    Note that CGI scripts will be run with UID of user nobody, for security
    reasons.  Problems with the CGI script will be translated to error 403.
+

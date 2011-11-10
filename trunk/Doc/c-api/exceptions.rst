@@ -683,3 +683,4 @@ Notes:
 (3)
    Only defined on Windows; protect code that uses this by testing that the
    preprocessor macro ``MS_WINDOWS`` is defined.
+

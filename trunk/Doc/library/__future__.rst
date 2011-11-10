@@ -16,25 +16,25 @@
   find the modules they're importing.
 
   为了避免混淆已存在的的分析导入语句的工具,并
-  找到那些正要被导入的模块。
+  找到那些正要被导入的模块. 
 
 * To ensure that :ref:`future statements <future>` run under releases prior to
   2.1 at least yield runtime exceptions (the import of :mod:`__future__` will
   fail, because there was no module of that name prior to 2.1).
 
   为了确保未来的语句**根据版本2.1之前运行
-  至少在运行时产生异常（``的``__future__进口将
-  失败，因为没有这个名称预先到2.1）模块。
+  至少在运行时产生异常 (``的``__future__进口将
+  失败,因为没有这个名称预先到2.1) 模块. 
 
 * To document when incompatible changes were introduced, and when they will be
   --- or were --- made mandatory.  This is a form of executable documentation, and
   can be inspected programmatically via importing :mod:`__future__` and examining
   its contents.
 
-   当文件不兼容的更改进行了介绍，当他们
-  会------或者是强制性的。这是一种形式
-  可执行文件，并且可以通过编程方式检查
-  ````__future__进口和审查其内容。
+   当文件不兼容的更改进行了介绍,当他们
+  会------或者是强制性的. 这是一种形式
+  可执行文件,并且可以通过编程方式检查
+  ````__future__进口和审查其内容. 
 
 Each statement in :file:`__future__.py` is of the form::
 
@@ -45,7 +45,7 @@ Each statement in :file:`__future__.py` is of the form::
 where, normally, *OptionalRelease* is less than *MandatoryRelease*, and both are
 5-tuples of the same form as ``sys.version_info``::
 
-其中，正常情况下，OptionalRelease*** MandatoryRelease*比少，
+其中,正常情况下,OptionalRelease*** MandatoryRelease*比少,
 又都是5作为```` sys.version_info元组相同的形式::
 
    (PY_MAJOR_VERSION, # the 2 in 2.1.0a3; an int
@@ -58,27 +58,27 @@ where, normally, *OptionalRelease* is less than *MandatoryRelease*, and both are
 *OptionalRelease* records the first release in which the feature was accepted.
 
 
-* OptionalRelease*记录的第一个版本中，该功能接受。
+* OptionalRelease*记录的第一个版本中,该功能接受. 
 
 In the case of a *MandatoryRelease* that has not yet occurred,
 *MandatoryRelease* predicts the release in which the feature will become part of
 the language.
 
-在一个* MandatoryRelease*，尚未发生的情况下，
-* MandatoryRelease*预测，释放该功能将成为语言的一部分。
+在一个* MandatoryRelease*,尚未发生的情况下,
+* MandatoryRelease*预测,释放该功能将成为语言的一部分. 
 
 Else *MandatoryRelease* records when the feature became part of the language; in
 releases at or after that, modules no longer need a future statement to use the
 feature in question, but may continue to use such imports.
 
-否则* MandatoryRelease*记录，当该功能成为部分
-语言，在时或之后的版本中，模块不再需要
-未来的声明中使用问题的功能，但可继续使用这种进口。
+否则* MandatoryRelease*记录,当该功能成为部分
+语言,在时或之后的版本中,模块不再需要
+未来的声明中使用问题的功能,但可继续使用这种进口. 
 
 *MandatoryRelease* may also be ``None``, meaning that a planned feature got
 dropped.
 
-* MandatoryRelease*也可以````没有，这意味着计划功能有下降.
+* MandatoryRelease*也可以````没有,这意味着计划功能有下降.
 
 Instances of class :class:`_Feature` have two corresponding methods,
 :meth:`getOptionalRelease` and :meth:`getMandatoryRelease`.
@@ -89,17 +89,17 @@ dynamically compiled code.  This flag is stored in the :attr:`compiler_flag`
 attribute on :class:`_Feature` instances.
 
 
-* CompilerFlag*是（位域）标志应在传递
-第四个参数的内置函数``编译（）``使
-功能在动态编译的代码。这个标志是储存在```` compiler_flag属性的````_Feature实例。
+* CompilerFlag*是 (位域) 标志应在传递
+第四个参数的内置函数``编译 () ``使
+功能在动态编译的代码. 这个标志是储存在```` compiler_flag属性的````_Feature实例. 
 
 No feature description will ever be deleted from :mod:`__future__`. Since its
 introduction in Python 2.1 the following features have found their way into the
 language using this mechanism:
 
 
-特征描述将永远不被删除````__future__。由于
-在Python 2.1中引入了以下功能已经找到了方法将使用这个机制的语言：
+特征描述将永远不被删除````__future__. 由于
+在Python 2.1中引入了以下功能已经找到了方法将使用这个机制的语言: 
 
 +------------------+-------------+--------------+---------------------------------------------+
 | feature          | optional in | mandatory in | effect                                      |
@@ -131,3 +131,4 @@ language using this mechanism:
 
    :ref:`future`
       How the compiler treats future imports.
+

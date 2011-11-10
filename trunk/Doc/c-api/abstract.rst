@@ -13,8 +13,8 @@ will raise a Python exception.
 
 ---------------------------------------------------------------------------
 
-本章中的Python对象交互功能，不论其类型，或与对象类型都无关.
-(例如：所有的数字类型，或者所有的序列类型). 当使用的对象类型并没有被申明时, 它们会唤起一个python异常.
+本章中的Python对象交互功能,不论其类型,或与对象类型都无关.
+(例如: 所有的数字类型,或者所有的序列类型). 当使用的对象类型并没有被申明时, 它们会唤起一个python异常.
 
 It is not possible to use these functions on objects that are not properly
 initialized, such as a list object that has been created by :c:func:`PyList_New`,
@@ -34,3 +34,4 @@ but whose items have not been set to some non-\ ``NULL`` value yet.
    iter.rst
    buffer.rst
    objbuffer.rst
+

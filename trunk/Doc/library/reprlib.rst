@@ -157,3 +157,4 @@ for file objects could be added::
    aRepr = MyRepr()
    print(aRepr.repr(sys.stdin))         # prints '<stdin>'
 
+

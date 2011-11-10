@@ -646,3 +646,4 @@ generator to be determined easily.
     * GEN_CLOSED: Execution has completed.
 
    .. versionadded:: 3.2
+

@@ -36,3 +36,4 @@ than explicitly calling :c:func:`PyGen_New`.
    Create and return a new generator object based on the *frame* object. A
    reference to *frame* is stolen by this function. The parameter must not be
    *NULL*.
+

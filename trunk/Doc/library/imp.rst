@@ -308,3 +308,4 @@ in that version, since :func:`find_module` has been extended and
            # Since we may exit via an exception, close fp explicitly.
            if fp:
                fp.close()
+

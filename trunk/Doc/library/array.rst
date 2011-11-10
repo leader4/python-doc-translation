@@ -412,3 +412,4 @@ Examples::
 
     数字化的Python扩展定义了其它一些数组类型;参见http://numpy.sourceforge.net/以获
     取更多关于数字化Python的信息.PDF版本的numpy手册可在http://numpy.sourceforge.net/numdoc/numdoc.pdf获取.
+

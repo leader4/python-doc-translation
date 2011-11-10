@@ -190,3 +190,4 @@ called with a non-bytes parameter.
    reallocation fails, the original bytes object at *\*bytes* is deallocated,
    *\*bytes* is set to *NULL*, a memory exception is set, and ``-1`` is
    returned.
+

@@ -583,3 +583,4 @@ This document was reviewed and revised by John Lee.
 .. [#] urllib opener for SSL proxy (CONNECT method): `ASPN Cookbook Recipe
        <http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/456195>`_.
 
+

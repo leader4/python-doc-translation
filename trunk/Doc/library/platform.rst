@@ -268,3 +268,4 @@ Unix Platforms
 
    The file is read and scanned in chunks of *chunksize* bytes.
 
+

@@ -17,16 +17,16 @@ POST request.  The encoding algorithm is not the same as the
 :program:`uuencode` program.
 
 Base64 是网络上最常见的用于传输 8 bit 字节代码的编码方式之一,大家可以查看
-RFC2045~RFC2049,上面有 MIME 的详细规范。Base64 要求把每三个 8 bit 的字节转换
+RFC2045~RFC2049,上面有 MIME 的详细规范. Base64 要求把每三个 8 bit 的字节转换
 为四个 6bit 的字节(3×8 = 4×6 = 24)
 ,然后把 6 bit 的字节再添两位高位 0,组成四个 8
 bit 的字节,
 也就是说,
-转换后的字符串理论上将要比原来的长 1/3。
+转换后的字符串理论上将要比原来的长 1/3. 
 当然,
 Python 的 base64
 库,帮我们封装了这些复杂的算法,只须简单地使用 base64.encodestring("Hello Python"),
-就可以进行 base64 编码了。
+就可以进行 base64 编码了. 
 
 
 There are two interfaces provided by this module.  The modern interface
@@ -192,4 +192,5 @@ An example usage of the module:
    :rfc:`1521` - MIME (Multipurpose Internet Mail Extensions) Part One: Mechanisms for Specifying and Describing the Format of Internet Message Bodies
       Section 5.2, "Base64 Content-Transfer-Encoding," provides the definition of the
       base64 encoding.
+
 

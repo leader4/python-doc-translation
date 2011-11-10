@@ -50,3 +50,4 @@ any other object.
    this macro doesn't check its type, you must do it yourself or you
    will risk crashes.
 
+

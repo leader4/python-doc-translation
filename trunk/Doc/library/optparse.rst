@@ -2014,3 +2014,4 @@ Features of note:
   about setting a default value for the option destinations in question; they
   can just leave the default as None and :meth:`ensure_value` will take care of
   getting it right when it's needed.
+

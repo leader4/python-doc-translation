@@ -166,3 +166,4 @@ subdirectory and all its subdirectories::
 
    Module :mod:`py_compile`
       Byte-compile a single source file.
+

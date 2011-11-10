@@ -168,3 +168,4 @@ SMTPChannel Objects
             from the client in :attr:`received_data` until the terminator
             "\r\n.\r\n" is received.
    ======== ===================================================================
+

@@ -442,3 +442,4 @@ http://www.freebsd.org/cgi/man.cgi?query=kqueue&sektion=2
 .. attribute:: kevent.udata
 
    User defined value.
+

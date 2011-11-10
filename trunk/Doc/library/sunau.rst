@@ -261,3 +261,4 @@ AU_write objects, as returned by :func:`.open` above, have the following methods
 Note that it is invalid to set any parameters after calling  :meth:`writeframes`
 or :meth:`writeframesraw`.
 
+

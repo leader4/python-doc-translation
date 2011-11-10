@@ -75,3 +75,4 @@
 
    Clear the float free list. Return the number of items that could not
    be freed.
+

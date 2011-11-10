@@ -49,3 +49,4 @@ an object, and :c:func:`PyBuffer_Release` when the buffer view can be released.
    returns ``0``, sets *buffer* to the memory location and *buffer_len* to the
    buffer length.  Returns ``-1`` and sets a :exc:`TypeError` on error.
 
+

@@ -48,3 +48,4 @@ sentinel value is returned.
    callable object that can be called with no parameters; each call to it should
    return the next item in the iteration.  When *callable* returns a value equal to
    *sentinel*, the iteration will be terminated.
+

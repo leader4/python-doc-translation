@@ -10,10 +10,10 @@ symbol is the corresponding integer value. The names and descriptions are
 borrowed from :file:`linux/include/errno.h`, which should be pretty
 all-inclusive.
 
-此模块提供“标准”的errno系统符号。 “
-每个符号的值是对应的整数值。的名称和
-描述都借鉴了`` Linux / include / errno.h中的的“，这应该
-很包容一切。
+此模块提供 "标准" 的errno系统符号.   "
+每个符号的值是对应的整数值. 的名称和
+描述都借鉴了`` Linux / include / errno.h中的的 ",这应该
+很包容一切. 
 
 
 .. data:: errorcode
@@ -23,22 +23,22 @@ all-inclusive.
    ``'EPERM'``.
 
     词典提供的errno值映射到字符串
-   在基础系统的名称。例如，
-   “errno.errorcode [errno.EPERM] `` ``'EPERM'”的地图。
+   在基础系统的名称. 例如,
+    "errno.errorcode [errno.EPERM] `` ``'EPERM'" 的地图. 
 
 To translate a numeric error code to an error message, use :func:`os.strerror`.
 
-要转换一个数字错误代码的错误消息，请使用
+要转换一个数字错误代码的错误消息,请使用
 `` os.strerror ()``.
 
 Of the following list, symbols that are not used on the current platform are not
 defined by the module.  The specific list of defined symbols is available as
 ``errno.errorcode.keys()``.  Symbols available can include:
 
-下面的列表，符号，不使用对当前
-平台是没有定义的模块。具体定义列表
+下面的列表,符号,不使用对当前
+平台是没有定义的模块. 具体定义列表
 符号是`` errno.errorcode.keys ()``.符号可
-可以包括：
+可以包括: 
 
 
 .. data:: EPERM
@@ -751,7 +751,7 @@ defined by the module.  The specific list of defined symbols is available as
 
    Network dropped connection because of reset
 
-   网络连接的下降，因为复位
+   网络连接的下降,因为复位
 
 
 .. data:: ECONNABORTED
@@ -800,7 +800,7 @@ defined by the module.  The specific list of defined symbols is available as
 
    Too many references: cannot splice
 
-   引用过多：无法接合
+   引用过多: 无法接合
 
 
 .. data:: ETIMEDOUT
@@ -892,4 +892,5 @@ defined by the module.  The specific list of defined symbols is available as
    Quota exceeded
 
    超过配额
+
 

@@ -889,3 +889,4 @@ only makes sense to call from a different thread.
   default, because some platforms (notably Mac OS X) have SQLite libraries which
   are compiled without this feature. To get loadable extension support, you must
   pass --enable-loadable-sqlite-extensions to configure.
+

@@ -239,3 +239,4 @@ function to specify which processes information should be provided for.
    thread.  May not be available on all systems.
 
    .. versionadded:: 3.2
+

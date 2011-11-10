@@ -17,7 +17,7 @@ This module provides support for Unix shell-style wildcards, which are *not* the
 same as regular expressions (which are documented in the :mod:`re` module).  The
 special characters used in shell-style wildcards are:
 
-fnmatch 实现了 shell patterns 表匹配字符串或文件名。
+fnmatch 实现了 shell patterns 表匹配字符串或文件名. 
 
 
 +------------+------------------------------------+
@@ -95,3 +95,4 @@ patterns.
 
    Module :mod:`glob`
       Unix shell-style path expansion.
+

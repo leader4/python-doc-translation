@@ -253,3 +253,4 @@ Here are some examples of typical usage of the :mod:`uuid` module::
    >>> uuid.UUID(bytes=x.bytes)
    UUID('00010203-0405-0607-0809-0a0b0c0d0e0f')
 
+

@@ -41,3 +41,4 @@ be the sample size in bits or ``'A'`` for A-LAW or ``'U'`` for u-LAW.
    The name of the file is given by *filename*.  This function returns a tuple as
    described above on success, or ``None``.
 
+

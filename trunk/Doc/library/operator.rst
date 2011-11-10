@@ -514,3 +514,4 @@ will perform the update, so no subsequent assignment is necessary:
               __ixor__(a, b)
 
    ``a = ixor(a, b)`` is equivalent to ``a ^= b``.
+

@@ -1236,3 +1236,4 @@ member in the :c:type:`PyTypeObject` structure should be *NULL*.  Otherwise, the
       through the struct bufferinfo.
 
       See :c:func:`PyBuffer_Release`.
+

@@ -266,3 +266,4 @@ sample and subtract the whole output sample from the input sample::
        outputdata = prefill + audioop.mul(outputdata,2,-factor) + postfill
        return audioop.add(inputdata, outputdata, 2)
 
+

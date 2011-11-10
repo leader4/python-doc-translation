@@ -14,10 +14,10 @@ This module implements a helper class and functions to quickly write a
 loop over standard input or a list of files. If you just want to read or
 write one file see :func:`open`.
 
-input()接受要编历的所有文件路径的列表，通过filename()返回当前正在读取的文件的文件名，
-filelineno()返回当前读取的行的行号，而lineno()返回当前已经读取的行的数量（或者序号）。
-其实，模块内部通过FileInput类来实现文件的编历读取，input()在内部创建了该类的一个对象，
-当处理完数据行之后，通过fileinput.close()来关闭这个内部对象。
+input()接受要编历的所有文件路径的列表,通过filename()返回当前正在读取的文件的文件名,
+filelineno()返回当前读取的行的行号,而lineno()返回当前已经读取的行的数量 (或者序号) . 
+其实,模块内部通过FileInput类来实现文件的编历读取,input()在内部创建了该类的一个对象,
+当处理完数据行之后,通过fileinput.close()来关闭这个内部对象. 
 
 The typical use is::
 
@@ -83,7 +83,7 @@ if there is no active state, :exc:`RuntimeError` is raised.
    Return the name of the file currently being read.  Before the first line has
    been read, returns ``None``.
    
-   返回当前读取文件的文件名。在第一行被读取之前会返回None。
+   返回当前读取文件的文件名. 在第一行被读取之前会返回None. 
 
 
 .. function:: fileno()
@@ -199,3 +199,4 @@ The two following opening hooks are provided by this module:
 
    Usage example: ``fi =
    fileinput.FileInput(openhook=fileinput.hook_encoded("iso-8859-1"))``
+

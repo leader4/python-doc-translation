@@ -4,17 +4,17 @@
 模块
 *******
 
-如果你从Python解释器退出再进入，那么你定义的所有的方法和变量就都消失了。所以，如果你想写一个能保存长一点的程序，你最好使用一个文本编辑器保存这些代码，
-把保存好的文件作为Python解释器的输入。这就是传说中的"脚本"。当你的程序能够长时间保存了，你就更加希望把他们（按照某种形式）拆分以便于管理。你可能还需要有个办法，
-在不同的程序中方便的调用，而不是把一坨代码拷来拷去。
+如果你从Python解释器退出再进入,那么你定义的所有的方法和变量就都消失了. 所以,如果你想写一个能保存长一点的程序,你最好使用一个文本编辑器保存这些代码,
+把保存好的文件作为Python解释器的输入. 这就是传说中的"脚本". 当你的程序能够长时间保存了,你就更加希望把他们 (按照某种形式) 拆分以便于管理. 你可能还需要有个办法,
+在不同的程序中方便的调用,而不是把一坨代码拷来拷去. 
 
 
-为此 Python 提供了一个办法，把这些定义存放在文件中，为一些脚本或者交互式的解释器实例使用。这个文件被称为*模块*，模块中的定义可以被*导入*到其他的模块或者*主*模块
-（*主*模块是执行脚本的最上层或计算模式下的一组可访问变量的集合）。
+为此 Python 提供了一个办法,把这些定义存放在文件中,为一些脚本或者交互式的解释器实例使用. 这个文件被称为*模块*,模块中的定义可以被*导入*到其他的模块或者*主*模块
+ (*主*模块是执行脚本的最上层或计算模式下的一组可访问变量的集合) . 
 
 
-模块就是拥有 Python 定义和声明的文件。文件名就是模块名称，以 .py 结尾。针对一个模块，模块的名称（字符串）和这个模块提供的全局变量 __name__ 是一样的。
-例如，用你贴心的编辑器在当前目录创建一个叫做 fibo.py 的文件，内容如下::
+模块就是拥有 Python 定义和声明的文件. 文件名就是模块名称,以 .py 结尾. 针对一个模块,模块的名称 (字符串) 和这个模块提供的全局变量 __name__ 是一样的. 
+例如,用你贴心的编辑器在当前目录创建一个叫做 fibo.py 的文件,内容如下::
 
    # Fibonacci numbers module
 
@@ -36,7 +36,7 @@
 Now enter the Python interpreter and import this module with the following
 command::
 
-现在进入 Python 解释器，通过如下命令导入这个模块
+现在进入 Python 解释器,通过如下命令导入这个模块
 
    >>> import fibo
 
@@ -44,7 +44,7 @@ This does not enter the names of the functions defined in ``fibo``  directly in
 the current symbol table; it only enters the module name ``fibo`` there. Using
 the module name you can access the functions::
 
-这并没有把``fibo``里面定义的方法名称直接导入符号表，他只是把 fibo 这个模块放在这了。你可以通过模块的名称来使用这些方法:
+这并没有把``fibo``里面定义的方法名称直接导入符号表,他只是把 fibo 这个模块放在这了. 你可以通过模块的名称来使用这些方法:
 
    >>> fibo.fib(1000)
    1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
@@ -55,7 +55,7 @@ the module name you can access the functions::
 
 If you intend to use a function often you can assign it to a local name::
 
-你也可以用一个本地的名字来存放某个方法，这样用起来会比较方便。
+你也可以用一个本地的名字来存放某个方法,这样用起来会比较方便. 
 
    >>> fib = fibo.fib
    >>> fib(500)
@@ -71,7 +71,7 @@ A module can contain executable statements as well as function definitions.
 These statements are intended to initialize the module. They are executed only
 the *first* time the module is imported somewhere. [#]_
 
-模块除了方法定义，还可以包括可执行的代码。这些代码一般用来初始化这个模块。这些代码只有在*第一次*被导入时才会被执行。
+模块除了方法定义,还可以包括可执行的代码. 这些代码一般用来初始化这个模块. 这些代码只有在*第一次*被导入时才会被执行. 
 
 Each module has its own private symbol table, which is used as the global symbol
 table by all functions defined in the module. Thus, the author of a module can
@@ -80,19 +80,19 @@ with a user's global variables. On the other hand, if you know what you are
 doing you can touch a module's global variables with the same notation used to
 refer to its functions, ``modname.itemname``.
 
-每个模块有各自独立的符号表，在模块内部为所有的函数当作全局符号表来使用。所以，模块的作者可以放心大胆的在模块内部使用这些全局变量，而不用担心把其他用户的全局变量搞花。从另一个方面，当你确实知道你在做什么的话，你也可以通过``modname.itemname``这样的表示法来访问模块内的函数。
+每个模块有各自独立的符号表,在模块内部为所有的函数当作全局符号表来使用. 所以,模块的作者可以放心大胆的在模块内部使用这些全局变量,而不用担心把其他用户的全局变量搞花. 从另一个方面,当你确实知道你在做什么的话,你也可以通过``modname.itemname``这样的表示法来访问模块内的函数. 
 
 Modules can import other modules.  It is customary but not required to place all
 :keyword:`import` statements at the beginning of a module (or script, for that
 matter).  The imported module names are placed in the importing module's global
 symbol table.
 
-模块是可以导入其他模块的。在一个模块（或者脚本，或者其他地方）的最前面使用 import 来导入一个模块，当然这只是一个惯例，而不是强制的。被导入的模块的名称将被放入当前操作的模块的符号表中。
+模块是可以导入其他模块的. 在一个模块 (或者脚本,或者其他地方) 的最前面使用 import 来导入一个模块,当然这只是一个惯例,而不是强制的. 被导入的模块的名称将被放入当前操作的模块的符号表中. 
 
 There is a variant of the :keyword:`import` statement that imports names from a
 module directly into the importing module's symbol table.  For example::
 
-还有一种导入的方法，可以使用:keyword:`import`直接把模块内（函数，变量的）名称导入到当前操作模块。比如:
+还有一种导入的方法,可以使用:keyword:`import`直接把模块内 (函数,变量的) 名称导入到当前操作模块. 比如:
 
    >>> from fibo import fib, fib2
    >>> fib(500)
@@ -101,11 +101,11 @@ module directly into the importing module's symbol table.  For example::
 This does not introduce the module name from which the imports are taken in the
 local symbol table (so in the example, ``fibo`` is not defined).
 
-这种导入的方法不会把被导入的模块的名称放在当前的字符表中（所以在这个例子里面，``fibo``这个名称是没有定义的）。
+这种导入的方法不会把被导入的模块的名称放在当前的字符表中 (所以在这个例子里面,``fibo``这个名称是没有定义的) . 
 
 There is even a variant to import all names that a module defines::
 
-这还有一种方法，可以一次性的把模块中的所有（函数，变量）名称都导入到当前模块的字符表:
+这还有一种方法,可以一次性的把模块中的所有 (函数,变量) 名称都导入到当前模块的字符表:
 
    >>> from fibo import *
    >>> fib(500)
@@ -116,7 +116,7 @@ In most cases Python programmers do not use this facility since it introduces
 an unknown set of names into the interpreter, possibly hiding some things
 you have already defined.
 
-这将把所有的名字都导入进来，但是那些由单一下划线（``_``）开头的名字不在此例。大多数情况， Python程序员不使用这种方法，因为引入的其它来源的命名，很可能覆盖了已有的定义。
+这将把所有的名字都导入进来,但是那些由单一下划线 (``_``) 开头的名字不在此例. 大多数情况, Python程序员不使用这种方法,因为引入的其它来源的命名,很可能覆盖了已有的定义. 
 
 Note that in general the practice of importing ``*`` from a module or package is
 frowned upon, since it often causes poorly readable code. However, it is okay to
@@ -152,7 +152,7 @@ the code in the module will be executed, just as if you imported it, but with
 the ``__name__`` set to ``"__main__"``.  That means that by adding this code at
 the end of your module::
 
-如果你的模块里面的代码就会执行，就好像你导入他们一样，``__name__`` 会赋值为 ``“__main__”``。也就是说，你在模块的最下面加上如下代码::
+如果你的模块里面的代码就会执行,就好像你导入他们一样,``__name__`` 会赋值为 `` "__main__" ``. 也就是说,你在模块的最下面加上如下代码::
 
    if __name__ == "__main__":
        import sys
@@ -162,14 +162,14 @@ you can make the file usable as a script as well as an importable module,
 because the code that parses the command line only runs if the module is
 executed as the "main" file::
 
-这个文件可以当作一个脚本来使用。而这部分代码只有在这个模块被当作”主”程序执行时才会被执行::
+这个文件可以当作一个脚本来使用. 而这部分代码只有在这个模块被当作" 主" 程序执行时才会被执行::
 
    $ python fibo.py 50
    1 1 2 3 5 8 13 21 34
 
 If the module is imported, the code is not run::
 
-如果这个模块是被导入的，那么这些代码是不被执行的:
+如果这个模块是被导入的,那么这些代码是不被执行的:
 
    >>> import fibo
    >>>
@@ -177,7 +177,7 @@ If the module is imported, the code is not run::
 This is often used either to provide a convenient user interface to a module, or
 for testing purposes (running the module as a script executes a test suite).
 
-模块经常通过这种写法来提供一些方便的接口，或者用来测试（直接运行脚本，会执行一个/组测试用例）。
+模块经常通过这种写法来提供一些方便的接口,或者用来测试 (直接运行脚本,会执行一个/组测试用例) . 
 
 
 .. _tut-searchpath:
@@ -195,7 +195,7 @@ directory names.  When :envvar:`PYTHONPATH` is not set, or when the file is not
 found there, the search continues in an installation-dependent default path; on
 Unix, this is usually :file:`.:/usr/local/lib/python`.
 
-当试图导入一个叫做 spam 的模块，解释器会首先在当前目录搜索一个叫做 spam.py 的文件，然后会依次寻找定义在环境变量 PYTHONPATH 中的所有目录。定义 PYTHONPATH`的语法和定义环境变量:envvar:`PATH`一样，都是一系列目录的列表。如果 :envvar:`PYTHONPATH`没有定义，或者按照上面的路径没有找到这个文件，那么解释器会继续在Python 安装时定义的默认目录来寻找。在Unix中，通常都是在:file:.:/usr/local/lib/python`。
+当试图导入一个叫做 spam 的模块,解释器会首先在当前目录搜索一个叫做 spam.py 的文件,然后会依次寻找定义在环境变量 PYTHONPATH 中的所有目录. 定义 PYTHONPATH`的语法和定义环境变量:envvar:`PATH`一样,都是一系列目录的列表. 如果 :envvar:`PYTHONPATH`没有定义,或者按照上面的路径没有找到这个文件,那么解释器会继续在Python 安装时定义的默认目录来寻找. 在Unix中,通常都是在:file:.:/usr/local/lib/python`. 
 
 Actually, modules are searched in the list of directories given by the variable
 ``sys.path`` which is initialized from the directory containing the input script
@@ -207,12 +207,12 @@ the same name as a standard module, or Python will attempt to load the script as
 a module when that module is imported. This will generally be an error.  See
 section :ref:`tut-standardmodules` for more information.
 
-实际上，这些模块都是在变量 sys.path 定义的目录里寻找。``sys.path`` 包含了输入脚本的目录（或者说当前目录），:envvar:PYTHONPATH 和安装时候的默认目录。Python 程序员可以去修改这个搜索路径。注意，因为被执行的脚本所在的目录也在模块的搜索路径中，那么被执行的脚本的名字一定要和标准的模块名称区别开来。这非常重要，否则当要导入标准模块的时候，Python 会试图导入这个脚本。这会导致错误的发生。请参阅 Standard Modules 标准组件 章节获取更多信息。
+实际上,这些模块都是在变量 sys.path 定义的目录里寻找. ``sys.path`` 包含了输入脚本的目录 (或者说当前目录) ,:envvar:PYTHONPATH 和安装时候的默认目录. Python 程序员可以去修改这个搜索路径. 注意,因为被执行的脚本所在的目录也在模块的搜索路径中,那么被执行的脚本的名字一定要和标准的模块名称区别开来. 这非常重要,否则当要导入标准模块的时候,Python 会试图导入这个脚本. 这会导致错误的发生. 请参阅 Standard Modules 标准组件 章节获取更多信息. 
 
 .. %
     Do we need stuff on zip files etc. ? DUBOIS
 
-“编译的”Python文件
+ "编译的" Python文件
 -----------------------
 
 As an important speed-up of the start-up time for short programs that use a lot
@@ -222,7 +222,7 @@ already-"byte-compiled" version of the module :mod:`spam`. The modification time
 of the version of :file:`spam.py` used to create :file:`spam.pyc` is recorded in
 :file:`spam.pyc`, and the :file:`.pyc` file is ignored if these don't match.
 
-在一个名为 spam.py 的文件启动时候，Python 会在同一个目录寻找一个叫 spam.pyc 的文件并且运行，这是一个重要的启动提速方式，尤其是你使用了大量的标准组件。 spam.pyc 是模块 spam 的“字节编译”的版本。文件 spam.py 的修改时间将被记录在 spam.pyc 当中，如果当前的修改时间和记录的时间不一致，那么 spam.pyc 就会被忽略掉。
+在一个名为 spam.py 的文件启动时候,Python 会在同一个目录寻找一个叫 spam.pyc 的文件并且运行,这是一个重要的启动提速方式,尤其是你使用了大量的标准组件.  spam.pyc 是模块 spam 的 "字节编译" 的版本. 文件 spam.py 的修改时间将被记录在 spam.pyc 当中,如果当前的修改时间和记录的时间不一致,那么 spam.pyc 就会被忽略掉. 
 
 Normally, you don't need to do anything to create the :file:`spam.pyc` file.
 Whenever :file:`spam.py` is successfully compiled, an attempt is made to write
@@ -232,11 +232,11 @@ fails; if for any reason the file is not written completely, the resulting
 contents of the :file:`spam.pyc` file are platform independent, so a Python
 module directory can be shared by machines of different architectures.
 
-通常你不用操心如何去创建 spam.pyc`。每次 :file:`spam.py 成功的编译之后，这个编译好的内容便写入 spam.pyc 。这不会有任何的问题，如果在生成 spam.pyc`时候发生了 任何的错误，那么这个文件将会被识别为不可用的，并接会被忽略。:file:`spam.pyc 的内容是操作系统无关的，所以 Python 的模块目录可以在不同的体系架构中共享。
+通常你不用操心如何去创建 spam.pyc`. 每次 :file:`spam.py 成功的编译之后,这个编译好的内容便写入 spam.pyc . 这不会有任何的问题,如果在生成 spam.pyc`时候发生了 任何的错误,那么这个文件将会被识别为不可用的,并接会被忽略. :file:`spam.pyc 的内容是操作系统无关的,所以 Python 的模块目录可以在不同的体系架构中共享. 
 
 Some tips for experts:
 
-专家提醒：
+专家提醒: 
 
 * When the Python interpreter is invoked with the :option:`-O` flag, optimized
   code is generated and stored in :file:`.pyo` files.  The optimizer currently
@@ -244,8 +244,8 @@ Some tips for experts:
   :option:`-O` is used, *all* :term:`bytecode` is optimized; ``.pyc`` files are
   ignored and ``.py`` files are compiled to optimized bytecode.
 
-* 当采用 -O 参数来启动 Python 的解析器时，Python 会生成优化的代码，并且存入
-  '.pyo'文件中。当前的优化器只能去掉采用:keyword:`assert`标记的语句，除此之外就没 什么用了。当:option:-O`参数启用，*所有*:term:字节码`都会被优化，忽略`.pyc``文件，并且所有的``.py``文件都被优化成为字节码。
+* 当采用 -O 参数来启动 Python 的解析器时,Python 会生成优化的代码,并且存入
+  '.pyo'文件中. 当前的优化器只能去掉采用:keyword:`assert`标记的语句,除此之外就没 什么用了. 当:option:-O`参数启用,*所有*:term:字节码`都会被优化,忽略`.pyc``文件,并且所有的``.py``文件都被优化成为字节码. 
 
 * Passing two :option:`-O` flags to the Python interpreter (:option:`-OO`) will
   cause the bytecode compiler to perform optimizations that could in some rare
@@ -254,16 +254,16 @@ Some tips for experts:
   some programs may rely on having these available, you should only use this
   option if you know what you're doing.
 
-* Python解析器使用两个 -O 参数（:option:`-OO`）将采用字节码编译以便提高性能，不
-  过在一些罕见的情况下会导致程序执行异常。暂时这个工作只会把字节码中的 `__doc__ 字符串去掉，字节码也会更加紧凑，然后存到 .pyo 文件中。虽然很多的程序都相信这些优化工作，但是还是建议你在做之前，确认一下自己是在干什么。
+* Python解析器使用两个 -O 参数 (:option:`-OO`) 将采用字节码编译以便提高性能,不
+  过在一些罕见的情况下会导致程序执行异常. 暂时这个工作只会把字节码中的 `__doc__ 字符串去掉,字节码也会更加紧凑,然后存到 .pyo 文件中. 虽然很多的程序都相信这些优化工作,但是还是建议你在做之前,确认一下自己是在干什么. 
 
 * A program doesn't run any faster when it is read from a :file:`.pyc` or
   :file:`.pyo` file than when it is read from a :file:`.py` file; the only thing
   that's faster about :file:`.pyc` or :file:`.pyo` files is the speed with which
   they are loaded.
 
-* 程序并不会因为读取 .pyc 或者 .pyo 文件而比 .py 文件运行的更快。
-  唯一会提升的只是他们加载的速度。
+* 程序并不会因为读取 .pyc 或者 .pyo 文件而比 .py 文件运行的更快. 
+  唯一会提升的只是他们加载的速度. 
 
 * When a script is run by giving its name on the command line, the bytecode for
   the script is never written to a :file:`.pyc` or :file:`.pyo` file.  Thus, the
@@ -272,16 +272,16 @@ Some tips for experts:
   possible to name a :file:`.pyc` or :file:`.pyo` file directly on the command
   line.
 
-* 在命令行中直接运行的脚本文件不会把编译的字节码写入 .pyc 或 .pyo 中。所以，
-  你应该把大部分的代码转移到你的模块当中，用一个短小的启动脚本来导入它们。或者把这个脚本的 .pyc 或 .pyo 文件直接放在要执行的目录中也可以。
+* 在命令行中直接运行的脚本文件不会把编译的字节码写入 .pyc 或 .pyo 中. 所以,
+  你应该把大部分的代码转移到你的模块当中,用一个短小的启动脚本来导入它们. 或者把这个脚本的 .pyc 或 .pyo 文件直接放在要执行的目录中也可以. 
 
 * It is possible to have a file called :file:`spam.pyc` (or :file:`spam.pyo`
   when :option:`-O` is used) without a file :file:`spam.py` for the same module.
   This can be used to distribute a library of Python code in a form that is
   moderately hard to reverse engineer.
 
-* 你还可以在提供一个模块的时候只提供类似 spam.pyc （或者通过 -O 生成的
-  spam.pyo ）文件，而没有 spam.py 。这主要是为了把你的 Python 文件当作库文件来发布，目的嘛，还不是为了让那些反向工程者多费一些脑细胞。
+* 你还可以在提供一个模块的时候只提供类似 spam.pyc  (或者通过 -O 生成的
+  spam.pyo ) 文件,而没有 spam.py . 这主要是为了把你的 Python 文件当作库文件来发布,目的嘛,还不是为了让那些反向工程者多费一些脑细胞. 
 
   .. index:: module: compileall
 
@@ -289,7 +289,7 @@ Some tips for experts:
   files when :option:`-O` is used) for all modules in a directory.
 
 * 这个叫做 compileall 的组件可以帮助你把一个目录中的所有模块都编译成为
-  .pyc （或者用 -O 来生成 .pyo ）
+  .pyc  (或者用 -O 来生成 .pyo ) 
 
 
 .. _tut-standardmodules:
@@ -311,7 +311,7 @@ provided on Windows systems. One particular module deserves some attention:
 ``sys.ps1`` and ``sys.ps2`` define the strings used as primary and secondary
 prompts::
 
-Python 本身带着一些标准的模块库，在 Python 库参考文档中将会介绍到（就是后面的“库参考文档”）。有些模块直接被构建在解析器里，这些虽然不是一些语言内置的功能，但是他却能很高效的使用，甚至是系统级调用也没问题。这些组件会根据不同的操作系统进行不同形式的配置，比如 winreg 这个模块就只会提供给 Windows 系统。应该注意到这有一个特别的模块 sys ，它内置在每一个 Python 解析器中。变量 sys.ps1 和 sys.ps2 定义了主提示符和副提示符所对应的字符串:
+Python 本身带着一些标准的模块库,在 Python 库参考文档中将会介绍到 (就是后面的 "库参考文档" ) . 有些模块直接被构建在解析器里,这些虽然不是一些语言内置的功能,但是他却能很高效的使用,甚至是系统级调用也没问题. 这些组件会根据不同的操作系统进行不同形式的配置,比如 winreg 这个模块就只会提供给 Windows 系统. 应该注意到这有一个特别的模块 sys ,它内置在每一个 Python 解析器中. 变量 sys.ps1 和 sys.ps2 定义了主提示符和副提示符所对应的字符串:
 
    >>> import sys
    >>> sys.ps1
@@ -326,7 +326,7 @@ Python 本身带着一些标准的模块库，在 Python 库参考文档中将�
 
 These two variables are only defined if the interpreter is in interactive mode.
 
-只有在交互式模式中，这两个变量才有定义。
+只有在交互式模式中,这两个变量才有定义. 
 
 The variable ``sys.path`` is a list of strings that determines the interpreter's
 search path for modules. It is initialized to a default path taken from the
@@ -334,7 +334,7 @@ environment variable :envvar:`PYTHONPATH`, or from a built-in default if
 :envvar:`PYTHONPATH` is not set.  You can modify it using standard list
 operations::
 
-我们说过，解释器从 sys.path 搜索模块，``sys.path`` 是一个存放着所有路径的字符串列表。如果定义了环境变量 PYTHONPATH ，那么从这里构建 sys.path ，否则使用一个内置的默认值。你可以使用标准用的列表操作来改变这个列表。
+我们说过,解释器从 sys.path 搜索模块,``sys.path`` 是一个存放着所有路径的字符串列表. 如果定义了环境变量 PYTHONPATH ,那么从这里构建 sys.path ,否则使用一个内置的默认值. 你可以使用标准用的列表操作来改变这个列表. 
 
    >>> import sys
    >>> sys.path.append('/ufs/guido/lib/python')
@@ -348,7 +348,7 @@ operations::
 The built-in function :func:`dir` is used to find out which names a module
 defines.  It returns a sorted list of strings::
 
-内置的函数 dir() 可以找到模块内定义的所有名称。以一个字符串列表的形式返回:
+内置的函数 dir() 可以找到模块内定义的所有名称. 以一个字符串列表的形式返回:
 
    >>> import fibo, sys
    >>> dir(fibo)
@@ -367,7 +367,7 @@ defines.  It returns a sorted list of strings::
 
 Without arguments, :func:`dir` lists the names you have defined currently::
 
-如果没有给定参数，那么 dir() 函数会罗列出当前定义的所有名称:
+如果没有给定参数,那么 dir() 函数会罗列出当前定义的所有名称:
 
    >>> a = [1, 2, 3, 4, 5]
    >>> import fibo
@@ -377,7 +377,7 @@ Without arguments, :func:`dir` lists the names you have defined currently::
 
 Note that it lists all types of names: variables, modules, functions, etc.
 
-注意，它会把所有的名称都列出来: 变量，模块，函数等等。
+注意,它会把所有的名称都列出来: 变量,模块,函数等等. 
 
 .. index:: module: builtins
 
@@ -385,7 +385,7 @@ Note that it lists all types of names: variables, modules, functions, etc.
 want a list of those, they are defined in the standard module
 :mod:`builtins`::
 
-:func:`dir` 函数并不会列出内置的函数和变量的名称，如果你坚持你想得到它们，那么你去问一个叫做
+:func:`dir` 函数并不会列出内置的函数和变量的名称,如果你坚持你想得到它们,那么你去问一个叫做
 :mod:`builtins` 的标准模块好了
 
    >>> import builtins
@@ -425,7 +425,7 @@ variable names, the use of dotted module names saves the authors of multi-module
 packages like NumPy or the Python Imaging Library from having to worry about
 each other's module names.
 
-包是一种管理 Python 模块命名空间的形式，采用“点模块名称”。比如一个模块的名称是 A.B`， 那么他表示一个包 ``A` 中的子模块 B 。就好像使用模块的时候，你不用担心不同模块之间的全局变量相互影响一样，采用点模块名称这种形式也不用担心不同库之间的模块重名的情况。这样不同的作者都可以提供 NumPy 模块，或者是 Python 图形库。
+包是一种管理 Python 模块命名空间的形式,采用 "点模块名称" . 比如一个模块的名称是 A.B`, 那么他表示一个包 ``A` 中的子模块 B . 就好像使用模块的时候,你不用担心不同模块之间的全局变量相互影响一样,采用点模块名称这种形式也不用担心不同库之间的模块重名的情况. 这样不同的作者都可以提供 NumPy 模块,或者是 Python 图形库. 
 
 Suppose you want to design a collection of modules (a "package") for the uniform
 handling of sound files and sound data.  There are many different sound file
@@ -438,7 +438,7 @@ artificial stereo effect), so in addition you will be writing a never-ending
 stream of modules to perform these operations.  Here's a possible structure for
 your package (expressed in terms of a hierarchical filesystem)::
 
-不妨假设你想设计一套统一处理声音文件和数据的模块（或者称之为一个“包”）。现存很多种不同的音频文件格式（基本上都是通过后缀名区分的，例如： .wav`，:file:.aiff`，:file:`.au`，），所以你需要有一组不断增加的模块，用来在不同的格式之间转换。并且针对这些音频数据，还有很多不同的操作（比如混音，添加回声，增加均衡器功能，创建人造立体声效果），所你还需要一组怎么也写不完的模块来处理这些操作。这里给出了一种可能的包结构（在分层的文件系统中）::
+不妨假设你想设计一套统一处理声音文件和数据的模块 (或者称之为一个 "包" ) . 现存很多种不同的音频文件格式 (基本上都是通过后缀名区分的,例如:  .wav`,:file:.aiff`,:file:`.au`,) ,所以你需要有一组不断增加的模块,用来在不同的格式之间转换. 并且针对这些音频数据,还有很多不同的操作 (比如混音,添加回声,增加均衡器功能,创建人造立体声效果) ,所你还需要一组怎么也写不完的模块来处理这些操作. 这里给出了一种可能的包结构 (在分层的文件系统中) ::
 
    sound/                          Top-level package
          __init__.py               Initialize the sound package
@@ -467,7 +467,7 @@ your package (expressed in terms of a hierarchical filesystem)::
 When importing the package, Python searches through the directories on
 ``sys.path`` looking for the package subdirectory.
 
-在导入一个包的时候，Python 会根据 sys.path 中的目录来寻找这个包中包含的子目录。
+在导入一个包的时候,Python 会根据 sys.path 中的目录来寻找这个包中包含的子目录. 
 
 The :file:`__init__.py` files are required to make Python treat the directories
 as containing packages; this is done to prevent directories with a common name,
@@ -476,19 +476,19 @@ on the module search path. In the simplest case, :file:`__init__.py` can just be
 an empty file, but it can also execute initialization code for the package or
 set the ``__all__`` variable, described later.
 
-目录只有包含一个叫做 __init__.py 的文件才会被认作是一个包，主要是为了避免一些滥俗的名字（比如叫做``string``）不小心的影响搜索路径中的有效模块。最简单的情况，放一个空的 :file:`__init__.py`就可以了。当然这个文件中也可以包含一些初始化代码或者为（将在后面介绍的） ``__all__``变量赋值。
+目录只有包含一个叫做 __init__.py 的文件才会被认作是一个包,主要是为了避免一些滥俗的名字 (比如叫做``string``) 不小心的影响搜索路径中的有效模块. 最简单的情况,放一个空的 :file:`__init__.py`就可以了. 当然这个文件中也可以包含一些初始化代码或者为 (将在后面介绍的)  ``__all__``变量赋值. 
 
 Users of the package can import individual modules from the package, for
 example::
 
-用户可以每次只导入一个包里面的特定模块，比如::
+用户可以每次只导入一个包里面的特定模块,比如::
 
    import sound.effects.echo
 
 This loads the submodule :mod:`sound.effects.echo`.  It must be referenced with
 its full name. ::
 
-这将会导入子模块:mod:`song.effects.echo`。 他必须使用全名去访问::
+这将会导入子模块:mod:`song.effects.echo`.  他必须使用全名去访问::
 
    sound.effects.echo.echofilter(input, output, delay=0.7, atten=4)
 
@@ -501,7 +501,7 @@ An alternative way of importing the submodule is::
 This also loads the submodule :mod:`echo`, and makes it available without its
 package prefix, so it can be used as follows::
 
-这同样会导入子模块:mod:`echo`，并且他不需要那些冗长的前缀，所以他可以这样使用::
+这同样会导入子模块:mod:`echo`,并且他不需要那些冗长的前缀,所以他可以这样使用::
 
    echo.echofilter(input, output, delay=0.7, atten=4)
 
@@ -514,7 +514,7 @@ Yet another variation is to import the desired function or variable directly::
 Again, this loads the submodule :mod:`echo`, but this makes its function
 :func:`echofilter` directly available::
 
-同样的，这种方法会导入子模块:mod:`echo`，并且可以直接使用他的:func:`echofilter`函数::
+同样的,这种方法会导入子模块:mod:`echo`,并且可以直接使用他的:func:`echofilter`函数::
 
    echofilter(input, output, delay=0.7, atten=4)
 
@@ -525,14 +525,14 @@ tests whether the item is defined in the package; if not, it assumes it is a
 module and attempts to load it.  If it fails to find it, an :exc:`ImportError`
 exception is raised.
 
-注意当使用``from package import item``这种形式的时候，对应的item既可以是包里面的子模块（子包），或者包里面定义的其他名称，比如函数，类或者变量。``import``语法会首先把item当作一个包定义的名称，如果没找到，再试图按照一个模块去导入。如果还没找到，恭喜，一个:exc:ImportError 异常被抛出了。
+注意当使用``from package import item``这种形式的时候,对应的item既可以是包里面的子模块 (子包) ,或者包里面定义的其他名称,比如函数,类或者变量. ``import``语法会首先把item当作一个包定义的名称,如果没找到,再试图按照一个模块去导入. 如果还没找到,恭喜,一个:exc:ImportError 异常被抛出了. 
 
 Contrarily, when using syntax like ``import item.subitem.subsubitem``, each item
 except for the last must be a package; the last item can be a module or a
 package but can't be a class or function or variable defined in the previous
 item.
 
-反之，如果使用形如``import item.subitem.subsubitem``这种导入形式，除了最后一项，都必须是包，而最后一项则可以是模块或者是包，但是不可以是类，函数或者变量的名字。
+反之,如果使用形如``import item.subitem.subsubitem``这种导入形式,除了最后一项,都必须是包,而最后一项则可以是模块或者是包,但是不可以是类,函数或者变量的名字. 
 
 
 .. _tut-pkg-import-star:
@@ -548,7 +548,7 @@ submodules are present in the package, and imports them all.  This could take a
 long time and importing sub-modules might have unwanted side-effects that should
 only happen when the sub-module is explicitly imported.
 
-设想一下，如果我们使用``from sound.effects import *``会发生什么？ 只是想想嘛。Python 会进入文件系统，找到这个包里面所有的子模块，一个一个的把它们都导入进来。但是很不幸，这个方法在 Windows平台上工作的就不是非常好，因为Windows是一个大小写不区分的系统。在这类平台上，没有人敢担保一个叫做 ECHO.py 的文件导入为模块:mod:`echo`还是:mod:`Echo`甚至:mod:`ECHO`。（例如，Windows 95就很讨厌的把每一个文件的首字母大写显示。）而且 DOS 的 8+3 命名规则对长模块名称的处理会把问题搞得更纠结。
+设想一下,如果我们使用``from sound.effects import *``会发生什么?  只是想想嘛. Python 会进入文件系统,找到这个包里面所有的子模块,一个一个的把它们都导入进来. 但是很不幸,这个方法在 Windows平台上工作的就不是非常好,因为Windows是一个大小写不区分的系统. 在这类平台上,没有人敢担保一个叫做 ECHO.py 的文件导入为模块:mod:`echo`还是:mod:`Echo`甚至:mod:`ECHO`.  (例如,Windows 95就很讨厌的把每一个文件的首字母大写显示. ) 而且 DOS 的 8+3 命名规则对长模块名称的处理会把问题搞得更纠结. 
 
 The only solution is for the package author to provide an explicit index of the
 package.  The :keyword:`import` statement uses the following convention: if a package's
@@ -560,14 +560,14 @@ support it, if they don't see a use for importing \* from their package.  For
 example, the file :file:`sounds/effects/__init__.py` could contain the following
 code::
 
-为了解决这个问题，只能烦劳包作者提供一个精确的包的索引了。导入语句遵循如下规则：如果包定义文件 __init__.py 存在一个叫做 __all__ 的列表变量，那么在使用 from package import * 的时候就把这个列表中的所有名字作为包内容导入。作为包的作者，可别忘了在更新包之后保证 __all__ 也更新了啊。你说我就不这么做，我就不使用导入*这种用法，好吧，没问题，谁让你是老板呢。这里有一个例子，在:file:`sounds/effects/__init__.py`中包含如下代码::
+为了解决这个问题,只能烦劳包作者提供一个精确的包的索引了. 导入语句遵循如下规则: 如果包定义文件 __init__.py 存在一个叫做 __all__ 的列表变量,那么在使用 from package import * 的时候就把这个列表中的所有名字作为包内容导入. 作为包的作者,可别忘了在更新包之后保证 __all__ 也更新了啊. 你说我就不这么做,我就不使用导入*这种用法,好吧,没问题,谁让你是老板呢. 这里有一个例子,在:file:`sounds/effects/__init__.py`中包含如下代码::
 
    __all__ = ["echo", "surround", "reverse"]
 
 This would mean that ``from sound.effects import *`` would import the three
 named submodules of the :mod:`sound` package.
 
-这表示当你使用``from sound.effects import *``这种用法时，你只会导入包里面这三个子模块。
+这表示当你使用``from sound.effects import *``这种用法时,你只会导入包里面这三个子模块. 
 
 If ``__all__`` is not defined, the statement ``from sound.effects import *``
 does *not* import all submodules from the package :mod:`sound.effects` into the
@@ -578,7 +578,7 @@ names defined (and submodules explicitly loaded) by :file:`__init__.py`.  It
 also includes any submodules of the package that were explicitly loaded by
 previous :keyword:`import` statements.  Consider this code::
 
-如果``__all__``真的而没有定义，那么使用``from sound.effects import *``这种语法的时候，就*不会*导入包:mod:`sound.effects`里的任何子模块。他只是把包:mod:`sound.effects`和它里面定义的所有内容导入进来（可能运行:file:`__init__.py`里定义的初始化代码）。这会把 :file:`__init__.py`里面定义的所有名字导入进来。并且他不会破坏掉我们在这句话之前导入的所有明确指定的模块。看下这部分代码:
+如果``__all__``真的而没有定义,那么使用``from sound.effects import *``这种语法的时候,就*不会*导入包:mod:`sound.effects`里的任何子模块. 他只是把包:mod:`sound.effects`和它里面定义的所有内容导入进来 (可能运行:file:`__init__.py`里定义的初始化代码) . 这会把 :file:`__init__.py`里面定义的所有名字导入进来. 并且他不会破坏掉我们在这句话之前导入的所有明确指定的模块. 看下这部分代码:
 
    import sound.effects.echo
    import sound.effects.surround
@@ -589,20 +589,20 @@ current namespace because they are defined in the :mod:`sound.effects` package
 when the ``from...import`` statement is executed.  (This also works when
 ``__all__`` is defined.)
 
-这个例子中，在执行``from...import``前，包:mod:`sound.effects`中的echo和surround模块都被导入到当前的命名空间中了。（当然如果定义了``__all__``就更没问题了。）
+这个例子中,在执行``from...import``前,包:mod:`sound.effects`中的echo和surround模块都被导入到当前的命名空间中了.  (当然如果定义了``__all__``就更没问题了. ) 
 
 Although certain modules are designed to export only names that follow certain
 patterns when you use ``import *``, it is still considered bad practise in
 production code.
 
-通常我们并不主张使用``*``这种方法来导入模块，因为这种方法经常会导致代码的可读性降低。不过这样倒的确是可以省去不少敲键的功夫，而且一些模块都设计成了只能通过特定的方法导入。
+通常我们并不主张使用``*``这种方法来导入模块,因为这种方法经常会导致代码的可读性降低. 不过这样倒的确是可以省去不少敲键的功夫,而且一些模块都设计成了只能通过特定的方法导入. 
 
 Remember, there is nothing wrong with using ``from Package import
 specific_submodule``!  In fact, this is the recommended notation unless the
 importing module needs to use submodules with the same name from different
 packages.
 
-记住，使用``from Package import specific_submodule``这种方法永远不会有错。事实上，这也是推荐的方法。除非是你要导入的子模块有可能和其他包的子模块重名。
+记住,使用``from Package import specific_submodule``这种方法永远不会有错. 事实上,这也是推荐的方法. 除非是你要导入的子模块有可能和其他包的子模块重名. 
 
 
 包内引用
@@ -614,7 +614,7 @@ packages.  For example, if the module :mod:`sound.filters.vocoder` needs to use
 the :mod:`echo` module in the :mod:`sound.effects` package, it can use ``from
 sound.effects import echo``.
 
-如果在结构中包是一个子包（比如这个例子中对于包:mod:sound`来说），而你又想导入兄弟包（同级别的包）你就得使用导入绝对的路径来导入。比如，如果模块:mod:`sound.filters.vocoder 要使用包:mod:`sound.effects`中的模块:mod:`echo`，你就要写成 ``from sound.effects import echo``。
+如果在结构中包是一个子包 (比如这个例子中对于包:mod:sound`来说) ,而你又想导入兄弟包 (同级别的包) 你就得使用导入绝对的路径来导入. 比如,如果模块:mod:`sound.filters.vocoder 要使用包:mod:`sound.effects`中的模块:mod:`echo`,你就要写成 ``from sound.effects import echo``. 
 
 You can also write relative imports, with the ``from module import name`` form
 of import statement.  These imports use leading dots to indicate the current and
@@ -629,7 +629,7 @@ Note that relative imports are based on the name of the current module.  Since
 the name of the main module is always ``"__main__"``, modules intended for use
 as the main module of a Python application must always use absolute imports.
 
-无论是隐式的还是显式的相对导入都是从当前模块开始的。主模块的名字永远是``”__main__”``，一个Python应用程序的主模块，应当总是使用绝对路径引用。
+无论是隐式的还是显式的相对导入都是从当前模块开始的. 主模块的名字永远是``" __main__" ``,一个Python应用程序的主模块,应当总是使用绝对路径引用. 
 
 
 跨目录的包
@@ -641,12 +641,12 @@ package's :file:`__init__.py` before the code in that file is executed.  This
 variable can be modified; doing so affects future searches for modules and
 subpackages contained in the package.
 
-包还提供一个额外的属性，:attr:`__path__`。这是一个目录列表，里面每一个包含的目录都有为这个包服务的:file:`__init__.py`，你得在其他:file:`__init__.py`被执行前定义哦。可以修改这个变量，用来影响包含在包里面的模块和子包。
+包还提供一个额外的属性,:attr:`__path__`. 这是一个目录列表,里面每一个包含的目录都有为这个包服务的:file:`__init__.py`,你得在其他:file:`__init__.py`被执行前定义哦. 可以修改这个变量,用来影响包含在包里面的模块和子包. 
 
 While this feature is not often needed, it can be used to extend the set of
 modules found in a package.
 
-这个功能并不常用，一般用来扩展包里面的模块。
+这个功能并不常用,一般用来扩展包里面的模块. 
 
 
 .. rubric:: Footnotes
@@ -655,5 +655,6 @@ modules found in a package.
    execution of a module-level function enters the function name in the module's
    global symbol table.
 
-   事实上函数的定义也是一种“可执行的声明”，执行时候从模块的全局符号表来寻找函数的名称。
+   事实上函数的定义也是一种 "可执行的声明" ,执行时候从模块的全局符号表来寻找函数的名称. 
+
 

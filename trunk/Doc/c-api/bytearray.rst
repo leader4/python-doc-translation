@@ -84,3 +84,4 @@ These macros trade safety for speed and they don't check pointers.
 .. c:function:: Py_ssize_t PyByteArray_GET_SIZE(PyObject *bytearray)
 
    Macro version of :c:func:`PyByteArray_Size`.
+

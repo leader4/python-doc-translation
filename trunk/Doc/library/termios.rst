@@ -102,3 +102,4 @@ exactly no matter what happens::
            termios.tcsetattr(fd, termios.TCSADRAIN, old)
        return passwd
 
+

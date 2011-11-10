@@ -182,3 +182,4 @@ Macros for the convenience of modules implementing the DB API:
 
    Create and return a new ``datetime.date`` object given an argument tuple
    suitable for passing to ``datetime.date.fromtimestamp()``.
+

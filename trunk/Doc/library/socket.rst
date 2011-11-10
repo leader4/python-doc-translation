@@ -24,38 +24,38 @@ in the C interface: as with :meth:`read` and :meth:`write` operations on Python
 files, buffer allocation on receive operations is automatic, and buffer length
 is implicit on send operations.
 
-socket 的英文意思是“孔、插座”
-,在这里它是一种进程的通信机制。可以把 socket 比作
+socket 的英文意思是 "孔、插座" 
+,在这里它是一种进程的通信机制. 可以把 socket 比作
 电话插座,区号是通话双方的网络地址;一方电话机发出信号和另一方接受信号,相当
 于向 socket 发送数据和从 socket 接收数据;通话结束后挂起电话机,相当于关闭 socket,
-撤销链接。
+撤销链接. 
 Python 中提供了丰富的网络编程模块,适当地调用这些模块可以大大提高编程效率,而
-且能够保证程序的健壮性。同时你会惊奇发现,Python 作为脚本语言,对部分网络协议
-的实现相当快。这里介绍的 socket 模块,是 Python 网络编程最基础的一个模块。当然在
+且能够保证程序的健壮性. 同时你会惊奇发现,Python 作为脚本语言,对部分网络协议
+的实现相当快. 这里介绍的 socket 模块,是 Python 网络编程最基础的一个模块. 当然在
 进行网络编程之前你必须清楚网络基本体系结构和基本原理,如果你做过类似的 C 语言
-网络编程,你会发现 Python 网络编程的流程与之非常相似。
+网络编程,你会发现 Python 网络编程的流程与之非常相似. 
 
 网络服务端的建立过程分为 6 个阶段,创建 Socket 对象、绑定端口、监听连接、接受请
-求、数据收发、关闭端口。
+求、数据收发、关闭端口. 
 分别对应函式
 socket.socket() 、 socket.bind() 、 socket.listen() 、 socket.accept() 、
-socket.sendall()\socket.recv()、socket.close()。
+socket.sendall()\socket.recv()、socket.close(). 
 
-网络服务端的建立过程分为四个阶段,创建 Socket 对象、连接服务器、数据收发、关闭Python端口。分别对应函式 
+网络服务端的建立过程分为四个阶段,创建 Socket 对象、连接服务器、数据收发、关闭Python端口. 分别对应函式 
 socket.socket()、
 socket.connect()、
 socket.sendall()\socket.recv()、
 socket.close()
 
 
-这里采用的是可靠连接 TCP 协议,与之相对应的是不可靠的无连接的 UDP 协议。创建
-socket 对象的协议类型,由 socket.socket()的第二个参数决定。socket.SOCK_STREAM 代
+这里采用的是可靠连接 TCP 协议,与之相对应的是不可靠的无连接的 UDP 协议. 创建
+socket 对象的协议类型,由 socket.socket()的第二个参数决定. socket.SOCK_STREAM 代
 表 TCP 协议,
-socket.SOCK_DGRAM 代表 UDP 协议。
+socket.SOCK_DGRAM 代表 UDP 协议. 
 当然采用不同协议的 socket 对象的
-操作函式有些差异,这里列举的两个例子都是采用 TCP 协议的。
+操作函式有些差异,这里列举的两个例子都是采用 TCP 协议的. 
 例子中选取的端口为 5678,系统中的端口分为两类:0~1023 为周知端口,一般供特定
-网络服务使用,1024~65535 为动态端口,供一般应用程序使用。
+网络服务使用,1024~65535 为动态端口,供一般应用程序使用. 
 
 
 
@@ -146,11 +146,11 @@ Module contents
 
 The module :mod:`socket` exports the following constants and functions:
 
-Python 的 socket 模块定义了四种可能出现的异常。
-1. socket.error:与一般 I/O 操作和数据通信问题有关的异常。
-2. socket.gaierror:与域名解析有关的异常。
-3. socket.herror:与其他地址解析错误有关的异常。
-4. socket.timeout:socket 调用 sockettimeout()函式后,处理超时有关的异常。
+Python 的 socket 模块定义了四种可能出现的异常. 
+1. socket.error:与一般 I/O 操作和数据通信问题有关的异常. 
+2. socket.gaierror:与域名解析有关的异常. 
+3. socket.herror:与其他地址解析错误有关的异常. 
+4. socket.timeout:socket 调用 sockettimeout()函式后,处理超时有关的异常. 
 
 
 
@@ -1065,4 +1065,5 @@ the interface::
    details of socket semantics.  For Unix, refer to the manual pages; for Windows,
    see the WinSock (or Winsock 2) specification.  For IPv6-ready APIs, readers may
    want to refer to :rfc:`3493` titled Basic Socket Interface Extensions for IPv6.
+
 

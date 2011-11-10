@@ -56,3 +56,4 @@ An HMAC object has the following methods:
 
    Module :mod:`hashlib`
       The Python module providing secure hash functions.
+

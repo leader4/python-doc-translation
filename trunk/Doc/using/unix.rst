@@ -9,7 +9,7 @@
 .. sectionauthor:: Shriphani Palakodety
 
 
- 获取，安装最新版本
+ 获取,安装最新版本
 ===================================================
 
 On Linux
@@ -149,3 +149,4 @@ information, read: http://geany.uvena.de/
 Komodo edit is another extremely good IDE.  It also has support for a lot of
 languages. For more information, read:
 http://www.activestate.com/store/productdetail.aspx?prdGuid=20f4ed15-6684-4118-a78b-d37ff4058c5f
+

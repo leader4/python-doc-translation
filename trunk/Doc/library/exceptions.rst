@@ -14,13 +14,13 @@ classes derived from that class (but not exception classes from which *it* is
 derived).  Two exception classes that are not related via subclassing are never
 equivalent, even if they have the same name.
 
-在Python中，所有的异常必须派生一个类的实例
-`` BaseException ``。在一个“尝试”一个``声明，除“
-子句中提到一个特定的类，该条款还处理任何
-从该类派生的异常类（而不是异常类
-* *派生）。两个异常类不
-通过子类相关的从来不等价的，即使他们有
-相同的名称。
+在Python中,所有的异常必须派生一个类的实例
+`` BaseException ``. 在一个 "尝试" 一个``声明,除 "
+子句中提到一个特定的类,该条款还处理任何
+从该类派生的异常类 (而不是异常类
+* *派生) . 两个异常类不
+通过子类相关的从来不等价的,即使他们有
+相同的名称. 
 
 .. index:: statement: raise
 
@@ -32,22 +32,22 @@ code).  The associated value is usually passed as arguments to the exception
 class's constructor.
 
 内置在下面列出的异常可产生的
-解释器或内置函数。除其中提到，他们有
-“相关的价值”，说明详细的错误原因。
-这可能是几个项目的信息（如一个字符串或者一个元组，
-错误代码和解释代码的字符串）。关联值
-通常是通过异常类的构造函数的参数。
+解释器或内置函数. 除其中提到,他们有
+ "相关的价值" ,说明详细的错误原因. 
+这可能是几个项目的信息 (如一个字符串或者一个元组,
+错误代码和解释代码的字符串) . 关联值
+通常是通过异常类的构造函数的参数. 
 
 User code can raise built-in exceptions.  This can be used to test an exception
 handler or to report an error condition "just like" the situation in which the
 interpreter raises the same exception; but beware that there is nothing to
 prevent user code from raising an inappropriate error.
 
-用户代码可以引发内置异常。这可用于测试
-异常处理程序或报告“一样”的错误条件
-情况的解释提出了同样的异常，但
-注意的是，没有什么，以防止用户代码引发
-不适当的错误。
+用户代码可以引发内置异常. 这可用于测试
+异常处理程序或报告 "一样" 的错误条件
+情况的解释提出了同样的异常,但
+注意的是,没有什么,以防止用户代码引发
+不适当的错误. 
 
 
 The built-in exception classes can be sub-classed to define new exceptions;
@@ -58,14 +58,14 @@ defining exceptions is available in the Python Tutorial under
 
 内置的异常类可以子类来定义新的
 例外;鼓励程序员至少派生出新的的
-从“例外的例外”类，而不是“BaseException”。
+从 "例外的例外" 类,而不是 "BaseException" . 
 定义例外的更多信息可在Python
 根据用户定义的异常教程*.
 
 The following exceptions are used mostly as base classes for other exceptions.
 
-但下列情况除外，主要用于其他基类
-例外。
+但下列情况除外,主要用于其他基类
+例外. 
 
 .. exception:: BaseException
 
@@ -75,12 +75,12 @@ The following exceptions are used mostly as base classes for other exceptions.
    representation of the argument(s) to the instance are returned, or the empty
    string when there were no arguments.
 
-   所有内建异常的基类。这并不意味着要
-   直接由用户定义的类继承（对于，使用
-   “例外”）。如果“字节（）``或`` STR（）”在一个被称为
-   这个类的实例，代表性的说法（S）
-   实例返回，或空字符串时有没有
-   论据。
+   所有内建异常的基类. 这并不意味着要
+   直接由用户定义的类继承 (对于,使用
+    "例外" ) . 如果 "字节 () ``或`` STR () " 在一个被称为
+   这个类的实例,代表性的说法 (S) 
+   实例返回,或空字符串时有没有
+   论据. 
 
 
    .. attribute:: args
@@ -90,11 +90,11 @@ The following exceptions are used mostly as base classes for other exceptions.
       assign a special meaning to the elements of this tuple, while others are
       usually called only with a single string giving an error message.
 
-      异常的构造函数的参数的tuple。一些
-      内置的异常（如“的IOError”）的期望了一定的数量
+      异常的构造函数的参数的tuple. 一些
+      内置的异常 (如 "的IOError" ) 的期望了一定的数量
       参数和分配特殊的含义的元素
-      该元组，而另一些则通常被称为只用一个单一的
-      给人一个错误消息字符串。
+      该元组,而另一些则通常被称为只用一个单一的
+      给人一个错误消息字符串. 
 
    .. method:: with_traceback(tb)
 
@@ -103,7 +103,7 @@ The following exceptions are used mostly as base classes for other exceptions.
       this::
 
        此方法设置*tb*新的异常回溯
-      返回异常对象。它通常用于在异常
+      返回异常对象. 它通常用于在异常
       处理这样的代码::
 
 
@@ -119,9 +119,9 @@ The following exceptions are used mostly as base classes for other exceptions.
    All built-in, non-system-exiting exceptions are derived from this class.  All
    user-defined exceptions should also be derived from this class.
 
-   所有内置的，非系统退出的例外是源于此
-   类。还应该来自所有用户定义的异常
-   这一类。
+   所有内置的,非系统退出的例外是源于此
+   类. 还应该来自所有用户定义的异常
+   这一类. 
 
 
 
@@ -132,8 +132,8 @@ The following exceptions are used mostly as base classes for other exceptions.
    :exc:`FloatingPointError`.
 
    对于那些内置提出的异常的基类
-   各种算术错误：`` OverflowError ``
-   “ZeroDivisionError `` `` FloatingPointError”。
+   各种算术错误: `` OverflowError ``
+    "ZeroDivisionError `` `` FloatingPointError" . 
 
 
 .. exception:: BufferError
@@ -141,7 +141,7 @@ The following exceptions are used mostly as base classes for other exceptions.
    Raised when a :ref:`buffer <bufferobjects>` related operation cannot be
    performed.
 
-    *缓冲区*相关的操作时，将无法执行。
+    *缓冲区*相关的操作时,将无法执行. 
 
 
 .. exception:: LookupError
@@ -151,8 +151,8 @@ The following exceptions are used mostly as base classes for other exceptions.
    can be raised directly by :func:`codecs.lookup`.
 
     提出当一个键或异常的基类
-   指数映射或序列上使用的是无效的：“IndexError”，
-   `` KeyError异常“。这可以提高直接由“codecs.lookup ()``.
+   指数映射或序列上使用的是无效的:  "IndexError" ,
+   `` KeyError异常 ". 这可以提高直接由 "codecs.lookup ()``.
 
 
 .. exception:: EnvironmentError
@@ -165,12 +165,12 @@ The following exceptions are used mostly as base classes for other exceptions.
    tuple itself is also available on the :attr:`args` attribute.
 
    例外可能发生的Python以外的基类
-   系统：引发IOError `` `` `` OSError“。当这种类型的异常
-   创建一个2元组，第一项是关于
-   实例的`` errno的“属性（它被假定为是一个错误
-   号），第二项是“于strerror”
-   属性（通常是相关的错误消息）。元组
-   本身也是``参数“属性。
+   系统: 引发IOError `` `` `` OSError ". 当这种类型的异常
+   创建一个2元组,第一项是关于
+   实例的`` errno的 "属性 (它被假定为是一个错误
+   号) ,第二项是 "于strerror" 
+   属性 (通常是相关的错误消息) . 元组
+   本身也是``参数 "属性. 
 
 
    When an :exc:`EnvironmentError` exception is instantiated with a 3-tuple, the
@@ -180,10 +180,10 @@ The following exceptions are used mostly as base classes for other exceptions.
    arguments.
 
    `` EnvironmentError``的例外是当一个实例与
-   3元组，前两项以上，而
-   第三项是“文件名”属性。然而，
-   为了向后兼容，``参数“属性只包含一个
-   2元组的前两个构造函数的参数。
+   3元组,前两项以上,而
+   第三项是 "文件名" 属性. 然而,
+   为了向后兼容,``参数 "属性只包含一个
+   2元组的前两个构造函数的参数. 
 
 
    The :attr:`filename` attribute is ``None`` when this exception is created with
@@ -192,16 +192,16 @@ The following exceptions are used mostly as base classes for other exceptions.
    In this last case, :attr:`args` contains the verbatim constructor arguments as a
    tuple.
 
-    “文件名”属性是“无”时，这个例外是
-   创建3个参数以外。 `` errno的``
-   “于strerror”属性也“没有”实例时
-   创建2个或3个参数以外。在最后这种情况下，
-   ``参数“包含作为一个元组的逐字构造函数的参数。
+     "文件名" 属性是 "无" 时,这个例外是
+   创建3个参数以外.  `` errno的``
+    "于strerror" 属性也 "没有" 实例时
+   创建2个或3个参数以外. 在最后这种情况下,
+   ``参数 "包含作为一个元组的逐字构造函数的参数. 
 
 
 The following exceptions are the exceptions that are usually raised.
 
-但下列情况例外，通常引发的异常。
+但下列情况例外,通常引发的异常. 
 
 .. exception:: AssertionError
 
@@ -209,7 +209,7 @@ The following exceptions are the exceptions that are usually raised.
 
    Raised when an :keyword:`assert` statement fails.
 
-  ``assert ``语句失败时。
+  ``assert ``语句失败时. 
 
 
 .. exception:: AttributeError
@@ -218,10 +218,10 @@ The following exceptions are the exceptions that are usually raised.
    assignment fails.  (When an object does not support attribute references or
    attribute assignments at all, :exc:`TypeError` is raised.)
 
-      时引发一个属性引用（见*属性引用*）或
-   分配失败。 （当一个对象不支持属性
-   引用或分配的所有属性，“TypeError错误”
-   提高。）
+      时引发一个属性引用 (见*属性引用*) 或
+   分配失败.   (当一个对象不支持属性
+   引用或分配的所有属性, "TypeError错误" 
+   提高. ) 
 
 
 .. exception:: EOFError
@@ -231,11 +231,11 @@ The following exceptions are the exceptions that are usually raised.
    :meth:`file.read` and :meth:`file.readline` methods return an empty string
    when they hit EOF.)
 
-     时引发内置的功能之一（“输入（）”或
-   “raw_input ()``)点击文件结束条件（EOF）无
-   读取任何数据。 （N.B.：“file.read（）”和
-   “file.readline（）”方法返回一个空字符串时，击中
-   EOF。）
+     时引发内置的功能之一 ( "输入 () " 或
+    "raw_input ()``)点击文件结束条件 (EOF) 无
+   读取任何数据.   (N.B.:  "file.read () " 和
+    "file.readline () " 方法返回一个空字符串时,击中
+   EOF. ) 
 
 
 .. exception:: FloatingPointError
@@ -245,10 +245,10 @@ The following exceptions are the exceptions that are usually raised.
    ``--with-fpectl`` option, or the :const:`WANT_SIGFPE_HANDLER` symbol is
    defined in the :file:`pyconfig.h` file.
 
-    浮点运算失败时引发。这个例外是
-   总是定义，但Python是配置时，只能提出
-   `` - - fpectl“选项，或`` WANT_SIGFPE_HANDLER ``
-   符号的定义是在“pyconfig.h”文件。
+    浮点运算失败时引发. 这个例外是
+   总是定义,但Python是配置时,只能提出
+   `` - - fpectl "选项,或`` WANT_SIGFPE_HANDLER ``
+   符号的定义是在 "pyconfig.h" 文件. 
 
 
 .. exception:: GeneratorExit
@@ -257,9 +257,9 @@ The following exceptions are the exceptions that are usually raised.
    directly inherits from :exc:`BaseException` instead of :exc:`Exception` since
    it is technically not an error.
 
-   提高时*发电机*的“关闭（）被称为”方法。它
-   直接继承“BaseException”而不是“异常”
-   因为它在技术上是不是一个错误。
+   提高时*发电机*的 "关闭 () 被称为" 方法. 它
+   直接继承 "BaseException" 而不是 "异常" 
+   因为它在技术上是不是一个错误. 
 
 
 .. exception:: IOError
@@ -268,16 +268,16 @@ The following exceptions are the exceptions that are usually raised.
    :func:`open` functions or a method of a :term:`file object`) fails for an
    I/O-related reason, e.g., "file not found" or "disk full".
 
-      时引发一个I / O操作（如内置的“打印（）”或
-   “打开（）”的功能或*文件对象*的方法）为失败
-   的I / O相关的原因，例如，“文件未找到”或“磁盘已满”。
+      时引发一个I / O操作 (如内置的 "打印 () " 或
+    "打开 () " 的功能或*文件对象*的方法) 为失败
+   的I / O相关的原因,例如, "文件未找到" 或 "磁盘已满" . 
 
    This class is derived from :exc:`EnvironmentError`.  See the discussion above
    for more information on exception instance attributes.
 
-   这个类是来自“EnvironmentError”。请参阅
+   这个类是来自 "EnvironmentError" . 请参阅
    上面讨论的异常实例的更多信息
-   属性。
+   属性. 
 
 
 .. exception:: ImportError
@@ -285,7 +285,7 @@ The following exceptions are the exceptions that are usually raised.
    Raised when an :keyword:`import` statement fails to find the module definition
    or when a ``from ... import`` fails to find a name that is to be imported.
 
-   当一个“import”声明引发无法找到模块
+   当一个 "import" 声明引发无法找到模块
    定义或一个``从...进口``无法找到一个名称
    要导入
 
@@ -296,9 +296,9 @@ The following exceptions are the exceptions that are usually raised.
    silently truncated to fall in the allowed range; if an index is not an
    integer, :exc:`TypeError` is raised.)
 
-     序列下标超出范围时引发。 （快讯指数
+     序列下标超出范围时引发.   (快讯指数
    自动截断在允许的范围内下降;如果索引
-   不是一个整数，“类型错误”引发。）
+   不是一个整数, "类型错误" 引发. ) 
 
    .. XXX xref to sequences
 
@@ -307,8 +307,8 @@ The following exceptions are the exceptions that are usually raised.
 
    Raised when a mapping (dictionary) key is not found in the set of existing keys.
 
-     映射（字典）的关键是没有发现在设置时提出
-   现有密钥。
+     映射 (字典) 的关键是没有发现在设置时提出
+   现有密钥. 
 
    .. XXX xref to mapping objects?
 
@@ -321,11 +321,11 @@ The following exceptions are the exceptions that are usually raised.
    accidentally caught by code that catches :exc:`Exception` and thus prevent
    the interpreter from exiting.
 
-    当用户点击引发的中断键（通常`` Ctrl - C组合“
-   或“删除”）。在执行过程中，检查中断
-   定期。唯一的例外继承`` BaseException ``这样才能
-   不误捕代码捕获“异常”
-   从而防止退出解释器。
+    当用户点击引发的中断键 (通常`` Ctrl - C组合 "
+   或 "删除" ) . 在执行过程中,检查中断
+   定期. 唯一的例外继承`` BaseException ``这样才能
+   不误捕代码捕获 "异常" 
+   从而防止退出解释器. 
 
 
 .. exception:: MemoryError
@@ -338,14 +338,14 @@ The following exceptions are the exceptions that are usually raised.
    nevertheless raises an exception so that a stack traceback can be printed, in
    case a run-away program was the cause.
 
-   操作时，耗尽内存，但情况可能
-   仍然被救出（删去一些对象）。关联值
-   是一个字符串，指示什么样的操作（内部）跑出
-   内存。请注意，因为底层的内存管理
-   体系结构（C语言的``的malloc（）“函数），翻译可能不
+   操作时,耗尽内存,但情况可能
+   仍然被救出 (删去一些对象) . 关联值
+   是一个字符串,指示什么样的操作 (内部) 跑出
+   内存. 请注意,因为底层的内存管理
+   体系结构 (C语言的``的malloc ()  "函数) ,翻译可能不
    总是能够完全恢复这种情况;
    然而引发一个异常可以使栈回溯
-   印刷，在一个离家出走的计划的原因。
+   印刷,在一个离家出走的计划的原因. 
 
 
 .. exception:: NameError
@@ -354,9 +354,9 @@ The following exceptions are the exceptions that are usually raised.
    unqualified names.  The associated value is an error message that includes the
    name that could not be found.
 
-     没有发现局部或全局名称时引发。这仅适用于
-   不合格的名称。相关的值是一个错误消息
-   包含找不到的名称。
+     没有发现局部或全局名称时引发. 这仅适用于
+   不合格的名称. 相关的值是一个错误消息
+   包含找不到的名称. 
 
 
 
@@ -366,9 +366,9 @@ The following exceptions are the exceptions that are usually raised.
    classes, abstract methods should raise this exception when they require derived
    classes to override the method.
 
-    这个例外是来自“RuntimeError ``。在用户定义
-   基类，抽象方法时，应该提出这个异常
-   他们要求派生类重写的方法。
+    这个例外是来自 "RuntimeError ``. 在用户定义
+   基类,抽象方法时,应该提出这个异常
+   他们要求派生类重写的方法. 
 
 
 
@@ -384,23 +384,23 @@ The following exceptions are the exceptions that are usually raised.
    See the module :mod:`errno`, which contains names for the error codes defined
    by the underlying operating system.
 
-     这个例外是来自“EnvironmentError”。这是提出
-   当一个函数返回一个系统相关的错误（不作非法时，
-   参数类型或其他偶然的错误）。 `` errno的``
-   属性是“errno的``从一个数字错误代码，及
-   “于strerror”属性对应的字符串，如将
-   印C函数“perror ()``.请参阅模块“的errno ``
+     这个例外是来自 "EnvironmentError" . 这是提出
+   当一个函数返回一个系统相关的错误 (不作非法时,
+   参数类型或其他偶然的错误) .  `` errno的``
+   属性是 "errno的``从一个数字错误代码,及
+    "于strerror" 属性对应的字符串,如将
+   印C函数 "perror ()``.请参阅模块 "的errno ``
    其中包含的基本定义的错误代码的名称
-   操作系统。
+   操作系统. 
 
    For exceptions that involve a file system path (such as :func:`chdir` or
    :func:`unlink`), the exception instance will contain a third attribute,
    :attr:`filename`, which is the file name passed to the function.
 
-     对于例外情况，涉及文件系统路径（如“CHDIR（）``
-   或“断开()``),异常实例将包含第三
-   属性，`` ``文件名，这是文件名传递给
-   功能。
+     对于例外情况,涉及文件系统路径 (如 "CHDIR () ``
+   或 "断开()``),异常实例将包含第三
+   属性,`` ``文件名,这是文件名传递给
+   功能. 
 
 
 
@@ -413,10 +413,10 @@ The following exceptions are the exceptions that are usually raised.
    aren't checked.
 
     当算术运算的结果是引发过大
-   派代表参加。这不能出现整数（宁可
-   提高“MemoryError”不是放弃）。由于缺乏
-   浮点异常处理的标准化，最
-   浮点运算也不会被检查。
+   派代表参加. 这不能出现整数 (宁可
+   提高 "MemoryError" 不是放弃) . 由于缺乏
+   浮点异常处理的标准化,最
+   浮点运算也不会被检查. 
 
 
 .. exception:: ReferenceError
@@ -426,10 +426,10 @@ The following exceptions are the exceptions that are usually raised.
    after it has been garbage collected. For more information on weak references,
    see the :mod:`weakref` module.
 
-     这个例外是弱引用代理，创建时提出
-   “weakref.proxy（）”功能，是用来访问属性
-   后，已被垃圾收集的指涉。欲了解更多
-   弱引用的信息，请参阅“weakref”模块。
+     这个例外是弱引用代理,创建时提出
+    "weakref.proxy () " 功能,是用来访问属性
+   后,已被垃圾收集的指涉. 欲了解更多
+   弱引用的信息,请参阅 "weakref" 模块. 
 
 
 .. exception:: RuntimeError
@@ -439,11 +439,11 @@ The following exceptions are the exceptions that are usually raised.
    wrong.  (This exception is mostly a relic from a previous version of the
    interpreter; it is not used very much any more.)
 
-       检测到错误时引发，不属于任何
-   其他类别。相关的值是一个字符串，说明了什么
-   正是去错了。 （此异常主要是从遗物
+       检测到错误时引发,不属于任何
+   其他类别. 相关的值是一个字符串,说明了什么
+   正是去错了.   (此异常主要是从遗物
    以前的版本的翻译;不使用它非常的任何
-   更多信息。）
+   更多信息. ) 
 
 
 
@@ -452,8 +452,8 @@ The following exceptions are the exceptions that are usually raised.
    Raised by built-in function :func:`next` and an :term:`iterator`\'s
    :meth:`__next__` method to signal that there are no further values.
 
-      内置函数“下一个（）”和迭代器*的提出
-   “__next__（）”方法来的信号，即有没有进一步的价值观。
+      内置函数 "下一个 () " 和迭代器*的提出
+    "__next__ () " 方法来的信号,即有没有进一步的价值观. 
 
 
 .. exception:: SyntaxError
@@ -463,18 +463,18 @@ The following exceptions are the exceptions that are usually raised.
    or :func:`eval`, or when reading the initial script or standard input
    (also interactively).
 
-     当解析器遇到一个语法错误引发。这可能会发生
-   在“进口”的声明，在通话中，内置函数
-   “EXEC（）”或“EVAL ()``,或阅读时的初始脚本，或
-   标准输入（也以交互方式）。
+     当解析器遇到一个语法错误引发. 这可能会发生
+   在 "进口" 的声明,在通话中,内置函数
+    "EXEC () " 或 "EVAL ()``,或阅读时的初始脚本,或
+   标准输入 (也以交互方式) . 
 
    Instances of this class have attributes :attr:`filename`, :attr:`lineno`,
    :attr:`offset` and :attr:`text` for easier access to the details.  :func:`str`
    of the exception instance returns only the message.
 
-      这个类的实例属性“文件名”，“LINENO ``，
-   “偏移”和“文本”更容易地访问的细节。
-   “（STR）”的异常实例只传回的消息。
+      这个类的实例属性 "文件名" , "LINENO ``,
+    "偏移" 和 "文本" 更容易地访问的细节. 
+    " (STR) " 的异常实例只传回的消息. 
 
 
 .. exception:: IndentationError
@@ -482,8 +482,8 @@ The following exceptions are the exceptions that are usually raised.
    Base class for syntax errors related to incorrect indentation.  This is a
    subclass of :exc:`SyntaxError`.
 
-     基类与不正确的缩进语法错误。
-   这是子类的“语法错误”。
+     基类与不正确的缩进语法错误. 
+   这是子类的 "语法错误" . 
 
 
 
@@ -493,7 +493,7 @@ The following exceptions are the exceptions that are usually raised.
    This is a subclass of :exc:`IndentationError`.
 
    时引发缩进包含一个标签的使用不一致
-   空格。这是一个子类`` `` IndentationError。
+   空格. 这是一个子类`` `` IndentationError. 
 
 
 .. exception:: SystemError
@@ -502,10 +502,10 @@ The following exceptions are the exceptions that are usually raised.
    look so serious to cause it to abandon all hope. The associated value is a
    string indicating what went wrong (in low-level terms).
 
-     在翻译时发现引发了一个内部​​错误，但
-   情况看起来并不严重，导致其放弃所有的希望。
-   相关的值是一个字符串，说明什么地方出了错（在
-   低级别的计算）。
+     在翻译时发现引发了一个内部​​错误,但
+   情况看起来并不严重,导致其放弃所有的希望. 
+   相关的值是一个字符串,说明什么地方出了错 (在
+   低级别的计算) . 
 
    You should report this to the author or maintainer of your Python interpreter.
    Be sure to report the version of the Python interpreter (``sys.version``; it is
@@ -514,11 +514,11 @@ The following exceptions are the exceptions that are usually raised.
    program that triggered the error.
 
      您应该报告给你的Python的作者或维护者
-   口译员。一定要报告的Python版本
-   解释器（`` sys.version ``，它也是一个开始打印
-   交互式的Python会议），确切的错误消息（
-   异常的相关值），如果可能的源
-   引发错误的程序。
+   口译员. 一定要报告的Python版本
+   解释器 (`` sys.version ``,它也是一个开始打印
+   交互式的Python会议) ,确切的错误消息 (
+   异常的相关值) ,如果可能的源
+   引发错误的程序. 
 
 
 
@@ -531,23 +531,23 @@ The following exceptions are the exceptions that are usually raised.
    if it has another type (such as a string), the object's value is printed and
    the exit status is one.
 
-      这引发异常“sys.exit（）”函数。当
-   没有被处理，退出Python解释;没有栈回溯
-   打印出来。如果相关联的值是一个整数，它指定
-   系统退出状态（通过C的“退出（）”功能）;如果是
-   “没有”，退出状态是零;如果有另一种类型（如
-   一个字符串），该对象的值是打印和退出状态
-   之一。
+      这引发异常 "sys.exit () " 函数. 当
+   没有被处理,退出Python解释;没有栈回溯
+   打印出来. 如果相关联的值是一个整数,它指定
+   系统退出状态 (通过C的 "退出 () " 功能) ;如果是
+    "没有" ,退出状态是零;如果有另一种类型 (如
+   一个字符串) ,该对象的值是打印和退出状态
+   之一. 
 
    Instances have an attribute :attr:`code` which is set to the proposed exit
    status or error message (defaulting to ``None``). Also, this exception derives
    directly from :exc:`BaseException` and not :exc:`Exception`, since it is not
    technically an error.
 
-    实例有一个属性“代码”设置建议
-   退出状态或错误消息（默认为“无”）。此外，这
-   异常直接来自“BaseException”，而不是
-   “例外”，因为它不是技术上的错误。
+    实例有一个属性 "代码" 设置建议
+   退出状态或错误消息 (默认为 "无" ) . 此外,这
+   异常直接来自 "BaseException" ,而不是
+    "例外" ,因为它不是技术上的错误. 
 
    A call to :func:`sys.exit` is translated into an exception so that clean-up
    handlers (:keyword:`finally` clauses of :keyword:`try` statements) can be
@@ -556,22 +556,22 @@ The following exceptions are the exceptions that are usually raised.
    absolutely positively necessary to exit immediately (for example, in the child
    process after a call to :func:`fork`).
 
-      “sys.exit（）”翻译成异常使调用
-   清理处理程序（``终于`` ``试试``声明的条款）
-   被执行，从而使调试器可以执行脚本，而不
-   运行失去控制的危险。 `` os._exit（）“函数
-   可以使用，如果是绝对积极必要的退出
-   立即（例如，在子进程调用后
-   “叉()``).
+       "sys.exit () " 翻译成异常使调用
+   清理处理程序 (``终于`` ``试试``声明的条款) 
+   被执行,从而使调试器可以执行脚本,而不
+   运行失去控制的危险.  `` os._exit ()  "函数
+   可以使用,如果是绝对积极必要的退出
+   立即 (例如,在子进程调用后
+    "叉()``).
 
    The exception inherits from :exc:`BaseException` instead of :exc:`Exception` so
    that it is not accidentally caught by code that catches :exc:`Exception`.  This
    allows the exception to properly propagate up and cause the interpreter to exit.
 
-    例外“BaseException”，而不是继承
-   “异常”，因此，它是不小心代码捕获
-   渔获“异常”。这允许例外
-   传播，并造成解释退出。
+    例外 "BaseException" ,而不是继承
+    "异常" ,因此,它是不小心代码捕获
+   渔获 "异常" . 这允许例外
+   传播,并造成解释退出. 
 
 
 .. exception:: TypeError
@@ -580,8 +580,8 @@ The following exceptions are the exceptions that are usually raised.
    type.  The associated value is a string giving details about the type mismatch.
 
    某项操作或功能应用到一个对象时引发
-   不合适的类型。相关联的值是一个字符串，给出
-   类型不匹配的细节。
+   不合适的类型. 相关联的值是一个字符串,给出
+   类型不匹配的细节. 
 
 
 
@@ -592,8 +592,8 @@ The following exceptions are the exceptions that are usually raised.
    :exc:`NameError`.
 
    参考引发到一个局部变量在函数
-   已绑定到该变量或方法，但没有价值。这是一个
-   “NameError ``的子类。
+   已绑定到该变量或方法,但没有价值. 这是一个
+    "NameError ``的子类. 
 
 
 
@@ -602,8 +602,8 @@ The following exceptions are the exceptions that are usually raised.
    Raised when a Unicode-related encoding or decoding error occurs.  It is a
    subclass of :exc:`ValueError`.
 
-   有关Unicode的编码或解码错误发生时引发。
-   这是一个子类“ValueError错误``。
+   有关Unicode的编码或解码错误发生时引发. 
+   这是一个子类 "ValueError错误``. 
 
 
 .. exception:: UnicodeEncodeError
@@ -611,8 +611,8 @@ The following exceptions are the exceptions that are usually raised.
    Raised when a Unicode-related error occurs during encoding.  It is a subclass of
    :exc:`UnicodeError`.
 
-   Unicode的编码过程中发生错误时引发。这是
-   UnicodeError子类的`` ``。
+   Unicode的编码过程中发生错误时引发. 这是
+   UnicodeError子类的`` ``. 
 
 
 .. exception:: UnicodeDecodeError
@@ -620,7 +620,7 @@ The following exceptions are the exceptions that are usually raised.
    Raised when a Unicode-related error occurs during decoding.  It is a subclass of
    :exc:`UnicodeError`.
 
-   一个Unicode相关的错误发生在解码时引发。这是
+   一个Unicode相关的错误发生在解码时引发. 这是
    UnicodeError子类的`` `
 
 
@@ -629,8 +629,8 @@ The following exceptions are the exceptions that are usually raised.
    Raised when a Unicode-related error occurs during translating.  It is a subclass
    of :exc:`UnicodeError`.
 
-    在翻译过程中出现一个Unicode相关的错误时引发。它
-   是一个子类`` `` UnicodeError。
+    在翻译过程中出现一个Unicode相关的错误时引发. 它
+   是一个子类`` `` UnicodeError. 
 
 
 
@@ -640,17 +640,17 @@ The following exceptions are the exceptions that are usually raised.
    right type but an inappropriate value, and the situation is not described by a
    more precise exception such as :exc:`IndexError`.
 
-    一个内置的操作或功能时，接收参数
-   具有正确的类型，但不恰当的值，
-   情况是不是一个更精确的异常，如描述
-   “IndexError”。
+    一个内置的操作或功能时,接收参数
+   具有正确的类型,但不恰当的值,
+   情况是不是一个更精确的异常,如描述
+    "IndexError" . 
 
 
 .. exception:: VMSError
 
    Only available on VMS.  Raised when a VMS-specific error occurs.
 
-   仅在VMS上可用。 VMS的特定的错误发生时引发。
+   仅在VMS上可用.  VMS的特定的错误发生时引发. 
 
 
 .. exception:: WindowsError
@@ -662,13 +662,13 @@ The following exceptions are the exceptions that are usually raised.
    Platform API. The :attr:`errno` value maps the :attr:`winerror` value to
    corresponding ``errno.h`` values. This is a subclass of :exc:`OSError`.
 
-     发生时，Windows的特定错误引发或错误时
-   数量不符合`` `` errno的值。 `` winerror“
-   “于strerror”值的返回值
-   “GetLastError函数（）”和“FORMATMESSAGE（）”功能，从
-   Windows平台API。 `` errno的“价值地图”winerror“
-   相应的“errno.h中的”值的价值。这是一个子类
-   “OSError”。
+     发生时,Windows的特定错误引发或错误时
+   数量不符合`` `` errno的值.  `` winerror "
+    "于strerror" 值的返回值
+    "GetLastError函数 () " 和 "FORMATMESSAGE () " 功能,从
+   Windows平台API.  `` errno的 "价值地图" winerror "
+   相应的 "errno.h中的" 值的价值. 这是一个子类
+    "OSError" . 
 
 
 .. exception:: ZeroDivisionError
@@ -678,35 +678,35 @@ The following exceptions are the exceptions that are usually raised.
    operation.
 
    一个部门或模操作时提出的第二个参数
-   是零。相关的值是一个字符串表示的类型
-   操作数和操作。
+   是零. 相关的值是一个字符串表示的类型
+   操作数和操作. 
 
 
 The following exceptions are used as warning categories; see the :mod:`warnings`
 module for more information.
 
-但下列情况除外用作预警类别，见
-“警告”模块，以获取更多信息。
+但下列情况除外用作预警类别,见
+ "警告" 模块,以获取更多信息. 
 
 .. exception:: Warning
 
    Base class for warning categories.
 
-   警告类别的基类。
+   警告类别的基类. 
 
 
 .. exception:: UserWarning
 
    Base class for warnings generated by user code.
 
-   基类由用户代码生成警告。
+   基类由用户代码生成警告. 
 
 
 .. exception:: DeprecationWarning
 
    Base class for warnings about deprecated features.
 
-    基类弃用的功能的警告。
+    基类弃用的功能的警告. 
 
 
 .. exception:: PendingDeprecationWarning
@@ -714,7 +714,7 @@ module for more information.
    Base class for warnings about features which will be deprecated in the future.
 
    警告这将在被废弃的有关功能的基类
-   未来。
+   未来. 
 
 
 .. exception:: SyntaxWarning
@@ -728,7 +728,7 @@ module for more information.
 
    Base class for warnings about dubious runtime behavior.
 
-   基类可疑的运行时行为的警告。
+   基类可疑的运行时行为的警告. 
 
 
 .. exception:: FutureWarning
@@ -736,36 +736,36 @@ module for more information.
    Base class for warnings about constructs that will change semantically in the
    future.
 
-    Base类的警告，这将改变结构
-   语义在未来的。
+    Base类的警告,这将改变结构
+   语义在未来的. 
 
 
 .. exception:: ImportWarning
 
    Base class for warnings about probable mistakes in module imports.
 
-   有关可能的错误在模块进口的警告的基类。
+   有关可能的错误在模块进口的警告的基类. 
 
 
 .. exception:: UnicodeWarning
 
    Base class for warnings related to Unicode.
 
-   基类为Unicode相关的警告。
+   基类为Unicode相关的警告. 
 
 
 .. exception:: BytesWarning
 
    Base class for warnings related to :class:`bytes` and :class:`buffer`.
 
-   有关“字节的警告的基类”和“缓冲区”。
+   有关 "字节的警告的基类" 和 "缓冲区" . 
 
 
 .. exception:: ResourceWarning
 
    Base class for warnings related to resource usage.
 
-   基类的资源使用有关的警告。
+   基类的资源使用有关的警告. 
 
    .. versionadded:: 3.2
 
@@ -777,3 +777,4 @@ Exception hierarchy 异常层次结构
 The class hierarchy for built-in exceptions is:
 
 .. literalinclude:: ../../Lib/test/exception_hierarchy.txt
+

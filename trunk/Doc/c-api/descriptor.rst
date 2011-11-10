@@ -38,3 +38,4 @@ found in the dictionary of type objects.
 
 
 .. c:function:: PyObject* PyWrapper_New(PyObject *, PyObject *)
+

@@ -235,3 +235,4 @@ A simple example illustrating typical use::
 
    print(tn.read_all().decode('ascii'))
 
+

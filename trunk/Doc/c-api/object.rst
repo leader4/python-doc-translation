@@ -347,3 +347,4 @@ is considered sufficient for this determination.
    iterator for the object argument, or the object  itself if the object is already
    an iterator.  Raises :exc:`TypeError` and returns *NULL* if the object cannot be
    iterated.
+

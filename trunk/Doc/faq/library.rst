@@ -7,7 +7,7 @@
 .. contents::关于库的一般问题
 =========================
 
-如何找到特定平台的模块或代码库？
+如何找到特定平台的模块或代码库? 
 --------------------------------------------------------
 
 Check :ref:`the Library Reference <library-index>` to see if there's a relevant
@@ -172,7 +172,7 @@ the external interfaces are unavailable by using "fake" interfaces implemented
 in Python.
 
 
-如何从doc strings创建文档？
+如何从doc strings创建文档? 
 -----------------------------------------------
 
 The :mod:`pydoc` module can create HTML from the doc strings in your Python
@@ -226,7 +226,7 @@ using curses, but curses is a fairly large module to learn.
 线程
 =======
 
-请问如何使用线程？
+请问如何使用线程? 
 -------------------------------
 
 Be sure to use the :mod:`threading` module and not the :mod:`_thread` module.
@@ -280,7 +280,7 @@ the queue when it finishes, and let the main thread read as many tokens from the
 queue as there are threads.
 
 
-如何在主线程外创建一个分支？
+如何在主线程外创建一个分支? 
 ---------------------------------------------------------
 
 The easiest way is to use the new :mod:`concurrent.futures` module,
@@ -472,14 +472,14 @@ including :func:`~shutil.copyfile`, :func:`~shutil.copytree`, and
 :func:`~shutil.rmtree`.
 
 
-如何复制文件？
+如何复制文件? 
 ---------------------
 
 The :mod:`shutil` module contains a :func:`~shutil.copyfile` function.  Note
 that on MacOS 9 it doesn't copy the resource fork and Finder info.
 
 
-如何读写二进制数据？
+如何读写二进制数据? 
 -------------------------------------
 
 To read or write complex binary data formats, it's best to use the :mod:`struct`
@@ -642,7 +642,7 @@ Or you can use the numeric constants 0, 1 and 2, respectively.
 网络编程
 ============================
 
-WWW工具？
+WWW工具? 
 ------------------------------------
 
 See the chapters titled :ref:`internet` and :ref:`netdata` in the Library
@@ -689,7 +689,7 @@ Jr."::
 .. seealso:: :ref:`urllib-howto` for extensive examples.
 
 
-生成HTML可以用什么模块？
+生成HTML可以用什么模块? 
 ------------------------------------------------------
 
 .. XXX add modern template languages
@@ -709,7 +709,7 @@ Consult the `Web Programming wiki pages
 <http://wiki.python.org/moin/WebProgramming>`_ for more links.
 
 
-如何通过脚本发送邮件？
+如何通过脚本发送邮件? 
 ----------------------------------------
 
 Use the standard library module :mod:`smtplib`.
@@ -885,3 +885,4 @@ Some higher-level functions operate on sequences directly, such as:
 
 There's also a ``Random`` class you can instantiate to create independent
 multiple random number generators.
+

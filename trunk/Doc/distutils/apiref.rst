@@ -2014,3 +2014,4 @@ that command is always applicable.
 *sub_commands* is usually defined at the \*end\* of a class, because predicates
 can be methods of the class, so they must already have been defined.  The
 canonical example is the :command:`install` command.
+

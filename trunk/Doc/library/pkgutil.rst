@@ -188,3 +188,4 @@ support.
 
    If the package cannot be located or loaded, or it uses a :pep:`302` loader
    which does not support :func:`get_data`, then ``None`` is returned.
+

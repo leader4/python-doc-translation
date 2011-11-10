@@ -18,12 +18,12 @@ spaces are floating point values.  In the YIQ space, the Y coordinate is between
 spaces, the coordinates are all between 0 and 1.
 
 colorsys模块定义的颜色值的双向转换
-之间的RGB（红，绿，蓝）色彩在空间中表示的颜色
-电脑显示器和其他三个坐标系：YIQ，HLS（色相明度
-饱和度）和HSV（色相饱和度值）。所有这些颜色的坐标
-空间浮点值。在YIQ空间，Y坐标之间
-0和1，但I和Q坐标可以是正或负。在所有其他
-空间坐标都是0和1之间。
+之间的RGB (红,绿,蓝) 色彩在空间中表示的颜色
+电脑显示器和其他三个坐标系: YIQ,HLS (色相明度
+饱和度) 和HSV (色相饱和度值) . 所有这些颜色的坐标
+空间浮点值. 在YIQ空间,Y坐标之间
+0和1,但I和Q坐标可以是正或负. 在所有其他
+空间坐标都是0和1之间. 
 
 .. seealso::
 
@@ -70,3 +70,4 @@ Example::
    (0.25, 0.5, 0.4)
    >>> colorsys.hsv_to_rgb(0.25, 0.5, 0.4)
    (0.3, 0.4, 0.2)
+

@@ -8,7 +8,7 @@
 =================
 
 
-是否有源代码级调试器，可执行断点，单步执行等等？
+是否有源代码级调试器,可执行断点,单步执行等等? 
 ------------------------------------------------------------------------------
 
 Yes.
@@ -50,48 +50,48 @@ They include:
 * Wing IDE (http://wingware.com/)
 * Komodo IDE (http://www.activestate.com/Products/Komodo)
 
-是的，
-pdb模块是Python中一个简单但足够的控制台模式的调试器。
-Python。这是标准的Python库的一部分，并且"记录在在库参考手册中"。
-``。你也可以把pdb的代码作为一个范例编写自己的调试器。
-通过使用调试器作为例子的PDB代码。
+是的,
+pdb模块是Python中一个简单但足够的控制台模式的调试器. 
+Python. 这是标准的Python库的一部分,并且"记录在在库参考手册中". 
+``. 你也可以把pdb的代码作为一个范例编写自己的调试器. 
+通过使用调试器作为例子的PDB代码. 
 
-IDLE交互式开发环境是标准Python发型版的一部分(通常位于tools/scripts/idle)，它包括一个图形化的调试器。
-标准的Python发行（通常可作为
-工具/脚本/空闲），包括一个图形化的调试器。香港和美国
+IDLE交互式开发环境是标准Python发型版的一部分(通常位于tools/scripts/idle),它包括一个图形化的调试器. 
+标准的Python发行 (通常可作为
+工具/脚本/空闲) ,包括一个图形化的调试器. 香港和美国
 文档在空闲调试
-http://www.python.org/idle/doc/idle2.html3Debugger上有IDLE调试器的文档。
+http://www.python.org/idle/doc/idle2.html3Debugger上有IDLE调试器的文档. 
 
-PythonWin是一个基于pdb的图形界面Python集成开发环境。
-PythonWin调试器为断点着色并且有一些很cool的功能，例如调试non-Pythonwin程序。
-调试功能，如非的PythonWin方案。是的PythonWin
-Pythonwin是Python Windows扩展项目的一部分，而且也是ActivePython发行的一部分(见 http://www.activestate.com/Products/ActivePython/index.html)
-作者：ActivePython分发的一部分（见
-http://www.activestate.com/Products/ActivePython/index.html）。
+PythonWin是一个基于pdb的图形界面Python集成开发环境. 
+PythonWin调试器为断点着色并且有一些很cool的功能,例如调试non-Pythonwin程序. 
+调试功能,如非的PythonWin方案. 是的PythonWin
+Pythonwin是Python Windows扩展项目的一部分,而且也是ActivePython发行的一部分(见 http://www.activestate.com/Products/ActivePython/index.html)
+作者: ActivePython分发的一部分 (见
+http://www.activestate.com/Products/ActivePython/index.html) . 
 
-Boa Constructor是一个使用wxWidgets的集成开发环境和GUI构建器。I
-它提供可视化框架的创建和操作，对象检查器、很多资源视图，如对象浏览器、继承的层次结构、文档字符串生成的HTML文档、先进的调试器、集成的帮助和Zope支持。
-在对象浏览器一样，继承的来源很多意见
-层次结构，文档字符串生成的HTML文档，先进
-调试器，集成的帮助，和Zope的支持
+Boa Constructor是一个使用wxWidgets的集成开发环境和GUI构建器. I
+它提供可视化框架的创建和操作,对象检查器、很多资源视图,如对象浏览器、继承的层次结构、文档字符串生成的HTML文档、先进的调试器、集成的帮助和Zope支持. 
+在对象浏览器一样,继承的来源很多意见
+层次结构,文档字符串生成的HTML文档,先进
+调试器,集成的帮助,和Zope的支持
 
-埃里克是在PyQt和Scintilla编辑组件内置的IDE。
+埃里克是在PyQt和Scintilla编辑组件内置的IDE. 
 
-Pydb是标准Python调试器pdb的一个版本，它是为使用DDD(数据显示调试器)而修改的，它是一个流行的图形调试器前端。
-使用与DDD（数据显示调试器），一个流行的图形调试器
-前端。Pydb可在http://bashdb.sourceforge.net/pydb/获取,DDD可在http://www.gnu.org/software/ddd获取。
-和DDD可在。
+Pydb是标准Python调试器pdb的一个版本,它是为使用DDD(数据显示调试器)而修改的,它是一个流行的图形调试器前端. 
+使用与DDD (数据显示调试器) ,一个流行的图形调试器
+前端. Pydb可在http://bashdb.sourceforge.net/pydb/获取,DDD可在http://www.gnu.org/software/ddd获取. 
+和DDD可在. 
 
-有许多包含图形调试器的商业Python集成开发环境。
-调试器。它们包括：
+有许多包含图形调试器的商业Python集成开发环境. 
+调试器. 它们包括: 
 
-*Wing IDE（http://wingware.com/）
+*Wing IDE (http://wingware.com/) 
 
-*Komodo IDE（http://www.activestate.com/Products/Komodo）
+*Komodo IDE (http://www.activestate.com/Products/Komodo) 
 
 
 
-*是否有帮助发现错误或执行静态分析的工具？
+*是否有帮助发现错误或执行静态分析的工具? 
 -------------------------------------------------------------
 
 Yes.
@@ -110,24 +110,24 @@ http://www.logilab.org/card/pylint_manual provides a full list of Pylint's
 features.
 
 
-是的，
+是的,
 
-PyChecker是一个静态分析工具，发现Python源码中的错误并提示代码的复杂度和风格。
-代码，并警告有关代码的复杂性和风格。你可以从http://pychecker.sf.net获取PyChecker
-。
+PyChecker是一个静态分析工具,发现Python源码中的错误并提示代码的复杂度和风格. 
+代码,并警告有关代码的复杂性和风格. 你可以从http://pychecker.sf.net获取PyChecker
+. 
 
-pylint的是另一种工具，检查模块是否满足编码标准，并可以编写插件，增加自定义功能。
-标准，也使得它可以编写插件以添加自定义
-功能除了PyChecker执行错误检查，Pylint提供一些新的功能，如检查行长度，根据你的编码标准检测变量名是否结构良好，声明的借口是否得到完整的实现，等等。
-pylint的优惠，例如检查线路长度一些附加功能，
-变量名是否是格式良好的编码，根据您的http://translate.google.com/toolkit/images/cleardot.gif
-标准的，声明的接口是否得到充分实施，等等。
-http://www.logilab.org/card/pylint_manual提供了Pylint功能的完整列表。
-pylint的的功能。
+pylint的是另一种工具,检查模块是否满足编码标准,并可以编写插件,增加自定义功能. 
+标准,也使得它可以编写插件以添加自定义
+功能除了PyChecker执行错误检查,Pylint提供一些新的功能,如检查行长度,根据你的编码标准检测变量名是否结构良好,声明的借口是否得到完整的实现,等等. 
+pylint的优惠,例如检查线路长度一些附加功能,
+变量名是否是格式良好的编码,根据您的http://translate.google.com/toolkit/images/cleardot.gif
+标准的,声明的接口是否得到充分实施,等等. 
+http://www.logilab.org/card/pylint_manual提供了Pylint功能的完整列表. 
+pylint的的功能. 
 
 
 
-如何将Python脚本转化为独立执行二进制的程序？
+如何将Python脚本转化为独立执行二进制的程序? 
 -----------------------------------------------------------
 
 You don't need the ability to compile Python to C code if all you want is a
@@ -163,45 +163,45 @@ Other tools include Fredrik Lundh's `Squeeze
 <http://www.pythonware.com/products/python/squeeze>`_ and Anthony Tuininga's
 `cx_Freeze <http://starship.python.net/crew/atuining/cx_Freeze/index.html>`_.
 
-如果你想要一个用户不用事先安装Python发行版就可独立下载运行的程序，你并不需要有编译Python为C代码的能力。
-是一个独立的程序，用户可以下载和运行而不
-不必安装Python发行第一。有一些工具可把由程序绑定的一组模块和Python二进制结合生成一个独立的可执行程序。
-工具是决定一个方案模块设置必需的，
+如果你想要一个用户不用事先安装Python发行版就可独立下载运行的程序,你并不需要有编译Python为C代码的能力. 
+是一个独立的程序,用户可以下载和运行而不
+不必安装Python发行第一. 有一些工具可把由程序绑定的一组模块和Python二进制结合生成一个独立的可执行程序. 
+工具是决定一个方案模块设置必需的,
 结合这些与一个Python二进制的模块组合在一起以产生一个单一
-可执行文件。
+可执行文件. 
 
-其中一种是使用freeze tool，他包含在Python资源树"Tools/freeze"目录下。
-树的``工具/冻结``。它吧Python字节码转换成C语言阵列，
-通过C编译器可以把你所有的模块嵌入到一个新的程序中去，然后它和标准Python模块相链接。
-然后链接与标准的Python模块。
+其中一种是使用freeze tool,他包含在Python资源树"Tools/freeze"目录下. 
+树的``工具/冻结``. 它吧Python字节码转换成C语言阵列,
+通过C编译器可以把你所有的模块嵌入到一个新的程序中去,然后它和标准Python模块相链接. 
+然后链接与标准的Python模块. 
 
-它通过递归扫描你资源目录来导入语句（通过两种形式），在标准的Python路径和源目录（内置模块）查找模块。
-这两种形式），并在标准的Python模块的路径，走
-以及在源目录（内置模块）。源目录然后，
-然后，把Python写的字节码转成C代码模块（使用编组模块可以把数组初始化函数可转成代码对象）
+它通过递归扫描你资源目录来导入语句 (通过两种形式) ,在标准的Python路径和源目录 (内置模块) 查找模块. 
+这两种形式) ,并在标准的Python模块的路径,走
+以及在源目录 (内置模块) . 源目录然后,
+然后,把Python写的字节码转成C代码模块 (使用编组模块可以把数组初始化函数可转成代码对象) 
 可转成使用初始化代码对象元帅
-，并创建一个定制的配置文件，此文件只包含那些程序中故事集使用的内置模块。
-。然后，它
-然后，编译通用的C代码并将其和其余的Python解释器链接，形成独立的二进制代码，就像你的脚本一样运行。
-翻译，形成一个独立的二进制文件并把它和其余的Python解释器
-你的脚本。
+,并创建一个定制的配置文件,此文件只包含那些程序中故事集使用的内置模块. 
+. 然后,它
+然后,编译通用的C代码并将其和其余的Python解释器链接,形成独立的二进制代码,就像你的脚本一样运行. 
+翻译,形成一个独立的二进制文件并把它和其余的Python解释器
+你的脚本. 
 
-显然，freeeze需要一个C编译器。还有其他一些实用程序不需要C编译器。其中一个是Thomas Heller的py2exe(仅在Windows下使用)，它在http://www.py2exe.org/可以找到。
-公用事业不。一个是托马斯海勒的py2exe（仅限Windows）在
+显然,freeeze需要一个C编译器. 还有其他一些实用程序不需要C编译器. 其中一个是Thomas Heller的py2exe(仅在Windows下使用),它在http://www.py2exe.org/可以找到. 
+公用事业不. 一个是托马斯海勒的py2exe (仅限Windows) 在
 
 http://www.py2exe.org/
 
-另一种是Christian Tismer的SQFREEZE，它把字节码附加到一个专门准备的Python解释器，这个解释器可以找到可执行程序中的这些字文件。
-专门准备的Python解释器，可以找到的字节代码
-可执行文件。
+另一种是Christian Tismer的SQFREEZE,它把字节码附加到一个专门准备的Python解释器,这个解释器可以找到可执行程序中的这些字文件. 
+专门准备的Python解释器,可以找到的字节代码
+可执行文件. 
 
-其他工具包括Fredrik Lundh的Sqeeze和 Anthony Tuininga的cx_Freeze。
-cx_Freeze。
-
-
+其他工具包括Fredrik Lundh的Sqeeze和 Anthony Tuininga的cx_Freeze. 
+cx_Freeze. 
 
 
-是否有Python编程的编码标准或风格指南？
+
+
+是否有Python编程的编码标准或风格指南? 
 ----------------------------------------------------------------
 
 Yes.  The coding style required for standard library modules is documented as
@@ -209,7 +209,7 @@ Yes.  The coding style required for standard library modules is documented as
 
 
 
-我的程序太慢，如何加速？
+我的程序太慢,如何加速? 
 ---------------------------------------------
 
 That's a tough one, in general.  There are many tricks to speed up Python code;
@@ -259,50 +259,50 @@ order to reduce the overhead of kernel system calls.  Thus CGI scripts that
 write all output in "one shot" may be faster than those that write lots of small
 pieces of output.
 
-这是一个艰难的，一般。有许多技巧，以加快
-Python代码，考虑重写C作为最后的手段部分。
+这是一个艰难的,一般. 有许多技巧,以加快
+Python代码,考虑重写C作为最后的手段部分. 
 
 在某些情况下它可以自动转换为C或Python的
-x86汇编语言，也就是说，您不必修改代码
-获得更快的速度。
+x86汇编语言,也就是说,您不必修改代码
+获得更快的速度. 
 
 Cython and耐热玻璃可以编译略微修改后的版本的Python
-C扩展成一个代码，可用于许多不同的平台。
+C扩展成一个代码,可用于许多不同的平台. 
 
 Psyco是正义的即时编译器转换成Python代码的X86
-汇编语言。如果你能使用它，Psyco可以提供显着
-加速比为关键职能。
+汇编语言. 如果你能使用它,Psyco可以提供显着
+加速比为关键职能. 
 
 这个答案就在于将讨论不同手法挤
-再快一点了Python代码。*不要*适用于任何优化
-过关，除非你知道你需要他们，经过分析表明
+再快一点了Python代码. *不要*适用于任何优化
+过关,除非你知道你需要他们,经过分析表明
 一个特定的功能是重处决的热点
-<msg name="code">代码</msg>优化几乎总是使代码不太清楚，你
-不应支付减少清晰度（开发成本增加
-时间，错误的可能性更大），除非所产生的性能
-好处是值得的。
+<msg name="code">代码</msg>优化几乎总是使代码不太清楚,你
+不应支付减少清晰度 (开发成本增加
+时间,错误的可能性更大) ,除非所产生的性能
+好处是值得的. 
 
-有一个专门关于性能提示的维基页面。
+有一个专门关于性能提示的维基页面. 
 
 圭多面包车罗瑟姆写了相关的优化在一个轶事
-http://www.python.org/doc/essays/list2str.html。
+http://www.python.org/doc/essays/list2str.html. 
 
-有一点要注意的是，函数和（特别是）方法调用
-相当昂贵，如果你已经设计了一个纯粹的面向对象的接口同地段
-微小的功能，不这样做比获取或设置一个实例
-变量或调用另一个方法，可以考虑使用更
-直接的方式，如直接访问实例变量。还可以看到
+有一点要注意的是,函数和 (特别是) 方法调用
+相当昂贵,如果你已经设计了一个纯粹的面向对象的接口同地段
+微小的功能,不这样做比获取或设置一个实例
+变量或调用另一个方法,可以考虑使用更
+直接的方式,如直接访问实例变量. 还可以看到
 标准模块`` ``这使得配置文件可以找出
-你的程序将花费其大部分时间（如果你有一些
+你的程序将花费其大部分时间 (如果你有一些
 耐心 - 在分析你的程序本身就可以慢下来了一
-量级）。
+量级) . 
 
-请记住，许多标准优化启发式你可能知道，从
-其他编程经验很可能申请到Python。例如，它
+请记住,许多标准优化启发式你可能知道,从
+其他编程经验很可能申请到Python. 例如,它
 可能会更快将输出发送到输出设备使用较大的写入
-而不是更小的，以减少内核开销
-系统调用。因此，CGI脚本是写在“一拍”所有输出
-可能会比那些写很多小件的输出速度。
+而不是更小的,以减少内核开销
+系统调用. 因此,CGI脚本是写在 "一拍" 所有输出
+可能会比那些写很多小件的输出速度. 
 
 Also, be sure to use Python's core features where appropriate.  For example,
 slicing allows programs to chop up lists and other sequence objects in a single
@@ -420,7 +420,7 @@ confusing API to your users.
 
 
 
-当变量有值的时候为什么我会得到一个UnboundLocalError？
+当变量有值的时候为什么我会得到一个UnboundLocalError? 
 --------------------------------------------------------------------
 
 It can be a surprise to get the UnboundLocalError in previously working
@@ -491,7 +491,7 @@ keyword:
 
 
 
-*Python中的局部和全局变量如何使用？
+*Python中的局部和全局变量如何使用? 
 ------------------------------------------------------------
 
 In Python, variables that are only referenced inside a function are implicitly
@@ -508,25 +508,25 @@ to declare as global every reference to a built-in function or to a component of
 an imported module.  This clutter would defeat the usefulness of the ``global``
 declaration for identifying side-effects.
 
-在Python中，那些只有在函数中引用的变量
-隐式全球性的。如果一个变量被赋予一个新值的任何地方
-在函数的身体，它的假设是本地。如果一个变量
-常是在函数内部分配一个新的值，变量
-隐式的地方，你需要明确地声明为'全球'了。
+在Python中,那些只有在函数中引用的变量
+隐式全球性的. 如果一个变量被赋予一个新值的任何地方
+在函数的身体,它的假设是本地. 如果一个变量
+常是在函数内部分配一个新的值,变量
+隐式的地方,你需要明确地声明为'全球'了. 
 
-虽然起初有点惊讶，片刻的考虑解释
-这一点．一方面，需要为指定变量全局`` ``
-提供了一个避免意外的副作用吧。另一方面，如果
-`` ``是全球需要全球所有的引用，你会使用
-全球所有的时间`` ``。你必须声明为全局每
+虽然起初有点惊讶,片刻的考虑解释
+这一点．一方面,需要为指定变量全局`` ``
+提供了一个避免意外的副作用吧. 另一方面,如果
+`` ``是全球需要全球所有的引用,你会使用
+全球所有的时间`` ``. 你必须声明为全局每
 引用一个内置的功能或组件的import一
-在这种组件上。这杂波有违有用的`` ``全球
-宣言确定的副作用。
+在这种组件上. 这杂波有违有用的`` ``全球
+宣言确定的副作用. 
 
 
 
 
-怎样共享不同模块间的全局变量？
+怎样共享不同模块间的全局变量? 
 ------------------------------------------------
 
 The canonical way to share information across modules within a single program is
@@ -536,11 +536,11 @@ a global name.  Because there is only one instance of each module, any changes
 made to the module object get reflected everywhere.  For example:
 
 规范的方式来共享在一个单一的跨模块的信息
-方案是创建一个特殊的模块（通常称为config或CFG桩）。
+方案是创建一个特殊的模块 (通常称为config或CFG桩) . 
 仅导入配置在您的应用程序的所有模块模块的
-可作为模块就成为一个全球性的名称。因为只有
-每个模块的一个实例，向模块对象得到任何改变
-处处体现。例如：
+可作为模块就成为一个全球性的名称. 因为只有
+每个模块的一个实例,向模块对象得到任何改变
+处处体现. 例如: 
 
 config.py::
 
@@ -562,7 +562,7 @@ pattern, for the same reason.
 
 
 
-在一个模块中使用import时，“best practices”是什么？
+在一个模块中使用import时, "best practices" 是什么? 
 -----------------------------------------------------------
 
 In general, don't use ``from modulename import *``.  Doing so clutters the
@@ -626,78 +626,78 @@ the import inside the class but outside of any method still causes the import to
 occur when the module is initialized.
 
 
-一般来说，不要使用`` ``从模块名*import。这样做杂波
-import商的名称空间。有些人甚至避免这一成语与
-这几个模块，设计了以这种方式import。模块
-以这种方式设计的，包括Tkinter的`` ``和`` ``线程。
+一般来说,不要使用`` ``从模块名*import. 这样做杂波
+import商的名称空间. 有些人甚至避免这一成语与
+这几个模块,设计了以这种方式import. 模块
+以这种方式设计的,包括Tkinter的`` ``和`` ``线程. 
 
-在一个文件的顶部导入模块。这样做很清楚什么
+在一个文件的顶部导入模块. 这样做很清楚什么
 其他模块的代码需要和避免的问题是否
-模块名称的范围。使用每行一个可以很容易地导入
-添加和删除模块的import，但每行使用多种import
-使用较少的屏幕空间。
+模块名称的范围. 使用每行一个可以很容易地导入
+添加和删除模块的import,但每行使用多种import
+使用较少的屏幕空间. 
 
-这是很好的做法，如果您导入模块中按以下顺序：
+这是很好的做法,如果您导入模块中按以下顺序: 
 
-1。标准库模块 - 例如`` ``系统，操作系统`` ``，`` getopt的``
+1. 标准库模块 - 例如`` ``系统,操作系统`` ``,`` getopt的``
 `` ``重
 
-2。第三方库模块（任何在Python的网站上安装，
-packages目录） - 如的MX。在DateTime，ZODB中，PIL.Image等
+2. 第三方库模块 (任何在Python的网站上安装,
+packages目录)  - 如的MX. 在DateTime,ZODB中,PIL.Image等
 
-3。本地开发的模块
+3. 本地开发的模块
 
-切勿使用相对包import。如果你写的代码在
-``的`` package.sub.m1要导入的模块和`` `` package.sub.m2，
-不要只写``从。 ``import平方米，即使它的法律。写
-`` ``从package.sub代替import平方米。见义PEP 328 ** **详情。
+切勿使用相对包import. 如果你写的代码在
+``的`` package.sub.m1要导入的模块和`` `` package.sub.m2,
+不要只写``从.  ``import平方米,即使它的法律. 写
+`` ``从package.sub代替import平方米. 见义PEP 328 ** **详情. 
 
-有时，需要import移动到一个函数或类
-避免圆形import的问题。戈登麦克米兰说：
+有时,需要import移动到一个函数或类
+避免圆形import的问题. 戈登麦克米兰说: 
 
-其中import细圆两个模块使用“import
-<模块“的形式import。当他们不想要第二个模块
-抓住了第一个名字（“从模块导入名称”）出来的
-import在顶层。这是因为在第一名称
-尚未公布，因为第一个模块忙导入
+其中import细圆两个模块使用 "import
+<模块 "的形式import. 当他们不想要第二个模块
+抓住了第一个名字 ( "从模块导入名称" ) 出来的
+import在顶层. 这是因为在第一名称
+尚未公布,因为第一个模块忙导入
 第 2 个
 
-在这种情况下，如果只用第二个模块是在一个函数，那么
-import可以很容易地进入该功能。由当时的
-import被调用时，第一个模块将完成初始化，
-第二个模块可以尽自己的import。
+在这种情况下,如果只用第二个模块是在一个函数,那么
+import可以很容易地进入该功能. 由当时的
+import被调用时,第一个模块将完成初始化,
+第二个模块可以尽自己的import. 
 
 它可能也有必要迁出的代码顶级import了
-如果某些模块是平台相关的。在这种情况下，可能
+如果某些模块是平台相关的. 在这种情况下,可能
 甚至有可能在import顶部的所有模块
-文件数在这种情况下，import在正确的模块
-相应的特定于平台的代码是一个很好的选择。
+文件数在这种情况下,import在正确的模块
+相应的特定于平台的代码是一个很好的选择. 
 
-只有进入一个局部范围的import，如在一个函数
-定义，如果有必要解决诸如避免的问题
+只有进入一个局部范围的import,如在一个函数
+定义,如果有必要解决诸如避免的问题
 圆形import或试图减少一个初始化时
-在这种组件上。这种技术是特别有帮助的许多import
-是不必要的程序如何执行而定。您可能还
-要移动到一个功能模块是import的，如果只使用过
-在该功能。请注意，第一个模块加载时间可能
-昂贵的，因为模块的一次初始化，但
-多次加载模块几乎是免费的，只需花费一
-夫妇字典查找。即使模块名称已经超过了
-范围，模块可能是在`` `` sys.modules可用。
+在这种组件上. 这种技术是特别有帮助的许多import
+是不必要的程序如何执行而定. 您可能还
+要移动到一个功能模块是import的,如果只使用过
+在该功能. 请注意,第一个模块加载时间可能
+昂贵的,因为模块的一次初始化,但
+多次加载模块几乎是免费的,只需花费一
+夫妇字典查找. 即使模块名称已经超过了
+范围,模块可能是在`` `` sys.modules可用. 
 
-如果只有一个特定的类实例使用一个模块，那么它
+如果只有一个特定的类实例使用一个模块,那么它
 合理的导入在类的`` ``方法和模块的__init__
-然后分配到一个实例变量的模块，使模块
-总是可用（通过该实例变量）期间的生活
-对象。请注意，要延迟到import类实例化，
-import必须是在一个方法。把里面的import
-类以外的任何方法，但仍然会导致import时发生
-模块初始化。
+然后分配到一个实例变量的模块,使模块
+总是可用 (通过该实例变量) 期间的生活
+对象. 请注意,要延迟到import类实例化,
+import必须是在一个方法. 把里面的import
+类以外的任何方法,但仍然会导致import时发生
+模块初始化. 
 
 
 
 
-我怎样才能从一种功能可选或关键字参数到另一个？
+我怎样才能从一种功能可选或关键字参数到另一个? 
 ---------------------------------------------------------------------------
 
 Collect the arguments using the ``*`` and ``**`` specifiers in the function's
@@ -730,11 +730,11 @@ just creates references to objects, there's no alias between an argument name in
 the caller and callee, and so no call-by-reference per se.  You can achieve the
 desired effect in a number of ways.
 
-请记住，在Python中的参数是由转让通过。由于
-任务仅仅是创建对象的引用，有没有别名
-在调用者之间的争论和被调用者的名字，因此没有要求逐
-引用本身。你可以实现在一个数达到预期效果
-方法。
+请记住,在Python中的参数是由转让通过. 由于
+任务仅仅是创建对象的引用,有没有别名
+在调用者之间的争论和被调用者的名字,因此没有要求逐
+引用本身. 你可以实现在一个数达到预期效果
+方法. 
 
 1) By returning a tuple of the results::
 
@@ -792,7 +792,7 @@ desired effect in a number of ways.
 Your best choice is to return a tuple containing the multiple results.
 
 
-你如何在Python中实现高阶函数？
+你如何在Python中实现高阶函数? 
 --------------------------------------------------
 
 You have two choices: you can use nested scopes or you can use callable objects.
@@ -852,7 +852,7 @@ same counting variable.
 
 
 
-如何在Python中复制一个对象？
+如何在Python中复制一个对象? 
 ----------------------------------
 
 In general, try :func:`copy.copy` or :func:`copy.deepcopy` for the general case.
@@ -861,11 +861,11 @@ Not all objects can be copied, but most can.
 Some objects can be copied more easily.  Dictionaries have a :meth:`~dict.copy`
 method::
 
-在一般情况下，尝试`` copy.copy（）``或`` copy.deepcopy（）``一般
-案件。并不是所有的对象可以被复制，但大多数可以。
+在一般情况下,尝试`` copy.copy () ``或`` copy.deepcopy () ``一般
+案件. 并不是所有的对象可以被复制,但大多数可以. 
 
-一些对象可以被复制更容易。字典有一
-``~dict.copy（）``方法::
+一些对象可以被复制更容易. 字典有一
+``~dict.copy () ``方法::
 
    newdict = olddict.copy()
 
@@ -875,7 +875,7 @@ Sequences can be copied by slicing::
 
 
 
-如何找到一个对象的方法或属性？
+如何找到一个对象的方法或属性? 
 ------------------------------------------------------
 
 For an instance x of a user-defined class, ``dir(x)`` returns an alphabetized
@@ -884,7 +884,7 @@ defined by its class.
 
 
 
-如何让我的代码找出对象名字？
+如何让我的代码找出对象名字? 
 -----------------------------------------------
 
 Generally speaking, it can't, because objects don't really have names.
@@ -892,10 +892,10 @@ Essentially, assignment always binds a name to a value; The same is true of
 ``def`` and ``class`` statements, but in that case the value is a
 callable. Consider the following code::
 
-一般来说，它不能，因为对象真的没有什么名字。
-从本质上讲，赋值总是绑定到一个值的名称;同样是
-真正的高清`` `` ``和``类报表，但在这种情况下，价值
-是一个可调用。考虑下面的代码::
+一般来说,它不能,因为对象真的没有什么名字. 
+从本质上讲,赋值总是绑定到一个值的名称;同样是
+真正的高清`` `` ``和``类报表,但在这种情况下,价值
+是一个可调用. 考虑下面的代码::
 
    class A:
        pass
@@ -932,7 +932,7 @@ this question:
 
 
 
-逗号操作符的优先级是怎样的？
+逗号操作符的优先级是怎样的? 
 -----------------------------------------------
 
 Comma is not an operator in Python.  Consider this session::
@@ -954,7 +954,7 @@ are not truly operators but syntactic delimiters in assignment statements.
 
 
 
-是否有与c语言中"?:"等价的三元运算符？
+是否有与c语言中"?:"等价的三元运算符? 
 ----------------------------------------------------
 
 Yes, this feature was added in Python 2.5. The syntax would be as follows::
@@ -1015,7 +1015,7 @@ they hated.
 
 
 
-是否能在Python中编写混淆的单行代码？
+是否能在Python中编写混淆的单行代码? 
 --------------------------------------------------------
 
 Yes.  Usually this is done by nesting :keyword:`lambda` within
@@ -1053,16 +1053,16 @@ Don't try this at home, kids!
 ===================
 
 
-如何指定十六进制和八进制整数？
+如何指定十六进制和八进制整数? 
 ------------------------------------------------
 
 To specify an octal digit, precede the octal value with a zero, and then a lower
 or uppercase "o".  For example, to set the variable "a" to the octal value "10"
 (8 in decimal), type::
 
-要指定一个八进制数字，前面加一个零的八进制值，
-然后以较低的或大写的“O”。例如，要设置变量“a”
-以八进制值“10”（十进制8），输入::
+要指定一个八进制数字,前面加一个零的八进制值,
+然后以较低的或大写的 "O" . 例如,要设置变量 "a" 
+以八进制值 "10"  (十进制8) ,输入::
 
    >>> a = 0o10
    >>> a
@@ -1138,14 +1138,14 @@ the :ref:`string-formatting` section, e.g. ``"{:04d}".format(144)`` yields
 
 
 
-怎样在字符串中进行修改？
+怎样在字符串中进行修改? 
 ----------------------------------
 
 You can't, because strings are immutable.  If you need an object with this
 ability, try converting the string to a list or use the array module::
 
-你不能，因为字符串是不可改变的。如果你需要一个对象，具有
-这种能力，尝试将字符串转换成一个列表或使用数组
+你不能,因为字符串是不可改变的. 如果你需要一个对象,具有
+这种能力,尝试将字符串转换成一个列表或使用数组
 模組::
 
    >>> s = "Hello, world"
@@ -1168,7 +1168,7 @@ ability, try converting the string to a list or use the array module::
 
 
 
-怎样使用字符串来调用函数/方法？
+怎样使用字符串来调用函数/方法? 
 -----------------------------------------------
 
 There are various techniques.
@@ -1227,7 +1227,7 @@ There are various techniques.
   resulted in an arbitrary function being executed.
 
 
-是否有一个从字符串中删除尾随换行符相当于Perl的chomp（）？
+是否有一个从字符串中删除尾随换行符相当于Perl的chomp () ? 
 -------------------------------------------------------------------------------------
 
 Starting with Python 2.2, you can use ``S.rstrip("\r\n")`` to remove all
@@ -1256,7 +1256,7 @@ For older versions of Python, there are two partial substitutes:
 
 
 
-是否有与scanf()或sscanf()等效函数？
+是否有与scanf()或sscanf()等效函数? 
 ------------------------------------------
 
 Not as such.
@@ -1272,18 +1272,18 @@ than C's :c:func:`sscanf` and better suited for the task.
 
 
 
-'UnicodeDecodeError'或'UnicodeEncodeError'的错误是什么意思？
+'UnicodeDecodeError'或'UnicodeEncodeError'的错误是什么意思? 
 -------------------------------------------------------------------
 
 See the :ref:`unicode-howto`.
 
 
 
-序列（元组/列表）
+序列 (元组/列表) 
 ========================
 
 
-如何转换元组和列表？
+如何转换元组和列表? 
 ------------------------------------------
 
 The type constructor ``tuple(seq)`` converts any sequence (actually, any
@@ -1301,7 +1301,7 @@ is a list, it makes a copy just like ``seq[:]`` would.
 
 
 
-什么是负值索引？
+什么是负值索引? 
 ------------------------
 
 Python sequences are indexed with positive numbers and negative numbers.  For
@@ -1315,7 +1315,7 @@ trailing newline from a string.
 
 
 
-怎样反序遍历序列？
+怎样反序遍历序列? 
 --------------------------------------------------
 
 Use the :func:`reversed` built-in function, which is new in Python 2.4::
@@ -1333,7 +1333,7 @@ With Python 2.3, you can use an extended slice syntax::
 
 
 
-如何从列表中删重复记录？
+如何从列表中删重复记录? 
 -----------------------------------------
 
 See the Python Cookbook for a long discussion of many ways to do this:
@@ -1369,7 +1369,7 @@ into a list.
 
 
 
-如何在Python产生数组？
+如何在Python产生数组? 
 -----------------------------------
 
 Use a list::
@@ -1395,7 +1395,7 @@ usually a lot slower than using Python lists.
 
 
 
-如何建立一个多层次的列表？
+如何建立一个多层次的列表? 
 ----------------------------------------
 
 You probably tried to make a multidimensional array like this::
@@ -1437,7 +1437,7 @@ Or, you can use an extension that provides a matrix datatype; `Numeric Python
 
 
 
-如何为对象序列申请方法？
+如何为对象序列申请方法? 
 -------------------------------------------------
 
 Use a list comprehension::
@@ -1449,15 +1449,15 @@ Use a list comprehension::
 ============
 
 
-如何按一定顺序显示字典的键值？
+如何按一定顺序显示字典的键值? 
 ---------------------------------------------------------------------
 
 You can't.  Dictionaries store their keys in an unpredictable order, so the
 display order of a dictionary's elements will be similarly unpredictable.
 
-你不能。字典键存储在不可预知的顺序，
+你不能. 字典键存储在不可预知的顺序,
 所以为了显示字典的内容将是同样
-不可预测的。
+不可预测的. 
 
 This can be frustrating if you want to save a printable version to a file, make
 some changes and then compare it with some other printed dictionary.  In this
@@ -1483,7 +1483,7 @@ particular order.
 
 
 
-我想要做一个复杂的排序：在Python可以做一个Schwartzian变换？
+我想要做一个复杂的排序: 在Python可以做一个Schwartzian变换? 
 ------------------------------------------------------------------------------
 
 The technique, attributed to Randal Schwartz of the Perl community, sorts the
@@ -1524,7 +1524,7 @@ is slower than the Schwartzian Transform.
 
 
 
-怎样用其他列表中的值排序一个列表？
+怎样用其他列表中的值排序一个列表? 
 ----------------------------------------------------
 
 Merge them into an iterator of tuples, sort the resulting list, and then pick
@@ -1559,7 +1559,7 @@ all those function calls.
 =======
 
 
-什么是类？
+什么是类? 
 ----------------
 
 A class is the particular object type created by executing a class statement.
@@ -1574,7 +1574,7 @@ and subclasses such as ``MboxMailbox``, ``MaildirMailbox``, ``OutlookMailbox``
 that handle various specific mailbox formats.
 
 
-什么是方法？
+什么是方法? 
 -----------------
 
 A method is a function on some object ``x`` that you normally call as
@@ -1587,7 +1587,7 @@ definition::
 
 
 
-self是什么？
+self是什么? 
 -------------
 
 Self is merely a conventional name for the first argument of a method.  A method
@@ -1599,7 +1599,7 @@ See also :ref:`why-self`.
 
 
 
-我如何检查一个对象是某一类或它的一个子类的实例？
+我如何检查一个对象是某一类或它的一个子类的实例? 
 -----------------------------------------------------------------------------------
 
 Use the built-in function ``isinstance(obj, cls)``.  You can check if an object
@@ -1637,7 +1637,7 @@ call it::
 
 
 
-什么是delegation？
+什么是delegation? 
 -------------------
 
 Delegation is an object oriented technique (also called a design pattern).
@@ -1684,7 +1684,7 @@ local state for self without causing an infinite recursion.
 
 
 
-如何调用基类中定义的但被派生类中的方法覆盖的方法？
+如何调用基类中定义的但被派生类中的方法覆盖的方法? 
 --------------------------------------------------------------------------------------
 
 Use the built-in :func:`super` function::
@@ -1719,7 +1719,7 @@ of resources) which base class to use.  Example::
 
 
 
-怎样创建静态类数据和静态类的方法呢？
+怎样创建静态类数据和静态类的方法呢? 
 -----------------------------------------------------------
 
 Both static data and static methods (in the sense of C++ or Java) are supported
@@ -1810,7 +1810,7 @@ You could also try a variable-length argument list, e.g. ::
 The same approach works for all method definitions.
 
 
-我试着使用__spam，我也得到一个关于_SomeClassName__spam错误。
+我试着使用__spam,我也得到一个关于_SomeClassName__spam错误. 
 ------------------------------------------------------------------
 
 Variable names with double leading underscores are "mangled" to provide a simple
@@ -1826,7 +1826,7 @@ names at all.
 
 
 
-我的类定义了__del__，但在删除对象是无法调用。
+我的类定义了__del__,但在删除对象是无法调用. 
 -----------------------------------------------------------------------
 
 There are several possible reasons for this.
@@ -1883,7 +1883,7 @@ keeping a list of weak references to each instance.
 
 
 
-如何创建.pyc文件？
+如何创建.pyc文件? 
 ----------------------------
 
 When a module is imported for the first time (or when the source is more recent
@@ -1946,7 +1946,7 @@ after checking ``__name__``::
 
 
 
-*怎样使用相互导入的模块？
+*怎样使用相互导入的模块? 
 -------------------------------------------------------
 
 Suppose you have the following modules:
@@ -2003,7 +2003,7 @@ These solutions are not mutually exclusive.
 
 
 
-__import__（'某某'）返回<模块'x'>，如何才能获得z？
+__import__ ('某某') 返回<模块'x'>,如何才能获得z? 
 ---------------------------------------------------------
 
 Try::
@@ -2023,7 +2023,7 @@ See :mod:`importlib` for a convenience function called
 
 
 
-当我编辑导入模块并重新导入，所做的更改不会显示出来。为什么会这样？
+当我编辑导入模块并重新导入,所做的更改不会显示出来. 为什么会这样? 
 -------------------------------------------------------------------------------------------------
 
 For reasons of efficiency as well as consistency, Python only reads the module
@@ -2032,11 +2032,11 @@ consisting of many modules where each one imports the same basic module, the
 basic module would be parsed and re-parsed many times.  To force rereading of a
 changed module, do this::
 
-出于效率的原因以及一致性，只读取的Python
-在第一次模块文件模块是import的。如果没有，
-在程序中的许多模块组成，其中的每个import
-相同的基本模块，基本模块将被解析并重新解析的多
-时间中给出判断以强制改变模块重读，这样做::
+出于效率的原因以及一致性,只读取的Python
+在第一次模块文件模块是import的. 如果没有,
+在程序中的许多模块组成,其中的每个import
+相同的基本模块,基本模块将被解析并重新解析的多
+时间中给出判断以强制改变模块重读,这样做::
 
    import imp
    import modname
@@ -2067,3 +2067,4 @@ class objects:
    '0x7352a0'
    >>> hex(id(cls.C))
    '0x4198d0'
+

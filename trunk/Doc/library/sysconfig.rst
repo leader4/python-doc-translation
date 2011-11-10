@@ -257,3 +257,4 @@ You can use :mod:`sysconfig` as a script with Python's *-m* option::
 This call will print in the standard output the information returned by
 :func:`get_platform`, :func:`get_python_version`, :func:`get_path` and
 :func:`get_config_vars`.
+

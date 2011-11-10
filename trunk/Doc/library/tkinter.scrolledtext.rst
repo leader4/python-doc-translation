@@ -30,3 +30,4 @@ available:
 .. attribute:: ScrolledText.vbar
 
    The scroll bar widget.
+

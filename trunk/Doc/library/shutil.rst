@@ -19,7 +19,7 @@ collections of files.  In particular, functions are provided  which support file
 copying and removal. For operations on individual files, see also the
 :mod:`os` module.
 
-shutil 模块提供了一些高层次的文件操作,比如复制、设置权限、删除等。
+shutil 模块提供了一些高层次的文件操作,比如复制、设置权限、删除等. 
 
 
 .. warning::
@@ -59,8 +59,8 @@ Directory and files operations
    such as character or block devices and pipes cannot be copied with this
    function.  *src* and *dst* are path names given as strings.
    
-   copyfile()将源文件内容完全复制给目标文件。如果没有写入目标文件的权限,会引起
-IOError。
+   copyfile()将源文件内容完全复制给目标文件. 如果没有写入目标文件的权限,会引起
+IOError. 
 
 
 
@@ -69,7 +69,7 @@ IOError。
    Copy the permission bits from *src* to *dst*.  The file contents, owner, and
    group are unaffected.  *src* and *dst* are path names given as strings.
    
-   在 Unix 下,一个新创建文件的权限会根据当前用户的 umask 值来设置。这里可以使用
+   在 Unix 下,一个新创建文件的权限会根据当前用户的 umask 值来设置. 这里可以使用
 	copymode()来实现使被创建的文件具有 umask 值,而不是由于源文件的权限
 
 
@@ -80,7 +80,7 @@ IOError。
    from *src* to *dst*.  The file contents, owner, and group are unaffected.  *src*
    and *dst* are path names given as strings.
    
-   copystat()函式可以复制文件的其他元信息(权限、最后读取时间、最后修改时间等)。它和 copy2()函式很类似。
+   copystat()函式可以复制文件的其他元信息(权限、最后读取时间、最后修改时间等). 它和 copy2()函式很类似. 
 
 
 
@@ -91,10 +91,10 @@ IOError。
    directory specified.  Permission bits are copied.  *src* and *dst* are path
    names given as strings.
    
-   copy()函式类似于 Unix 命令 cp,将源文件复制成一个目标文件。和 copyfile()不同的是,
+   copy()函式类似于 Unix 命令 cp,将源文件复制成一个目标文件. 和 copyfile()不同的是,
 	如果目标参数是一个目录而不是文件,那么在这个目录中复制一个源文件副本(它与源
 	文件同名)
-	。另外,文件的权限也会随之被复制
+	. 另外,文件的权限也会随之被复制
 
 
 
@@ -124,7 +124,7 @@ IOError。
    copied with :func:`copystat`, individual files are copied using
    :func:`copy2`.
    
-   使用 copytree()来复制目录,它会递归复制整个目录结构。目标目录必须不存在。
+   使用 copytree()来复制目录,它会递归复制整个目录结构. 目标目录必须不存在. 
 
 
    If *symlinks* is true, symbolic links in the source tree are represented as
@@ -174,7 +174,7 @@ IOError。
    handled by calling a handler specified by *onerror* or, if that is omitted,
    they raise an exception.
    
-   使用 rmtree()可以删除整个目录。若其中产生错误,会作为异常抛出。但是如果它的第二个参数是目录,那么产生的错误会被忽略,第三个参数可以指定为一个特殊出错处理函式句柄,
+   使用 rmtree()可以删除整个目录. 若其中产生错误,会作为异常抛出. 但是如果它的第二个参数是目录,那么产生的错误会被忽略,第三个参数可以指定为一个特殊出错处理函式句柄,
 
 
    If *onerror* is provided, it must be a callable that accepts three
@@ -194,7 +194,7 @@ IOError。
    If the destination is on the current filesystem, then simply use rename.
    Otherwise, copy src (with :func:`copy2`) to the dst and then remove src.
    
-   移动文件或目录可以使用 move(),这类似于 Unix 命令 mv。如果源文件或目录和目标文
+   移动文件或目录可以使用 move(),这类似于 Unix 命令 mv. 如果源文件或目录和目标文
 件或目录在同一个文件系统下,那么源文件或目录会直接重命名,否则源文件或目录会
 复制到目标文件或目录,接着删除源文件或目录
 
@@ -425,5 +425,6 @@ The resulting archive contains::
     -rw------- tarek/staff    1675 2008-06-09 13:26:54 ./id_rsa
     -rw-r--r-- tarek/staff     397 2008-06-09 13:26:54 ./id_rsa.pub
     -rw-r--r-- tarek/staff   37192 2010-02-06 18:23:10 ./known_hosts
+
 
 

@@ -160,3 +160,4 @@
    gotten by calling :c:func:`PySequence_Size` on *o*, but
    :c:func:`PySequence_Fast_GET_SIZE` is faster because it can assume *o* is a list
    or tuple.
+

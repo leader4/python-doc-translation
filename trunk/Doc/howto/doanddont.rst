@@ -288,3 +288,4 @@ This version is bulletproof::
    value = (foo.bar()['first'][0]*baz.quux(1, 2)[5:9]
            + calculate_number(10, 20)*forbulate(500, 360))
 
+

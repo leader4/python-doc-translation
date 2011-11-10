@@ -172,7 +172,7 @@ with "0.1" is explained in precise detail below, in the "Representation Error"
 section.  See `The Perils of Floating Point <http://www.lahey.com/float.htm>`_
 for a more complete account of other common surprises.
 
-二进制浮点运算给我们带来很多这样的“惊喜”。”0.1”带来的问题在本文的”表现错误”小节中有着详细的解释。另外，`The Perils of Floating Point <http://www.lahey.com/float.htm>`_ 中也有更加完整的描述。
+二进制浮点运算给我们带来很多这样的 "惊喜" . " 0.1" 带来的问题在本文的" 表现错误" 小节中有着详细的解释. 另外,`The Perils of Floating Point <http://www.lahey.com/float.htm>`_ 中也有更加完整的描述. 
 
 As that says near the end, "there are no easy answers."  Still, don't be unduly
 wary of floating-point!  The errors in Python float operations are inherited
@@ -181,7 +181,7 @@ more than 1 part in 2\*\*53 per operation.  That's more than adequate for most
 tasks, but you do need to keep in mind that it's not decimal arithmetic and
 that every float operation can suffer a new rounding error.
 
-最后我们要说，“没有完美的方法”。但是，不要过分的拒绝浮点数！Python浮点操作中的错误是由硬件本身限制的，在大多数的机器上每次运算的误差不会超过2的53次方之一。这样的误差在大多数的任务中是可以被接受的。但是，我们还是要牢记我们做的并不是十进制运算，任何一个浮点预算都有可能产生一个新的错误。
+最后我们要说, "没有完美的方法" . 但是,不要过分的拒绝浮点数! Python浮点操作中的错误是由硬件本身限制的,在大多数的机器上每次运算的误差不会超过2的53次方之一. 这样的误差在大多数的任务中是可以被接受的. 但是,我们还是要牢记我们做的并不是十进制运算,任何一个浮点预算都有可能产生一个新的错误. 
 
 While pathological cases do exist, for most casual use of floating-point
 arithmetic you'll see the result you expect in the end if you simply round the
@@ -189,7 +189,7 @@ display of your final results to the number of decimal digits you expect.
 :func:`str` usually suffices, and for finer control see the :meth:`str.format`
 method's format specifiers in :ref:`formatstrings`.
 
-当不出意外的时候，通常情况下大多数的浮点运算我们会得到我们期望的结果，你只需要简单的取小数位，最终得到和十进制的一样的显示结果。str 函数基本上够用了，为了更好的控制我们还可以看看Python的``%``格式化操作符：``%g``, ``%f``和``%e``格式化符能让我们灵活而简单的得到我们想要显示的结果。
+当不出意外的时候,通常情况下大多数的浮点运算我们会得到我们期望的结果,你只需要简单的取小数位,最终得到和十进制的一样的显示结果. str 函数基本上够用了,为了更好的控制我们还可以看看Python的``%``格式化操作符: ``%g``, ``%f``和``%e``格式化符能让我们灵活而简单的得到我们想要显示的结果. 
 
 For use cases which require exact decimal representation, try using the
 :mod:`decimal` module which implements decimal arithmetic suitable for
@@ -209,7 +209,7 @@ If you are a heavy user of floating point operations you should take a look
 at the Numerical Python package and many other packages for mathematical and
 statistical operations supplied by the SciPy project. See <http://scipy.org>.
 
-如果你在工作中频繁的使用浮点数，你应该看一看为数学准备的Numerical Python库和为统计学操作准备的SciPy项目，参见 <http://scipy.org>.
+如果你在工作中频繁的使用浮点数,你应该看一看为数学准备的Numerical Python库和为统计学操作准备的SciPy项目,参见 <http://scipy.org>.
 
 Python provides tools that may help on those rare occasions when you really
 *do* want to know the exact value of a float.  The
@@ -286,9 +286,9 @@ decimal fractions cannot be represented exactly as binary (base 2) fractions.
 This is the chief reason why Python (or Perl, C, C++, Java, Fortran, and many
 others) often won't display the exact decimal number you expect.
 
-`表示错误` 源于事实上一些（事实上是大多）十进制分数不能精确表示为二进制分数。这就是Python（
+`表示错误` 源于事实上一些 (事实上是大多) 十进制分数不能精确表示为二进制分数. 这就是Python (
 
-以及 Perl，C，C++，Java，Fortran 等等）语言通常不会显示出你期望的十进制数值的原因：
+以及 Perl,C,C++,Java,Fortran 等等) 语言通常不会显示出你期望的十进制数值的原因: 
 
 Why is that?  1/10 is not exactly representable as a binary fraction. Almost all
 machines today (November 2000) use IEEE-754 floating point arithmetic, and
@@ -297,7 +297,7 @@ doubles contain 53 bits of precision, so on input the computer strives to
 convert 0.1 to the closest fraction it can of the form *J*/2**\ *N* where *J* is
 an integer containing exactly 53 bits.  Rewriting ::
 
-这是为什么？ 1/10 不能被精确表示为二进制分数。今天（2000年十一月）的大多数机器使用 IEEE-754 浮点算法，大多平台将 Python 浮点数对映为 IEEE-754 “双精度浮点数”。 754 双精度浮点数有 53 比特位精度，所以计算机输入时将 0.1 尽可能的转为最接近的 J/2***N* 形式。 J 是一个包含53比特的整数。如下::
+这是为什么?  1/10 不能被精确表示为二进制分数. 今天 (2000年十一月) 的大多数机器使用 IEEE-754 浮点算法,大多平台将 Python 浮点数对映为 IEEE-754  "双精度浮点数" .  754 双精度浮点数有 53 比特位精度,所以计算机输入时将 0.1 尽可能的转为最接近的 J/2***N* 形式.  J 是一个包含53比特的整数. 如下::
 
    1 / 10 ~= J / (2**N)
 
@@ -308,7 +308,7 @@ as ::
 and recalling that *J* has exactly 53 bits (is ``>= 2**52`` but ``< 2**53``),
 the best value for *N* is 56::
 
-前面提到 J 需要 53 比特位（``大于等于 2**52`` 且 ``小于53``）， N 的最佳值是 56：
+前面提到 J 需要 53 比特位 (``大于等于 2**52`` 且 ``小于53``) , N 的最佳值是 56: 
 
     >>> 2**52 <=  2**56 // 10  < 2**53
     True
@@ -316,7 +316,7 @@ the best value for *N* is 56::
 That is, 56 is the only value for *N* that leaves *J* with exactly 53 bits.  The
 best possible value for *J* is then that quotient rounded::
 
-于是，对于 J 期待的 53 位，56是 N 的唯一可选值。 J 的最佳可用值是下面计算出的范围：
+于是,对于 J 期待的 53 位,56是 N 的唯一可选值.  J 的最佳可用值是下面计算出的范围: 
 
    >>> q, r = divmod(2**56, 10)
    >>> r
@@ -325,14 +325,14 @@ best possible value for *J* is then that quotient rounded::
 Since the remainder is more than half of 10, the best approximation is obtained
 by rounding up::
 
-因为余数大于10，最好的逼近方法是由上界逼近 ：
+因为余数大于10,最好的逼近方法是由上界逼近 : 
 
    >>> q+1
    7205759403792794
 
 Therefore the best possible approximation to 1/10 in 754 double precision is::
 
-因此 1/10 在 754 双精度下最接近的是它比 2**56 ，即::
+因此 1/10 在 754 双精度下最接近的是它比 2**56 ,即::
 
    7205759403792794 / 2 ** 56
 
@@ -344,12 +344,12 @@ Note that since we rounded up, this is actually a little bit larger than 1/10;
 if we had not rounded up, the quotient would have been a little bit smaller than
 1/10.  But in no case can it be *exactly* 1/10!
 
-注意，因为这里我们取上界，所以它实际上比 1/10 大一点点。如果我们取下界，就会比 1/10 小一点。不过它不会 恰好 是 1/10 ！
+注意,因为这里我们取上界,所以它实际上比 1/10 大一点点. 如果我们取下界,就会比 1/10 小一点. 不过它不会 恰好 是 1/10 ! 
 
 So the computer never "sees" 1/10:  what it sees is the exact fraction given
 above, the best 754 double approximation it can get::
 
-所以计算机无法“理解” 1/10：它理解收到的分数，给出它所能得到的最佳精度：
+所以计算机无法 "理解"  1/10: 它理解收到的分数,给出它所能得到的最佳精度: 
 
    >>> 0.1 * 2 ** 55
    3602879701896397.0
@@ -357,7 +357,7 @@ above, the best 754 double approximation it can get::
 If we multiply that fraction by 10\*\*55, we can see the value out to
 55 decimal digits::
 
-如果我们将这个分数乘10**55，我们可以看到（被截断）的55位十进制有效数字：
+如果我们将这个分数乘10**55,我们可以看到 (被截断) 的55位十进制有效数字: 
 
    >>> 3602879701896397 * 10 ** 55 // 2 ** 55
    1000000000000000055511151231257827021181583404541015625
@@ -391,3 +391,4 @@ easy:
 
    >>> format(Decimal.from_float(0.1), '.17')
    '0.10000000000000001'
+

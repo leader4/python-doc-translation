@@ -7,8 +7,8 @@
 :Release: |version|
 :Date: |today|
 
-本手册文件的API针对那些想写扩展模块或嵌入的Python的C和C+ +程序员。
-它描述了编写扩展的一般原则，但不涉及详细的API函数。
+本手册文件的API针对那些想写扩展模块或嵌入的Python的C和C+ +程序员. 
+它描述了编写扩展的一般原则,但不涉及详细的API函数. 
 
 .. toctree::
    :maxdepth: 2
@@ -23,3 +23,4 @@
    init.rst
    memory.rst
    objimpl.rst
+

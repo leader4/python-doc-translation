@@ -791,3 +791,4 @@ The following example reads the resulting pickled data. ::
    the persistent IDs, in protocol 0, are delimited by the newline
    character.  Therefore if any kind of newline characters occurs in
    persistent IDs, the resulting pickle will become unreadable.
+

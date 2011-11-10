@@ -205,3 +205,4 @@ A simple example demonstrating the use of the programmatic interface::
    r = tracer.results()
    r.write_results(show_missing=True, coverdir="/tmp")
 
+

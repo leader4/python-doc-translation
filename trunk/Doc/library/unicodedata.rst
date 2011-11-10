@@ -160,3 +160,4 @@ Examples:
    >>> unicodedata.bidirectional('\u0660') # 'A'rabic, 'N'umber
    'AN'
 
+

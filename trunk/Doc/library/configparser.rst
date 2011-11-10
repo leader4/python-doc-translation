@@ -1258,3 +1258,4 @@ Exceptions
 .. [1] Config parsers allow for heavy customization.  If you are interested in
        changing the behaviour outlined by the footnote reference, consult the
        `Customizing Parser Behaviour`_ section.
+
