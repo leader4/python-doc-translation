@@ -13,7 +13,7 @@ a time when most email was composed of ASCII characters only.  :rfc:`2822` is a
 specification written assuming email contains only 7-bit ASCII characters.
 
 :rfc:`2822`描述了电子邮件格式的基本标准. 
-它源于上一个版本:rfc:`822`的标准,该版本来源于当时大量使用的仅由ASCII字符组合的电子邮件. 
+它源于上一个版本:rfc:`822`的标准, 该版本来源于当时大量使用的仅由ASCII字符组合的电子邮件. 
 :rfc:`2822`是一个假设只包含7位ASCII字符电子邮件的规范. 
 
 Of course, as email has been deployed worldwide, it has become
@@ -25,9 +25,9 @@ written describing how to encode email containing non-ASCII characters into
 :rfc:`2047`, and :rfc:`2231`. The :mod:`email` package supports these standards
 in its :mod:`email.header` and :mod:`email.charset` modules.
 
-当然,由于电子邮件已风菲全球并成为国际化,因此该语言规范字符集能够应用到电子邮件中. 
-基本标准仍然需要使用只有7位的ASCII字符传输电子邮件,因此RFCs已描述了如何对含有非ASCII字符的电子邮件编码为:rfc:`2822`\ -compliant格式. 
-这些RFCs包含:rfc:`2045`,:rfc:`2046`,:rfc:`2047`和:rfc:`2231`. :mod:`email`包中的:mod:`email.header`和:mod:`email.charset`模块支持这些标准. 
+当然, 由于电子邮件已风菲全球并成为国际化, 因此该语言规范字符集能够应用到电子邮件中. 
+基本标准仍然需要使用只有7位的ASCII字符传输电子邮件, 因此RFCs已描述了如何对含有非ASCII字符的电子邮件编码为:rfc:`2822`\ -compliant格式. 
+这些RFCs包含:rfc:`2045`, :rfc:`2046`, :rfc:`2047`和:rfc:`2231`. :mod:`email`包中的:mod:`email.header`和:mod:`email.charset`模块支持这些标准. 
 
 If you want to include non-ASCII characters in your email headers, say in the
 :mailheader:`Subject` or :mailheader:`To` fields, you should use the
@@ -36,8 +36,8 @@ object to an instance of :class:`Header` instead of using a string for the heade
 value.  Import the :class:`Header` class from the :mod:`email.header` module.
 For example:
 
-如果要在电子邮件标题中包含非ASCII字符,那么应该在:mailheader:`Subject`或:mailheader:`To`中使用:class:`Header`类,
-并且将:class:`~email.message.Message`对象赋值给:class:`Header`实例,而不是使用字符串. 
+如果要在电子邮件标题中包含非ASCII字符, 那么应该在:mailheader:`Subject`或:mailheader:`To`中使用:class:`Header`类, 
+并且将:class:`~email.message.Message`对象赋值给:class:`Header`实例, 而不是使用字符串. 
 从:mod:`email.header`模块导入 :class:`Header`类. 
 例如::
 
@@ -58,8 +58,8 @@ the character set that the byte string was encoded in.  When the subsequent
 field was properly :rfc:`2047` encoded.  MIME-aware mail readers would show this
 header using the embedded ISO-8859-1 character.
 
-注意,如何在:mailheader:`Subject`中包含非ASCII字符?
-通过创建一个:class:`Header`实例并传递已编码的字节串的字符集,当:class:`~email.message.Message`实例扁平化时,:mailheader:`Subject`
+注意, 如何在:mailheader:`Subject`中包含非ASCII字符?
+通过创建一个:class:`Header`实例并传递已编码的字节串的字符集, 当:class:`~email.message.Message`实例扁平化时, :mailheader:`Subject`
 正好被:rfc:`2047`编码. MIME-aware电子邮件readers将会显示已嵌入式的 ISO-8859-1字符的头. 
 
 Here is the :class:`Header` class description:
@@ -79,7 +79,7 @@ Here is the :class:`Header` class description:
    :class:`str`, but see the :meth:`append` documentation for semantics.
    
    选项*s*是初始化的头. ``None``即未设置 (默认值) . 可以在后面使用 :meth:`append`方法添加. 
-   *s*可能是:class:`bytes`的实例或:class:`str`,具体请参考:meth:`append`文档. 
+   *s*可能是:class:`bytes`的实例或:class:`str`, 具体请参考:meth:`append`文档. 
 
    Optional *charset* serves two purposes: it has the same meaning as the *charset*
    argument to the :meth:`append` method.  It also sets the default character set
@@ -90,7 +90,7 @@ Here is the :class:`Header` class description:
    
    选项*charset*有两个目的: 它具有相同的含义*charset*参数:meth:`append`方法. 
    它还设置了默认的字符集所有后续: :meth:`append`省略的*charset*参数的调用. 
-   *charset*中没有提供构造函数 (默认) ,``us-ascii``
+   *charset*中没有提供构造函数 (默认) , ``us-ascii``
    *s*的初始字符集作为默认字符集是用来后续:meth:`append`调用. 
 
    The maximum line length can be specified explicitly via *maxlinelen*.  For
@@ -101,8 +101,8 @@ Here is the :class:`Header` class description:
    first line of a long, split header.
    
    最大行的长度通过变量*maxlinelen*明确指出. 拆分第一行为较短的值
-    (占字段的header不包括在*s*中,例如: :mailheader:`Subject`) 在*header_name*中传递字段名称. 
-   *maxlinelen*默认为76,*header_name*默认值是``None``,意味着不考虑第一个很长的拆分header的行. 
+    (占字段的header不包括在*s*中, 例如: :mailheader:`Subject`) 在*header_name*中传递字段名称. 
+   *maxlinelen*默认为76, *header_name*默认值是``None``, 意味着不考虑第一个很长的拆分header的行. 
 
 
    Optional *continuation_ws* must be :rfc:`2822`\ -compliant folding
@@ -110,7 +110,7 @@ Here is the :class:`Header` class description:
    character will be prepended to continuation lines.  *continuation_ws*
    defaults to a single space character.
    
-   选项*continuation_ws*必须是:rfc:`2822`\ -compliant的折叠空白,通常是空格或硬制表符. 
+   选项*continuation_ws*必须是:rfc:`2822`\ -compliant的折叠空白, 通常是空格或硬制表符. 
    这字符将被置于续行. *continuation_ws*默认为一个空格字符. 
 
    Optional *errors* is passed straight through to the :meth:`append` method.
@@ -129,8 +129,8 @@ Here is the :class:`Header` class description:
       of ``None`` (the default) means that the *charset* given in the constructor
       is used.
 
-      选项*charset*,如果给定的,应该是一个:class:`~email.charset..Charset`
-      实例 (请参考:mod:`email.charset`) 或字符集的名称,这将被转换为一个:class:`~email.charset.Charset`实例. 
+      选项*charset*, 如果给定的, 应该是一个:class:`~email.charset..Charset`
+      实例 (请参考:mod:`email.charset`) 或字符集的名称, 这将被转换为一个:class:`~email.charset.Charset`实例. 
        ``None``值 (默认) 意味着*charset*已在构造函数中被使用. 
 
       *s* may be an instance of :class:`bytes` or :class:`str`.  If it is an
@@ -138,26 +138,26 @@ Here is the :class:`Header` class description:
       string, and a :exc:`UnicodeError` will be raised if the string cannot be
       decoded with that character set.
 
-      *s*可能是一个:class:`bytes`或:class:`str`的实例. 如果是一个:class:`bytes`实例,那么*charset*是该字节的编码字符串,
-      如果字符串不能解码该字符集,就会抛出:exc:`UnicodeError`异常. 
+      *s*可能是一个:class:`bytes`或:class:`str`的实例. 如果是一个:class:`bytes`实例, 那么*charset*是该字节的编码字符串, 
+      如果字符串不能解码该字符集, 就会抛出:exc:`UnicodeError`异常. 
 
       If *s* is an instance of :class:`str`, then *charset* is a hint specifying
       the character set of the characters in the string.
 
-      如果*s*是:class:`str`实例,然后*charset*是一个提示指定字符串中的字符的字符集. 
+      如果*s*是:class:`str`实例, 然后*charset*是一个提示指定字符串中的字符的字符集. 
 
       In either case, when producing an :rfc:`2822`\ -compliant header using
       :rfc:`2047` rules, the string will be encoded using the output codec of
       the charset.  If the string cannot be encoded using the output codec, a
       UnicodeError will be raised.
 
-      在这两种情况下,当使用:rfc:`2047`规则命名:rfc:`2822`\ -compliant头部,该字符串将被编码使用输出编解码器字符集. 
-      如果该字符串不能使用output codec进行编码,就会抛出UnicodeError异常. 
+      在这两种情况下, 当使用:rfc:`2047`规则命名:rfc:`2822`\ -compliant头部, 该字符串将被编码使用输出编解码器字符集. 
+      如果该字符串不能使用output codec进行编码, 就会抛出UnicodeError异常. 
 
       Optional *errors* is passed as the errors argument to the decode call
       if *s* is a byte string.
 
-      如果*s*是字节字符串,那么会传递错误参数选项*errors*到解码调用. 
+      如果*s*是字节字符串, 那么会传递错误参数选项*errors*到解码调用. 
 
 
    .. method:: encode(splitchars=';, \\t', maxlinelen=None, linesep='\\n')
@@ -168,21 +168,21 @@ Here is the :class:`Header` class description:
       split long ASCII lines on, in rough support of :rfc:`2822`'s *highest
       level syntactic breaks*.  This doesn't affect :rfc:`2047` encoded lines.
 
-      编码成一个RFC兼容的格式的消息头,可能在base64或quoted-printable编码中,封装最大行数和非ASCII部分. 
-      选项*splitchars*是一个字符串,其中包含的字符拆分成很长的ASCII行,在粗糙的支持最高:rfc:`2822`的*highestlevel syntactic breaks*. 
+      编码成一个RFC兼容的格式的消息头, 可能在base64或quoted-printable编码中, 封装最大行数和非ASCII部分. 
+      选项*splitchars*是一个字符串, 其中包含的字符拆分成很长的ASCII行, 在粗糙的支持最高:rfc:`2822`的*highestlevel syntactic breaks*. 
       这并不影响:rfc:`2047`编码行. 
 
       *maxlinelen*, if given, overrides the instance's value for the maximum
       line length.
 
-      *maxlinelen*,如果给定的,覆盖实例的最大值行的长度. 
+      *maxlinelen*, 如果给定的, 覆盖实例的最大值行的长度. 
 
       *linesep* specifies the characters used to separate the lines of the
       folded header.  It defaults to the most useful value for Python
       application code (``\n``), but ``\r\n`` can be specified in order
       to produce headers with RFC-compliant line separators.
 
-      *linesep*指定用于分隔的行的字符折叠头. 它默认为Python的最有用的价值应用程序代码 (``\n``) ,但``\r\n``可以按顺序指定
+      *linesep*指定用于分隔的行的字符折叠头. 它默认为Python的最有用的价值应用程序代码 (``\n``) , 但``\r\n``可以按顺序指定
       生产与RFC兼容的行分隔符头. 
 
       .. versionchanged:: 3.2
@@ -195,7 +195,7 @@ Here is the :class:`Header` class description:
    The :class:`Header` class also provides a number of methods to support
    standard operators and built-in functions.
 
-   :class:`Header`类还提供了一些方法,以支持标准的操作符和内置函数. 
+   :class:`Header`类还提供了一些方法, 以支持标准的操作符和内置函数. 
 
    .. method:: __str__()
 
@@ -205,8 +205,8 @@ Here is the :class:`Header` class description:
       charset of `unknown-8bit` are decoded as `ASCII` using the `replace`
       error handler.
 
-      :class:`Header`作为一个字符串返回一个近似,使用无限制的行长度. 
-      销售所有货件都转换为Unicode的使用. 指定的编码,并适当结合在一起. 
+      :class:`Header`作为一个字符串返回一个近似, 使用无限制的行长度. 
+      销售所有货件都转换为Unicode的使用. 指定的编码, 并适当结合在一起. 
       任何与字符集解码的ASCII`使用`取代`unknown-8bit`错误处理程序. 
 
       .. versionchanged:: 3.2
@@ -248,7 +248,7 @@ The :mod:`email.header` module also provides the following convenient functions.
    character set specified in the encoded string.
 
    这个函数返回一组含有每个解码部分头的``(decoded_string, charset)``对.  *charset*是``None``非编码
-   头的部分,否则小写的字符串,其中包含的名称字符集编码的字符串中指定. 
+   头的部分, 否则小写的字符串, 其中包含的名称字符集编码的字符串中指定. 
 
    Here's an example::
 
@@ -268,13 +268,13 @@ The :mod:`email.header` module also provides the following convenient functions.
    pairs of the format ``(decoded_string, charset)`` where *charset* is the name of
    the character set.
 
-   :func:`decode_header`需要一个头值的字符串并返回一个``(decoded_string, charset)``序列对,其中*charset*是字符集名称. 
+   :func:`decode_header`需要一个头值的字符串并返回一个``(decoded_string, charset)``序列对, 其中*charset*是字符集名称. 
 
    This function takes one of those sequence of pairs and returns a
    :class:`Header` instance.  Optional *maxlinelen*, *header_name*, and
    *continuation_ws* are as in the :class:`Header` constructor.
 
-   此功能需要那些序列对,并返回一个:class:`Header`实例. 选项*maxlinelen*,*header_name*
+   此功能需要那些序列对, 并返回一个:class:`Header`实例. 选项*maxlinelen*, *header_name*
    *continuation_ws*与:class:`Header`构造函数一致. 
 
 

@@ -13,7 +13,7 @@
 The :mod:`wave` module provides a convenient interface to the WAV sound format.
 It does not support compression/decompression, but it does support mono/stereo.
 
-:mod "wave" 模块为WAV声音格式提供了一个方便的接口. 它不支持压缩/解压缩,但它确实
+:mod "wave" 模块为WAV声音格式提供了一个方便的接口. 它不支持压缩/解压缩, 但它确实
 支持单声道/立体声. 
 
 
@@ -27,7 +27,7 @@ The :mod:`wave` module defines the following function and exception:
    If *file* is a string, open the file by that name, otherwise treat it as a
    seekable file-like object.  *mode* can be any of
 
-    如果*file*是一个字符串,打开该名称的文件,否则视
+    如果*file*是一个字符串, 打开该名称的文件, 否则视
    它为一个可搜索的文件一样的对象.  *mode*可为任意
 
    ``'r'``, ``'rb'``
@@ -61,8 +61,8 @@ The :mod:`wave` module defines the following function and exception:
    :meth:`close` method is called; it is the caller's responsibility to close
    the file object.
 
-   如果你通过一个file-like对象,当``close()``方法被调用时wave对象不会关闭它. 
-   ,它是关闭文件对象调用者的责任. 
+   如果你通过一个file-like对象, 当``close()``方法被调用时wave对象不会关闭它. 
+   , 它是关闭文件对象调用者的责任. 
 
 
 .. function:: openfp(file, mode)
@@ -78,7 +78,7 @@ The :mod:`wave` module defines the following function and exception:
    An error raised when something is impossible because it violates the WAV
    specification or hits an implementation deficiency.
 
-    提出错误的某件事情是不可能时,因为它违反WAV规格或点击缺乏执行情况. 
+    提出错误的某件事情是不可能时, 因为它违反WAV规格或点击缺乏执行情况. 
 
 
 .. _wave-read-objects:
@@ -88,7 +88,7 @@ Wave_read Objects
 
 Wave_read objects, as returned by :func:`.open`, have the following methods:
 
-``open()``,返回Wave_read对象,有以下几种方法: 
+``open()``,返回Wave_read对象, 有以下几种方法: 
 
 
 .. method:: Wave_read.close()
@@ -96,7 +96,7 @@ Wave_read objects, as returned by :func:`.open`, have the following methods:
    Close the stream if it was opened by :mod:`wave`, and make the instance
    unusable.  This is called automatically on object collection.
 
-   如果它被 "wave" 打开了则关闭流,使实例无法使用. 
+   如果它被 "wave" 打开了则关闭流, 使实例无法使用. 
    这就是所谓的自动对象的集合. 
 
 
@@ -104,7 +104,7 @@ Wave_read objects, as returned by :func:`.open`, have the following methods:
 
    Returns number of audio channels (``1`` for mono, ``2`` for stereo).
 
-    返回的音频通道数 (``1``单声道,``2``立体声) . 
+    返回的音频通道数 (``1``单声道, ``2``立体声) . 
 
 
 .. method:: Wave_read.getsampwidth()
@@ -148,7 +148,7 @@ Wave_read objects, as returned by :func:`.open`, have the following methods:
    Returns a tuple ``(nchannels, sampwidth, framerate, nframes, comptype,
    compname)``, equivalent to output of the :meth:`get\*` methods.
 
-   返回一个元组 " (nchannels,sampwidth,framerate,nframes,comptype,compname) " ,
+   返回一个元组 " (nchannels, sampwidth, framerate, nframes, comptype, compname) " , 
    相当于输出``get*()`` 方法. 
 
 
@@ -158,7 +158,7 @@ Wave_read objects, as returned by :func:`.open`, have the following methods:
 
     Reads and returns at most *n* frames of audio, as a string of
    bytes.
-   在最多的*n*音频信号帧,读取并返回一个字符串. 
+   在最多的*n*音频信号帧, 读取并返回一个字符串. 
 
 
 .. method:: Wave_read.rewind()
@@ -171,7 +171,7 @@ Wave_read objects, as returned by :func:`.open`, have the following methods:
 The following two methods are defined for compatibility with the :mod:`aifc`
 module, and don't do anything interesting.
 
-以下两种方法被定义为与 "AIFC" 模块的兼容性,并没有做什么有趣的. 
+以下两种方法被定义为与 "AIFC" 模块的兼容性, 并没有做什么有趣的. 
 
 
 .. method:: Wave_read.getmarkers()
@@ -190,7 +190,7 @@ module, and don't do anything interesting.
 The following two methods define a term "position" which is compatible between
 them, and is otherwise implementation dependent.
 
-以下两种方法定义一个长期的 "位置" ,这是他们之间的兼容,另有依赖于实现. 
+以下两种方法定义一个长期的 "位置" , 这是他们之间的兼容, 另有依赖于实现. 
 
 
 .. method:: Wave_read.setpos(pos)
@@ -214,7 +214,7 @@ Wave_write Objects
 
 Wave_write objects, as returned by :func:`.open`, have the following methods:
 
-``open()``返回Wave_write对象,有以下几种方法: 
+``open()``返回Wave_write对象, 有以下几种方法: 
 
 
 .. method:: Wave_write.close()
@@ -222,7 +222,7 @@ Wave_write objects, as returned by :func:`.open`, have the following methods:
    Make sure *nframes* is correct, and close the file if it was opened by
    :mod:`wave`.  This method is called upon object collection.
 
-   确保*nframes* 是正确的,如果它是由``wave``打开并关闭该文件. 
+   确保*nframes* 是正确的, 如果它是由``wave``打开并关闭该文件. 
    这种方法被称为对对象集合. 
 
 
@@ -259,7 +259,7 @@ Wave_write objects, as returned by :func:`.open`, have the following methods:
    Set the number of frames to *n*. This will be changed later if more frames are
    written.
 
-   以后如果有更多的帧被写入,那么*n*设置帧的数量这将被改变,. 
+   以后如果有更多的帧被写入, 那么*n*设置帧的数量这将被改变, . 
 
 
 .. method:: Wave_write.setcomptype(type, name)
@@ -267,7 +267,7 @@ Wave_write objects, as returned by :func:`.open`, have the following methods:
    Set the compression type and description. At the moment, only compression type
    ``NONE`` is supported, meaning no compression.
 
-   设置的压缩类型和描述. 目前,仅有压缩型``NONE``支持,
+   设置的压缩类型和描述. 目前,仅有压缩型``NONE``支持, 
    这意味着没有压缩..
 
 
@@ -287,7 +287,7 @@ Wave_write objects, as returned by :func:`.open`, have the following methods:
    Return current position in the file, with the same disclaimer for the
    :meth:`Wave_read.tell` and :meth:`Wave_read.setpos` methods.
 
-    返回文件的当前位置,
+    返回文件的当前位置, 
    ``Wave_read.tell()``和``Wave_read.setpos()``方法有相同的免责声明. 
 
 
@@ -295,21 +295,21 @@ Wave_write objects, as returned by :func:`.open`, have the following methods:
 
    Write audio frames, without correcting *nframes*.
 
-   写的音频帧,不纠正* nframes*.
+   写的音频帧, 不纠正* nframes*.
 
 
 .. method:: Wave_write.writeframes(data)
 
    Write audio frames and make sure *nframes* is correct.
 
-    写的音频帧,并确保*nframes* 是正确的. 
+    写的音频帧, 并确保*nframes* 是正确的. 
 
 
 Note that it is invalid to set any parameters after calling :meth:`writeframes`
 or :meth:`writeframesraw`, and any attempt to do so will raise
 :exc:`wave.Error`.
 
-请注意,任何参数设置后调用``writeframes()`` 或者 ``writeframesraw()``它将会是无效的,
+请注意, 任何参数设置后调用``writeframes()`` 或者 ``writeframesraw()``它将会是无效的,
 任何尝试只做会提高 "wave.Error" . 
 
 

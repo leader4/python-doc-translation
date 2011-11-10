@@ -30,7 +30,7 @@ representation of Macintosh files in ASCII. Only the data fork is handled.
    output filename is read from the binhex file.
 
    解码一个binhex的*input*文件. *input* 可能是一个文件名或者是一个支持``read()``
-   和``close()``方法的类文件对象.如果参数不是``None``,结果写入到*output*文件中. 
+   和``close()``方法的类文件对象.如果参数不是``None``, 结果写入到*output*文件中. 
    否则输入文件名来自binhex文件. 
 
    The following exception is also defined:
@@ -62,19 +62,19 @@ representation of Macintosh files in ASCII. Only the data fork is handled.
 There is an alternative, more powerful interface to the coder and decoder, see
 the source for details.
 
-   这是一个非常规的,强大的编码和解码的接口. 细节参考源文件. 
+   这是一个非常规的, 强大的编码和解码的接口. 细节参考源文件. 
 
 
 If you code or decode textfiles on non-Macintosh platforms they will still use
 the old Macintosh newline convention (carriage-return as end of line).
 
-如果你在非Macintosh平台上编码或者解码文本文件,将仍然使用旧的Macintosh的换行符
+如果你在非Macintosh平台上编码或者解码文本文件, 将仍然使用旧的Macintosh的换行符
 约定(回车作为一行的结束). 
 
 
 As of this writing, :func:`hexbin` appears to not work in all cases.
 
-当在写的时候,只要出现了``hexbin()`` 都不能工作. 
+当在写的时候, 只要出现了``hexbin()`` 都不能工作. 
 
 
 

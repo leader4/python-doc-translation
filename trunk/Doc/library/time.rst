@@ -152,7 +152,7 @@ The module defines the following functions and data items:
    as returned by :func:`localtime` is used. Locale information is not used by
    :func:`asctime`.
    
-     将一个struct_time(默认为当时时间),转换成字符串. 
+     将一个struct_time(默认为当时时间), 转换成字符串. 
 
    .. note::
 
@@ -176,9 +176,9 @@ The module defines the following functions and data items:
    :c:func:`QueryPerformanceCounter`. The resolution is typically better than one
    microsecond.
    
-     该函数有两个功能,
-  在第一次调用的时候,返回的是程序运行的实际时间; 
-  以第二次之后的调用,返回的是自第一次调用后,到这次调用的时间间隔
+     该函数有两个功能, 
+  在第一次调用的时候, 返回的是程序运行的实际时间; 
+  以第二次之后的调用, 返回的是自第一次调用后,到这次调用的时间间隔
 
 
 .. function:: ctime([secs])
@@ -205,7 +205,7 @@ The module defines the following functions and data items:
    :class:`struct_time` object. See :func:`calendar.timegm` for the inverse of this
    function.
    
-   将一个时间戳转换成一个UTC时区(0时区)的struct_time,如果seconds参数未输入,则以当前时间为转换标准
+   将一个时间戳转换成一个UTC时区(0时区)的struct_time, 如果seconds参数未输入, 则以当前时间为转换标准
 
 
 .. function:: localtime([secs])
@@ -214,7 +214,7 @@ The module defines the following functions and data items:
    :const:`None`, the current time as returned by :func:`time` is used.  The dst
    flag is set to ``1`` when DST applies to the given time.
    
-     将一个时间戳转换成一个当前时区的struct_time,如果seconds参数未输入,则以当前时间为转换标准
+     将一个时间戳转换成一个当前时区的struct_time, 如果seconds参数未输入, 则以当前时间为转换标准
 
 
 .. function:: mktime(t)
@@ -240,7 +240,7 @@ The module defines the following functions and data items:
    routine.  Also, the suspension time may be longer than requested by an arbitrary
    amount because of the scheduling of other activity in the system.
    
-     线程推迟指定的时间运行,经过测试,单位为秒,但是在帮助文档中有以下这样一句话,这关是看不懂
+     线程推迟指定的时间运行, 经过测试, 单位为秒, 但是在帮助文档中有以下这样一句话, 这关是看不懂
    "The argument may be a floating point number for subsecond precision." 
 
 
@@ -255,7 +255,7 @@ The module defines the following functions and data items:
    0 is a legal argument for any position in the time tuple; if it is normally
    illegal the value is forced to a correct one.
    
-   将指定的struct_time(默认为当前时间),根据指定的格式化字符串输出
+   将指定的struct_time(默认为当前时间), 根据指定的格式化字符串输出
   python中时间日期格式化符号: 
   %y 两位数的年份表示 (00-99) 
   %Y 四位数的年份表示 (000-9999) 
@@ -386,7 +386,7 @@ The module defines the following functions and data items:
   %j 年内的一天 (001-366) 
   %p 本地A.M.或P.M.的等价符
   %U 一年中的星期数 (00-53) 星期天为星期的开始
-  %w 星期 (0-6) ,星期天为星期的开始
+  %w 星期 (0-6) , 星期天为星期的开始
   %W 一年中的星期数 (00-53) 星期一为星期的开始
   %x 本地相应的日期表示
   %X 本地相应的时间表示

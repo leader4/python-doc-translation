@@ -129,7 +129,7 @@ you're using to solve it, but it's human nature to view this as a failure of
 some sort.
 
 
-简单,容易理解
+简单, 容易理解
 ------------------------------------
 
 Python is definitely *not* a toy language that's only usable for small tasks.

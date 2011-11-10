@@ -28,7 +28,7 @@ subshell.  (For tilde and shell variable expansion, use
    :file:`../../Tools/\*/\*.gif`), and can contain shell-style wildcards. Broken
    symlinks are included in the results (as in the shell).
    
-   返回所有匹配的文件路径列表. 它只有一个参数pathname,定义了文件路径匹配规则,这里可以是绝对路径,也可以是相对路径. 
+   返回所有匹配的文件路径列表. 它只有一个参数pathname, 定义了文件路径匹配规则, 这里可以是绝对路径, 也可以是相对路径. 
 
 
 .. function:: iglob(pathname)
@@ -36,8 +36,8 @@ subshell.  (For tilde and shell variable expansion, use
    Return an :term:`iterator` which yields the same values as :func:`glob`
    without actually storing them all simultaneously.
    
-   获取一个可编历对象,使用它可以逐个获取匹配的文件路径名. 与glob.glob()的区别是: 
-   glob.glob同时获取所有的匹配路径,而glob.iglob一次只获取一个匹配路径. 这有点类似于.NET中操作数据库用到的DataSet与DataReader. 
+   获取一个可编历对象, 使用它可以逐个获取匹配的文件路径名. 与glob.glob()的区别是: 
+   glob.glob同时获取所有的匹配路径, 而glob.iglob一次只获取一个匹配路径. 这有点类似于.NET中操作数据库用到的DataSet与DataReader. 
 
 
 For example, consider a directory containing only the following files:

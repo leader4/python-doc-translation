@@ -27,5 +27,5 @@ Be careful to not use this module where deadlock might occur from a thread being
 created that blocks waiting for another thread to be created.  This often occurs
 with blocking I/O.
 
-在创建一个线程时,如果它需要等待另一个线程被创建,这时候应当小心使用该模块,因为会导致死锁,并且这种现象很容易出现并堵塞I/O. 
+在创建一个线程时, 如果它需要等待另一个线程被创建, 这时候应当小心使用该模块, 因为会导致死锁, 并且这种现象很容易出现并堵塞I/O. 
 

@@ -14,11 +14,11 @@ Python also provides some built-in data types, in particular,
 Unicode strings, and the :class:`bytes` class is used to hold binary data.
 
 在本章中所描述的模块提供了多种专门的数据
-类型,如日期和时间,固定类型的数组,堆队列,同步队列,集合. 
+类型, 如日期和时间, 固定类型的数组, 堆队列, 同步队列, 集合. 
 
-Python还提供一些内置的数据类型,尤其是
+Python还提供一些内置的数据类型, 尤其是
 :class:`dict`, :class:`list`, :class:`set` and :class:`frozenset`,
-:class:`tuple`.  The :class:`str` 类是用来装载Unicode字符串,bytes类是用来存放二进制数据字节. 
+:class:`tuple`.  The :class:`str` 类是用来装载Unicode字符串, bytes类是用来存放二进制数据字节. 
 
 
 

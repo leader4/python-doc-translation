@@ -32,7 +32,7 @@ are always available.  They are listed here in alphabetical order.
    integer or a floating point number.  If the argument is a complex number, its
    magnitude is returned.
    
-       该函数返回一个number的绝对值. 参数x可以是plain、long interger或者浮点. 如果参数是复数,返回其数量级. 
+       该函数返回一个number的绝对值. 参数x可以是plain、long interger或者浮点. 如果参数是复数, 返回其数量级. 
 
 
 .. function:: all(iterable)
@@ -46,7 +46,7 @@ are always available.  They are listed here in alphabetical order.
                   return False
           return True
           
-    返回真,如果迭代器所有元素都是真. 
+    返回真, 如果迭代器所有元素都是真. 
 
 
 .. function:: any(iterable)
@@ -60,7 +60,7 @@ are always available.  They are listed here in alphabetical order.
                   return True
           return False
           
-    返回真,如果迭代器部分元素为真. 
+    返回真, 如果迭代器部分元素为真. 
     
 
 
@@ -91,7 +91,7 @@ are always available.  They are listed here in alphabetical order.
    :class:`int`. Class :class:`bool` cannot be subclassed further.  Its only
    instances are :const:`False` and :const:`True`.
    
-        将一个值转化为布尔类型. 如果x值假或者省略没有,返回False; 反之返回True. bool也是一个类,是int的父类. bool类没有其他的父类呢. 它只可能被实例化为False或者True. 
+        将一个值转化为布尔类型. 如果x值假或者省略没有, 返回False; 反之返回True. bool也是一个类, 是int的父类. bool类没有其他的父类呢. 它只可能被实例化为False或者True. 
 
 
    .. index:: pair: Boolean; type
@@ -147,7 +147,7 @@ are always available.  They are listed here in alphabetical order.
    Note that classes are callable (calling a class returns a new instance);
    instances are callable if their class has a :meth:`__call__` method.
    
-        如果对象参数是可调用的,该函数返回True,反之为False. 如果返回True,同样有可能调用失败,但是如果返回False,就绝对不可能调用成功. 注意这些类是可以调用的(调用一个类返回一个新实例),如果一个类有__call__()方法就可以调用类实例. 
+        如果对象参数是可调用的, 该函数返回True, 反之为False. 如果返回True, 同样有可能调用失败, 但是如果返回False, 就绝对不可能调用成功. 注意这些类是可以调用的(调用一个类返回一个新实例), 如果一个类有__call__()方法就可以调用类实例. 
 
    .. versionadded:: 3.2
       This function was first removed in Python 3.0 and then brought back
@@ -163,7 +163,7 @@ are always available.  They are listed here in alphabetical order.
    outside that range.
    
        返回整数对象i对应的的字符串表达. 比如chr(97)==a.
-       返回一个字符串,其ASCII码是一个整型i.比如chr(97)返回字符串' a'. 参数i的范围在0-255之间. 
+       返回一个字符串, 其ASCII码是一个整型i.比如chr(97)返回字符串' a'. 参数i的范围在0-255之间. 
 
    Note that on narrow Unicode builds, the result is a string of
    length two for *i* greater than 65,535 (0xFFFF in hexadecimal).
@@ -174,7 +174,7 @@ are always available.  They are listed here in alphabetical order.
 
    Return a class method for *function*.
    
-        一个类方法接受类,将其作为隐式的第一个参数,就像实例方法接受实例一样. 声明一个类方法是用如下方式:
+        一个类方法接受类, 将其作为隐式的第一个参数, 就像实例方法接受实例一样. 声明一个类方法是用如下方式:
 
 
    A class method receives the class as implicit first argument, just like an
@@ -193,7 +193,7 @@ are always available.  They are listed here in alphabetical order.
    method is called for a derived class, the derived class object is passed as the
    implied first argument.
    
-        如果一个类方法调用了一个此类的派生类,这个派生类对象就作为这个类函数的隐式的第一个参数. 
+        如果一个类方法调用了一个此类的派生类, 这个派生类对象就作为这个类函数的隐式的第一个参数. 
 
    Class methods are different than C++ or Java static methods. If you want those,
    see :func:`staticmethod` in this section.
@@ -208,7 +208,7 @@ are always available.  They are listed here in alphabetical order.
    by :func:`exec` or :func:`eval`.  *source* can either be a string or an AST
    object.  Refer to the :mod:`ast` module documentation for information on how
    to work with AST objects.
-        本函数将字符串编译成代码对象,并可以被exec语句执行,或者被evel()求值. filename参数指定所需要的字符串是从哪个文件得到的,,如果没有从该指定文件中得到所需要的string,就将传递一些有标示性的值 (string参数一般都是必须的) . 
+        本函数将字符串编译成代码对象, 并可以被exec语句执行, 或者被evel()求值. filename参数指定所需要的字符串是从哪个文件得到的, , 如果没有从该指定文件中得到所需要的string, 就将传递一些有标示性的值 (string参数一般都是必须的) . 
 
    The *filename* argument should give the file from which the code was read;
    pass some recognizable value if it wasn't read from a file (``'<string>'`` is
@@ -266,7 +266,7 @@ are always available.  They are listed here in alphabetical order.
    the function serves as a numeric conversion function like :func:`int`
    and :func:`float`.  If both arguments are omitted, returns ``0j``.
    
-        创建一个复数类型. 每个参数必须是数值类型,如果imag参数没有,默认为0,如果real和imag参数均无,则返回0j.
+        创建一个复数类型. 每个参数必须是数值类型, 如果imag参数没有, 默认为0, 如果real和imag参数均无, 则返回0j.
 
    The complex type is described in :ref:`typesnumeric`.
 
@@ -297,7 +297,7 @@ are always available.  They are listed here in alphabetical order.
    Without arguments, return the list of names in the current local scope.  With an
    argument, attempt to return a list of valid attributes for that object.
    
-   无需参数,返回当前local scope的名称列表,有参数,尝试返回当前参数对象有效属性列表. 
+   无需参数, 返回当前local scope的名称列表, 有参数, 尝试返回当前参数对象有效属性列表. 
 
    If the object has a method named :meth:`__dir__`, this method will be called and
    must return the list of attributes. This allows objects that implement a custom

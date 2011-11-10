@@ -164,7 +164,7 @@ This module defines the following functions and objects:
    The *func* will be passed to  :func:`sys.settrace` for each thread, before its
    :meth:`run` method is called.
    
-   设置一个跟踪函数,用于在run()执行之前被调用. 
+   设置一个跟踪函数, 用于在run()执行之前被调用. 
 
 
 .. function:: setprofile(func)
@@ -175,7 +175,7 @@ This module defines the following functions and objects:
    The *func* will be passed to  :func:`sys.setprofile` for each thread, before its
    :meth:`run` method is called.
    
-   设置一个跟踪函数,用于在run()执行完毕之后调用. 
+   设置一个跟踪函数, 用于在run()执行完毕之后调用. 
 
 
 .. function:: stack_size([size])
@@ -350,7 +350,7 @@ impossible to detect the termination of alien threads.
       when a thread exits and another thread is created.  The identifier is
       available even after the thread has exited.
       
-      获取线程的标识符. 线程标识符是一个非零整数,只有在调用了start()方法之后该属性才有效,否则它只返回None. 
+      获取线程的标识符. 线程标识符是一个非零整数, 只有在调用了start()方法之后该属性才有效, 否则它只返回None. 
 
    .. method:: is_alive()
 
@@ -360,7 +360,7 @@ impossible to detect the termination of alien threads.
       until just after the :meth:`run` method terminates.  The module function
       :func:`.enumerate` returns a list of all alive threads.
       
-      　判断线程是否是激活的 (alive) . 从调用start()方法启动线程,到run()方法执行完毕或遇到未处理异常而中断 这段时间内,线程是激活的. 
+      　判断线程是否是激活的 (alive) . 从调用start()方法启动线程, 到run()方法执行完毕或遇到未处理异常而中断 这段时间内, 线程是激活的. 
 
    .. attribute:: daemon
 
@@ -582,10 +582,10 @@ the call as often as necessary.
    or :class:`RLock` object, and it is used as the underlying lock.  Otherwise,
    a new :class:`RLock` object is created and used as the underlying lock.
    
-   可以把Condiftion理解为一把高级的琐,它提供了比Lock, RLock更高级的功能,允许我们能够控制复杂的线程同步问题. 
-   threadiong.Condition在内部维护一个琐对象 (默认是RLock) ,可以在创建Condigtion对象的时候把琐对象作为参数传入. 
-   Condition也提供了acquire, release方法,其含义与琐的acquire, release方法一致,其实它只是简单的调用内部琐对象的对应的方法而已. 
-   Condition还提供了如下方法(特别要注意: 这些方法只有在占用琐(acquire)之后才能调用,否则将会报RuntimeError异常. )
+   可以把Condiftion理解为一把高级的琐, 它提供了比Lock, RLock更高级的功能, 允许我们能够控制复杂的线程同步问题. 
+   threadiong.Condition在内部维护一个琐对象 (默认是RLock) , 可以在创建Condigtion对象的时候把琐对象作为参数传入. 
+   Condition也提供了acquire, release方法, 其含义与琐的acquire, release方法一致, 其实它只是简单的调用内部琐对象的对应的方法而已. 
+   Condition还提供了如下方法(特别要注意: 这些方法只有在占用琐(acquire)之后才能调用, 否则将会报RuntimeError异常. )
 
    .. method:: acquire(*args)
 
@@ -603,7 +603,7 @@ the call as often as necessary.
       not acquired the lock when this method is called, a :exc:`RuntimeError` is
       raised.
       
-      wait方法释放内部所占用的琐,同时线程被挂起,直至接收到通知被唤醒或超时 (如果提供了timeout参数的话) . 当线程被唤醒并重新占有琐的时候,程序才会继续执行下去. 
+      wait方法释放内部所占用的琐, 同时线程被挂起, 直至接收到通知被唤醒或超时 (如果提供了timeout参数的话) . 当线程被唤醒并重新占有琐的时候, 程序才会继续执行下去. 
 
       This method releases the underlying lock, and then blocks until it is
       awakened by a :meth:`notify` or :meth:`notify_all` call for the same
@@ -777,7 +777,7 @@ An event object manages an internal flag that can be set to true with the
 :meth:`~Event.set` method and reset to false with the :meth:`clear` method.  The
 :meth:`wait` method blocks until the flag is true.
 
-Event实现与Condition类似的功能,不过比Condition简单一点. 它通过维护内部的标识符来实现线程间的同步问题. 
+Event实现与Condition类似的功能, 不过比Condition简单一点. 它通过维护内部的标识符来实现线程间的同步问题. 
  (threading.Event和.NET中的System.Threading.ManualResetEvent类实现同样的功能. ) 
 
 
@@ -811,7 +811,7 @@ Event实现与Condition类似的功能,不过比Condition简单一点. 它通过
       entry, return immediately.  Otherwise, block until another thread calls
       :meth:`set` to set the flag to true, or until the optional timeout occurs.
       
-      堵塞线程,直到Event对象内部标识位被设为True或超时 (如果提供了参数timeout) . 
+      堵塞线程, 直到Event对象内部标识位被设为True或超时 (如果提供了参数timeout) . 
 
       When the timeout argument is present and not ``None``, it should be a
       floating point number specifying a timeout for the operation in seconds

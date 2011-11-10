@@ -100,7 +100,7 @@ your system, it declares the functions :c:func:`malloc`, :c:func:`free` and
 :c:func:`realloc` directly.
 
 除了在标准头文件里定义的符号, :file:`Python.h` 定义的所有用户可见符号都有一个前缀,
-``Py`` 或 ``PY``. 为了方便, 而且因为它们被 Python 解释器广泛地使用, ``"Python.h"``
+``Py`` 或 ``PY``. 为了方便,  而且因为它们被 Python 解释器广泛地使用, ``"Python.h"``
 包含几个标准头文件: ``<stdio.h>``, ``string.h``, ``<errno.h``, 和 ``<stdlib.h>``.
 如果后面的头文件在你的系统里不存在的话, 它会直接地声明函数 :c:func:`malloc`,
 :c:func:`free` 和 :c:func:`realloc`.
@@ -242,8 +242,8 @@ fine to do so.  As a general rule, however, this is not necessary, and can cause
 information about the cause of the error to be lost: most operations can fail
 for a variety of reasons.)
 
-有一些情况,一个模块实际上能通过调用其他PyErr_*函数给出错误的更多细节信息,在这些情形下,调用其他函数是很好的. 
-然而,按照惯例,上述这种做法并不需要,它可能会导致引起错误原因的信息丢失: 绝大部分操作都可能由于各种各样的原因而失败. 
+有一些情况, 一个模块实际上能通过调用其他PyErr_*函数给出错误的更多细节信息, 在这些情形下, 调用其他函数是很好的. 
+然而, 按照惯例, 上述这种做法并不需要, 它可能会导致引起错误原因的信息丢失: 绝大部分操作都可能由于各种各样的原因而失败. 
 
 To ignore an exception set by a function call that failed, the exception
 condition must be cleared explicitly by calling :c:func:`PyErr_Clear`.  The only
@@ -251,7 +251,7 @@ time C code should call :c:func:`PyErr_Clear` is if it doesn't want to pass the
 error on to the interpreter but wants to handle it completely by itself
 (possibly by trying something else, or pretending nothing went wrong).
 
-为了忽略一个失败的函数调用而导致的异常,这种异常情况必须保证通过调用PyErr_Clear函数被清除,C语言只有在它不想将错误传递给解释器而想完全自主的控制它的情况下才需调用Python_Clear. 
+为了忽略一个失败的函数调用而导致的异常, 这种异常情况必须保证通过调用PyErr_Clear函数被清除, C语言只有在它不想将错误传递给解释器而想完全自主的控制它的情况下才需调用Python_Clear. 
 
 Every failing :c:func:`malloc` call must be turned into an exception --- the
 direct caller of :c:func:`malloc` (or :c:func:`realloc`) must call
@@ -259,19 +259,19 @@ direct caller of :c:func:`malloc` (or :c:func:`realloc`) must call
 object-creating functions (for example, :c:func:`PyLong_FromLong`) already do
 this, so this note is only relevant to those who call :c:func:`malloc` directly.
 
-每一个内存分配 (malloc) 调用的失败必须产生一个异常----直接内存分配的调用者必须调用PyErr_NoMemory并返回一个失败提示. 所有的对象创建函数 (如PyInt_FromLong) 已经做到了这一点,所以这条规则是和那些想直接调用内存分配 (malloc) 有关的. 
+每一个内存分配 (malloc) 调用的失败必须产生一个异常----直接内存分配的调用者必须调用PyErr_NoMemory并返回一个失败提示. 所有的对象创建函数 (如PyInt_FromLong) 已经做到了这一点, 所以这条规则是和那些想直接调用内存分配 (malloc) 有关的. 
 
 Also note that, with the important exception of :c:func:`PyArg_ParseTuple` and
 friends, functions that return an integer status usually return a positive value
 or zero for success and ``-1`` for failure, like Unix system calls.
 
-还需注意的是,通过PyArg_ParseTuple、函数,若返回一个正整数或0则表示成功,而-1表示失败,这就像Unix操作系统中的调用. 
+还需注意的是, 通过PyArg_ParseTuple、函数, 若返回一个正整数或0则表示成功, 而-1表示失败, 这就像Unix操作系统中的调用. 
 
 Finally, be careful to clean up garbage (by making :c:func:`Py_XDECREF` or
 :c:func:`Py_DECREF` calls for objects you have already created) when you return
 an error indicator!
 
-最后,当你返回一个错误指示时小心清除垃圾 (通过执行对已创建对象的调用函数Py_XDECREF或Py_DECREF) 
+最后, 当你返回一个错误指示时小心清除垃圾 (通过执行对已创建对象的调用函数Py_XDECREF或Py_DECREF) 
 
 The choice of which exception to raise is entirely yours.  There are predeclared
 C objects corresponding to all built-in Python exceptions, such as
@@ -283,13 +283,13 @@ function usually raises :c:data:`PyExc_TypeError`.  If you have an argument whos
 value must be in a particular range or must satisfy other conditions,
 :c:data:`PyExc_ValueError` is appropriate.
 
-是否去引发异常完全由你的选择,对于Python内建异常,都有与之对应的C语言对象,如PyExc_TypeError表示文件无法打开
-(这很可能是PyExc_IOError). 如果参数列表出现了问题,PyArg_ParseTuple函数通常会引发PyExc_TypeError. 而若是一个参数的值必须在一定范围内或者必须满足其他条件,便引发PyExc_ValueError. 
+是否去引发异常完全由你的选择, 对于Python内建异常, 都有与之对应的C语言对象, 如PyExc_TypeError表示文件无法打开
+(这很可能是PyExc_IOError). 如果参数列表出现了问题, PyArg_ParseTuple函数通常会引发PyExc_TypeError. 而若是一个参数的值必须在一定范围内或者必须满足其他条件, 便引发PyExc_ValueError. 
 
 You can also define a new exception that is unique to your module. For this, you
 usually declare a static object variable at the beginning of your file:
 
-你也可以定义一些新的对于你的模块来说是唯一的异常. 这样,你通常会在源文件的开头部分声明一个静态对象变量::
+你也可以定义一些新的对于你的模块来说是唯一的异常. 这样, 你通常会在源文件的开头部分声明一个静态对象变量::
 
    static PyObject *SpamError;
 
@@ -318,7 +318,7 @@ Note that the Python name for the exception object is :exc:`spam.error`.  The
 being :exc:`Exception` (unless another class is passed in instead of *NULL*),
 described in :ref:`bltin-exceptions`.
 
-注意这个异常对象的Python名是spam.error. 而PyErr_NewException函数会用基础异常类建立一个类 (除非有另外一个类已经换作NULL通过) ,这是内建异常中所描述的. 
+注意这个异常对象的Python名是spam.error. 而PyErr_NewException函数会用基础异常类建立一个类 (除非有另外一个类已经换作NULL通过) , 这是内建异常中所描述的. 
 
 Note also that the :c:data:`SpamError` variable retains a reference to the newly
 created exception class; this is intentional!  Since the exception could be
@@ -327,7 +327,7 @@ needed to ensure that it will not be discarded, causing :c:data:`SpamError` to
 become a dangling pointer. Should it become a dangling pointer, C code which
 raises the exception could cause a core dump or other unintended side effects.
 
-还需注意的是,SpamError变量会保留一个对新创建异常类的引用,而这是有深意的. 因为异常可以被外部函数从模块中移除掉,而这个类的引用需要用来保证它不会被抛弃 (译者注: 即失去对该异常类的跟踪) ,导致其为一个悬指针,引发该异常的C语言代码会引起存储器清0或其他意想不到的副作用(side effects). 
+还需注意的是, SpamError变量会保留一个对新创建异常类的引用, 而这是有深意的. 因为异常可以被外部函数从模块中移除掉, 而这个类的引用需要用来保证它不会被抛弃 (译者注: 即失去对该异常类的跟踪) , 导致其为一个悬指针, 引发该异常的C语言代码会引起存储器清0或其他意想不到的副作用(side effects). 
 We discuss the use of PyMODINIT_FUNC as a function return type later in this sample.
 接下来我们讨论这个例子(sample)中的作为函数返回类型的PyMODINIT_FUNC的用法. 
 

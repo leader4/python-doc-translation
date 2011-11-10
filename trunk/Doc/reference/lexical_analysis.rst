@@ -227,7 +227,7 @@ implementation of the read-eval-print loop.  In the standard interactive
 interpreter, an entirely blank logical line (i.e. one containing not even
 whitespace or a comment) terminates a multi-line statement.
 
-只含有空格、制表符、进纸符和一个可选注释的逻辑行,在解析过程中是被忽略的 (即不会产生对应的NEWLINE语言符号). 在语句进行交互式输入时,对空行的处理可能不同,这依赖于 "输入-计算-输出"  (read-eval-print) 循环的实现方式. 在标准交互解释器中,一个纯粹的空行 (即不包括任何东西,甚至注释和空白) 才会结束多行语句. 
+只含有空格、制表符、进纸符和一个可选注释的逻辑行, 在解析过程中是被忽略的 (即不会产生对应的NEWLINE语言符号). 在语句进行交互式输入时, 对空行的处理可能不同, 这依赖于 "输入-计算-输出"  (read-eval-print) 循环的实现方式. 在标准交互解释器中, 一个纯粹的空行 (即不包括任何东西,甚至注释和空白) 才会结束多行语句. 
 
 .. _indentation:
 
@@ -240,7 +240,7 @@ Leading whitespace (spaces and tabs) at the beginning of a logical line is used
 to compute the indentation level of the line, which in turn is used to determine
 the grouping of statements.
 
-逻辑行的前导空白 (空格和制表符) 用于计算行的缩进层次,缩进层次然后用于语句的分组. 
+逻辑行的前导空白 (空格和制表符) 用于计算行的缩进层次, 缩进层次然后用于语句的分组. 
 
 Tabs are replaced (from left to right) by one to eight spaces such that the
 total number of characters up to and including the replacement is a multiple of
@@ -250,34 +250,34 @@ indentation.  Indentation cannot be split over multiple physical lines using
 backslashes; the whitespace up to the first backslash determines the
 indentation.
 
-首先, 制表符被转换成 (从左到右) 一至八个空格,这样直到包括替换部分的字符总数达到八的倍数 (这是为了与UNIX的规则保持一致. 然后,根据首个非空白字符前的空格总数计算行的缩进层次.  "缩进" 是不能用反斜线跨物理行接续的. 只有反斜线之前的空白字符才用于确定缩进层次. 
+首先, 制表符被转换成 (从左到右) 一至八个空格, 这样直到包括替换部分的字符总数达到八的倍数 (这是为了与UNIX的规则保持一致. 然后, 根据首个非空白字符前的空格总数计算行的缩进层次.  "缩进" 是不能用反斜线跨物理行接续的. 只有反斜线之前的空白字符才用于确定缩进层次. 
 
 Indentation is rejected as inconsistent if a source file mixes tabs and spaces
 in a way that makes the meaning dependent on the worth of a tab in spaces; a
 :exc:`TabError` is raised in that case.
 
-如果源文件混合使用了制表符和空格,并且缩进的意义依赖于制表符的空格长度的话,那么这种缩进会以不一致为原因被拒绝,并会抛出 :exc:`TabError` 异常. 
+如果源文件混合使用了制表符和空格, 并且缩进的意义依赖于制表符的空格长度的话, 那么这种缩进会以不一致为原因被拒绝, 并会抛出 :exc:`TabError` 异常. 
 
 **Cross-platform compatibility note:** because of the nature of text editors on
 non-UNIX platforms, it is unwise to use a mixture of spaces and tabs for the
 indentation in a single source file.  It should also be noted that different
 platforms may explicitly limit the maximum indentation level.
 
-**跨平台兼容性注意: ** 由于在非UNIX平台上的文本编辑器特性,在单个源文件里使用混合空格和制表符的缩进是不明智的. 另一个值得注意的地方是不同平台可能明确地限制了最大缩进层次. 
+**跨平台兼容性注意: ** 由于在非UNIX平台上的文本编辑器特性, 在单个源文件里使用混合空格和制表符的缩进是不明智的. 另一个值得注意的地方是不同平台可能明确地限制了最大缩进层次. 
 
 A formfeed character may be present at the start of the line; it will be ignored
 for the indentation calculations above.  Formfeed characters occurring elsewhere
 in the leading whitespace have an undefined effect (for instance, they may reset
 the space count to zero).
 
-换页符 (formfeed) 可以出现在行首,但以上介绍的缩进计算过程会忽略它. 在行前置空白的其它位置上出现的换页符会导致未定义的行为 (例如,它可能使空格数重置为零) . 
+换页符 (formfeed) 可以出现在行首, 但以上介绍的缩进计算过程会忽略它. 在行前置空白的其它位置上出现的换页符会导致未定义的行为 (例如, 它可能使空格数重置为零) . 
 
 .. index:: INDENT token, DEDENT token
 
 The indentation levels of consecutive lines are used to generate INDENT and
 DEDENT tokens, using a stack, as follows.
 
-每种连续行缩进的层次都会产生语言符号INDENT和DEDENT,这里使用了堆栈数据结构,如下所述. 
+每种连续行缩进的层次都会产生语言符号INDENT和DEDENT, 这里使用了堆栈数据结构, 如下所述. 
 
 Before the first line of the file is read, a single zero is pushed on the stack;
 this will never be popped off again.  The numbers pushed on the stack will
@@ -290,7 +290,7 @@ popped off, and for each number popped off a DEDENT token is generated.  At the
 end of the file, a DEDENT token is generated for each number remaining on the
 stack that is larger than zero.
 
-在未读入文件第一行之前,压入 (push) 内一个零,它此后再也不会被弹出 (pop) . 所有压入堆栈中的数字都从底部向顶部增长. 在每个逻辑行的开头处,它的缩进层次与栈顶比较,如果两者相等则什么也不会发生; 如果它大于栈顶,将其压入栈中,并产生一个INDENT语言符号; 如果小于栈顶, 那么它的值应该已经出现于堆栈中,堆栈中所有大于它的数都将被弹出,并且每个都产生一个DEDENT语言符号. 到达文件尾时,堆栈中大于零的数字都被弹出,每弹出一个数字都会产生一个DEDENT语言符号. 
+在未读入文件第一行之前, 压入 (push) 内一个零, 它此后再也不会被弹出 (pop) . 所有压入堆栈中的数字都从底部向顶部增长. 在每个逻辑行的开头处, 它的缩进层次与栈顶比较, 如果两者相等则什么也不会发生; 如果它大于栈顶, 将其压入栈中, 并产生一个INDENT语言符号; 如果小于栈顶, 那么它的值应该已经出现于堆栈中, 堆栈中所有大于它的数都将被弹出, 并且每个都产生一个DEDENT语言符号. 到达文件尾时, 堆栈中大于零的数字都被弹出, 每弹出一个数字都会产生一个DEDENT语言符号. 
 
 Here is an example of a correctly (though confusingly) indented piece of Python
 code:
@@ -336,7 +336,7 @@ tokens.  Whitespace is needed between two tokens only if their concatenation
 could otherwise be interpreted as a different token (e.g., ab is one token, but
 a b is two tokens).
 
-除了位于在逻辑行开始处或者字符串当中,空格,制表符和进纸符这些空白字符可以等效地用于分隔语言符号 (token) . 只在两个符号在连接后会有其它含义时才需要使用空白分割它们,例如,ab是一个符号,但a b是两个符号. 
+除了位于在逻辑行开始处或者字符串当中, 空格, 制表符和进纸符这些空白字符可以等效地用于分隔语言符号 (token) . 只在两个符号在连接后会有其它含义时才需要使用空白分割它们, 例如, ab是一个符号,但a b是两个符号. 
 
 .. _other-tokens:
 
@@ -349,7 +349,7 @@ characters (other than line terminators, discussed earlier) are not tokens, but
 serve to delimit tokens. Where ambiguity exists, a token comprises the longest
 possible string that forms a legal token, when read from left to right.
 
-除了NEWLINE、INDENT和DEDENT外,还有以下几类语言符号:  *标识符* , *关键字* 、 *字面值* 、 *运算符* 和 *分隔符* . 空白不是语言符号 (除了断行符,如前所述) ,但可以用于分隔语言符号. 如果在构造某语言符号可能存在歧义时,就试图用尽量长的字符串 (从左至右读出的) 构造一个合法语言符号. 
+除了NEWLINE、INDENT和DEDENT外, 还有以下几类语言符号:  *标识符* ,  *关键字* 、 *字面值* 、 *运算符* 和 *分隔符* . 空白不是语言符号 (除了断行符, 如前所述) , 但可以用于分隔语言符号. 如果在构造某语言符号可能存在歧义时, 就试图用尽量长的字符串 (从左至右读出的) 构造一个合法语言符号. 
 
 .. _identifiers:
 
@@ -367,24 +367,24 @@ The syntax of identifiers in Python is based on the Unicode standard annex
 UAX-31, with elaboration and changes as defined below; see also :pep:`3131` for
 further details.
 
-下面介绍的Python标识符定义是在Unicode standard annex UAX-31的基础上加以修改而成的,更多细节可以参考 :pep:`3131` . 
+下面介绍的Python标识符定义是在Unicode standard annex UAX-31的基础上加以修改而成的, 更多细节可以参考 :pep:`3131` . 
 
 Within the ASCII range (U+0001..U+007F), the valid characters for identifiers
 are the same as in Python 2.x: the uppercase and lowercase letters ``A`` through
 ``Z``, the underscore ``_`` and, except for the first character, the digits
 ``0`` through ``9``.
 
-在ASCII范围(U+0001..U+007F)内,标识符的有效字符与Python 2.x相同: 大小写字母 (A-Z) 、下划线,以及不能作为标识符开始的数字 (0-9) . 
+在ASCII范围(U+0001..U+007F)内, 标识符的有效字符与Python 2.x相同: 大小写字母 (A-Z) 、下划线, 以及不能作为标识符开始的数字 (0-9) . 
 
 Python 3.0 introduces additional characters from outside the ASCII range (see
 :pep:`3131`).  For these characters, the classification uses the version of the
 Unicode Character Database as included in the :mod:`unicodedata` module.
 
-Python 3.0引入了在ASCII范围之外额外字符 (参见 :pep:`3131` ) . 对于这些字符,分类 (classification) 可以使用 :mod:`unicodedata` 模块中的Unicode Character Database. 
+Python 3.0引入了在ASCII范围之外额外字符 (参见 :pep:`3131` ) . 对于这些字符, 分类 (classification) 可以使用 :mod:`unicodedata` 模块中的Unicode Character Database. 
 
 Identifiers are unlimited in length.  Case is significant.
 
-标识符不限长度,区分大小写. 
+标识符不限长度, 区分大小写. 
 
 .. productionlist::
    identifier: `xid_start` `xid_continue`*
@@ -434,7 +434,7 @@ The following identifiers are used as reserved words, or *keywords* of the
 language, and cannot be used as ordinary identifiers.  They must be spelled
 exactly as written here:
 
-以下标识符用作保留字, 或者叫做语言的 *关键字* ,它们不能作为普通标识符使用,而且它们必须按如下拼写严格书写: 
+以下标识符用作保留字, 或者叫做语言的 *关键字* , 它们不能作为普通标识符使用, 而且它们必须按如下拼写严格书写: 
 
 .. sourcecode:: text
 
@@ -455,7 +455,7 @@ Certain classes of identifiers (besides keywords) have special meanings.  These
 classes are identified by the patterns of leading and trailing underscore
 characters:
 
-除了关键字,某些类型的标识符也具有特殊含义,这种标识符一般都以下划线开始或结束: 
+除了关键字, 某些类型的标识符也具有特殊含义, 这种标识符一般都以下划线开始或结束: 
 
 ``_*``
    Not imported by ``from module import *``.  The special identifier ``_`` is used
@@ -463,7 +463,7 @@ characters:
    stored in the :mod:`builtins` module.  When not in interactive mode, ``_``
    has no special meaning and is not defined. See section :ref:`import`.
 
-   ``from moduls import *`` 不会导入这些符号. 在交互式解释器中,特殊标识符 ``_`` 保存上次计算 (evaluation) 的结果,这个符号在 :mod:`builtins` 模块之中. 在非交互方式时, ``_`` 没有特殊含义,而且是没有定义的. 参见 :ref:`import` 节. 
+   ``from moduls import *`` 不会导入这些符号. 在交互式解释器中, 特殊标识符 ``_`` 保存上次计算 (evaluation) 的结果, 这个符号在 :mod:`builtins` 模块之中. 在非交互方式时,  ``_`` 没有特殊含义, 而且是没有定义的. 参见 :ref:`import` 节. 
 
    .. note::
 
@@ -471,7 +471,7 @@ characters:
       refer to the documentation for the :mod:`gettext` module for more
       information on this convention.      
 
-      名字 ``_`` 通常用于国际化开发,关于这个惯用法,可以参考模块 :mod:`gettext` . 
+      名字 ``_`` 通常用于国际化开发, 关于这个惯用法, 可以参考模块 :mod:`gettext` . 
 
 ``__*__``
    System-defined names. These names are defined by the interpreter and its
@@ -481,7 +481,7 @@ characters:
    any context, that does not follow explicitly documented use, is subject to
    breakage without warning.
 
-   系统预定义的名字. 这种名字由解释器及其实现定义 (包括标准库) . 目前定义的系统名字在　:ref:`specialnames` 和其他地方有所介绍. Python的未来版本可能会引入更多的这种名字 . 对于*不*符合文档说明的 ``__*__`` 名字的用法,可能会在以后版本中在没有任何警告的前提下失败. 
+   系统预定义的名字. 这种名字由解释器及其实现定义 (包括标准库) . 目前定义的系统名字在　:ref:`specialnames` 和其他地方有所介绍. Python的未来版本可能会引入更多的这种名字 . 对于*不*符合文档说明的 ``__*__`` 名字的用法, 可能会在以后版本中在没有任何警告的前提下失败. 
 
 ``__*``
    Class-private names.  Names in this category, when used within the context of a
@@ -489,7 +489,7 @@ characters:
    clashes between "private" attributes of base and derived classes. See section
    :ref:`atom-identifiers`.
 
-   类私有名字. 此类名字出现在类定义的上下文中. 为了避免基类与继承类的 "私有" 属性的名字冲突,它们会被自动更名为其他名字 (mangled form) . 参考 :ref:`atom-identifiers` . 
+   类私有名字. 此类名字出现在类定义的上下文中. 为了避免基类与继承类的 "私有" 属性的名字冲突, 它们会被自动更名为其他名字 (mangled form) . 参考 :ref:`atom-identifiers` . 
 
 .. _literals:
 
@@ -541,7 +541,7 @@ rest of the literal. The source character set is defined by the encoding
 declaration; it is UTF-8 if no encoding declaration is given in the source file;
 see section :ref:`encodings`.
 
-上面产生式中一个没有表示出来的语法限制是,在 :token:`stringprefix` 或 :token:`bytesprefix` 与其余字面值之间不允许出现空白字符. 源代码的字符集由编码声明定义,如果源文件内没有指定编码声明,则默认为UTF-8,参见 :ref:`encodings` . 
+上面产生式中一个没有表示出来的语法限制是, 在 :token:`stringprefix` 或 :token:`bytesprefix` 与其余字面值之间不允许出现空白字符. 源代码的字符集由编码声明定义, 如果源文件内没有指定编码声明, 则默认为UTF-8, 参见 :ref:`encodings` . 
 
 .. index:: triple-quoted string, Unicode Consortium, raw string
 
@@ -552,27 +552,27 @@ of three single or double quotes (these are generally referred to as
 characters that otherwise have a special meaning, such as newline, backslash
 itself, or the quote character.
 
-通俗地讲,这两种字面值可以用单引号( ``' `` )或双引号( ``" `` )括住. 它们也可以用成对的三个单引号和双引号(这叫做 *三重引用串* ),反斜线( ``\`` )可以用于引用其它有特殊含义的字符,例如新行符、反斜线本身或者引用字符. 
+通俗地讲, 这两种字面值可以用单引号( ``' `` )或双引号( ``" `` )括住. 它们也可以用成对的三个单引号和双引号(这叫做 *三重引用串* ), 反斜线( ``\`` )可以用于引用其它有特殊含义的字符, 例如新行符、反斜线本身或者引用字符. 
 
 Bytes literals are always prefixed with ``'b'`` or ``'B'``; they produce an
 instance of the :class:`bytes` type instead of the :class:`str` type.  They
 may only contain ASCII characters; bytes with a numeric value of 128 or greater
 must be expressed with escapes.
 
-字节字面值一定要以 ``'b'`` 或 ``'B'`` 开始,这会产生一个:`bytes` 类的实例,而不是 :class:`str` 的. 它只能包括ASCII字符,数值等于或者超过128的字节必须用转义字符表达. 
+字节字面值一定要以 ``'b'`` 或 ``'B'`` 开始, 这会产生一个:`bytes` 类的实例, 而不是 :class:`str` 的. 它只能包括ASCII字符, 数值等于或者超过128的字节必须用转义字符表达. 
 
 Both string and bytes literals may optionally be prefixed with a letter ``'r'``
 or ``'R'``; such strings are called :dfn:`raw strings` and treat backslashes as
 literal characters.  As a result, in string literals, ``'\U'`` and ``'\u'``
 escapes in raw strings are not treated specially.
 
-字符串和字节字面值都可以用 ``' u' `` 和 ``' U' `` 开头,这样的字符串字面值叫作 :dfn:`原始串 (raw strings) ` ,其中不对反斜线作转义处理,因此,原始串中的 ``'\U'`` 和 ``'\u'`` 不会得到特殊处理. 
+字符串和字节字面值都可以用 ``' u' `` 和 ``' U' `` 开头, 这样的字符串字面值叫作 :dfn:`原始串 (raw strings) ` , 其中不对反斜线作转义处理, 因此, 原始串中的 ``'\U'`` 和 ``'\u'`` 不会得到特殊处理. 
 
 In triple-quoted strings, unescaped newlines and quotes are allowed (and are
 retained), except that three unescaped quotes in a row terminate the string.  (A
 "quote" is the character used to open the string, i.e. either ``'`` or ``"``.)
 
-在三重引用串中,未转义新行和引用字符是允许的 (并且会被保留) ,除非三个连续的引用字符结束了该串.  (引用字符指用于开始字符串的字符, 如 ``' `` 和 ``" `` ) 
+在三重引用串中, 未转义新行和引用字符是允许的 (并且会被保留) , 除非三个连续的引用字符结束了该串.  (引用字符指用于开始字符串的字符, 如 ``' `` 和 ``" `` ) 
 
 .. index:: physical line, escape sequence, Standard C, C
 
@@ -580,7 +580,7 @@ Unless an ``'r'`` or ``'R'`` prefix is present, escape sequences in strings are
 interpreted according to rules similar to those used by Standard C.  The
 recognized escape sequences are:
 
-如果没有使用 ``' r' `` 或 ``' R' `` 前缀,转义序列就按就按类似标准C那样解释,可接受的转义序列见下表: 
+如果没有使用 ``' r' `` 或 ``' R' `` 前缀, 转义序列就按就按类似标准C那样解释, 可接受的转义序列见下表: 
 
 +-----------------+---------------------------------+-------+
 | Escape Sequence | Meaning                         | Notes |
@@ -635,25 +635,25 @@ Notes:
 (1)
    As in Standard C, up to three octal digits are accepted.
 
-   与C标准相同,最多只接受三个八进制数字. 
+   与C标准相同, 最多只接受三个八进制数字. 
 
 (2)
    Unlike in Standard C, exactly two hex digits are required.
 
-   不像C标准,这里要求给全２个十六进制数字. 
+   不像C标准, 这里要求给全２个十六进制数字. 
 
 (3)
    In a bytes literal, hexadecimal and octal escapes denote the byte with the
    given value. In a string literal, these escapes denote a Unicode character
    with the given value.
 
-   在字节字面值中,十六进制和八进制转义字符都是指定一个字节的值. 在字符串字面值中,这些转义字符指定的是一个Unicode字符的值. 
+   在字节字面值中, 十六进制和八进制转义字符都是指定一个字节的值. 在字符串字面值中, 这些转义字符指定的是一个Unicode字符的值. 
 
 (4)
    Individual code units which form parts of a surrogate pair can be encoded using
    this escape sequence.  Exactly four hex digits are required.
 
-   任何构成部分surrogate pair的单独code unit都可以使用转义字符序列编码. 不像C标准,这里要求给全４个十六进制数字. 
+   任何构成部分surrogate pair的单独code unit都可以使用转义字符序列编码. 不像C标准, 这里要求给全４个十六进制数字. 
 
 (5)
    Any Unicode character can be encoded this way, but characters outside the Basic
@@ -661,7 +661,7 @@ Notes:
    compiled to use 16-bit code units (the default).  Exactly eight hex digits
    are required.
 
-   任何Unicode字符都可以用这种方式编码,但如果Python是按16位code unit编译的话 (默认) ,这里要求写全８个十六进制数字. 
+   任何Unicode字符都可以用这种方式编码, 但如果Python是按16位code unit编译的话 (默认) , 这里要求写全８个十六进制数字. 
 
 .. index:: unrecognized escape sequence
 
@@ -682,7 +682,7 @@ that a single backslash followed by a newline is interpreted as those two
 characters as part of the string, *not* as a line continuation.
 
 
-即使在原始串中,字符引用也可以使用反斜线转义,但反斜线会保留在字符串中,例如, ``r"\""`` 是一个有效的字符串,它由两个字符组成,一个反斜线一个双引号; 而 ``r"\"`` 则不是 (甚至原始串也不能包括奇数个反斜线. 另外, *原始串也不能以反斜线结束*  (因为反斜线会把后面的引用字符转义) . 同时,也要注意在新行符后出现的反斜线,会解释为串部分中的两个字符,而 *不是* 续行处理. 
+即使在原始串中, 字符引用也可以使用反斜线转义, 但反斜线会保留在字符串中, 例如,  ``r"\""`` 是一个有效的字符串, 它由两个字符组成, 一个反斜线一个双引号; 而 ``r"\"`` 则不是 (甚至原始串也不能包括奇数个反斜线. 另外,  *原始串也不能以反斜线结束*  (因为反斜线会把后面的引用字符转义) . 同时, 也要注意在新行符后出现的反斜线, 会解释为串部分中的两个字符, 而 *不是* 续行处理. 
 .. _string-catenation:
 
 字符串字面值的连接 (String literal concatenation) 
@@ -695,7 +695,7 @@ as their concatenation.  Thus, ``"hello" 'world'`` is equivalent to
 needed, to split long strings conveniently across long lines, or even to add
 comments to parts of strings, for example:
 
-多个空白分隔的相邻字符串或者字节字面值,可能使用了不同的引用习惯,这是允许的,并且它们在连接时含义是一样的. 因此, ``" hello"  'world'`` 等价于 ``" helloworld" `` . 这个功能可以用来减少需要的反斜线,把跨越多行的长字符串,甚至可以在串的某个部分加注释,例如::
+多个空白分隔的相邻字符串或者字节字面值, 可能使用了不同的引用习惯, 这是允许的, 并且它们在连接时含义是一样的. 因此, ``" hello"  'world'`` 等价于 ``" helloworld" `` . 这个功能可以用来减少需要的反斜线, 把跨越多行的长字符串, 甚至可以在串的某个部分加注释, 例如::
 
    re.compile("[A-Za-z_]"       # letter or underscore
               "[A-Za-z0-9_]*"   # letter, digit or underscore
@@ -706,7 +706,7 @@ compile time.  The '+' operator must be used to concatenate string expressions
 at run time.  Also note that literal concatenation can use different quoting
 styles for each component (even mixing raw strings and triple quoted strings).
 
-注意这个功能是在语法层次上定义的,但却是在编译时实现的. 在运行时连接字符串表达式必须使用" +" 运算符. 再次提醒,在字面值连接时,不同的引用字符可以混用,甚至原始串与三重引用串也可以混合使用. 
+注意这个功能是在语法层次上定义的, 但却是在编译时实现的. 在运行时连接字符串表达式必须使用" +" 运算符. 再次提醒, 在字面值连接时, 不同的引用字符可以混用, 甚至原始串与三重引用串也可以混合使用. 
 
 .. _numbers:
 
@@ -721,13 +721,13 @@ There are three types of numeric literals: integers, floating point numbers, and
 imaginary numbers.  There are no complex literals (complex numbers can be formed
 by adding a real number and an imaginary number).
 
-有三种数值型字面值: 整数、浮点数和虚数. 没有复数类型的字面值,复数可以用一个实数加上一个虚数的方法构造. 
+有三种数值型字面值: 整数、浮点数和虚数. 没有复数类型的字面值, 复数可以用一个实数加上一个虚数的方法构造. 
 
 Note that numeric literals do not include a sign; a phrase like ``-1`` is
 actually an expression composed of the unary operator '``-``' and the literal
 ``1``.
 
-注意数值型字面值并不包括正负号,像 ``-1`` ,实际上是组合了一元运算符 '``-``' 和字面值 ``1`` 的一个表达式. 
+注意数值型字面值并不包括正负号, 像 ``-1`` , 实际上是组合了一元运算符 '``-``' 和字面值 ``1`` 的一个表达式. 
 
 .. _integers:
 
@@ -753,13 +753,13 @@ Integer literals are described by the following lexical definitions:
 There is no limit for the length of integer literals apart from what can be
 stored in available memory.
 
-除了可用内存的容量限制,整数长度没有其他限制. 
+除了可用内存的容量限制, 整数长度没有其他限制. 
 
 Note that leading zeros in a non-zero decimal number are not allowed. This is
 for disambiguation with C-style octal literals, which Python used before version
 3.0.
 
-注意,非零十进制数字中不允许用0作为前缀,这种写法会与C语言风格的八进制字面值产生歧义 (用于3.0之前版本的Python) . 
+注意, 非零十进制数字中不允许用0作为前缀, 这种写法会与C语言风格的八进制字面值产生歧义 (用于3.0之前版本的Python) . 
 
 Some examples of integer literals:
 
@@ -792,7 +792,7 @@ For example, ``077e010`` is legal, and denotes the same number as ``77e10``. The
 allowed range of floating point literals is implementation-dependent. Some
 examples of floating point literals:
 
-注意整数部分和指数部分都看作是十进制的. 例如, ``077e010`` 是合法的,它等价于 ``77e10`` . 浮点型字面值的取值范围依赖于实现,以下是一些浮点数的例子::
+注意整数部分和指数部分都看作是十进制的. 例如,  ``077e010`` 是合法的, 它等价于 ``77e10`` . 浮点型字面值的取值范围依赖于实现, 以下是一些浮点数的例子::
 
    3.14    10.    .001    1e100    3.14e-10    0e0
 
@@ -800,7 +800,7 @@ Note that numeric literals do not include a sign; a phrase like ``-1`` is
 actually an expression composed of the unary operator ``-`` and the literal
 ``1``.
 
-注意数值型字面值并不包括正负号,像 ``-1`` ,实际上是一个组合了一元运算符 '``-``' 和字面值``1``的表达式. 
+注意数值型字面值并不包括正负号, 像 ``-1`` , 实际上是一个组合了一元运算符 '``-``' 和字面值``1``的表达式. 
 
 .. _imaginary:
 
@@ -820,7 +820,7 @@ restrictions on their range.  To create a complex number with a nonzero real
 part, add a floating point number to it, e.g., ``(3+4j)``.  Some examples of
 imaginary literals:
 
-虚数是实部为零的复数. 复数由一对有着相同取值范围的浮点数表示. 为了创建一个非零实部的复数,可以对它增加一个浮点数,例如, ``(3+4j)`` . 下面是一些例子::
+虚数是实部为零的复数. 复数由一对有着相同取值范围的浮点数表示. 为了创建一个非零实部的复数, 可以对它增加一个浮点数, 例如,  ``(3+4j)`` . 下面是一些例子::
 
    3.14j   10.j    10j     .001j   1e100j  3.14e-10j
 
@@ -862,19 +862,19 @@ of three periods has a special meaning as an ellipsis literal. The second half
 of the list, the augmented assignment operators, serve lexically as delimiters,
 but also perform an operation.
 
-句号可以出现在浮点数和虚数字面值中,三个连续句号的序列是片断的省略写法. 在这个列表的后半部分,即参数化赋值运算符,它们在词法上是分隔符,同时也执行运算. 
+句号可以出现在浮点数和虚数字面值中, 三个连续句号的序列是片断的省略写法. 在这个列表的后半部分, 即参数化赋值运算符, 它们在词法上是分隔符, 同时也执行运算. 
 
 The following printing ASCII characters have special meaning as part of other
 tokens or are otherwise significant to the lexical analyzer:
 
-以下ASCII可打印字符,要么在作为其它语言符号的一部分时有特殊含义,要么对于词法分析器具有特殊作用::
+以下ASCII可打印字符, 要么在作为其它语言符号的一部分时有特殊含义, 要么对于词法分析器具有特殊作用::
 
    '       "       #       \
 
 The following printing ASCII characters are not used in Python.  Their
 occurrence outside string literals and comments is an unconditional error:
 
-Python不使用以下ASCII可打印字符,当它们出现在注释和字符串字面值之外时就是非法的::
+Python不使用以下ASCII可打印字符, 当它们出现在注释和字符串字面值之外时就是非法的::
 
    $       ?       `
 

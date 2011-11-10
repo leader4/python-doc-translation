@@ -23,8 +23,8 @@ There are an number of extension widget sets to :mod:`tkinter`.
       busy, graph, stripchart, tabset and vector commands are be available.
       
        是使用``tkinter``包构建高层次的符合型部件的工具箱. 它包含了建立在megawidgets
-      基础上的一套灵活的和可扩展的类库. 这些megawidgets包括记事本,组合框,选择部件,
-      窗口部件, 滚动部件, 对话窗口等. 另外, 当对BLT使用Pmw.Blt接口时,busy, graph, 
+      基础上的一套灵活的和可扩展的类库. 这些megawidgets包括记事本, 组合框, 选择部件, 
+      窗口部件, 滚动部件, 对话窗口等. 另外, 当对BLT使用Pmw.Blt接口时, busy, graph, 
       stripchart, tabset and vector 命令都可以用. 
       
 
@@ -35,7 +35,7 @@ There are an number of extension widget sets to :mod:`tkinter`.
       Tix, lacking however Tix's fast :class:`HList` widget for drawing trees.
       
       
-      Pmw最开始的想法是采用Tk的``itcl``扩展,Michael McLennan的``[incr Tk]``
+      Pmw最开始的想法是采用Tk的``itcl``扩展, Michael McLennan的``[incr Tk]``
       和 Mark Ulferts 的``[incr Widgets]``. 直接把这几个megawidgets从itcl移
       植到Python. 它提供的很多部件``[incr Widgets]``已经实现了, 并且大都是Tix
       完成的. 但是缺少一个绘制树的快速的Tix的``HList``部件. 
@@ -48,9 +48,9 @@ There are an number of extension widget sets to :mod:`tkinter`.
       since they can operate directly on Python data structures, without having to
       transfer data through the Tk/Tcl layer.
       
-      是一个库,允许你使用纯Python编写新的Tkinter部件. WCK 框架让你完全控制
-      部件的创建,配置, 屏幕外观, 和时间处理. WCK 部件非常快和轻量级, 因为
-      它们能直接操作Python数据结构,而不需要通过Tk/Tcl这一层进行数据的传输. 
+      是一个库, 允许你使用纯Python编写新的Tkinter部件. WCK 框架让你完全控制
+      部件的创建, 配置, 屏幕外观, 和时间处理. WCK 部件非常快和轻量级, 因为
+      它们能直接操作Python数据结构, 而不需要通过Tk/Tcl这一层进行数据的传输. 
       
 
 
@@ -73,7 +73,7 @@ Python的主要的跨平台(Windows, Mac OS X, 类Unix) GUI 工具包:
       `PythonCAD <http://www.pythoncad.org/>`_. An online `tutorial
       <http://www.pygtk.org/pygtk2tutorial/index.html>`_ is available.
       
-      是一个绑定GTK部件的集合. 它提供了一个面向对象的接口,是略高于C的一种. 
+      是一个绑定GTK部件的集合. 它提供了一个面向对象的接口, 是略高于C的一种. 
       它配备比Tkinter更多的部件. 有良好的Python文档. 同样也有对GNOME的绑定. 
       一个众所周知的流行的PyGTK应用程序是PythonCAD. 它的在线教程也是可用的.
       
@@ -93,7 +93,7 @@ Python的主要的跨平台(Windows, Mac OS X, 类Unix) GUI 工具包:
       
       PyQt是一个绑定于Qt的**sip**包装的工具集. Qt是一个广泛使用的C++ GUI应用程序
       开发框架. 在Unix, Windows and Mac OS X都能用. **sip** 是一个生成从C++库到
-      Python类的绑定的工具,是专门为Python设计的. *PyQt3* 绑定有一本 <GUI Programming 
+      Python类的绑定的工具, 是专门为Python设计的. *PyQt3* 绑定有一本 <GUI Programming 
       with Python: QT Edition by Boudewijn Rempt> 的书.  *PyQt4*绑定同样有一本 
       Mark Summerfield 写的 <Rapid GUI Programming with Python and Qt> . 
       
@@ -117,9 +117,9 @@ Python的主要的跨平台(Windows, Mac OS X, 类Unix) GUI 工具包:
       (原名wxWindows) C++工具包创建的.  它提供了本地外观和感觉上的应用程序.  
       在Windows, Mac OS X, and Unix 系统尽可能使用每个平台自己的原生部件. 
       (GTK+ 在类Unix-like系统上). 此外它提供了广泛的部件. wxPython提供了
-      联机文档和上下文相关帮助,打印,HTML查看,低级别设备上下文绘制,拖动和删除,
-      访问系统剪切板,一个基于XML资源格式 等的类,它包含一个不断增长的用户贡献库模块. 
-      wxPython有一本 <wxPython in Action> 的书,是Noel Rappin 和 Robin Dunn写的.
+      联机文档和上下文相关帮助, 打印, HTML查看, 低级别设备上下文绘制, 拖动和删除, 
+      访问系统剪切板, 一个基于XML资源格式 等的类, 它包含一个不断增长的用户贡献库模块. 
+      wxPython有一本 <wxPython in Action> 的书, 是Noel Rappin 和 Robin Dunn写的.
       
       
 
@@ -131,8 +131,8 @@ much more complete list, and also for links to documents where the
 different GUI toolkits are compared.
 
 PyGTK, PyQt, and wxPython, 都有比Tkinter更多的具有现代化外观和感觉的部件. 
-此外,Python中有更多的其他GUI工具包. 它们都跨平台,也有特定平台. 参见Python维基,
-有更多的完整的GUI编程列表,并且有不同GUI工具包之间的比较的文章的链接. 
+此外, Python中有更多的其他GUI工具包. 它们都跨平台, 也有特定平台. 参见Python维基, 
+有更多的完整的GUI编程列表, 并且有不同GUI工具包之间的比较的文章的链接. 
 
 
 

@@ -10,7 +10,7 @@ Language (SGML) and the Hypertext Markup Language (HTML), and several interfaces
 for working with the Extensible Markup Language (XML).
 
 Python支持一定数量的模块与各种形式的结构化数据标记一起工作. 这些与模块一起工作
-的有标准通用标记语言(SGML)和超文本标记语言(HTML),以及几个为可扩展标记语言(XML)
+的有标准通用标记语言(SGML)和超文本标记语言(HTML), 以及几个为可扩展标记语言(XML)
 工作的接口. 
 
 
@@ -21,7 +21,7 @@ included with Python, so the :mod:`xml.parsers.expat` module will always be
 available.
 
 重要的是要注意在``xml``包中的模块需要至少一个可用的SAX兼容的XML解析器. Expat
-解析器被Python包含在内,所以``xml.parsers.expat``模块将始终可用. 
+解析器被Python包含在内, 所以``xml.parsers.expat``模块将始终可用. 
 
 
 

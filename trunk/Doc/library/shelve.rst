@@ -194,7 +194,7 @@ object)::
    Module :mod:`pickle`
       Object serialization used by :mod:`shelve`.
       
-anydbm允许我们将一个磁盘上的文件与一个 "dict-like" 对象关联起来,操作这个 "dict-like" 对象,就像操作dict对象一样,最后可以将 "dict-like" 的数据持久化到文件. 对这个"dict-like"对象进行操作的时候,key和value的类型必须是字符串. 下面是使用anydbm的例子: 
+anydbm允许我们将一个磁盘上的文件与一个 "dict-like" 对象关联起来, 操作这个 "dict-like" 对象, 就像操作dict对象一样, 最后可以将 "dict-like" 的数据持久化到文件. 对这个"dict-like"对象进行操作的时候, key和value的类型必须是字符串. 下面是使用anydbm的例子: 
 
 	#coding=utf-8
 
@@ -222,8 +222,8 @@ if __name__ == '__main__':
     LoadData()
 
     
-     anydbm.open(filename[, flag[, mode]]),filename是关联的文件路径,可选参数flag可以是: 'r': 只读, 'w': 可读写, 'c': 如果数据文件不存在,就创建,允许读写; 'n': 每次调用open()都重新创建一个空的文件. mode是unix下文件模式,如0666表示允许所有用户读写. 
+     anydbm.open(filename[, flag[, mode]]), filename是关联的文件路径, 可选参数flag可以是: 'r': 只读, 'w': 可读写, 'c': 如果数据文件不存在, 就创建, 允许读写; 'n': 每次调用open()都重新创建一个空的文件. mode是unix下文件模式, 如0666表示允许所有用户读写. 
     
-    shelve模块是anydbm的增强版,它支持在"dict-like"对象中存储任何可以被pickle序列化的对象,但key也必须是字符串. 
+    shelve模块是anydbm的增强版, 它支持在"dict-like"对象中存储任何可以被pickle序列化的对象, 但key也必须是字符串. 
 
 

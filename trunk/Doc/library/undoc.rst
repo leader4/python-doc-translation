@@ -25,13 +25,13 @@ revised.
 These modules are used to implement the :mod:`os.path` module, and are not
 documented beyond this mention.  There's little need to document these.
 
-这些模块是用来实现 "os.path的" 模块,并没有记录提到这一点. 
+这些模块是用来实现 "os.path的" 模块, 并没有记录提到这一点. 
 
 
 :mod:`ntpath`
    --- Implementation of :mod:`os.path` on Win32, Win64, WinCE, and OS/2 platforms.
 
-   ---实施 "os.path的" 上的Win32,Win64中,WINCE,OS/ 2   平台. 
+   ---实施 "os.path的" 上的Win32, Win64中, WINCE, OS/ 2   平台. 
 
 
 :mod:`posixpath`

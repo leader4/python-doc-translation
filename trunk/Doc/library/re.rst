@@ -456,7 +456,7 @@ form.
    Values can be any of the following variables, combined using bitwise OR (the
    ``|`` operator).
    
-   可以把正则表达式编译成一个正则表达式对象. 可以把那些经常使用的正则表达式编译成正则表达式对象,这样可以提高一定的效率. 
+   可以把正则表达式编译成一个正则表达式对象. 可以把那些经常使用的正则表达式编译成正则表达式对象, 这样可以提高一定的效率. 
 
    The sequence ::
 
@@ -557,7 +557,7 @@ form.
    pattern; note that this is different from finding a zero-length match at some
    point in the string.
    
-   re.search函数会在字符串内查找模式匹配,只到找到第一个匹配然后返回,如果字符串没有匹配,则返回None. 
+   re.search函数会在字符串内查找模式匹配,只到找到第一个匹配然后返回, 如果字符串没有匹配, 则返回None. 
 
 
 .. function:: match(pattern, string, flags=0)
@@ -567,7 +567,7 @@ form.
    <match-objects>`.  Return ``None`` if the string does not match the pattern;
    note that this is different from a zero-length match.
    
-   　re.match 尝试从字符串的开始匹配一个模式,
+   　re.match 尝试从字符串的开始匹配一个模式, 
 
    .. note::
 
@@ -577,7 +577,7 @@ form.
 
 .. function:: split(pattern, string, maxsplit=0, flags=0)
 
-	可以使用re.split来分割字符串,如: re.split(r'/s+', text); 将字符串按空格分割成一个单词列表. 
+	可以使用re.split来分割字符串, 如: re.split(r'/s+', text); 将字符串按空格分割成一个单词列表. 
 
    Split *string* by the occurrences of *pattern*.  If capturing parentheses are
    used in *pattern*, then the text of all groups in the pattern are also returned
@@ -626,7 +626,7 @@ form.
    one group.  Empty matches are included in the result unless they touch the
    beginning of another match.
    
-   re.findall可以获取字符串中所有匹配的字符串. 如: re.findall(r'/w*oo/w*', text); 获取字符串中,包含'oo'的所有单词. 
+   re.findall可以获取字符串中所有匹配的字符串. 如: re.findall(r'/w*oo/w*', text); 获取字符串中, 包含'oo'的所有单词. 
 
 
 .. function:: finditer(pattern, string, flags=0)
