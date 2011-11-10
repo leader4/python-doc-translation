@@ -242,3 +242,4 @@ MimeTypes Objects
    Load MIME type information from the Windows registry.  Availability: Windows.
 
    .. versionadded:: 3.2
+

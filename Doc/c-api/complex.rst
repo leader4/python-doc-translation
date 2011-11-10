@@ -124,3 +124,4 @@ pointers.  This is consistent throughout the API.
    If *op* is not a Python complex number object but has a :meth:`__complex__`
    method, this method will first be called to convert *op* to a Python complex
    number object.
+

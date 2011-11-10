@@ -602,3 +602,4 @@ An :class:`http.client.HTTPMessage` instance holds the headers from an HTTP
 response.  It is implemented using the :class:`email.message.Message` class.
 
 .. XXX Define the methods that clients can depend upon between versions.
+

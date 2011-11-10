@@ -262,3 +262,4 @@ be sent, and the handler raises an exception. ::
 
    signal.alarm(0)          # Disable the alarm
 
+

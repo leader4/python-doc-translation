@@ -145,3 +145,4 @@ Other Functions
 
    Force the :c:func:`malloc` heap to clean itself up and return unused blocks to
    the operating system.  On failure, this raises :exc:`IOError`.
+

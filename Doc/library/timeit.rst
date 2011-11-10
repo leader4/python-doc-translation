@@ -246,3 +246,4 @@ To give the :mod:`timeit` module access to functions you define, you can pass a
        t = Timer("test()", "from __main__ import test")
        print(t.timeit())
 
+

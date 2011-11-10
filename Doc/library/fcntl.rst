@@ -148,3 +148,4 @@ lay-out for the *lockdata* variable is system dependent --- therefore using the
       in the :mod:`os` module (on BSD only), the :func:`os.open` function
       provides an alternative to the :func:`lockf` and :func:`flock` functions.
 
+

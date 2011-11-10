@@ -206,3 +206,4 @@ As a basic example, below is a very basic HTML parser that uses the
 .. [#] For backward compatibility reasons *strict* mode does not raise
        exceptions for all non-compliant HTML.  That is, some invalid HTML
        is tolerated even in *strict* mode.
+

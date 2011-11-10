@@ -236,3 +236,4 @@ new entries to the global character set, alias, and codec registries:
    Python codec, as appropriate for the second argument to the :class:`str`'s
    :func:`decode` method
 
+

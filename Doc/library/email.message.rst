@@ -560,3 +560,4 @@ Here are the methods of the :class:`Message` class:
       The *defects* attribute contains a list of all the problems found when
       parsing this message.  See :mod:`email.errors` for a detailed description
       of the possible parsing defects.
+

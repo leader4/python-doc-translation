@@ -129,7 +129,7 @@ you're using to solve it, but it's human nature to view this as a failure of
 some sort.
 
 
-简单，容易理解
+简单,容易理解
 ------------------------------------
 
 Python is definitely *not* a toy language that's only usable for small tasks.
@@ -353,4 +353,5 @@ http://www.faqs.org/docs/Linux-mini/Advocacy.html
    by simply attacking existing systems and complaining about their inadequacies;
    this often ends up looking like unfocused whining.  It's much better to point
    out some of the many areas where Python is an improvement over other systems.
+
 

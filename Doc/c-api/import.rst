@@ -266,3 +266,4 @@
    Returns ``0`` on success or ``-1`` if insufficient memory could be allocated to
    extend the internal table.  In the event of failure, no modules are added to the
    internal table.  This should be called before :c:func:`Py_Initialize`.
+

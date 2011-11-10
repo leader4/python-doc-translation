@@ -1292,3 +1292,4 @@ BOM will be prepended to the UTF-8 encoded bytes. For the stateful encoder this
 is only done once (on the first write to the byte stream).  For decoding an
 optional UTF-8 encoded BOM at the start of the data will be skipped.
 
+

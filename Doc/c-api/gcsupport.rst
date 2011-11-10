@@ -150,3 +150,4 @@ if the object is immutable.
    this method (don't just call :c:func:`Py_DECREF` on a reference).  The
    collector will call this method if it detects that this object is involved
    in a reference cycle.
+

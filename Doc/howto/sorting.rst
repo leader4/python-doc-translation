@@ -281,3 +281,4 @@ Odd and Ends
     >>> newgrades = {'john': 'F', 'jane':'A', 'dave': 'C'}
     >>> sorted(students, key=newgrades.__getitem__)
     ['jane', 'dave', 'john']
+

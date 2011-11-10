@@ -275,3 +275,4 @@ This last example demonstrates the final few formatting functions:
    >>> an_error = IndexError('tuple index out of range')
    >>> traceback.format_exception_only(type(an_error), an_error)
    ['IndexError: tuple index out of range\n']
+

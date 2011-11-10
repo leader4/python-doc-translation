@@ -116,3 +116,4 @@ and *NULL* returned.
    Replace the unicode encode error with backslash escapes (``\x``, ``\u`` and
    ``\U``).
 
+

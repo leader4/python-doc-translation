@@ -56,3 +56,4 @@
    .. versionchanged:: 3.2
       The parameter type for the *slice* parameter was ``PySliceObject*``
       before.
+

@@ -84,3 +84,4 @@ Reference Manual pages.
 
 .. versionchanged:: 3.2
    Added the ``-b`` option, deprecated the ``-g`` option.
+

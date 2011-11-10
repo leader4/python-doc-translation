@@ -246,7 +246,7 @@ For more information on :func:`testfile`, see section :ref:`doctest-basic-api`.
 
 .. _doctest-how-it-works:
 
-它是如何工作的？
+它是如何工作的? 
 ------------
 
 This section examines in detail how doctest works: which docstrings it looks at,
@@ -359,7 +359,7 @@ The fine print:
 
 .. _doctest-execution-context:
 
-什么是执行上下文？
+什么是执行上下文? 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By default, each time :mod:`doctest` finds a docstring to test, it uses a
@@ -376,7 +376,7 @@ You can force use of your own dict as the execution context by passing
 
 .. _doctest-exceptions:
 
-异常呢？
+异常呢? 
 ^^^^^^^^^^^^^^^^^^^^^^
 
 No problem, provided that the traceback is the only output produced by the
@@ -1784,3 +1784,4 @@ several options for organizing tests:
 .. [#] Examples containing both expected output and an exception are not supported.
    Trying to guess where one ends and the other begins is too error-prone, and that
    also makes for a confusing test.
+

@@ -63,3 +63,4 @@ The following function has been added as a useful debugging tool.  It should
    Optional *fp* is a file-like object to print the output to.  It must be
    suitable for Python's :func:`print` function.  *level* is used internally.
    *include_default*, if true, prints the default type as well.
+

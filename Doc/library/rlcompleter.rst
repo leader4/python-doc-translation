@@ -66,3 +66,4 @@ Completer objects have the following method:
    :func:`dir` function.  Any exception raised during the evaluation of the
    expression is caught, silenced and :const:`None` is returned.
 
+

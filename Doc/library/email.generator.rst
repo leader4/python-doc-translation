@@ -204,3 +204,4 @@ representing the part.
    The default value for *fmt* is ``None``, meaning ::
 
       [Non-text (%(type)s) part of message omitted, filename %(filename)s]
+

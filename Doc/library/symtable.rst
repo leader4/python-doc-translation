@@ -186,3 +186,4 @@ Examining Symbol Tables
 
       Return the namespace bound to this name.  If more than one namespace is
       bound, a :exc:`ValueError` is raised.
+

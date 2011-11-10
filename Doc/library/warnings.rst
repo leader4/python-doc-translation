@@ -405,3 +405,4 @@ Available Context Managers
         :func:`showwarning` function and internal list of filter
         specifications.  This means the context manager is modifying
         global state and therefore is not thread-safe.
+

@@ -352,3 +352,4 @@ readily available functions::
    def load_expression(source_string):
        st = parser.expr(source_string)
        return st, st.compile()
+

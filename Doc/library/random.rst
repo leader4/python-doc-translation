@@ -96,9 +96,9 @@ Functions for integers:
    The positional argument pattern matches that of :func:`range`.  Keyword arguments
    should not be used because the function may use them in unexpected ways.
    
-   random.randrange的函数原型为：random.randrange([start], stop[, step])，从指定范围内，
-   按指定基数递增的集合中 获取一个随机数。如：random.randrange(10, 100, 2)，结果相当于从[10, 12, 14, 16, ... 96, 98]序列中获取一个随机数。
-   random.randrange(10, 100, 2)在结果上与 random.choice(range(10, 100, 2) 等效。
+   random.randrange的函数原型为: random.randrange([start], stop[, step]),从指定范围内,
+   按指定基数递增的集合中 获取一个随机数. 如: random.randrange(10, 100, 2),结果相当于从[10, 12, 14, 16, ... 96, 98]序列中获取一个随机数. 
+   random.randrange(10, 100, 2)在结果上与 random.choice(range(10, 100, 2) 等效. 
 
    .. versionchanged:: 3.2
       :meth:`randrange` is more sophisticated about producing equally distributed
@@ -110,7 +110,7 @@ Functions for integers:
    Return a random integer *N* such that ``a <= N <= b``.  Alias for
    ``randrange(a, b+1)``.
    
-   random.randint()的函数原型为：random.randint(a, b)，用于生成一个指定范围内的整数。其中参数a是下限，参数b是上限，生成的随机数n: a <= n <= b
+   random.randint()的函数原型为: random.randint(a, b),用于生成一个指定范围内的整数. 其中参数a是下限,参数b是上限,生成的随机数n: a <= n <= b
 
 
 Functions for sequences:
@@ -120,8 +120,8 @@ Functions for sequences:
    Return a random element from the non-empty sequence *seq*. If *seq* is empty,
    raises :exc:`IndexError`.
    
-   random.choice从序列中获取一个随机元素。其函数原型为：random.choice(sequence)。参数sequence表示一个有序类型。这里要说明 一下：
-   sequence在python不是一种特定的类型，而是泛指一系列的类型。list, tuple, 字符串都属于sequence。
+   random.choice从序列中获取一个随机元素. 其函数原型为: random.choice(sequence). 参数sequence表示一个有序类型. 这里要说明 一下: 
+   sequence在python不是一种特定的类型,而是泛指一系列的类型. list, tuple, 字符串都属于sequence. 
 
 
 .. function:: shuffle(x[, random])
@@ -130,7 +130,7 @@ Functions for sequences:
    0-argument function returning a random float in [0.0, 1.0); by default, this is
    the function :func:`random`.
    
-   random.shuffle的函数原型为：random.shuffle(x[, random])，用于将一个列表中的元素打乱。
+   random.shuffle的函数原型为: random.shuffle(x[, random]),用于将一个列表中的元素打乱. 
 
    Note that for even rather small ``len(x)``, the total number of permutations of
    *x* is larger than the period of most random number generators; this implies
@@ -142,7 +142,7 @@ Functions for sequences:
    Return a *k* length list of unique elements chosen from the population sequence
    or set. Used for random sampling without replacement.
    
-   　random.sample的函数原型为：random.sample(sequence, k)，从指定序列中随机获取指定长度的片断。sample函数不会修改原有序列。
+   　random.sample的函数原型为: random.sample(sequence, k),从指定序列中随机获取指定长度的片断. sample函数不会修改原有序列. 
 
    Returns a new list containing elements from the population while leaving the
    original population unchanged.  The resulting list is in selection order so that
@@ -178,8 +178,8 @@ be found in any statistics text.
    The end-point value ``b`` may or may not be included in the range
    depending on floating-point rounding in the equation ``a + (b-a) * random()``.
    
-   random.uniform的函数原型为：random.uniform(a, b)，用于生成一个指定范围内的随机符点数，两个参数其中一个是上限，
-   一个是下限。如果a > b，则生成的随机数n: b <= n <= a。如果 a <b， 则 a <= n <= b。
+   random.uniform的函数原型为: random.uniform(a, b),用于生成一个指定范围内的随机符点数,两个参数其中一个是上限,
+   一个是下限. 如果a > b,则生成的随机数n: b <= n <= a. 如果 a <b, 则 a <= n <= b. 
 
 .. function:: triangular(low, high, mode)
 
@@ -339,3 +339,4 @@ with :func:`itertools.accumulate`, and then locate the random value with
     >>> x = random.random() * cumdist[-1]
     >>> choices[bisect.bisect(cumdist, x)]
     'Blue'
+

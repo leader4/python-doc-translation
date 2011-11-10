@@ -1,4 +1,4 @@
-:mod:`argparse` --- 命令行选项，参数和子命令解析器
+:mod:`argparse` --- 命令行选项,参数和子命令解析器
 ===============================================================================
 
 .. module:: argparse
@@ -1786,3 +1786,4 @@ A partial upgrade path from optparse to argparse:
 
 * Replace the OptionParser constructor ``version`` argument with a call to
   ``parser.add_argument('--version', action='version', version='<the version>')``
+

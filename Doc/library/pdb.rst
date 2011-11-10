@@ -497,3 +497,4 @@ by the local file.
 
 .. [1] Whether a frame is considered to originate in a certain module
        is determined by the ``__name__`` in the frame globals.
+

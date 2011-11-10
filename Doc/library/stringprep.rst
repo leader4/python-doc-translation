@@ -138,3 +138,4 @@ list of all functions available in the module.
    Determine whether *code* is in tableD.2  (Characters with bidirectional property
    "L").
 
+

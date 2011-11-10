@@ -449,3 +449,4 @@ Starting with Python 2.6, bdist_wininst supports a :option:`--user-access-contro
 option.  The default is 'none' (meaning no UAC handling is done), and other
 valid values are 'auto' (meaning prompt for UAC elevation if Python was
 installed for all users) and 'force' (meaning always prompt for elevation).
+

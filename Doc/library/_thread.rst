@@ -19,19 +19,19 @@ The :mod:`threading` module provides an easier to use and higher-level
 threading API built on top of this module.
 
 Python 是支持多线程的,并且是 native 的线程,主要是通过 thread 和 threading 这两个模
-块来实现的。thread 是比较底层的模块,threading 是 thread 的包装,可以更加方便地被使
-用。这里需要提一下的是 Python 对线程的支持还不够完善,不能利用多 CPU,但是下个
-版本的 Python 中已经考虑改进这点。
+块来实现的. thread 是比较底层的模块,threading 是 thread 的包装,可以更加方便地被使
+用. 这里需要提一下的是 Python 对线程的支持还不够完善,不能利用多 CPU,但是下个
+版本的 Python 中已经考虑改进这点. 
 我们不建议使用 thread 模块,
 是由于以下几点原因:
 首先,更高级别的 threading 模块更为先进,对线程的支持更为完善,而且使用 thread 模
-块里的属性有可能会与 threading 冲突。
+块里的属性有可能会与 threading 冲突. 
 其次,
 低级别 thread 模块的同步原语很少
-(实际上只有一个) 而 threading 模块则有很多。
+(实际上只有一个) 而 threading 模块则有很多. 
 ,
 还有一个不要使用 thread 的原因,就是它对你的进程什么时候应该结束完全没有控制,
-当主线程结束时,所有的线程都会被强制结束掉,没有警告,也不会有正常的清除工作。
+当主线程结束时,所有的线程都会被强制结束掉,没有警告,也不会有正常的清除工作. 
 
 
 .. index::
@@ -66,9 +66,9 @@ It defines the following constants and functions:
    unhandled exception, a stack trace is printed and then the thread exits (but
    other threads continue to run).
    
-   函数将创建一个新的线程，并返回该线程的标识符（标识符为整数）。参数 function 表示线程创建之后，
-   立即执行的函数，参数 args 是该函数的参数，它是一个元组类型；第二个参数 kwargs 是可选的，它为函数提供了命名参数字典。
-   函数执行完毕之后，线程将自动退出。如果函数在执行过程中遇到未处理的异常，该线程将退出，但不会影响其他线程的执行。
+   函数将创建一个新的线程,并返回该线程的标识符 (标识符为整数) . 参数 function 表示线程创建之后,
+   立即执行的函数,参数 args 是该函数的参数,它是一个元组类型; 第二个参数 kwargs 是可选的,它为函数提供了命名参数字典. 
+   函数执行完毕之后,线程将自动退出. 如果函数在执行过程中遇到未处理的异常,该线程将退出,但不会影响其他线程的执行. 
 
 
 .. function:: interrupt_main()
@@ -76,7 +76,7 @@ It defines the following constants and functions:
    Raise a :exc:`KeyboardInterrupt` exception in the main thread.  A subthread can
    use this function to interrupt the main thread.
    
-   在主线程中触发 KeyboardInterrupt 异常。子线程可以使用该方法来中断主线程。
+   在主线程中触发 KeyboardInterrupt 异常. 子线程可以使用该方法来中断主线程. 
 
 
 .. function:: exit()
@@ -84,7 +84,7 @@ It defines the following constants and functions:
    Raise the :exc:`SystemExit` exception.  When not caught, this will cause the
    thread to exit silently.
    
-   结束当前线程。调用该函数会触发 SystemExit 异常，如果没有处理该异常，线程将结束。
+   结束当前线程. 调用该函数会触发 SystemExit 异常,如果没有处理该异常,线程将结束. 
 
 ..
    function:: exit_prog(status)
@@ -108,7 +108,7 @@ It defines the following constants and functions:
    be used e.g. to index a dictionary of thread-specific data.  Thread identifiers
    may be recycled when a thread exits and another thread is created.
    
-   返回当前线程的标识符，标识符是一个非零整数。
+   返回当前线程的标识符,标识符是一个非零整数. 
 
 
 .. function:: stack_size([size])
@@ -157,9 +157,9 @@ Lock objects have the following methods:
    *timeout* argument specifies an unbounded wait.  You cannot specify
    a *timeout* if *waitflag* is zero.
    
-   　获取琐。函数返回一个布尔值，如果获取成功，返回 True ，否则返回 False 。参数 waitflag 的默认值是一个非零整数，
-   表示如果琐已经被其他线程占用，那么当前线程将一直等待，只到其他线程释放，然后获取访琐。如果将参数 waitflag 置为 0 ，
-   那么当前线程会尝试获取琐，不管琐是否被其他线程占用，当前线程都不会等待。
+   　获取琐. 函数返回一个布尔值,如果获取成功,返回 True ,否则返回 False . 参数 waitflag 的默认值是一个非零整数,
+   表示如果琐已经被其他线程占用,那么当前线程将一直等待,只到其他线程释放,然后获取访琐. 如果将参数 waitflag 置为 0 ,
+   那么当前线程会尝试获取琐,不管琐是否被其他线程占用,当前线程都不会等待. 
 
 
    The return value is ``True`` if the lock is acquired successfully,
@@ -177,7 +177,7 @@ Lock objects have the following methods:
    Releases the lock.  The lock must have been acquired earlier, but not
    necessarily by the same thread.
    
-   释放所占用的琐。
+   释放所占用的琐. 
 
 
 .. method:: lock.locked()
@@ -185,7 +185,7 @@ Lock objects have the following methods:
    Return the status of the lock: ``True`` if it has been acquired by some thread,
    ``False`` if not.
    
-   判断琐是否被占用。
+   判断琐是否被占用. 
 
 In addition to these methods, lock objects can also be used via the
 :keyword:`with` statement, e.g.::
@@ -223,4 +223,5 @@ In addition to these methods, lock objects can also be used via the
 * When the main thread exits, it does not do any of its usual cleanup (except
   that :keyword:`try` ... :keyword:`finally` clauses are honored), and the
   standard I/O files are not flushed.
+
 

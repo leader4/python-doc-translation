@@ -12,16 +12,16 @@
 The :mod:`tty` module defines functions for putting the tty into cbreak and raw
 modes.
 
-“TTY”模块定义功能投入的tty cbreak 和RAW模式。
+ "TTY" 模块定义功能投入的tty cbreak 和RAW模式. 
 
 Because it requires the :mod:`termios` module, it will work only on Unix.
 
-因为它要求“termios的”模块，它将仅在UNIX上工作。
+因为它要求 "termios的" 模块,它将仅在UNIX上工作. 
 
 
 The :mod:`tty` module defines the following functions:
 
-“TTY”模块定义了以下功能：
+ "TTY" 模块定义了以下功能: 
 
 
 .. function:: setraw(fd, when=termios.TCSAFLUSH)
@@ -30,8 +30,8 @@ The :mod:`tty` module defines the following functions:
    defaults to :const:`termios.TCSAFLUSH`, and is passed to
    :func:`termios.tcsetattr`.
 
-   文件描述符模式* FD* row 。如果*when*
-   省略，则默认为“termios.TCSAFLUSH``，并传递给
+   文件描述符模式* FD* row . 如果*when*
+   省略,则默认为 "termios.TCSAFLUSH``,并传递给
    `` termios.tcsetattr()``.
 
 
@@ -41,19 +41,20 @@ The :mod:`tty` module defines the following functions:
    defaults to :const:`termios.TCSAFLUSH`, and is passed to
    :func:`termios.tcsetattr`.
 
-   更改模式的文件的描述符* FD* cbreak。如果*when*
-   省略，则默认为“termios.TCSAFLUSH``，并传递给
+   更改模式的文件的描述符* FD* cbreak. 如果*when*
+   省略,则默认为 "termios.TCSAFLUSH``,并传递给
    `` termios.tcsetattr()``.
 
 
 
 .. seealso::
 
-另参见：
+另参见: 
 
    Module :mod:`termios`
       Low-level terminal control interface.
 
-       模块“termios的``
-      低级别的终端控制接口。
+       模块 "termios的``
+      低级别的终端控制接口. 
+
 

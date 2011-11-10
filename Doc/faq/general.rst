@@ -38,7 +38,7 @@ helpful, please contribute via `the PSF donation page
 <http://www.python.org/psf/donations/>`_.
 
 
-使用Python是否有版权限制？
+使用Python是否有版权限制? 
 ------------------------------------------------------
 
 You can do anything you want with the source, as long as you leave the
@@ -57,7 +57,7 @@ use it.  Consult `the Trademark Usage Policy
 
 
 
- 最初Python是在哪里诞生的？
+ 最初Python是在哪里诞生的? 
 ------------------------------------------
 
 Here's a *very* brief summary of what started it all, written by Guido van
@@ -100,7 +100,7 @@ Rossum:
    USENET.  The rest is in the ``Misc/HISTORY`` file.
 
 
-Python优势是什么？
+Python优势是什么? 
 ------------------------
 
 Python is a high-level general-purpose programming language that can be applied
@@ -118,7 +118,7 @@ find packages of interest to you.
 
 
 
-Python版本号是如何管理的？
+Python版本号是如何管理的? 
 --------------------------------------------------
 
 Python versions are numbered A.B.C or A.B.  A is the major version number -- it
@@ -152,7 +152,7 @@ See also the documentation for ``sys.version``, ``sys.hexversion``, and
 ``sys.version_info``.
 
 
-如何获取Python源码的副本？
+如何获取Python源码的副本? 
 --------------------------------------------
 
 The latest Python source distribution is always available from python.org, at
@@ -170,7 +170,7 @@ Consult the `Developer FAQ <http://www.python.org/dev/faq/>`__ for more
 information on getting the source code and compiling it.
 
 
-如何获得帮助文档？
+如何获得帮助文档? 
 -------------------------------------
 
 .. XXX mention py3k
@@ -185,7 +185,7 @@ for the documentation is part of the Python source distribution.
 
 
 
-我从未接触过Python，哪里有教程？
+我从未接触过Python,哪里有教程? 
 ---------------------------------------------------------
 
 There are numerous tutorials and books available.  The standard documentation
@@ -196,7 +196,7 @@ find information for beginning Python programmers, including lists of tutorials.
 
 
 
-是否有新闻组或邮件列表来针对Python投票？
+是否有新闻组或邮件列表来针对Python投票? 
 -------------------------------------------------------
 
 There is a newsgroup, :newsgroup:`comp.lang.python`, and a mailing list,
@@ -216,7 +216,7 @@ can be found at http://www.python.org/community/lists/.
 
 
 
-如何获得Python的测试版本？
+如何获得Python的测试版本? 
 -------------------------------------------
 
 Alpha and beta releases are available from http://www.python.org/download/.  All
@@ -231,7 +231,7 @@ http://www.python.org/dev/faq/ for details.
 
 
 
-如何提交Python bug 报告？
+如何提交Python bug 报告? 
 ---------------------------------------------------
 
 To report a bug or submit a patch, please use the Roundup installation at
@@ -250,7 +250,7 @@ Guide <http://python.org/dev/>`_.
 
 
 
-有什么我可以参阅的公开文档么？
+有什么我可以参阅的公开文档么? 
 -------------------------------------------------------------------
 
 It's probably best to cite your favorite book about Python.
@@ -264,7 +264,7 @@ outdated.
 
 
 
-书在哪里！？
+书在哪里! ? 
 ------------------------------
 
 Yes, there are many, and more are being published.  See the python.org wiki at
@@ -274,18 +274,18 @@ You can also search online bookstores for "Python" and filter out the Monty
 Python references; or perhaps search for "Python" and "language".
 
 
-www.python.org 服务器在哪里？
+www.python.org 服务器在哪里? 
 ---------------------------------------------
 
 It's currently in Amsterdam, graciously hosted by `XS4ALL
 <http://www.xs4all.nl>`_.  Thanks to Thomas Wouters for his work in arranging
 python.org's hosting.
 
-阿姆斯特丹！荷兰！
+阿姆斯特丹! 荷兰! 
 
 
 
-为何被称作Python？
+为何被称作Python? 
 ------------------------
 
 When he began implementing Python, Guido van Rossum was also reading the
@@ -307,7 +307,7 @@ Python的实际情况
 
 
 
-这家伙稳定么？
+这家伙稳定么? 
 ---------------------
 
 Very stable.  New, stable releases have been coming out roughly every 6 to 18
@@ -329,7 +329,7 @@ currently there is more third party software available for Python 2 than for
 Python 3.  Python 2 code will generally not run unchanged in Python 3.
 
 
-多少人在使用Python？
+多少人在使用Python? 
 ---------------------------------
 
 There are probably tens of thousands of users, though it's difficult to obtain
@@ -344,7 +344,7 @@ the group or even read it.
 
 
 
-有多少著名工程使用Python编码？
+有多少著名工程使用Python编码? 
 --------------------------------------------------
 
 See http://python.org/about/success for a list of projects that use Python.
@@ -361,7 +361,7 @@ include Google, Yahoo, and Lucasfilm Ltd.
 
 
 
-Python未来有什么新的开发计划？
+Python未来有什么新的开发计划? 
 ------------------------------------------------------------
 
 See http://www.python.org/dev/peps/ for the Python Enhancement Proposals
@@ -375,7 +375,7 @@ New development is discussed on `the python-dev mailing list
 
 
 
-Python接受不完整不稳健的改进么？
+Python接受不完整不稳健的改进么? 
 -----------------------------------------------------------
 
 In general, no.  There are already millions of lines of Python code around the
@@ -427,7 +427,7 @@ available to track it down and fix it.  This is one advantage of an open source
 programming environment.
 
 
-Python是编程初学者的首选吗？
+Python是编程初学者的首选吗? 
 ----------------------------------------------------
 
 Yes.
@@ -525,3 +525,4 @@ Now convert the pickle file to a new format database::
 The precise commands you use will vary depending on the particulars of your
 installation.  For full details about operation of these two scripts check the
 doc string at the start of each one.
+

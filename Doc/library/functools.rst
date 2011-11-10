@@ -1,4 +1,4 @@
-:mod:`functools` --- 高阶排序功能，可调用对象的操作
+:mod:`functools` --- 高阶排序功能,可调用对象的操作
 ==============================================================================
 
 .. module:: functools
@@ -281,4 +281,5 @@ differences.  For instance, the :attr:`__name__` and :attr:`__doc__` attributes
 are not created automatically.  Also, :class:`partial` objects defined in
 classes behave like static methods and do not transform into bound methods
 during instance attribute look-up.
+
 

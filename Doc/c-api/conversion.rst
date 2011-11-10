@@ -129,3 +129,4 @@ The following functions provide locale-independent string to number conversions.
 
    Case insensitive comparison of strings. The function works almost
    identically to :c:func:`strncmp` except that it ignores the case.
+

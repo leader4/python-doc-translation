@@ -551,3 +551,4 @@ definitions. Currently, these definitions are based on MSI version 2.0.
 
    This module contains definitions for the UIText and ActionText tables, for the
    standard installer actions.
+

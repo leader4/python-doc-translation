@@ -14,7 +14,7 @@ exact representations of decimal numbers.
 
 本章描述的模块提供了数字和数学相关的方法和数据类型.``numbers`` 模块定义了一个数学类型
 的抽象层次. ``math``和``cmath``模块包含各种浮点数和复数的数学方法.
-对十进制精度比对速度感兴趣的用户，``decimal``模块支持了十进制的更精确的表示.
+对十进制精度比对速度感兴趣的用户,``decimal``模块支持了十进制的更精确的表示.
 
 The following modules are documented in this chapter:
 
@@ -29,3 +29,4 @@ The following modules are documented in this chapter:
    decimal.rst
    fractions.rst
    random.rst
+

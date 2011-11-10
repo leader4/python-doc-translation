@@ -24,45 +24,45 @@ are known to be Python 3-compatible.
 Tkinter
 -------
 
-Python默认包含有面向对象的Tcl/Tk图形集合的标准封装，称作tkinter。
-这绝对是最简单的安装和使用它的方式了。
-虽然它涉及了许多Python的二进制程序包。
-进一步了解TK，或想看到源码，请查阅Tcl/Tk的主页。Tcl/Tk同时被完全移植到了苹果操作系统，Windows和Unix平台上。
+Python默认包含有面向对象的Tcl/Tk图形集合的标准封装,称作tkinter. 
+这绝对是最简单的安装和使用它的方式了. 
+虽然它涉及了许多Python的二进制程序包. 
+进一步了解TK,或想看到源码,请查阅Tcl/Tk的主页. Tcl/Tk同时被完全移植到了苹果操作系统,Windows和Unix平台上. 
 
 wxWidgets
 ---------
 
-wxWidgets (http://www.wxwidgets.org) 是一个免费的跨平台的用C++写的图形库，它可在不同平台上创建原生的操作系统图形组件。
+wxWidgets (http://www.wxwidgets.org) 是一个免费的跨平台的用C++写的图形库,它可在不同平台上创建原生的操作系统图形组件. 
 
 
 
-它被绑定到Python，Perl，Ruby等多种语言上。
+它被绑定到Python,Perl,Ruby等多种语言上. 
 
 wxPython (http://www.wxpython.org) 是针对
-wxwidgets的Python语言封装包。 当然它跟不上官方 wxWidgets的更新速度，
-但它总是提供大量的纯Python代码的功能和其他语言封装无法做到的新特性。
+wxwidgets的Python语言封装包.  当然它跟不上官方 wxWidgets的更新速度,
+但它总是提供大量的纯Python代码的功能和其他语言封装无法做到的新特性. 
 
-wxPython的用户群和开发社区都很活跃。
+wxPython的用户群和开发社区都很活跃. 
 
 wxWidgets 和 wxPython都是免费开源的
-他们的许可允许用户开发商业化的产品，和免费、共享软件一样毫无限制。
+他们的许可允许用户开发商业化的产品,和免费、共享软件一样毫无限制. 
 
 
 Qt
 ---
 
 
-还有一种绑定是针对QT的(可以用PyQt也可以用PySide）。
-PyQt 目前比PySide更成熟些，
-但是它要求你购买Riverbank Computing 的使用许可，如果你想开发私有软件的话。PySide是完全免费的，它由诺基亚收购的Qt部门（以前是另外一家公司）开发，是PyQt的最佳代替品。
+还有一种绑定是针对QT的(可以用PyQt也可以用PySide) . 
+PyQt 目前比PySide更成熟些,
+但是它要求你购买Riverbank Computing 的使用许可,如果你想开发私有软件的话. PySide是完全免费的,它由诺基亚收购的Qt部门 (以前是另外一家公司) 开发,是PyQt的最佳代替品. 
 
-Qt 4.5 升级到了LGPL license; 同时，商业许可证仍由诺基亚提供。
+Qt 4.5 升级到了LGPL license; 同时,商业许可证仍由诺基亚提供. 
 
 Gtk+
 ----
 
 
-PyGtk是由James Henstridge封装的GTK的python程序包。
+PyGtk是由James Henstridge封装的GTK的python程序包. 
 可查阅 <http://www.pygtk.org>.
 
 
@@ -73,7 +73,7 @@ Python bindings for `the FLTK toolkit <http://www.fltk.org>`_, a simple yet
 powerful and mature cross-platform windowing system, are available from `the
 PyFLTK project <http://pyfltk.sourceforge.net>`_.
 
-FLTK 工具的Python绑定, 一个成熟、简单易用，功能强大的跨平台窗口系统，由PyFLTK项目维护。
+FLTK 工具的Python绑定, 一个成熟、简单易用,功能强大的跨平台窗口系统,由PyFLTK项目维护. 
 
 
 FOX
@@ -83,7 +83,7 @@ A wrapper for `the FOX toolkit <http://www.fox-toolkit.org/>`_ called `FXpy
 <http://fxpy.sourceforge.net/>`_ is available.  FOX supports both Unix variants
 and Windows.
 
-FOX工具的封装，被称作 FXpy。FOX 支持
+FOX工具的封装,被称作 FXpy. FOX 支持
 Unix variants 和 Windows.
 
 
@@ -96,7 +96,7 @@ For OpenGL bindings, see `PyOpenGL <http://pyopengl.sourceforge.net>`_.
 OpenGL的绑定, 请查阅 PyOpenGL.
 
 
-Python有特定平台的GUI工具吗？
+Python有特定平台的GUI工具吗? 
 ========================================================
 
 `The Mac port <http://python.org/download/mac>`_ by Jack Jansen has a rich and
@@ -176,3 +176,4 @@ The most common cause is that the widget to which the binding applies doesn't
 have "keyboard focus".  Check out the Tk documentation for the focus command.
 Usually a widget is given the keyboard focus by clicking in it (but not for
 labels; see the takefocus option).
+

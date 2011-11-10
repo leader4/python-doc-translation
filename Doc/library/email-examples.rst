@@ -44,3 +44,4 @@ text version: [2]_
 
 .. [1] Thanks to Matthew Dixon Cowles for the original inspiration and examples.
 .. [2] Contributed by Martin Matejek.
+

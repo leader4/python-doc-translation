@@ -541,3 +541,4 @@ The module also defines the following utility function:
       'Débuter en Python'
       >>> decode_header("Re: =?UTF-8?B?cHJvYmzDqG1lIGRlIG1hdHJpY2U=?=")
       'Re: problème de matrice'
+

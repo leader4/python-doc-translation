@@ -27,7 +27,7 @@ Using the subprocess Module
 
 This module defines one class called :class:`Popen`:
 
-这个模块主要就提供一个类Popen：
+这个模块主要就提供一个类Popen: 
 
 
 .. class:: Popen(args, bufsize=0, executable=None, stdin=None, stdout=None, stderr=None, preexec_fn=None, close_fds=True, shell=False, cwd=None, env=None, universal_newlines=False, startupinfo=None, creationflags=0, restore_signals=True, start_new_session=False, pass_fds=())
@@ -68,28 +68,28 @@ This module defines one class called :class:`Popen`:
       used in the shell (such as filenames containing spaces or the *echo* command
       shown above) are single list elements.
       
-      参数args可以是字符串或者序列类型（如：list，元组），用于指定进程的可执行文件及其参数。如果是序列类型，第一个元素通常是可执行文件的路径。我们也可以显式的使用executeable参数来指定可执行文件的路径。在windows操作系统上，Popen通过调用CreateProcess()来创建子进程,CreateProcess接收一个字符串参数，如果args是序列类型，系统将会通过list2cmdline()函数将序列类型转换  为字符串。
-　　参数bufsize：指定缓冲。
+      参数args可以是字符串或者序列类型 (如: list,元组) ,用于指定进程的可执行文件及其参数. 如果是序列类型,第一个元素通常是可执行文件的路径. 我们也可以显式的使用executeable参数来指定可执行文件的路径. 在windows操作系统上,Popen通过调用CreateProcess()来创建子进程,CreateProcess接收一个字符串参数,如果args是序列类型,系统将会通过list2cmdline()函数将序列类型转换  为字符串. 
+　　参数bufsize: 指定缓冲. 
         0 无缓冲
         1 行缓冲
         其他正值 缓冲区大小
         负值 采用默认系统缓冲(一般是全缓冲)
-　　参数executable用于指定可执行程序。一般情况下我们通过args参数来设置所要运行的程序。
-   None 没有任何重定向，继承父进程
+　　参数executable用于指定可执行程序. 一般情况下我们通过args参数来设置所要运行的程序. 
+   None 没有任何重定向,继承父进程
    PIPE 创建管道
         文件对象
         文件描述符(整数)
    stderr 还可以设置为 STDOUT
-        如果将参数shell设为True，executable将指定程序使用的shell。在windows平台下，默认的shell由COMSPEC环境变量来指定。
-　　参数stdin, stdout, stderr分别表示程序的标准输入、输出、错误句柄。他们可以是PIPE，文件描述符或文件对象，也可以设置为None，表示从父进程继承。
-　　参数preexec_fn只在Unix平台下有效，用于指定一个可执行对象（callable object），它将在子进程运行之前被调用。
-　　参数Close_sfs：在windows平台下，如果close_fds被设置为True，则新创建的子进程将不会继承父进程的输入、输出、错误管道。我们不能将close_fds设置为True同时重定向子进程的标准输入、输出         与错误(stdin, stdout, stderr)。钩子函数， 在fork和exec之间执行。(unix)
-　　如果参数shell设为true，程序将通过shell来执行。为真的话    unix下相当于args前面添加了 "/bin/sh“ ”-c”   window下，相当于添加"cmd.exe /c"
-　　参数cwd用于设置子进程的当前目录。
-　　参数env是字典类型，用于指定子进程的环境变量。如果env = None，子进程的环境变量将从父进程中继承。
-　　参数Universal_newlines:不同操作系统下，文本的换行符是不一样的。如：windows下用'\r\n'表示换，而Linux下用'\n'。如果将此参数设置为True，Python统一把这些换行符当作'\n'来处理。
-　　参数startupinfo与createionflags只在windows下用效，它们将被传递给底层的CreateProcess()函数，用于设置子进程的一些属性，如：主窗口的外观，进程的优先级等等。
-   creationflags，windows下，传递CREATE_NEW_CONSOLE创建自己的控制台窗口
+        如果将参数shell设为True,executable将指定程序使用的shell. 在windows平台下,默认的shell由COMSPEC环境变量来指定. 
+　　参数stdin, stdout, stderr分别表示程序的标准输入、输出、错误句柄. 他们可以是PIPE,文件描述符或文件对象,也可以设置为None,表示从父进程继承. 
+　　参数preexec_fn只在Unix平台下有效,用于指定一个可执行对象 (callable object) ,它将在子进程运行之前被调用. 
+　　参数Close_sfs: 在windows平台下,如果close_fds被设置为True,则新创建的子进程将不会继承父进程的输入、输出、错误管道. 我们不能将close_fds设置为True同时重定向子进程的标准输入、输出         与错误(stdin, stdout, stderr). 钩子函数, 在fork和exec之间执行. (unix)
+　　如果参数shell设为true,程序将通过shell来执行. 为真的话    unix下相当于args前面添加了 "/bin/sh " " -c"    window下,相当于添加"cmd.exe /c"
+　　参数cwd用于设置子进程的当前目录. 
+　　参数env是字典类型,用于指定子进程的环境变量. 如果env = None,子进程的环境变量将从父进程中继承. 
+　　参数Universal_newlines:不同操作系统下,文本的换行符是不一样的. 如: windows下用'\r\n'表示换,而Linux下用'\n'. 如果将此参数设置为True,Python统一把这些换行符当作'\n'来处理. 
+　　参数startupinfo与createionflags只在windows下用效,它们将被传递给底层的CreateProcess()函数,用于设置子进程的一些属性,如: 主窗口的外观,进程的优先级等等. 
+   creationflags,windows下,传递CREATE_NEW_CONSOLE创建自己的控制台窗口
 
    On Unix, with *shell=True*: If args is a string, it specifies the command
    string to execute through the shell.  This means that the string must be
@@ -404,7 +404,7 @@ Instances of the :class:`Popen` class have the following methods:
    Check if child process has terminated.  Set and return :attr:`returncode`
    attribute.
    
-        用于检查子进程是否已经结束。设置并返回returncode属性。
+        用于检查子进程是否已经结束. 设置并返回returncode属性. 
 
 
 .. method:: Popen.wait()
@@ -412,7 +412,7 @@ Instances of the :class:`Popen` class have the following methods:
    Wait for child process to terminate.  Set and return :attr:`returncode`
    attribute.
    
-        等待子进程结束。设置并返回returncode属性.
+        等待子进程结束. 设置并返回returncode属性.
 
    .. warning::
 
@@ -429,8 +429,8 @@ Instances of the :class:`Popen` class have the following methods:
    *input* argument should be a byte string to be sent to the child process, or
    ``None``, if no data should be sent to the child.
    
-        与子进程进行交互。向stdin发送数据，或从stdout和stderr中读取数据。可选参数input指定发送到子进程的参数。Communicate()返回一个元组：(stdoutdata, stderrdata)。注意：如果希望通过进程的stdin向其发送数据，在创建Popen对象的时候，参数stdin必须被设置为PIPE。同样，如果希望从stdout和stderr获取数据，
-        必须将stdout和stderr设置为PIPE。
+        与子进程进行交互. 向stdin发送数据,或从stdout和stderr中读取数据. 可选参数input指定发送到子进程的参数. Communicate()返回一个元组: (stdoutdata, stderrdata). 注意: 如果希望通过进程的stdin向其发送数据,在创建Popen对象的时候,参数stdin必须被设置为PIPE. 同样,如果希望从stdout和stderr获取数据,
+        必须将stdout和stderr设置为PIPE. 
 
    :meth:`communicate` returns a tuple ``(stdoutdata, stderrdata)``.
 
@@ -449,7 +449,7 @@ Instances of the :class:`Popen` class have the following methods:
 
    Sends the signal *signal* to the child.
    
-        向子进程发送信号。
+        向子进程发送信号. 
 
    .. note::
 
@@ -464,7 +464,7 @@ Instances of the :class:`Popen` class have the following methods:
    child. On Windows the Win32 API function :c:func:`TerminateProcess` is called
    to stop the child.
    
-        停止(stop)子进程。在windows平台下，该方法将调用Windows API TerminateProcess（）来结束子进程。
+        停止(stop)子进程. 在windows平台下,该方法将调用Windows API TerminateProcess () 来结束子进程. 
 
 
 .. method:: Popen.kill()
@@ -472,7 +472,7 @@ Instances of the :class:`Popen` class have the following methods:
    Kills the child. On Posix OSs the function sends SIGKILL to the child.
    On Windows :meth:`kill` is an alias for :meth:`terminate`.
    
-        杀死子进程。
+        杀死子进程. 
 
 
 The following attributes are also available:
@@ -490,7 +490,7 @@ The following attributes are also available:
    If the *stdin* argument was :data:`PIPE`, this attribute is a :term:`file
    object` that provides input to the child process.  Otherwise, it is ``None``.
    
-        如果在创建Popen对象是，参数stdin被设置为PIPE，Popen.stdin将返回一个文件对象用于策子进程发送指令。否则返回None。
+        如果在创建Popen对象是,参数stdin被设置为PIPE,Popen.stdin将返回一个文件对象用于策子进程发送指令. 否则返回None. 
 
 
 .. attribute:: Popen.stdout
@@ -498,7 +498,7 @@ The following attributes are also available:
    If the *stdout* argument was :data:`PIPE`, this attribute is a :term:`file
    object` that provides output from the child process.  Otherwise, it is ``None``.
    
-        如果在创建Popen对象是，参数stdout被设置为PIPE，Popen.stdout将返回一个文件对象用于策子进程发送指令。否则返回None。
+        如果在创建Popen对象是,参数stdout被设置为PIPE,Popen.stdout将返回一个文件对象用于策子进程发送指令. 否则返回None. 
 
 
 .. attribute:: Popen.stderr
@@ -507,14 +507,14 @@ The following attributes are also available:
    object` that provides error output from the child process.  Otherwise, it is
    ``None``.
    
-    　如果在创建Popen对象是，参数stdout被设置为PIPE，Popen.stdout将返回一个文件对象用于策子进程发送指令。否则返回None。
+    　如果在创建Popen对象是,参数stdout被设置为PIPE,Popen.stdout将返回一个文件对象用于策子进程发送指令. 否则返回None. 
 
 
 .. attribute:: Popen.pid
 
    The process ID of the child process.
    
-        获取子进程的进程ID。
+        获取子进程的进程ID. 
 
    Note that if you set the *shell* argument to ``True``, this is the process ID
    of the spawned shell.
@@ -526,7 +526,7 @@ The following attributes are also available:
    by :meth:`communicate`).  A ``None`` value indicates that the process
    hasn't terminated yet.
    
-        获取进程的返回值。如果进程还没有结束，返回None。
+        获取进程的返回值. 如果进程还没有结束,返回None. 
 
    A negative value ``-N`` indicates that the child was terminated by signal
    ``N`` (Unix only).
@@ -712,3 +712,4 @@ Replacing functions from the :mod:`popen2` module
 * popen2 closes all file descriptors by default, but you have to specify
   ``close_fds=True`` with :class:`Popen` to guarantee this behavior on
   all platforms or past Python versions.
+

@@ -65,3 +65,4 @@ To do just the former:
    :func:`compile_command`; the difference is that if the instance compiles program
    text containing a ``__future__`` statement, the instance 'remembers' and
    compiles all subsequent program texts with the statement in force.
+

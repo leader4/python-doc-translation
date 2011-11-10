@@ -213,3 +213,4 @@ These functions are usually used in the module initialization function.
 .. c:function:: int PyModule_AddStringMacro(PyObject *module, macro)
 
    Add a string constant to *module*.
+

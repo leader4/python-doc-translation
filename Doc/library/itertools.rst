@@ -758,3 +758,4 @@ with local variables defined as default values.  For example, the
 
    def dotproduct(vec1, vec2, sum=sum, map=map, mul=operator.mul):
        return sum(map(mul, vec1, vec2))
+

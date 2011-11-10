@@ -129,3 +129,4 @@ instance will fail with a :exc:`EOFError` exception.
 .. [#] "EA IFF 85" Standard for Interchange Format Files, Jerry Morrison, Electronic
    Arts, January 1985.
 
+

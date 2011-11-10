@@ -67,3 +67,4 @@ as much as it can.
 
    Similar to :c:func:`PyWeakref_GetObject`, but implemented as a macro that does no
    error checking.
+

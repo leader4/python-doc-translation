@@ -105,3 +105,4 @@ mail logging::
 
    syslog.openlog(logopt=syslog.LOG_PID, facility=syslog.LOG_MAIL)
    syslog.syslog('E-mail processing initiated...')
+

@@ -344,3 +344,4 @@ this module.  Most applications will need to derive new writer classes from the
    simply word-wrapped to the number of columns specified by *maxcol*.  This
    class is suitable for reflowing a sequence of paragraphs.
 
+

@@ -148,3 +148,4 @@ Refer to :ref:`using-capsules` for more information on using these objects.
    *NULL*.
 
    Return 0 on success.  Return nonzero and set an exception on failure.
+

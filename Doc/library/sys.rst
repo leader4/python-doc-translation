@@ -9,7 +9,7 @@ This module provides access to some variables used or maintained by the
 interpreter and to functions that interact strongly with the interpreter. It is
 always available.
 
-这个模块提供了访问解释器使用或维护的变量,或与解释器联系紧密的函数,它总是可用。
+这个模块提供了访问解释器使用或维护的变量,或与解释器联系紧密的函数,它总是可用. 
 
 
 .. data:: abiflags
@@ -30,12 +30,12 @@ always available.
    the interpreter, ``argv[0]`` is set to the string ``'-c'``.  If no script name
    was passed to the Python interpreter, ``argv[0]`` is the empty string.
    
-   命令行参数列表会被传递给一个Python脚本。
-   `` argv的[0]``是该脚本的名称（它依赖于具体操作系统
-   无论是否是一个完整的路径名）。如果命令
-   使用*-ç*命令行选项，
-   `` argv的[0]``则为字符串``'- c'``。如果没有脚本的名字
-   传递到Python解释器，`` argv的[0]``是空字符串。
+   命令行参数列表会被传递给一个Python脚本. 
+   `` argv的[0]``是该脚本的名称 (它依赖于具体操作系统
+   无论是否是一个完整的路径名) . 如果命令
+   使用*-ç*命令行选项,
+   `` argv的[0]``则为字符串``'- c'``. 如果没有脚本的名字
+   传递到Python解释器,`` argv的[0]``是空字符串. 
 
    To loop over the standard input, or the list of files given on the
    command line, see the :mod:`fileinput` module.
@@ -47,9 +47,9 @@ always available.
    big-endian (most-significant byte first) platforms, and ``'little'`` on
    little-endian (least-significant byte first) platforms.
    
-    本地机器的字节顺序指示器。
-   ``'big'``针对大端（最高有效字节在前）平台，
-   ``'little'针对小尾数``（最低有效字节在前）平台。
+    本地机器的字节顺序指示器. 
+   ``'big'``针对大端 (最高有效字节在前) 平台,
+   ``'little'针对小尾数`` (最低有效字节在前) 平台. 
 
 
 .. data:: subversion
@@ -1052,4 +1052,5 @@ always available.
 .. rubric:: Citations
 
 .. [C99] ISO/IEC 9899:1999.  "Programming languages -- C."  A public draft of this standard is available at http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf .
+
 

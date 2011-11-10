@@ -8,7 +8,7 @@ The modules described in this chapter provide interfaces to features that are
 unique to the Unix operating system, or in some cases to some or many variants
 of it.  Here's an overview:
 
-本章节描述Unix系统和其变种操作系统独有的接口。
+本章节描述Unix系统和其变种操作系统独有的接口. 
 
 
 .. toctree::
@@ -26,3 +26,4 @@ of it.  Here's an overview:
    resource.rst
    nis.rst
    syslog.rst
+

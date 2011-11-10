@@ -51,7 +51,7 @@
    when researching a change.
 
 
-这篇文章解释了在Python 3.2.2相比3.1的新功能，它着重于几个亮点，并给出了几个例子。对于详细内容。
+这篇文章解释了在Python 3.2.2相比3.1的新功能,它着重于几个亮点,并给出了几个例子. 对于详细内容. 
 
 
 .. seealso::
@@ -59,11 +59,11 @@
    :pep:`392` - Python 3.2 Release Schedule
 
 
-PEP 384: 定义了一个稳定的 ABI （PEP: Python社区提交讨论的Python优化建议）
+PEP 384: 定义了一个稳定的 ABI  (PEP: Python社区提交讨论的Python优化建议) 
 ======================================================================
 
-在过去，一个Python版本生成的扩展模块往往不能用于其他Python版本。特别是在Windows中，每个版本的Python都会重建所依赖的扩展模块。
-这是因为要获得自由访问到相应的Python解释器而专门规定的，只有这样才能使得那些扩展模块可以被使用。
+在过去,一个Python版本生成的扩展模块往往不能用于其他Python版本. 特别是在Windows中,每个版本的Python都会重建所依赖的扩展模块. 
+这是因为要获得自由访问到相应的Python解释器而专门规定的,只有这样才能使得那些扩展模块可以被使用. 
 
 With Python 3.2, an alternative approach becomes available: extension
 modules which restrict themselves to a limited API (by defining
@@ -74,10 +74,10 @@ mode will also work with 3.3, 3.4, and so on. Extension modules that
 make use of details of memory structures can still be built, but will
 need to be recompiled for every feature release.
 
-随着新的Python 3.2，另一种解决方法已出现：
-扩展模块，通过将自己restict到一个有限制的API（定义Py_LIMITED_API）虽然只能使用部分内部API，但这被认为是一个可以建立稳定跨版本的API集合。
-因此，扩展模块这种创建模式在Python版本3.3，3.4，等等也可以被使用。
-那些关于内存结构细节的扩展模块会被自动创建同时每个版本的特色功能部分将会被重新编译。
+随着新的Python 3.2,另一种解决方法已出现: 
+扩展模块,通过将自己restict到一个有限制的API (定义Py_LIMITED_API) 虽然只能使用部分内部API,但这被认为是一个可以建立稳定跨版本的API集合. 
+因此,扩展模块这种创建模式在Python版本3.3,3.4,等等也可以被使用. 
+那些关于内存结构细节的扩展模块会被自动创建同时每个版本的特色功能部分将会被重新编译. 
 
 .. seealso::
 
@@ -85,7 +85,7 @@ need to be recompiled for every feature release.
       PEP written by Martin von Löwis.
 
 
-*Python PEP 389：Argparse命令行解析模块
+*Python PEP 389: Argparse命令行解析模块
 =============================================
 
 A new module for command line parsing, :mod:`argparse`, was introduced to
@@ -93,8 +93,8 @@ overcome the limitations of :mod:`optparse` which did not provide support for
 positional arguments (not just options), subcommands, required options and other
 common patterns of specifying and validating options.
 
-一个用于命令行解析新模块，`` argparse ``，它被用来解决``optparse ``的局限性，后者没有提供支持
-自定义参数（不只是选项），子命令，要求的选择和其他普通的指定和验证模式。
+一个用于命令行解析新模块,`` argparse ``,它被用来解决``optparse ``的局限性,后者没有提供支持
+自定义参数 (不只是选项) ,子命令,要求的选择和其他普通的指定和验证模式. 
 
 This module has already had widespread success in the community as a
 third-party module.  Being more fully featured than its predecessor, the
@@ -102,15 +102,15 @@ third-party module.  Being more fully featured than its predecessor, the
 The older module is still being kept available because of the substantial amount
 of legacy code that depends on it.
 
-该模块在开发社区中作为第三方模块已经获得广泛的成功。比其前任更丰富的特性，``argparse`` 模块是目前命令行处理的首选模块。
-旧的模块仍被保留继续使用，因为有大量的遗留代码依赖于它。
+该模块在开发社区中作为第三方模块已经获得广泛的成功. 比其前任更丰富的特性,``argparse`` 模块是目前命令行处理的首选模块. 
+旧的模块仍被保留继续使用,因为有大量的遗留代码依赖于它. 
 
 
 Here's an annotated example parser showing features like limiting results to a
 set of choices, specifying a *metavar* in the help screen, validating that one
 or more positional arguments is present, and making a required option.
 
-这里有一个例子分析器，显示那些可选的特性功能集合，并指定一个* metavar *在屏幕帮助界面上，验证一个或多个位置参数是否存在，并生成所需的选项::
+这里有一个例子分析器,显示那些可选的特性功能集合,并指定一个* metavar *在屏幕帮助界面上,验证一个或多个位置参数是否存在,并生成所需的选项::
 
     import argparse
     parser = argparse.ArgumentParser(
@@ -160,7 +160,7 @@ Example of the parser's automatically generated help::
 An especially nice :mod:`argparse` feature is the ability to define subparsers,
 each with their own argument patterns and help displays::
 
-一个argparse极好的的功能是能够定义subparsers，subparsers，每次解析到自定义的参数都会显示相应的帮助文档::
+一个argparse极好的的功能是能够定义subparsers,subparsers,每次解析到自定义的参数都会显示相应的帮助文档::
 
     import argparse
     parser = argparse.ArgumentParser(prog='HELM')
@@ -186,13 +186,13 @@ each with their own argument patterns and help displays::
       PEP written by Steven Bethard.
 
 
-*Python PEP 389：新的命令行解析模块PEP的书面由史蒂芬Bethard。
+*Python PEP 389: 新的命令行解析模块PEP的书面由史蒂芬Bethard. 
 
 
    :ref:`upgrading-optparse-code` for details on the differences from :mod:`optparse`.
 
 
-*Python PEP 391：基于字典的日志配置
+*Python PEP 391: 基于字典的日志配置
 ====================================================
 
 The :mod:`logging` module provided two kinds of configuration, one style with
@@ -202,8 +202,8 @@ to create configurations from JSON or YAML files, nor did they support
 incremental configuration, which is needed for specifying logger options from a
 command line.
 
-"logging"模块提供两种配置方式，第一种针对每个选项都有一个函数来处理，另一种在外部保存一个`` ConfigParser ``格式文件。这些办法
-不能从JSON或YAML文件灵活的创建配置项目，也不支持增量配置，对于特定的命令行日志记录器这是必须的。
+"logging"模块提供两种配置方式,第一种针对每个选项都有一个函数来处理,另一种在外部保存一个`` ConfigParser ``格式文件. 这些办法
+不能从JSON或YAML文件灵活的创建配置项目,也不支持增量配置,对于特定的命令行日志记录器这是必须的. 
 
 To support a more flexible style, the module now offers
 :func:`logging.config.dictConfig` for specifying logging configuration with
@@ -211,8 +211,8 @@ plain Python dictionaries.  The configuration options include formatters,
 handlers, filters, and loggers.  Here's a working example of a configuration
 dictionary::
 
-为了支持更灵活的风格，现在提供一个专用模块`` logging.config.dictConfig（）``用于
-使用普通的Python字典创建日志记录项。配置选项包括格式化，处理器，过滤器和记录器。这里有一个关于字典配置日志的实例：:
+为了支持更灵活的风格,现在提供一个专用模块`` logging.config.dictConfig () ``用于
+使用普通的Python字典创建日志记录项. 配置选项包括格式化,处理器,过滤器和记录器. 这里有一个关于字典配置日志的实例: :
 
    {"version": 1,
     "formatters": {"brief": {"format": "%(levelname)-8s: %(name)-15s: %(message)s"},
@@ -236,7 +236,7 @@ If that dictionary is stored in a file called :file:`conf.json`, it can be
 loaded and called with code like this::
 
 
-如果该字典是存储在`` conf.json ``文件中，它可以像这样被加载和调用::
+如果该字典是存储在`` conf.json ``文件中,它可以像这样被加载和调用::
 
    >>> import json, logging.config
    >>> with open('conf.json') as f:
@@ -253,14 +253,14 @@ loaded and called with code like this::
       PEP written by Vinay Sajip.
 
 
-*Python PEP 3148：concurrent.futures 模块
+*Python PEP 3148: concurrent.futures 模块
 =================================================================
 
 Code for creating and managing concurrency is being collected in a new top-level
 namespace, *concurrent*.  Its first member is a *futures* package which provides
 a uniform high-level interface for managing threads and processes.
 
-创建和管理并发的代码被收集存放在一个新的顶级命名空间*concurrent*。第一个成员是*futures*包，它提供了一个统一管理线程和进程的高层次的接口。
+创建和管理并发的代码被收集存放在一个新的顶级命名空间*concurrent*. 第一个成员是*futures*包,它提供了一个统一管理线程和进程的高层次的接口. 
 
 The design for :mod:`concurrent.futures` was inspired by
 *java.util.concurrent.package*.  In that model, a running call and its result
@@ -269,8 +269,8 @@ features common to threads, processes, and remote procedure calls.  That object
 supports status checks (running or done), timeouts, cancellations, adding
 callbacks, and access to results or exceptions.
 
-concurrent.futures的设计灵感来自* java.util.concurrent.package *.在此模式下，调用代码和运行结果都是表现为一个``Future``对象，摘要功能
-常见的线程，进程和远程过程调用。该对象支持状态检查（跑步或做），超时，取消，加入回调，并获得结果或例外。
+concurrent.futures的设计灵感来自* java.util.concurrent.package *.在此模式下,调用代码和运行结果都是表现为一个``Future``对象,摘要功能
+常见的线程,进程和远程过程调用. 该对象支持状态检查 (跑步或做) ,超时,取消,加入回调,并获得结果或例外. 
 
 The primary offering of the new module is a pair of executor classes for
 launching and managing calls.  The goal of the executors is to make it easier to
@@ -279,8 +279,8 @@ setup a pool of resources, launch the calls, create a results queue, add
 time-out handling, and limit the total number of threads, processes, or remote
 procedure calls.
 
-这个新模块的首要特色是有一对运行和管理代码调用的执行器类。该执行者器的目标是让使用现有的工具进行并行调用更加容易。他们
-需要设置一个资源池来保留这种效果，而后运行代码调用，创建结果队列，添加超时处理器，并限制线程，进程或远程调用总数。
+这个新模块的首要特色是有一对运行和管理代码调用的执行器类. 该执行者器的目标是让使用现有的工具进行并行调用更加容易. 他们
+需要设置一个资源池来保留这种效果,而后运行代码调用,创建结果队列,添加超时处理器,并限制线程,进程或远程调用总数. 
 
 Ideally, each application should share a single executor across multiple
 components so that process and thread limits can be centrally managed.  This
@@ -288,7 +288,7 @@ solves the design challenge that arises when each component has its own
 competing strategy for resource management.
 
 
-理想的情况下，每个应用程序独享一个链接多个组件的执行器，以便对进程和线程的各种限制进行集中管理。这解决了设计时出现的缺陷，每个组件都有自己的资源管理器这种竞争机制。
+理想的情况下,每个应用程序独享一个链接多个组件的执行器,以便对进程和线程的各种限制进行集中管理. 这解决了设计时出现的缺陷,每个组件都有自己的资源管理器这种竞争机制. 
 
 Both classes share a common interface with three methods:
 :meth:`~concurrent.futures.Executor.submit` for scheduling a callable and
@@ -299,13 +299,13 @@ resources.  The class is a :term:`context manager` and can be used in a
 :keyword:`with` statement to assure that resources are automatically released
 when currently pending futures are done executing.
 
-这两个类共享一个通用的接口，包含三个方法：``submit（）``调度一个可调用代码并返回一个``Future``对象; ``map（）``调度在当时多个异步调用，``shutdown()``
-用来释放资源。这个类是一个*context manager*，可以被用在``with``声明中，以确保当前pending futures运行完毕时资源被自动释放。
+这两个类共享一个通用的接口,包含三个方法: ``submit () ``调度一个可调用代码并返回一个``Future``对象; ``map () ``调度在当时多个异步调用,``shutdown()``
+用来释放资源. 这个类是一个*context manager*,可以被用在``with``声明中,以确保当前pending futures运行完毕时资源被自动释放. 
 
 A simple of example of :class:`~concurrent.futures.ThreadPoolExecutor` is a
 launch of four parallel threads for copying files::
 
-一个``ThreadPoolExecutor``的例子，运行了4个并发的复制文件的线程::
+一个``ThreadPoolExecutor``的例子,运行了4个并发的复制文件的线程::
 
   import concurrent.futures, shutil
   with concurrent.futures.ThreadPoolExecutor(max_workers=4) as e:
@@ -327,7 +327,7 @@ launch of four parallel threads for copying files::
    :class:`~concurrent.futures.ProcessPoolExecutor`.
 
 
-*Python PEP 3147：PYC文件库目录
+*Python PEP 3147: PYC文件库目录
 =====================================
 
 Python's scheme for caching bytecode in *.pyc* files did not work well in
@@ -335,20 +335,20 @@ environments with multiple Python interpreters.  If one interpreter encountered
 a cached file created by another interpreter, it would recompile the source and
 overwrite the cached file, thus losing the benefits of caching.
 
-Python将字节码缓存在*. pyc文件*文件并不能很好的工作，特别是
-有多个Python解释器环境时。如果一名解释器
-遇到了另一个解释器创建的缓存文件时，它会
-重新编译源和覆盖已缓存的文件，这样就会失去
-缓存的本意和优势。
+Python将字节码缓存在*. pyc文件*文件并不能很好的工作,特别是
+有多个Python解释器环境时. 如果一名解释器
+遇到了另一个解释器创建的缓存文件时,它会
+重新编译源和覆盖已缓存的文件,这样就会失去
+缓存的本意和优势. 
 
 The issue of "pyc fights" has become more pronounced as it has become
 commonplace for Linux distributions to ship with multiple versions of Python.
 These conflicts also arise with CPython alternatives such as Unladen Swallow.
 
-“pyc文件相互打架”的问题变得更加突出，因为它已成为
+ "pyc文件相互打架" 的问题变得更加突出,因为它已成为
 为多个Python同时存在的Linux各发行版本司空见惯现象
-.这些冲突也出现于CPython的替代品，如
-Unladen Swallow。
+.这些冲突也出现于CPython的替代品,如
+Unladen Swallow. 
 
 To solve this problem, Python's import machinery has been extended to use
 distinct filenames for each interpreter.  Instead of Python 3.2 and Python 3.3 and
@@ -358,20 +358,20 @@ look for "mymodule.cpython-32.pyc", "mymodule.cpython-33.pyc", and
 cluttering source directories, the *pyc* files are now collected in a
 "__pycache__" directory stored under the package directory.
 
-为了解决这个问题，Python的import体系已打算
-针对不同解释器使用不同的文件名。代替Python 3.2
+为了解决这个问题,Python的import体系已打算
+针对不同解释器使用不同的文件名. 代替Python 3.2
 和Python 3.3,Unladen Swallow缓存冲突机制的方法是生成一个叫做
-“mymodule.pyc”的文件，他们现在会寻找“mymodule.cpython - 32.pyc”
-“mymodule.cpython - 33.pyc”和“mymodule.unladen10.pyc”。并且
-为了防止这些新文件塞满源文档目录，
-* pyc文件*文件现在会被存放在相应源文件包目录下的“__pycache__”目录.
+ "mymodule.pyc" 的文件,他们现在会寻找 "mymodule.cpython - 32.pyc" 
+ "mymodule.cpython - 33.pyc" 和 "mymodule.unladen10.pyc" . 并且
+为了防止这些新文件塞满源文档目录,
+* pyc文件*文件现在会被存放在相应源文件包目录下的 "__pycache__" 目录.
 
 Aside from the filenames and target directories, the new scheme has a few
 aspects that are visible to the programmer:
 
 
-除了文件名和目标目录，新方案
-对于程序员还有几个方面值得关注：
+除了文件名和目标目录,新方案
+对于程序员还有几个方面值得关注: 
 
 * Imported modules now have a :attr:`__cached__` attribute which stores the name
   of the actual file that was imported:
@@ -398,7 +398,7 @@ aspects that are visible to the programmer:
 
 * 脚本从导入的文件推断源文件名现在需要更聪明的办法.
   它不再是简单地去掉"pyc"文件名里面的"c".
-  相反，现在使用"imp"模块中的新函数来实现它::
+  相反,现在使用"imp"模块中的新函数来实现它::
 
   >>> imp.source_from_cache('c:/py32/lib/__pycache__/collections.cpython-32.pyc')
   'c:/py32/lib/collections.py'
@@ -413,7 +413,7 @@ aspects that are visible to the programmer:
   *__pycache__*.
 
 * `` py_compile ``和`` compileall``模块的新更新
-  反映了针对目标目录新的命名约定。该
+  反映了针对目标目录新的命名约定. 该
   命令行调用*compileall``* 时有了新的选项:"-i"表示
   将会被编译的指定的文件和目录列表,``-b``
   将导致字节码文件被写入到其传统位置
@@ -426,8 +426,8 @@ aspects that are visible to the programmer:
   to stay Python 3.1 compatible are included with the documentation).
 
 * ``importlib.abc``模块伴随着装载字节码文件的新*抽象
-  基类*一起被更新。过时的ABCs，
-  `` PyLoader `` 和`` PyPycLoader``，已被废除(
+  基类*一起被更新. 过时的ABCs,
+  `` PyLoader `` 和`` PyPycLoader``,已被废除(
   附带了如何保持与Python 3.1兼容性的帮助文档.)
 
 .. seealso::
@@ -436,7 +436,7 @@ aspects that are visible to the programmer:
       PEP written by Barry Warsaw.
 
 
-*Python PEP 3149：.so文件的ABI版本标记
+*Python PEP 3149: .so文件的ABI版本标记
 ======================================
 
 The PYC repository directory allows multiple bytecode cache files to be
@@ -444,8 +444,8 @@ co-located.  This PEP implements a similar mechanism for shared object files by
 giving them a common directory and distinct names for each version.
 
 PYC 允许多个字节码缓存文件的文件目录
-设在同一路径。这篇PEP实现了一个类似的机制，共享
-目标文件，针对不同语言版本,给他们一个共同的目录和不同的名称.
+设在同一路径. 这篇PEP实现了一个类似的机制,共享
+目标文件,针对不同语言版本,给他们一个共同的目录和不同的名称.
 
 The common directory is "pyshared" and the file names are made distinct by
 identifying the Python implementation (such as CPython, PyPy, Jython, etc.), the
@@ -453,11 +453,11 @@ major and minor version numbers, and optional build flags (such as "d" for
 debug, "m" for pymalloc, "u" for wide-unicode).  For an arbitrary package "foo",
 you may see these files when the distribution package is installed::
 
-常见的目录是“pyshared”，文件名是由
-通过识别不同的Python实现而生成的的（如CPython的，
-PyPy，Jython中，等），主要和次要版本号，以及可选
-创建标记（如“d”表示调试，“m”代表pymalloc，“u”为
-多类别Unicode对于任选的包比如“foo”，你可能会在安装Python程序后看到这些文件::
+常见的目录是 "pyshared" ,文件名是由
+通过识别不同的Python实现而生成的的 (如CPython的,
+PyPy,Jython中,等) ,主要和次要版本号,以及可选
+创建标记 (如 "d" 表示调试, "m" 代表pymalloc, "u" 为
+多类别Unicode对于任选的包比如 "foo" ,你可能会在安装Python程序后看到这些文件::
 
    /usr/share/pyshared/foo.cpython-32m.so
    /usr/share/pyshared/foo.cpython-33md.so
@@ -479,7 +479,7 @@ Python本身的标记是通过``sysconfig `` 模块的函数进行访问的::
       PEP written by Barry Warsaw.
 
 
-*Python PEP 3333：Python的Web服务器网关接口1.0.1
+*Python PEP 3333: Python的Web服务器网关接口1.0.1
 =====================================================
 
 This informational PEP clarifies how bytes/text issues are to be handled by the
@@ -488,8 +488,8 @@ conveniently handled with the :class:`str` type even though the HTTP protocol
 is itself bytes oriented.
 
 本PEP参考阐明了如何通过WGSI协议处理 字节/文字的细节问题.
-目前的挑战是，字符串处理
-在Python 3中最方便的方式是处理``str``类型，
+目前的挑战是,字符串处理
+在Python 3中最方便的方式是处理``str``类型,
 虽然HTTP协议本身更擅长有针对性的处理特定的字节类型.
 
 The PEP differentiates so-called *native strings* that are used for
@@ -511,23 +511,23 @@ encoding. That is, they must either be *ISO-8859-1* characters or use
 这些字符串是用于
 表示响应报头环境字典的键和值或"start_response"函数的状态.
 他们必须遵从
-**RFC 2616**编码要求。也就是说，它们必须是
-*ISO-8859- 1*字符或是**RFC 2047**中的MIME编码。
-如果要从Python2的移植WSGI的应用，这里有几个
-要点：
+**RFC 2616**编码要求. 也就是说,它们必须是
+*ISO-8859- 1*字符或是**RFC 2047**中的MIME编码. 
+如果要从Python2的移植WSGI的应用,这里有几个
+要点: 
 
-*如果报头已经使用Python2中的字符串，应用程序无需改变.
-是必要的。
+*如果报头已经使用Python2中的字符串,应用程序无需改变.
+是必要的. 
 
-*如果相反，应用程序对输出报头进行了编码或对输入报头进行了解码，
-则报头将需要重新以 Latin-1 方式编码。
-例如，一个输出报头用"h.encode('utf-8')"编码成UTF-8
+*如果相反,应用程序对输出报头进行了编码或对输入报头进行了解码,
+则报头将需要重新以 Latin-1 方式编码. 
+例如,一个输出报头用"h.encode('utf-8')"编码成UTF-8
 则需要从字节转换为原生
 字符串,且必须使用``h.encode('utf-8').decode('latin-1')``方式.
 
-*应用程序生成的变量或使用``write（）``方式发送出去的字符串必须是byte strings.
-`` start_response（）``函数
-和与其交互的函数必须使用native strings.两者不能混用。
+*应用程序生成的变量或使用``write () ``方式发送出去的字符串必须是byte strings.
+`` start_response () ``函数
+和与其交互的函数必须使用native strings.两者不能混用. 
 
 For developers porting WSGI applications from Python 2, here are the salient
 points:
@@ -553,8 +553,8 @@ this gap, the :mod:`wsgiref` module has a new function,
 为了方便开发者写 CGI-to-WSGI 或者类似的转换协议,
 用户必须能访问该使用native strings的环境
 ,虽然同一个平台可能有
-不同的约定。为了弥补这一空白，``wsgiref`` 模块
-有了一个新函数，`` wsgiref.handlers.read_environ（）``,可以将
+不同的约定. 为了弥补这一空白,``wsgiref`` 模块
+有了一个新函数,`` wsgiref.handlers.read_environ () ``,可以将
 CGI变量从`` os.environ``转换为native strings并且返回一个新字典.
 
 .. seealso::
@@ -568,7 +568,7 @@ CGI变量从`` os.environ``转换为native strings并且返回一个新字典.
 
 Some smaller changes made to the core Python language are:
 
-一些较小的Python语言核心的变化是：
+一些较小的Python语言核心的变化是: 
 
 * String formatting for :func:`format` and :meth:`str.format` gained new
   capabilities for the format character **#**.  Previously, for integers in
@@ -577,9 +577,9 @@ Some smaller changes made to the core Python language are:
   Decimal, causing the output to always have a decimal point even when no digits
   follow it.
 
-* `` format（）``和`` str.format（）获得了使用**#**进行字符串格式化的新功能.
-  此前， 整数的二进制，八进制或十六进制形式，都会分别有个'0b','0o','0x'前缀.
-  现在，它也可以这样处理,浮点数,复数,十进制数，最终输出会有一个小数点，即使没有数字跟随它::
+* `` format () ``和`` str.format () 获得了使用**#**进行字符串格式化的新功能.
+  此前, 整数的二进制,八进制或十六进制形式,都会分别有个'0b','0o','0x'前缀.
+  现在,它也可以这样处理,浮点数,复数,十进制数,最终输出会有一个小数点,即使没有数字跟随它::
 
   >>> format(20, '#o')
   '0o24'
@@ -597,11 +597,11 @@ Some smaller changes made to the core Python language are:
   custom :class:`dict` subclasses that normalize keys before look-up or that
   supply a :meth:`__missing__` method for unknown keys::
 
-* 还有一个新的`` str.format_map（）``方法，扩展了现有的`` str.format（）``方法，可接受
-  任意*mapping*映射对象。这种新方法使我们能够对Python的许多类字典
-  对象进行字符串格式化，如``defaultdict `` ，``Shelf``，``ConfigParser`` ，或
+* 还有一个新的`` str.format_map () ``方法,扩展了现有的`` str.format () ``方法,可接受
+  任意*mapping*映射对象. 这种新方法使我们能够对Python的许多类字典
+  对象进行字符串格式化,如``defaultdict `` ,``Shelf``,``ConfigParser`` ,或
   "dbm".这对我们自定义一个在查询前先初始化正常化字典key的子类也很有帮助,
-  或者提供一个`` __missing__（）``方法处理未知keys::
+  或者提供一个`` __missing__ () ``方法处理未知keys::
 
     >>> import shelve
     >>> d = shelve.open('tmp.shl')
@@ -628,7 +628,7 @@ Some smaller changes made to the core Python language are:
   the copyright and version information from being displayed in the interactive
   mode.  The option can be introspected using the :attr:`sys.flags` attribute::
 
-* 解释器现在可以以安静模式启动，``-q``，可以阻止在交互模式中显示版权和版本信息.
+* 解释器现在可以以安静模式启动,``-q``,可以阻止在交互模式中显示版权和版本信息.
   该选项可以被``sys.flags `` 属性内省::
 
     $ python -q
@@ -647,10 +647,10 @@ Some smaller changes made to the core Python language are:
   has been tightened to only catch :exc:`AttributeError` and let other
   exceptions pass through::
 
-* `` hasattr（）``函数通过调用 ``getattr（）``检测是否触发异常。这种技术允许它
-  检测`` __getattr__（）``或`` __getattribute__（）``动态创建的方法是否存在于类字典中.
-  以前，* hasattr *会触发任何异常,可能掩盖了真正的错误。现在，* hasattr *已被限制于
-  只能扑捉到 ``AttributeError ``，其他异常会被它忽略:::
+* `` hasattr () ``函数通过调用 ``getattr () ``检测是否触发异常. 这种技术允许它
+  检测`` __getattr__ () ``或`` __getattribute__ () ``动态创建的方法是否存在于类字典中.
+  以前,* hasattr *会触发任何异常,可能掩盖了真正的错误. 现在,* hasattr *已被限制于
+  只能扑捉到 ``AttributeError ``,其他异常会被它忽略:::
 
     >>> class A:
             @property
@@ -670,8 +670,8 @@ Some smaller changes made to the core Python language are:
   caused confusion and is no longer needed now that the shortest possible
   :func:`repr` is displayed by default:
 
-* 浮点数和复数使用"str()"的效果现在和"repr"是一样的.此前，``str（）``形式更短，不过这容易
-  造成混乱，现在不再需要,``repr（）``将会是最短格式的默认显示：
+* 浮点数和复数使用"str()"的效果现在和"repr"是一样的.此前,``str () ``形式更短,不过这容易
+  造成混乱,现在不再需要,``repr () ``将会是最短格式的默认显示: 
 
    >>> import math
    >>> repr(math.pi)
@@ -686,8 +686,8 @@ Some smaller changes made to the core Python language are:
   release of any resources that were acquired when requesting a buffer from the
   original object.
 
-* ``memoryview`` 对象现在有一个``release（）``方法，他们也
-  支持context manager协议。这将允许在请求新的内存缓存时候及时释放已过时对象的资源:::
+* ``memoryview`` 对象现在有一个``release () ``方法,他们也
+  支持context manager协议. 这将允许在请求新的内存缓存时候及时释放已过时对象的资源:::
 
 
   >>> with memoryview(b'abcdefgh') as v:
@@ -699,7 +699,7 @@ Some smaller changes made to the core Python language are:
 * Previously it was illegal to delete a name from the local namespace if it
   occurs as a free variable in a nested block::
 
-* 删除本地命名空间的名称以前它是非法的，尤其它作为自由变量出现在嵌套快中:::
+* 删除本地命名空间的名称以前它是非法的,尤其它作为自由变量出现在嵌套快中:::
 
        def outer(x):
            def inner():
@@ -711,8 +711,8 @@ Some smaller changes made to the core Python language are:
   is cleared, so this code which used to work with Python 2.6, raised a
   :exc:`SyntaxError` with Python 3.1 and now works again::
 
-  现在这是允许的。请记住，``except``会导致清零,
-  所以这种代码在Python 2.6中会工作,在Python3.1中会触发"SyntaxError"异常，，现在又被重新加入进3.2版本了:::
+  现在这是允许的. 请记住,``except``会导致清零,
+  所以这种代码在Python 2.6中会工作,在Python3.1中会触发"SyntaxError"异常,,现在又被重新加入进3.2版本了:::
 
        def f():
            def print_error():
@@ -760,8 +760,8 @@ Some smaller changes made to the core Python language are:
   can be enabled through the means provided by the :mod:`warnings`
   module, or on the command line.
 
-* 一个新的警告类别，``ResourceWarning`` ，已添加。这是
-  它会在资源被耗光或被异常清楚时候发出警告,它默认是关闭的,但可以通过``warnings``模块启用，或通过命令行。
+* 一个新的警告类别,``ResourceWarning`` ,已添加. 这是
+  它会在资源被耗光或被异常清楚时候发出警告,它默认是关闭的,但可以通过``warnings``模块启用,或通过命令行. 
 
   A :exc:`ResourceWarning` is issued at interpreter shutdown if the
   :data:`gc.garbage` list isn't empty, and if :attr:`gc.DEBUG_UNCOLLECTABLE` is
@@ -769,8 +769,8 @@ Some smaller changes made to the core Python language are:
   programmer aware that their code contains object finalization issues.
 
   ``ResourceWarning``会在解释器被关闭但
-  ``gc.garbage``列表并不为空的情况下被放出，若此时``gc.DEBUG_UNCOLLECTABLE``
-  被设置，所有无法收回的对象将会被打印出来。这是为了让程序员意识到他们的代码包含了未被明确决定归属的对象的现象.
+  ``gc.garbage``列表并不为空的情况下被放出,若此时``gc.DEBUG_UNCOLLECTABLE``
+  被设置,所有无法收回的对象将会被打印出来. 这是为了让程序员意识到他们的代码包含了未被明确决定归属的对象的现象.
 
   A :exc:`ResourceWarning` is also issued when a :term:`file object` is destroyed
   without having been explicitly closed.  While the deallocator for such
@@ -780,7 +780,7 @@ Some smaller changes made to the core Python language are:
   of enabling the warning from the command line::
 
 `` ResourceWarning``在一个文件对象未被显式关闭却被突然销毁的情况下也会被放出,虽然deallocator会确保它关闭底层
-  操作系统资源（通常是一个文件描述符），在具体异常问题的延时时间里却可能发生各种可能,特别是在Windows下。这里有一个的例子:::
+  操作系统资源 (通常是一个文件描述符) ,在具体异常问题的延时时间里却可能发生各种可能,特别是在Windows下. 这里有一个的例子:::
 
       $ python -q -Wdefault
       >>> f = open("foo", "wb")
@@ -796,9 +796,9 @@ Some smaller changes made to the core Python language are:
   now support slicing and negative indices, even with values larger than
   :attr:`sys.maxsize`.  This makes *range* more interoperable with lists::
 
-* `` range``对象现在支持*index*和*count*方法。这是使更多的对象全面落实
-  "collections Sequence" *抽象基类*努力的一部分，.这样做的结果是这个语言将会有一个更加统一的API。此外，``range``
-  对象现在支持切片和nagative indices，包括其值大于"sys.maxsize"时也可以处理.这使得操作*range*对象时更类似于操作列表:::
+* `` range``对象现在支持*index*和*count*方法. 这是使更多的对象全面落实
+  "collections Sequence" *抽象基类*努力的一部分,.这样做的结果是这个语言将会有一个更加统一的API. 此外,``range``
+  对象现在支持切片和nagative indices,包括其值大于"sys.maxsize"时也可以处理.这使得操作*range*对象时更类似于操作列表:::
 
       >>> range(0, 100, 2).count(10)
       1
@@ -816,8 +816,8 @@ Some smaller changes made to the core Python language are:
   a concise, readable alternative to using an :term:`abstract base class` in an
   expression like ``isinstance(x, collections.Callable)``:
 
-* Py2.x中的内置函数``callable（）``被保留。
-  提供了一个简明，使用一个抽象基可读*替代在一类*喜欢`` isinstance（X表达，* collections可赎回）``：
+* Py2.x中的内置函数``callable () ``被保留. 
+  提供了一个简明,使用一个抽象基可读*替代在一类*喜欢`` isinstance (X表达,* collections可赎回) ``: 
 
   >>> callable(max)
   True
@@ -831,51 +831,51 @@ Some smaller changes made to the core Python language are:
   with home directories for users with non-ASCII characters in their usernames.
 
 * Python的导入机制现在可以加载那些目录路径名为非ASCII名的已安装模块.
-  目录名与路径中的非ASCII字符。这解决了日益严重的问题:用户使用非ASCII编码的路径名也可正常工作.
+  目录名与路径中的非ASCII字符. 这解决了日益严重的问题:用户使用非ASCII编码的路径名也可正常工作.
 
  (Required extensive work by Victor Stinner in :issue:`9425`.)
 
 
-* 新的，改进和过时的模块
+* 新的,改进和过时的模块
 =====================================
 
 Python's standard library has undergone significant maintenance efforts and
 quality improvements.
 
 Python的标准库已经历了重大的改动,维护,
-质量也大大提高。
+质量也大大提高. 
 
 The biggest news for Python 3.2 is that the :mod:`email` package, :mod:`mailbox`
 module, and :mod:`nntplib` modules now work correctly with the bytes/text model
 in Python 3.  For the first time, there is correct handling of messages with
 mixed encodings.
 
-Python的3.2最大的新闻是``email``包，
-``mailbox``模块，``nntplib``模块现在可以在
-Python3下面的 byte/text 模式下正常工作。这是首次有可以
-完美处理messages中混合编码的方法。
+Python的3.2最大的新闻是``email``包,
+``mailbox``模块,``nntplib``模块现在可以在
+Python3下面的 byte/text 模式下正常工作. 这是首次有可以
+完美处理messages中混合编码的方法. 
 
 Throughout the standard library, there has been more careful attention to
 encodings and text versus bytes issues.  In particular, interactions with the
 operating system are now better able to exchange non-ASCII data using the
 Windows MBCS encoding, locale-aware encodings, or UTF-8.
 
-整个标准库中，出现了需更加小心处理
-编码和文本字节的问题。特别是，
+整个标准库中,出现了需更加小心处理
+编码和文本字节的问题. 特别是,
 与操作系统配合现在能够更好地处理
-非ASCII数据比如使用使用Windows MBCS编码，locale-aware
-编码，或UTF-8。
+非ASCII数据比如使用使用Windows MBCS编码,locale-aware
+编码,或UTF-8. 
 
 Another significant win is the addition of substantially better support for
 *SSL* connections and security certificates.
 
 另一个重大改善是对
-*SSL*连接和安全证书的更好支持。
+*SSL*连接和安全证书的更好支持. 
 
 In addition, more classes now implement a :term:`context manager` to support
 convenient and reliable resource clean-up using a :keyword:`with` statement.
 
-此外，现在更多的类实现了*context manager*以支持使用"with"进行更彻底的资源清理.
+此外,现在更多的类实现了*context manager*以支持使用"with"进行更彻底的资源清理.
 
 email
 -----
@@ -888,39 +888,39 @@ email package had to be extended to parse and generate email messages in bytes
 format.
 
 ``eamil ``包的大部分用法已经基本
-固定,感谢大卫的辛勤努力。问题是
+固定,感谢大卫的辛勤努力. 问题是
 通常阅读和存储电子邮件都是以字节的形式
-而不是文本，一个邮件里面可能包含多种编码.
-因此，email包不得不拓展了
-解析和生成邮件消息字节的格式。
+而不是文本,一个邮件里面可能包含多种编码.
+因此,email包不得不拓展了
+解析和生成邮件消息字节的格式. 
 
 * New functions :func:`~email.message_from_bytes` and
   :func:`~email.message_from_binary_file`, and new classes
   :class:`~email.parser.BytesFeedParser` and :class:`~email.parser.BytesParser`
   allow binary message data to be parsed into model objects.
 
-*新函数`` message_from_bytes（）``和
+*新函数`` message_from_bytes () ``和
 `` message_from_binary_file ()``,新的类``BytesFeedParser``
 和``BytesParser`` 允许二进制信息数据被解析成
-模型对象。
+模型对象. 
 
 * Given bytes input to the model, :meth:`~email.message.Message.get_payload`
   will by default decode a message body that has a
   :mailheader:`Content-Transfer-Encoding` of *8bit* using the charset
   specified in the MIME headers and return the resulting string.
 
-*鉴于字节输入到模型中，`` get_payload（）``将默认
+*鉴于字节输入到模型中,`` get_payload () ``将默认
 解码邮件正文有*的内容传输的编码*
 * *使用8位的MIME头并返回指定的字符集
-结果字符串。
+结果字符串. 
 
 * Given bytes input to the model, :class:`~email.generator.Generator` will
   convert message bodies that have a :mailheader:`Content-Transfer-Encoding` of
   *8bit* to instead have a *7bit* :mailheader:`Content-Transfer-Encoding`.
 
 
-*鉴于字节输入到模型中，将转换`` ``发电机消息
-机构有一个*内容传输的编码* * *，而不是8位
+*鉴于字节输入到模型中,将转换`` ``发电机消息
+机构有一个*内容传输的编码* * *,而不是8位
 有7位* * *内容传输编码*.
 
   Headers with unencoded non-ASCII bytes are deemed to be :rfc:`2047`\ -encoded
@@ -1143,27 +1143,27 @@ with multiple preconditions does not run until all of the predecessor tasks are
 complete.
 
 ``threading``模块有一个新的同步类`` Barrier``,
-可使多个线程处在等待状态，直到他们都已经达到了
-常见的障碍点。Barriers在确认多个线程是否在前任线程任务完成前处在待命状态时十分有用.
+可使多个线程处在等待状态,直到他们都已经达到了
+常见的障碍点. Barriers在确认多个线程是否在前任线程任务完成前处在待命状态时十分有用.
 
 Barriers can work with an arbitrary number of threads.  This is a generalization
 of a `Rendezvous <http://en.wikipedia.org/wiki/Synchronous_rendezvous>`_ which
 is defined for only two threads.
 
 
-Barriers可以与任意数量的线程一起工作。出于
-概括性和常见程度，默认只定义两个线程。
+Barriers可以与任意数量的线程一起工作. 出于
+概括性和常见程度,默认只定义两个线程. 
 
 Implemented as a two-phase cyclic barrier, :class:`~threading.Barrier` objects
 are suitable for use in loops.  The separate *filling* and *draining* phases
 assure that all threads get released (drained) before any one of them can loop
 back and re-enter the barrier.  The barrier fully resets after each cycle.
 
-作为一个两阶段实施循环障碍，障碍`` ``对象
-适合于循环使用。单独填写*和* * *排水
-阶段得到保证所有线程前公布任何一个（排水）
-他们可以回送，并重新进入障碍。充分的屏障
-复位后，每个周期。
+作为一个两阶段实施循环障碍,障碍`` ``对象
+适合于循环使用. 单独填写*和* * *排水
+阶段得到保证所有线程前公布任何一个 (排水) 
+他们可以回送,并重新进入障碍. 充分的屏障
+复位后,每个周期. 
 
 Example of using barriers::
 
@@ -2947,3 +2947,4 @@ require changes to your code:
   a new function, :func:`asyncore.handle_accepted`, was added to replace it.
 
   (Contributed by Giampaolo Rodola in :issue:`6706`.)
+

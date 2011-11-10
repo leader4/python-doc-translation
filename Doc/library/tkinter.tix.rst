@@ -584,3 +584,4 @@ Tix Commands
    imported and inited, it is not possible to reset the color schemes and font sets
    using the :meth:`tix_config` method. Instead, the :meth:`tix_resetoptions`
    method must be used.
+

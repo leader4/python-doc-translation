@@ -1,4 +1,4 @@
-:mod:`dbm` --- Unix的“数据库”的接口
+:mod:`dbm` --- Unix的 "数据库" 的接口
 =============================================
 
 .. module:: dbm
@@ -324,3 +324,4 @@ The module defines the following:
 
       Synchronize the on-disk directory and data files.  This method is called
       by the :meth:`Shelve.sync` method.
+

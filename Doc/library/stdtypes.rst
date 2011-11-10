@@ -2785,3 +2785,4 @@ The following attributes are only supported by :term:`new-style class`\ es.
 
 .. [#] To format only a tuple you should therefore provide a singleton tuple whose only
    element is the tuple to be formatted.
+

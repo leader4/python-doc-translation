@@ -138,3 +138,4 @@ The :class:`SAXException` exception class supports the following methods:
 
    Return an encapsulated exception object, or ``None``.
 
+

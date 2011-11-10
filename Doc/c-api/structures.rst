@@ -282,3 +282,4 @@ definition with the same method name.
    read-only access.  Using :c:macro:`T_STRING` for :attr:`type` implies
    :c:macro:`READONLY`.  Only :c:macro:`T_OBJECT` and :c:macro:`T_OBJECT_EX`
    members can be deleted.  (They are set to *NULL*).
+

@@ -116,3 +116,4 @@ Panel objects have the following methods:
 
    Returns the window object associated with the panel.
 
+

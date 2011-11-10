@@ -268,12 +268,12 @@ Dealing with handlers that block
 .. currentmodule:: logging.handlers
 
 Sometimes you have to get your logging handlers to do their work without
-blocking the thread you’re logging from. This is common in Web applications,
+blocking the thread you' re logging from. This is common in Web applications,
 though of course it also occurs in other scenarios.
 
 A common culprit which demonstrates sluggish behaviour is the
 :class:`SMTPHandler`: sending emails can take a long time, for a
-number of reasons outside the developer’s control (for example, a poorly
+number of reasons outside the developer' s control (for example, a poorly
 performing mail or network infrastructure). But almost any network-based
 handler can block: Even a :class:`SocketHandler` operation may do a
 DNS query under the hood which is too slow (and this query can be deep in the
@@ -292,7 +292,7 @@ developers who will use your code.
 
 The second part of the solution is :class:`QueueListener`, which has been
 designed as the counterpart to :class:`QueueHandler`.  A
-:class:`QueueListener` is very simple: it’s passed a queue and some handlers,
+:class:`QueueListener` is very simple: it' s passed a queue and some handlers,
 and it fires up an internal thread which listens to its queue for LogRecords
 sent from ``QueueHandlers`` (or any other source of ``LogRecords``, for that
 matter). The ``LogRecords`` are removed from the queue and passed to the
@@ -1039,3 +1039,4 @@ of queues, for example a ZeroMQ 'subscribe' socket. Here's an example::
    :ref:`A basic logging tutorial <logging-basic-tutorial>`
 
    :ref:`A more advanced logging tutorial <logging-advanced-tutorial>`
+

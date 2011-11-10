@@ -82,7 +82,7 @@ is no need to do anything special to use the API from C++.
 
 .. _api-objects:
 
-对象，类型，引用计数
+对象,类型,引用计数
 ===================================
 
 .. index:: object: type
@@ -628,4 +628,5 @@ after every statement run by the interpreter.)  Implied by :c:macro:`Py_DEBUG`.
 
 Please refer to :file:`Misc/SpecialBuilds.txt` in the Python source distribution
 for more detailed information.
+
 

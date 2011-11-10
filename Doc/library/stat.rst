@@ -293,3 +293,4 @@ Example::
    if __name__ == '__main__':
        walktree(sys.argv[1], visitfile)
 
+

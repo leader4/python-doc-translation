@@ -92,3 +92,4 @@ pseudo-terminal to record all input and output of a terminal session in a
    pty.spawn(shell, read)
    script.write(('Script done on %s\n' % time.asctime()).encode())
    sys.stdout.write('Script done, file is %s\n' % filename)
+

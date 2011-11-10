@@ -309,3 +309,4 @@ documentation. This allows a server to provide its own web-based documentation.
 
    Set the description used in the generated HTML documentation. This description
    will appear as a paragraph, below the server name, in the documentation.
+
