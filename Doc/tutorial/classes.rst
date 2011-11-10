@@ -4,41 +4,17 @@
 类
 *******
 
-Compared with other programming languages, Python's class mechanism adds classes
-with a minimum of new syntax and semantics.  It is a mixture of the class
-mechanisms found in C++ and Modula-3.  Python classes provide all the standard
-features of Object Oriented Programming: the class inheritance mechanism allows
-multiple base classes, a derived class can override any methods of its base
-class or classes, and a method can call the method of a base class with the same
-name.  Objects can contain arbitrary amounts and kinds of data.  As is true for
-modules, classes partake of the dynamic nature of Python: they are created at
-runtime, and can be modified further after creation.
 
 Python 在尽可能不增加新的语法和语义的情况下加入了类机制。这种机制是 C++ 和 Modula-3 的混合。 
 Python中的类没有在用户和定义之间建立一个绝对的屏障，而是依赖于用户自觉的不去“破坏定义”。
 然而，类机制最重要的功能都完整的保留下来：类继承机制允许多继承，派生类可以覆盖（override）基类中的任何方法，
 方法中可以调用基类中的同名方法。对象可以包含任意数量的私有成员。
 
-In C++ terminology, normally class members (including the data members) are
-*public* (except see below :ref:`tut-private`), and all member functions are
-*virtual*.  As in Modula-3, there are no shorthands for referencing the object's
-members from its methods: the method function is declared with an explicit first
-argument representing the object, which is provided implicitly by the call.  As
-in Smalltalk, classes themselves are objects.  This provides semantics for
-importing and renaming.  Unlike C++ and Modula-3, built-in types can be used as
-base classes for extension by the user.  Also, like in C++, most built-in
-operators with special syntax (arithmetic operators, subscripting etc.) can be
-redefined for class instances.
 
 用 C++ 术语来讲，所有的类成员（包括数据成员）都是*公有*（参见 Private Variables 私有变量 ）的，
 所有的成员函数都是*虚*（ virtual ）的。没有特定的构造和析构函数。像 Modula-3 一样，在成员方法中没有什么简便的方式可以引用对象的成员：
 方法函数在定义时需要以引用的对象做为第一个参数，调用时则会隐式引用对象。像 Smalltalk 一样，类本身就是对象，在更为广义的范围上理解：
  Python 中一切数据类型都是对象。这样就形成了语义上的引入和重命名。但是，像 C++ 而非 Modula-3 中那样，大多数带有特殊语法的内置操作符（算法运算符、下标等）都可以针对类的需要重新定义。
-
-(Lacking universally accepted terminology to talk about classes, I will make
-occasional use of Smalltalk and C++ terms.  I would use Modula-3 terms, since
-its object-oriented semantics are closer to those of Python than C++, but I
-expect that few readers have heard of it.)
 
 
 (由于在谈论类的时候缺乏公认的术语, 我会偶尔使用 Smalltalk 和 C++ 的术语.
@@ -50,17 +26,6 @@ expect that few readers have heard of it.)
 漫谈命名和对象
 ==============================
 
-Objects have individuality, and multiple names (in multiple scopes) can be bound
-to the same object.  This is known as aliasing in other languages.  This is
-usually not appreciated on a first glance at Python, and can be safely ignored
-when dealing with immutable basic types (numbers, strings, tuples).  However,
-aliasing has a possibly surprising effect on the semantics of Python code
-involving mutable objects such as lists, dictionaries, and most other types.
-This is usually used to the benefit of the program, since aliases behave like
-pointers in some respects.  For example, passing an object is cheap since only a
-pointer is passed by the implementation; and if a function modifies an object
-passed as an argument, the caller will see the change --- this eliminates the
-need for two different argument passing mechanisms as in Pascal.
 
 对象是被特化的，多个名字（在多个作用域中）可以绑定同一个对象。这相当于其它语言中的别名。
 通常对 Python 的第一印象中会忽略这一点，使用那些不可变的基本类型（数值、字符串、元组）时也可以很放心的忽视它。
@@ -74,96 +39,39 @@ need for two different argument passing mechanisms as in Pascal.
 作用域和命名空间
 ============================
 
-Before introducing classes, I first have to tell you something about Python's
-scope rules.  Class definitions play some neat tricks with namespaces, and you
-need to know how scopes and namespaces work to fully understand what's going on.
-Incidentally, knowledge about this subject is useful for any advanced Python
-programmer.
-
 在介绍类之前，我首先介绍一些有关 Python 作用域的规则：类的定义非常巧妙的运用了命名空间，要完全理解接下来的知识，需要先理解作用域和命名空间的工作原理。另外，这一切的知识对于任何高级 Python 程序员都非常有用。
 
 Let's begin with some definitions.
 
 我们从一些定义开始。
 
-A *namespace* is a mapping from names to objects.  Most namespaces are currently
-implemented as Python dictionaries, but that's normally not noticeable in any
-way (except for performance), and it may change in the future.  Examples of
-namespaces are: the set of built-in names (containing functions such as :func:`abs`, and
-built-in exception names); the global names in a module; and the local names in
-a function invocation.  In a sense the set of attributes of an object also form
-a namespace.  The important thing to know about namespaces is that there is
-absolutely no relation between names in different namespaces; for instance, two
-different modules may both define a function ``maximize`` without confusion ---
-users of the modules must prefix it with the module name.
 
 命名空间是从命名到对象的映射。当前命名空间主要是通过 Python 字典实现的，不过通常不关心具体的实现方式（除非出于性能考虑），以后也有可能会改变其实现方式。以下有一些命名空间的例子：内置命名（像 abs() 这样的函数，以及内置异常名）集，模块中的全局命名，函数调用中的局部命名。某种意义上讲对象的属性集也是一个命名空间。关于命名空间需要了解的一件很重要的事就是不同命名空间中的命名没有任何联系，例如两个不同的模块可能都会定义一个名为“maximize”的函数而不会发生混淆－－用户必须以模块名为前缀来引用它们。
 
-By the way, I use the word *attribute* for any name following a dot --- for
-example, in the expression ``z.real``, ``real`` is an attribute of the object
-``z``.  Strictly speaking, references to names in modules are attribute
-references: in the expression ``modname.funcname``, ``modname`` is a module
-object and ``funcname`` is an attribute of it.  In this case there happens to be
-a straightforward mapping between the module's attributes and the global names
-defined in the module: they share the same namespace!  [#]_
 
 顺便提一句，我习惯称 Python 中任何一个“.”之后的命名为*属性*－－例如，表达式 z.real 中的 real 是对象 z 的一个属性。严格来讲，从模块中引用命名是引用属性：表达式 modname.funcname 中， modname 是一个模块对象，``funcname`` 是它的一个属性。因此，模块的属性和模块中的全局命名有直接的映射关系：它们共享同一命名空间！[#]_
 
-Attributes may be read-only or writable.  In the latter case, assignment to
-attributes is possible.  Module attributes are writable: you can write
-``modname.the_answer = 42``.  Writable attributes may also be deleted with the
-:keyword:`del` statement.  For example, ``del modname.the_answer`` will remove
-the attribute :attr:`the_answer` from the object named by ``modname``.
 
 属性可以是只读或可写的。后一种情况下，可以对属性赋值。你可以这样作：``modname.the_answer = 42``。可写的属性也可以用 del 语句删除。例如：``del modname.the_answer`` 会从 modname 对象中删除 the_answer 属性。
 
-Namespaces are created at different moments and have different lifetimes.  The
-namespace containing the built-in names is created when the Python interpreter
-starts up, and is never deleted.  The global namespace for a module is created
-when the module definition is read in; normally, module namespaces also last
-until the interpreter quits.  The statements executed by the top-level
-invocation of the interpreter, either read from a script file or interactively,
-are considered part of a module called :mod:`__main__`, so they have their own
-global namespace.  (The built-in names actually also live in a module; this is
-called :mod:`builtins`.)
 
 在不同的时刻创建的命名空间，有不同的生存期。包含内置命名的命名空间在 Python 解释器启动时创建，会一直保留，不被删除。模块的全局命名空间在模块定义被读入时创建，通常，模块命名空间也会一直保存到解释器退出。由解释器在最高层调用执行的语句，不管它是从脚本文件中读入还是来自交互式输入，都是__main__ 模块的一部分，所以它们也拥有自己的命名空间。（内置命名也同样被包含在一个模块中，它被称作 __builtin__ 。）
 
-The local namespace for a function is created when the function is called, and
-deleted when the function returns or raises an exception that is not handled
-within the function.  (Actually, forgetting would be a better way to describe
-what actually happens.)  Of course, recursive invocations each have their own
-local namespace.
 
 当函数被调用时创建一个局部命名空间，函数反正返回过抛出一个未在函数内处理的异常时删除。（实际上，说是遗忘更为贴切）。当然，每一个递归调用拥有自己的命名空间。
 
-A *scope* is a textual region of a Python program where a namespace is directly
-accessible.  "Directly accessible" here means that an unqualified reference to a
-name attempts to find the name in the namespace.
 
 *作用域*是Python程序中一个命名空间可以直接访问的正文区域。“直接访问”在这里的意思是查找命名时无需引用命名前缀。
 
-Although scopes are determined statically, they are used dynamically. At any
-time during execution, there are at least three nested scopes whose namespaces
-are directly accessible:
-
 尽管作用域是静态定义，在使用时他们都是动态的。每次执行时，至少有三个命名空间可以直接访问的作用域嵌套在一起：
 
-* the innermost scope, which is searched first, contains the local names
 
-  最内层的作用域, 首先被搜索, 包含局部变量名
+* 最内层的作用域, 首先被搜索, 包含局部变量名
 
-* the scopes of any enclosing functions, which are searched starting with the
-  nearest enclosing scope, contains non-local, but also non-global names
-
-  任意函数的作用域, 它从最接近的作用域开始搜索, 包括非局部的, 
+* 任意函数的作用域, 它从最接近的作用域开始搜索, 包括非局部的, 
   但也是非全局的名字
 
-* the next-to-last scope contains the current module's global names
-
-  紧邻最后的作用域包含了当前模块的全局变量
-
-* the outermost scope (searched last) is the namespace containing built-in names
+* 紧邻最后的作用域包含了当前模块的全局变量
 
 * 包含局部命名的使用域在最里面，首先被搜索
 * 其次搜索的是中层的作用域，这里包含了同级的函数
