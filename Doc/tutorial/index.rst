@@ -23,14 +23,12 @@ Python 的解释器可以很容易的通过 C 或者 C++  (或者其它可以通
 本手册向读者介绍 Python 语言及其体系的基本知识与概念. 配合 Python 解释器学习会很有帮助, 不过文中己包含所有的完整例子, 所以这本手册也可以离线阅读. 
 
 
-需要有关标准对象和模块的详细介绍的话, 请查询 Python 库参考手册.  Python 参考手册提供了更多的关于语言方面的正式说明. 
-需要编写 C 或 C++扩展, 请阅读 Python 解释器的扩展和集成 以及 Python/C API 参考手册. 这几本书涵盖了各个深度上的 Python 知识. 
+需要有关标准对象和模块的详细介绍的话, 请参阅 Python :ref:`library-index`.  :ref:`reference-index` 提供了更多的关于语言方面的正式说明. 
+需要编写 C 或 C++扩展, 请阅读 :ref:`extending-index`  以及 :ref:`c-api-index`. 这几本书涵盖了各个深度上的 Python 知识. 
 
 
 本手册不会涵盖 Python 的所有功能, 也不侍去解释用到的所有相关的知识. 相反, 它介绍了许多 Python 中最引人注目的功能, 
 这会对读者掌握这门语言的风格大有帮助. 读过它后, 你应该可以阅读和编写 Python 块和程序, 接下来可以从 Python 库参考手册中进一步学习 Python 多种多样的库和模块. 
-
-The :ref:`glossary` is also worth going through.
 
 :ref:`glossary` 也值得仔细阅读.
 
