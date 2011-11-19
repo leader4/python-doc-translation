@@ -1,7 +1,7 @@
 ﻿.. _tut-informal:
 
 ****************************************************
-Python 简介
+对 Python 的非正式介绍
 ****************************************************
 
 以下的例子中, 通过有没有以提示符 (``>>>`` 和 ``...``) 起始来区分输入和输出. 要录入示例的话, 我们必须输入以提示符开头的行中, 
@@ -847,12 +847,7 @@ This example introduces several new features.
      >>> print('The value of i is', i)
      The value of i is 65536
 
-  The keyword *end* can be used to avoid the newline after the output, or end
-  the output with a different string.
-
-------------------------------------------------------------------------------------------------------------------------------------------------------
-
-  关键字 end 可以用于在输出后防止换行::
+  关键字 *end* 可以用于在输出后防止换行, 或者以一个不同的字符串结束输出::
 
      >>> a, b = 0, 1
      >>> while b < 1000:
@@ -860,4 +855,3 @@ This example introduces several new features.
      ...     a, b = b, a+b
      ...
      1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,
-
